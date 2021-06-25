@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 2560
     height: 947
-  m_MinSize: {x: 678, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 19
+  controlID: 59
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,7 +130,7 @@ MonoBehaviour:
   - {fileID: 13}
   - {fileID: 14}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 80
+  controlID: 60
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 81
+  controlID: 61
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -340,6 +340,7 @@ MonoBehaviour:
     - {fileID: -9049619622506955418, guid: 78b8674bdf084ce4e8f055e585afe4cf, type: 2}
     - {fileID: -1205180314526852635, guid: 1a3241ba2bb4353409d916f2cf29e2c4, type: 2}
     - {fileID: 7629234544199872679, guid: f7772d0eee63a7b41bbbe4595ba3d281, type: 2}
+    - {fileID: -49645212002777976, guid: b0b65e1201c74d2428fd8d1b4303a0b6, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -421,10 +422,26 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 183.5
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 24
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: aec321f14458ab948ba7a5e79f8253e4, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: b0b65e1201c74d2428fd8d1b4303a0b6, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -2895423650841138789, guid: aec321f14458ab948ba7a5e79f8253e4, type: 2}
+  - m_Target: {fileID: -49645212002777976, guid: b0b65e1201c74d2428fd8d1b4303a0b6, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -464,7 +481,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 15678
+  m_LastSelectedObjectID: -1234
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -528,22 +545,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\bombe\Documents\Unity3D\SecondJam
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f23e0000
-    m_LastClickedID: 16114
-    m_ExpandedIDs: 00000000bc3e0000be3e0000c23e0000c43e000000ca9a3b
+    scrollPos: {x: 0, y: 35}
+    m_SelectedIDs: 2a3f0000
+    m_LastClickedID: 16170
+    m_ExpandedIDs: 00000000f03e0000f23e0000f43e0000f63e00000a3f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -571,7 +588,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000bc3e0000be3e0000c03e0000c23e0000c43e0000
+    m_ExpandedIDs: 00000000f03e0000f23e0000f43e0000f63e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -599,7 +616,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000925000002a4200009c3e0000
+    m_ExpandedInstanceIDs: c6230000925000002a4200009c3e000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -692,9 +709,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 7ca4ffff3ec5ffff94c8ffffdeceffff0cfbffff4efbffff
+      m_SelectedIDs: 2efbffff
+      m_LastClickedID: -1234
+      m_ExpandedIDs: 98bcffffb6e2ffffc8fafffffcfaffff10fbffff52fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -749,14 +766,14 @@ MonoBehaviour:
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 0
+  m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.1926383, y: -1.206036, z: -9.84467}
+    m_Target: {x: 756.27576, y: 236.86984, z: -826.77576}
     speed: 2
-    m_Value: {x: 1.1926383, y: -1.206036, z: -9.84467}
+    m_Value: {x: 756.27576, y: 236.86984, z: -826.77576}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -785,17 +802,17 @@ MonoBehaviour:
       m_Size: {x: 0, y: 0}
     yGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -803,17 +820,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.0033139577, y: 0.99613076, z: -0.07666295, w: -0.043058537}
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: -0.003313927, y: 0.9961215, z: -0.076662235, w: -0.04305814}
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.8807006
+    m_Target: 324.0577
     speed: 2
-    m_Value: 5.8807006
+    m_Value: 324.0577
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -827,7 +844,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.03774435, y: 0.94079006, z: -0.31784526, w: -0.11172134}
+  m_LastSceneViewRotation: {x: -0.024306266, y: -0.008400613, z: 0.00020343187, w: -0.9996772}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 

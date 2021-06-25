@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPickup : MonoBehaviour
 {
-    private int healAmmount;
+    private int healAmmount = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +21,12 @@ public class HealthPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>().Heal(healAmmount);
-            Destroy(gameObject);
+           PlayerControls playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
+            if (playerControls.curHp != playerControls.maxHp)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>().Heal(healAmmount);
+                Destroy(gameObject);
+            }
         }
     }
 }

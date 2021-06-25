@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6e9768595884ade439ba3bf253e6da3d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0052fd84031e7447b09dc19d6ecf2c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 7419672412132425510}
   - component: {fileID: 7419672412132425508}
   - component: {fileID: 7419672412132425515}
+  - component: {fileID: 2049345428}
   m_Layer: 0
   m_Name: AmmoPickup
   m_TagString: Untagged
@@ -153,3 +154,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd87deaf4fcea6647bd67dcbdf355c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2049345428
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7419672412132425511}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0b65e1201c74d2428fd8d1b4303a0b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

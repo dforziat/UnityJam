@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -17,11 +18,14 @@ public class PlayerControls : MonoBehaviour
     [Header("Camera")]
     [SerializeField] float lookSensitivity;
 
-    int curHp = 50;
-    int maxHp = 100;
-
+    public int curHp = 50;
+    public int maxHp = 100;
     public int currentAmmo = 20;
     public int gunDamage = 1;
+
+    public Text hpText;
+    public Text ammoText;
+
 
     Camera cam;
 
@@ -46,6 +50,8 @@ public class PlayerControls : MonoBehaviour
     private void Start()
     {
         curHp = maxHp;
+        hpText.text = curHp.ToString("D3");
+        ammoText.text = currentAmmo.ToString("D3");
     }
 
     void Update()
@@ -90,9 +96,11 @@ public class PlayerControls : MonoBehaviour
     public void TakeDamage(int damage)
     {
         curHp -= damage;
-        if(curHp <= 0)
+        hpText.text = curHp.ToString("D3");
+        if (curHp <= 0)
         {
-            GetComponent<DeathHandler>().HandleDeath();
+            hpText.text = "000";
+            GetComponent<DeathHandler>().HandleDeath(); 
         }
     }
 
@@ -106,6 +114,13 @@ public class PlayerControls : MonoBehaviour
         {
             curHp += healAmount;
         }
+        hpText.text = curHp.ToString("D3");
+    }
+
+    public void RecieveAmmo(int ammoAmount)
+    {
+        currentAmmo += ammoAmount;
+        ammoText.text = currentAmmo.ToString("D3");
     }
 
 
@@ -123,6 +138,7 @@ public class PlayerControls : MonoBehaviour
         canShoot = false;
         gunAnimator.SetTrigger("shoot");
         currentAmmo--;
+        ammoText.text = currentAmmo.ToString("D3");
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
         {
