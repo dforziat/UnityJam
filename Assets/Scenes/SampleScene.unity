@@ -399,6 +399,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &941940674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6216474775019406687, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 6216474775089520114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1312762229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5028391134535262255, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
@@ -553,6 +558,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5028391134535262254, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 941940674}
+    - target: {fileID: 5028391134535262254, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
       propertyPath: hpText
       value: 
       objectReference: {fileID: 1379608363}
@@ -678,6 +687,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3480689939614903340, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 077449fe801af9a40a8d72e734bb439c, type: 3}
+    - target: {fileID: 3480689939614903340, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6216474776588816481, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: m_Name
       value: UI

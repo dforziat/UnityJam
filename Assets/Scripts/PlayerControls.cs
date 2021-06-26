@@ -35,6 +35,7 @@ public class PlayerControls : MonoBehaviour
     public Vector3 dir;
 
     public GameObject hitEffect;
+    public GameObject gun;
     public Animator gunAnimator;
     bool canShoot = true;
     float rateOfFire = .5f;
@@ -137,6 +138,7 @@ public class PlayerControls : MonoBehaviour
     {
         canShoot = false;
         gunAnimator.SetTrigger("shoot");
+        gun.GetComponent<AudioSource>().Play();
         currentAmmo--;
         ammoText.text = currentAmmo.ToString("D3");
         RaycastHit hit;
