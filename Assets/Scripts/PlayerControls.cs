@@ -22,6 +22,7 @@ public class PlayerControls : MonoBehaviour
     public int maxHp = 100;
     public int currentAmmo = 20;
     public int gunDamage = 1;
+    private bool isDead = false;
 
     public Text hpText;
     public Text ammoText;
@@ -37,6 +38,9 @@ public class PlayerControls : MonoBehaviour
     public GameObject hitEffect;
     public GameObject gun;
     public Animator gunAnimator;
+
+    private AudioSource audioSource;
+    public AudioClip injuredAudioClip;
     bool canShoot = true;
     float rateOfFire = .5f;
     void Awake()
@@ -46,17 +50,22 @@ public class PlayerControls : MonoBehaviour
         //disable cursor
         Cursor.lockState = CursorLockMode.Locked;
 
-        //initialize UI
+        isDead = false;
     }
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         curHp = maxHp;
         hpText.text = curHp.ToString("D3");
         ammoText.text = currentAmmo.ToString("D3");
     }
 
     void Update()
-    {     
+    {
+        if (isDead)
+        {
+            return;
+        }
             Gravity();
             CamLook();
             Movement();
@@ -96,12 +105,15 @@ public class PlayerControls : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        GetComponent<DamageEffect>().ShowDamageEffect();
+        audioSource.PlayOneShot(injuredAudioClip);
         curHp -= damage;
         hpText.text = curHp.ToString("D3");
         if (curHp <= 0)
         {
             hpText.text = "000";
-            GetComponent<DeathHandler>().HandleDeath(); 
+            GetComponent<DeathHandler>().HandleDeath();
+            isDead = true;
         }
     }
 
