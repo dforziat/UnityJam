@@ -14,10 +14,14 @@ public class EnemyController : MonoBehaviour
     private float chaseRange = 5;
     private float distanceToTarget = Mathf.Infinity;
     private bool isProvoked = false;
+    private AudioSource audioSource;
+    public AudioClip damagedClip;
+    public AudioClip deathClip;
     // Start is called before the first frame update
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -73,7 +77,9 @@ public class EnemyController : MonoBehaviour
     {
         health -= damage;
         GetComponent<Animator>().SetTrigger("damaged");
+        audioSource.PlayOneShot(damagedClip);
         if (health <= 0) {
+            audioSource.PlayOneShot(deathClip);
             Instantiate(explosion, new Vector3(transform.position.x,transform.position.y - verticalOffset,transform.position.z), transform.rotation);
             Destroy(gameObject);
         }

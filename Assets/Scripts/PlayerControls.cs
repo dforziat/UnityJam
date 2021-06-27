@@ -38,10 +38,15 @@ public class PlayerControls : MonoBehaviour
     public GameObject hitEffect;
     public GameObject gun;
     public Animator gunAnimator;
+    public Image damageEffect;
 
+    [Header("Audio")]
     private AudioSource audioSource;
     public AudioClip injuredAudioClip;
     public AudioClip deathAudioClip;
+    public AudioClip ammoPickupClip;
+    public AudioClip healthPickupClip;
+
     bool canShoot = true;
     float rateOfFire = .5f;
     void Awake()
@@ -112,6 +117,7 @@ public class PlayerControls : MonoBehaviour
         hpText.text = curHp.ToString("D3");
         if (curHp <= 0)
         {
+            damageEffect.enabled = false;
             hpText.text = "000";
             GetComponent<DeathHandler>().HandleDeath();
             audioSource.PlayOneShot(deathAudioClip);
@@ -130,10 +136,12 @@ public class PlayerControls : MonoBehaviour
             curHp += healAmount;
         }
         hpText.text = curHp.ToString("D3");
+        audioSource.PlayOneShot(healthPickupClip);
     }
 
     public void RecieveAmmo(int ammoAmount)
     {
+        audioSource.PlayOneShot(ammoPickupClip);
         currentAmmo += ammoAmount;
         ammoText.text = currentAmmo.ToString("D3");
     }
