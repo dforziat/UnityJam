@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     public int health = 3;
     public int damage = 10;
     public GameObject explosion;
-    private float verticalOffset = .5f;
+    private float verticalOffset = 0;
     public Transform target;
     private NavMeshAgent navMeshAgent;
     private float chaseRange = 5;
@@ -72,7 +72,8 @@ public class EnemyController : MonoBehaviour
     public void takeDamage(int damage)
     {
         health -= damage;
-        if(health <= 0) {
+        GetComponent<Animator>().SetTrigger("damaged");
+        if (health <= 0) {
             Instantiate(explosion, new Vector3(transform.position.x,transform.position.y - verticalOffset,transform.position.z), transform.rotation);
             Destroy(gameObject);
         }

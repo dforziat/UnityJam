@@ -15,11 +15,11 @@ C:/Users/bombe/Documents/Unity3D/SecondJam
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57126
+50018
 Successfully changed project path to: C:/Users/bombe/Documents/Unity3D/SecondJam
 C:/Users/bombe/Documents/Unity3D/SecondJam
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 37.03 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 34.84 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.1f1 (77a89f25062f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Resources/UnitySubsystems
@@ -35,22 +35,22 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56192
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56612
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.129660 seconds.
+Registered in 0.001840 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 38.50 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 34.59 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.470 seconds
+- Completed reload, in  1.009 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.065266 seconds.
+Registered in 0.001153 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
@@ -59,226 +59,110 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.120 seconds
+- Completed reload, in  1.522 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
-Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1555 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 82.0 MB.
 System memory in use after: 82.1 MB.
 
 Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1998.
-Total: 2.051100 ms (FindLiveObjects: 0.233700 ms CreateObjectMapping: 0.086600 ms MarkObjects: 1.649700 ms  DeleteObjects: 0.080200 ms)
+Total: 2.047900 ms (FindLiveObjects: 0.163500 ms CreateObjectMapping: 0.062500 ms MarkObjects: 1.731600 ms  DeleteObjects: 0.089400 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/DamageEffect.cs
-  artifactKey: Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/DamageEffect.cs using Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1c42107300cea59f812efa3b56619f8') in 0.036944 seconds
-  Import took 0.039353 seconds .
+  path: Assets/Sprites/eyeEnemie-Sheet.png
+  artifactKey: Guid(4fd7f36a1a82e8d47a489445c375377f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/eyeEnemie-Sheet.png using Guid(4fd7f36a1a82e8d47a489445c375377f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b7e0c3db4d78fcb09cd25b23d08445e') in 0.072669 seconds
+  Import took 0.075195 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.777763 seconds.
-  path: Assets/Scripts/DamageEffect.cs
-  artifactKey: Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/DamageEffect.cs using Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd18d5f5474cd904c2c71b32e3cb90168') in 0.003001 seconds
-  Import took 0.005652 seconds .
+  Time since last request: 11.176792 seconds.
+  path: Assets/Sprites/eyeEnemie-Sheet.png
+  artifactKey: Guid(4fd7f36a1a82e8d47a489445c375377f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/eyeEnemie-Sheet.png using Guid(4fd7f36a1a82e8d47a489445c375377f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2c3c8aafd04fbd4bc01588e5e4dd8ec') in 0.012108 seconds
+  Import took 0.014413 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 46.155160 seconds.
-  path: Assets/Scripts/DamageEffect.cs
-  artifactKey: Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/DamageEffect.cs using Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2989f2730cba86e61a5cef0956b94f0c') in 0.002654 seconds
-  Import took 0.005340 seconds .
+  Time since last request: 0.006475 seconds.
+  path: Assets/Sprites/eyeEnemie-Sheet.png
+  artifactKey: Guid(4fd7f36a1a82e8d47a489445c375377f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/eyeEnemie-Sheet.png using Guid(4fd7f36a1a82e8d47a489445c375377f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2c3c8aafd04fbd4bc01588e5e4dd8ec') in 0.013033 seconds
+  Import took 0.016767 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.372989 seconds.
-  path: Assets/Scripts/DamageEffect.cs
-  artifactKey: Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/DamageEffect.cs using Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc3506e5455f624a3d54e8ef8c295025') in 0.003015 seconds
-  Import took 0.005541 seconds .
+  Time since last request: 44.509589 seconds.
+  path: Assets/Sprites/eyeEnemie-Sheet.png
+  artifactKey: Guid(4fd7f36a1a82e8d47a489445c375377f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/eyeEnemie-Sheet.png using Guid(4fd7f36a1a82e8d47a489445c375377f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '120cfca8ab51b543ad620dcac805e158') in 0.051576 seconds
+  Import took 0.053970 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 67.586626 seconds.
-  path: Assets/Scripts/DamageEffect.cs
-  artifactKey: Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/DamageEffect.cs using Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baab70d984adc9aee6ddf673c7259d47') in 0.003143 seconds
-  Import took 0.010335 seconds .
+  Time since last request: 292.234292 seconds.
+  path: Assets/Animations/Enemy.controller
+  artifactKey: Guid(f7772d0eee63a7b41bbbe4595ba3d281) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Enemy.controller using Guid(f7772d0eee63a7b41bbbe4595ba3d281) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6285f16018f954c442986c326597ff38') in 0.013405 seconds
+  Import took 0.016908 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 29.233486 seconds.
-  path: Assets/Scripts/DamageEffect.cs
-  artifactKey: Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/DamageEffect.cs using Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ae0b6f43ef1bb904a3b634f48ffd99c') in 0.004201 seconds
-  Import took 0.007434 seconds .
+  Time since last request: 214.805717 seconds.
+  path: Assets/Scripts/EnemyController.cs
+  artifactKey: Guid(9933311426dde934d96e8506ce306f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EnemyController.cs using Guid(9933311426dde934d96e8506ce306f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f693e0693f903cfe0a80ec828dcf6cf') in 0.014719 seconds
+  Import took 0.017308 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 26.453224 seconds.
-  path: Assets/Scripts/DamageEffect.cs
-  artifactKey: Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/DamageEffect.cs using Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15b8635f50ea268a96287f44b2bac986') in 0.003069 seconds
-  Import took 0.005898 seconds .
+  Time since last request: 0.000701 seconds.
+  path: Assets/Scripts/EnemyController.cs
+  artifactKey: Guid(9933311426dde934d96e8506ce306f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EnemyController.cs using Guid(9933311426dde934d96e8506ce306f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f693e0693f903cfe0a80ec828dcf6cf') in 0.002041 seconds
+  Import took 0.004775 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.425827 seconds.
-  path: Assets/Scripts/DamageEffect.cs
-  artifactKey: Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/DamageEffect.cs using Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78422107db322cad628573792d0e87b9') in 0.002923 seconds
-  Import took 0.005540 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.107657 seconds.
-  path: Assets/Scripts/DamageEffect.cs
-  artifactKey: Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/DamageEffect.cs using Guid(fe0136bf25e74b44382d694f563820a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0796ef15e5f289565cf7378664143a34') in 0.004710 seconds
-  Import took 0.008133 seconds .
+  Time since last request: 31.724890 seconds.
+  path: Assets/Scripts/EnemyController.cs
+  artifactKey: Guid(9933311426dde934d96e8506ce306f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/EnemyController.cs using Guid(9933311426dde934d96e8506ce306f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '652240399a8ab41999ccabd4aca5232e') in 0.003191 seconds
+  Import took 0.007068 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001140 seconds.
+Registered in 0.001135 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.871 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 80.5 MB.
-System memory in use after: 80.6 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2001.
-Total: 2.078800 ms (FindLiveObjects: 0.156700 ms CreateObjectMapping: 0.054600 ms MarkObjects: 1.811600 ms  DeleteObjects: 0.054700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001163 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.860 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 80.5 MB.
-System memory in use after: 80.6 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2004.
-Total: 2.001600 ms (FindLiveObjects: 0.150800 ms CreateObjectMapping: 0.045300 ms MarkObjects: 1.755200 ms  DeleteObjects: 0.049500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001165 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.854 seconds
+- Completed reload, in  0.880 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 80.5 MB.
-System memory in use after: 80.6 MB.
+System memory in use before: 83.6 MB.
+System memory in use after: 83.7 MB.
 
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2007.
-Total: 2.882300 ms (FindLiveObjects: 0.235700 ms CreateObjectMapping: 0.131000 ms MarkObjects: 2.453100 ms  DeleteObjects: 0.060700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001351 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.835 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 80.5 MB.
-System memory in use after: 80.6 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2010.
-Total: 2.432000 ms (FindLiveObjects: 0.266200 ms CreateObjectMapping: 0.113000 ms MarkObjects: 1.993900 ms  DeleteObjects: 0.057800 ms)
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2008.
+Total: 2.228500 ms (FindLiveObjects: 0.201600 ms CreateObjectMapping: 0.062600 ms MarkObjects: 1.905100 ms  DeleteObjects: 0.058400 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001509 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.865 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 80.5 MB.
-System memory in use after: 80.6 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2013.
-Total: 3.864400 ms (FindLiveObjects: 0.266300 ms CreateObjectMapping: 0.109600 ms MarkObjects: 3.426200 ms  DeleteObjects: 0.060300 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 513.431750 seconds.
-  path: Assets/Scripts/PlayerControls.cs
-  artifactKey: Guid(191d23ba1aef4844d8ff7d1c8b01e345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PlayerControls.cs using Guid(191d23ba1aef4844d8ff7d1c8b01e345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33a56783aaed71fda93ea23e04b602eb') in 0.011186 seconds
-  Import took 0.013743 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.023149 seconds.
-  path: Assets/Scripts/PlayerControls.cs
-  artifactKey: Guid(191d23ba1aef4844d8ff7d1c8b01e345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PlayerControls.cs using Guid(191d23ba1aef4844d8ff7d1c8b01e345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33a56783aaed71fda93ea23e04b602eb') in 0.015657 seconds
-  Import took 0.018677 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001129 seconds.
+Registered in 0.001259 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
@@ -287,1236 +171,21 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.949 seconds
+- Completed reload, in  0.821 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 80.5 MB.
-System memory in use after: 80.6 MB.
+System memory in use before: 83.6 MB.
+System memory in use after: 83.7 MB.
 
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2016.
-Total: 2.188000 ms (FindLiveObjects: 0.171600 ms CreateObjectMapping: 0.055500 ms MarkObjects: 1.903400 ms  DeleteObjects: 0.056100 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 122.726386 seconds.
-  path: Assets/Scripts/PlayerControls.cs
-  artifactKey: Guid(191d23ba1aef4844d8ff7d1c8b01e345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PlayerControls.cs using Guid(191d23ba1aef4844d8ff7d1c8b01e345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31aa72d380803c868160fea5062d12fb') in 0.004112 seconds
-  Import took 0.006925 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.097174 seconds.
-  path: Assets/Scripts/PlayerControls.cs
-  artifactKey: Guid(191d23ba1aef4844d8ff7d1c8b01e345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PlayerControls.cs using Guid(191d23ba1aef4844d8ff7d1c8b01e345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31aa72d380803c868160fea5062d12fb') in 0.002975 seconds
-  Import took 0.005395 seconds .
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2011.
+Total: 1.921900 ms (FindLiveObjects: 0.148200 ms CreateObjectMapping: 0.050700 ms MarkObjects: 1.673700 ms  DeleteObjects: 0.048200 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001868 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.801 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 80.6 MB.
-System memory in use after: 80.6 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2019.
-Total: 2.958400 ms (FindLiveObjects: 0.150300 ms CreateObjectMapping: 0.052400 ms MarkObjects: 2.695700 ms  DeleteObjects: 0.058900 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 619.151376 seconds.
-  path: Assets/Human Sounds/Male
-  artifactKey: Guid(4f74526d8082ca945be9c8f652f0c583) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male using Guid(4f74526d8082ca945be9c8f652f0c583) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7af2655928ba639dbd741d48c1ecb08') in 0.013760 seconds
-  Import took 0.016950 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.052528 seconds.
-  path: Assets/Human Sounds/Male/Male Angry 01.wav
-  artifactKey: Guid(3c05c8b02eab7f448806e2879a1f06d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Angry 01.wav using Guid(3c05c8b02eab7f448806e2879a1f06d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa4446e4c7a38b97a42b7bf03ba878de') in 0.113651 seconds
-  Import took 0.116301 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000262 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 16.wav
-  artifactKey: Guid(cc195ae8eb20e0342b6e9ec27ca339e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 16.wav using Guid(cc195ae8eb20e0342b6e9ec27ca339e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f44c11fe1eacb9e4b48f6b8320fc62ee') in 0.017864 seconds
-  Import took 0.020609 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000218 seconds.
-  path: Assets/Human Sounds/Male/Male Cough 03.wav
-  artifactKey: Guid(b9a96f3010c7c80479374b66eb8740fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Cough 03.wav using Guid(b9a96f3010c7c80479374b66eb8740fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99b3d2ecd5e524060808de50ad895c9b') in 0.018486 seconds
-  Import took 0.021784 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000288 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 09.wav
-  artifactKey: Guid(89ef0bde96703104bac1273da3c899d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 09.wav using Guid(89ef0bde96703104bac1273da3c899d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26ac0528dbb538b1669dd0cdecf6b6f4') in 0.014298 seconds
-  Import took 0.017341 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000217 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 15.wav
-  artifactKey: Guid(9f61c29f0fd53754983eac1f7c5f8748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 15.wav using Guid(9f61c29f0fd53754983eac1f7c5f8748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd38b9fbe4c027a9f50ebc8922f9fae89') in 0.016687 seconds
-  Import took 0.019908 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000190 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 05.wav
-  artifactKey: Guid(aa62123b1b5d9644888f68cc550345f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 05.wav using Guid(aa62123b1b5d9644888f68cc550345f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b6e3f997487fc2291473db7cf25f325') in 0.017879 seconds
-  Import took 0.021108 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000189 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 10.wav
-  artifactKey: Guid(2ccad5e52e495a04eb6b1241a13283be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 10.wav using Guid(2ccad5e52e495a04eb6b1241a13283be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c358574da3610bf1a3291cff6834594a') in 0.031692 seconds
-  Import took 0.035316 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000167 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 03.wav
-  artifactKey: Guid(f72209a23b59e954797d666eaa59fbea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 03.wav using Guid(f72209a23b59e954797d666eaa59fbea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00a53aa87085419bd77b28d3d3c1ce53') in 0.015161 seconds
-  Import took 0.017743 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000191 seconds.
-  path: Assets/Human Sounds/Male/Male Effort 06.wav
-  artifactKey: Guid(fc6fca36a63218845be25694d8721106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort 06.wav using Guid(fc6fca36a63218845be25694d8721106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9daf84e01061fce9072847ad25184770') in 0.011959 seconds
-  Import took 0.014441 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000198 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 19.wav
-  artifactKey: Guid(718548add8f8e2d47ab01fb4b4687ab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 19.wav using Guid(718548add8f8e2d47ab01fb4b4687ab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ec378a3f8795cc7c6f42a484893e127') in 0.012635 seconds
-  Import took 0.015021 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000156 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 06.wav
-  artifactKey: Guid(923a31802a2285f419484488f55d9989) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 06.wav using Guid(923a31802a2285f419484488f55d9989) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b3cb105550a7d5b317bef784480e48b') in 0.012133 seconds
-  Import took 0.014529 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000163 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 01.wav
-  artifactKey: Guid(88212d15603516247816dbce7db48707) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 01.wav using Guid(88212d15603516247816dbce7db48707) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bca39063d03f96d44cffe1d75cdd7040') in 0.018697 seconds
-  Import took 0.021421 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000165 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 12.wav
-  artifactKey: Guid(244667c65e7704e4089ca2fecd6c7a7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 12.wav using Guid(244667c65e7704e4089ca2fecd6c7a7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5877d24ced12ce65e92dd1a616ced398') in 0.012095 seconds
-  Import took 0.014455 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000169 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 01.wav
-  artifactKey: Guid(8d4b6c0830c6d074aab6b4f63ad4d580) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 01.wav using Guid(8d4b6c0830c6d074aab6b4f63ad4d580) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce594a4ca7aecc1c2f53191c4706e015') in 0.012124 seconds
-  Import took 0.014399 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000159 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 10.wav
-  artifactKey: Guid(0a6b1bf00335ce04494bc1a54b7e45ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 10.wav using Guid(0a6b1bf00335ce04494bc1a54b7e45ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '716835bf67b38570d9620f0a9f9e6b38') in 0.012489 seconds
-  Import took 0.015205 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000198 seconds.
-  path: Assets/Human Sounds/Male/Male Effort Jump and Fall 02.wav
-  artifactKey: Guid(a67d2be585e36eb448c9ba6ff03914a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort Jump and Fall 02.wav using Guid(a67d2be585e36eb448c9ba6ff03914a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90e81cf23bf08627fc256e7ebde75c81') in 0.019393 seconds
-  Import took 0.022499 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000248 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 09.wav
-  artifactKey: Guid(6927f9b2ffc324847a9e1382594d931a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 09.wav using Guid(6927f9b2ffc324847a9e1382594d931a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f76c7746f1c7e346f8653052aea5a3b') in 0.012884 seconds
-  Import took 0.015536 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000219 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 04.wav
-  artifactKey: Guid(59cd986cd808f2a42a74de5acc24f8f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 04.wav using Guid(59cd986cd808f2a42a74de5acc24f8f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fe11e09ac8dfbcb4d68c5223c1ab543') in 0.012764 seconds
-  Import took 0.015149 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000167 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 12.wav
-  artifactKey: Guid(e502e15cb8150814dbaced303518e858) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 12.wav using Guid(e502e15cb8150814dbaced303518e858) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3adfe853dd23bbd9cea58d275b52027') in 0.016359 seconds
-  Import took 0.019070 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000162 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 05.wav
-  artifactKey: Guid(42b292ee4a16dcc47a42f63adcb87d3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 05.wav using Guid(42b292ee4a16dcc47a42f63adcb87d3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '606fce9f3bb555dfa37b292e14530c36') in 0.015051 seconds
-  Import took 0.017707 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000260 seconds.
-  path: Assets/Human Sounds/Male/Male Effort Jump and Fall 01.wav
-  artifactKey: Guid(a684ae4f7af324043bf36d8aa5be0ee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort Jump and Fall 01.wav using Guid(a684ae4f7af324043bf36d8aa5be0ee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2efbaee8a2b7560358ff97618eb3a3d8') in 0.013094 seconds
-  Import took 0.015800 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000199 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 07.wav
-  artifactKey: Guid(1ddbe4319b4beea478abf2557ad99416) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 07.wav using Guid(1ddbe4319b4beea478abf2557ad99416) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba89c7e96d94d2229cf3f4f1d8f5a6ee') in 0.014205 seconds
-  Import took 0.018190 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000175 seconds.
-  path: Assets/Human Sounds/Male/Male Angry 05.wav
-  artifactKey: Guid(362e3a9897ce28e4c8b0490ff619c611) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Angry 05.wav using Guid(362e3a9897ce28e4c8b0490ff619c611) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '008e5f61f91fc02d9f27e2db2305215c') in 0.012043 seconds
-  Import took 0.014709 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000170 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 16.wav
-  artifactKey: Guid(40002d78594dde6448e7d9e4cfacb22b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 16.wav using Guid(40002d78594dde6448e7d9e4cfacb22b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23304aa1565bd52503cbfad05e578828') in 0.015701 seconds
-  Import took 0.018341 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000171 seconds.
-  path: Assets/Human Sounds/Male/Male Sigh 02.wav
-  artifactKey: Guid(ba5d2a589cea3c447afd40b9e67b7e8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Sigh 02.wav using Guid(ba5d2a589cea3c447afd40b9e67b7e8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e83ea87d29aa65fce69f6a45f633ee5') in 0.016465 seconds
-  Import took 0.018985 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000174 seconds.
-  path: Assets/Human Sounds/Male/Male Effort Jump and Fall 04.wav
-  artifactKey: Guid(c9da5170a8163d041825163deea7cbae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort Jump and Fall 04.wav using Guid(c9da5170a8163d041825163deea7cbae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcd0c5290741251a36edd54174323b12') in 0.014904 seconds
-  Import took 0.017357 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000162 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 14.wav
-  artifactKey: Guid(1b33296116b1f204a9e5f2e8f4adc118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 14.wav using Guid(1b33296116b1f204a9e5f2e8f4adc118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18c6a3167f61f9da56433fea656fbda5') in 0.014370 seconds
-  Import took 0.016792 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000163 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 13.wav
-  artifactKey: Guid(34d8982e9529c6140a198b71e87a0a9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 13.wav using Guid(34d8982e9529c6140a198b71e87a0a9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c34247fcc6c67fb78038bc94f968ccc2') in 0.014116 seconds
-  Import took 0.016654 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000176 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 14.wav
-  artifactKey: Guid(d7c99634ab4261042a79a6d6ed6fa365) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 14.wav using Guid(d7c99634ab4261042a79a6d6ed6fa365) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb59fbbf092cc722bc01e74b23b6db4d') in 0.012258 seconds
-  Import took 0.014796 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000167 seconds.
-  path: Assets/Human Sounds/Male/Male Effort Jump and Fall 07.wav
-  artifactKey: Guid(6546a0e6f2517c14aaa5d90c55a0659a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort Jump and Fall 07.wav using Guid(6546a0e6f2517c14aaa5d90c55a0659a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fc7c891e694364ff7592535c9d531ed') in 0.011708 seconds
-  Import took 0.014478 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000169 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 16.wav
-  artifactKey: Guid(a2adadfc8632caa4d8b26a3164d51ac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 16.wav using Guid(a2adadfc8632caa4d8b26a3164d51ac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ea1ef27f4d234e13f57958ea0b4a557') in 0.012787 seconds
-  Import took 0.015206 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000160 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 02.wav
-  artifactKey: Guid(12f560bb51d63524a89dcf8508796779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 02.wav using Guid(12f560bb51d63524a89dcf8508796779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71b9bcbb411d179ef05b99dcd6f540e8') in 0.012033 seconds
-  Import took 0.014786 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000175 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 09.wav
-  artifactKey: Guid(587dabf4670b06d42bc71740d5534228) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 09.wav using Guid(587dabf4670b06d42bc71740d5534228) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85472ccd98792b0eb10c1de103b5e6e6') in 0.012437 seconds
-  Import took 0.014806 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000157 seconds.
-  path: Assets/Human Sounds/Male/Male Cough 01.wav
-  artifactKey: Guid(8dd45ac8bc81294469f23fc0c5606ca4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Cough 01.wav using Guid(8dd45ac8bc81294469f23fc0c5606ca4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d715894a1b403f468d28b839e73b748') in 0.011065 seconds
-  Import took 0.013468 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000169 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 11.wav
-  artifactKey: Guid(fbccda1fb6dbbf44ba4646be8e5d326c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 11.wav using Guid(fbccda1fb6dbbf44ba4646be8e5d326c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65199935b140dcc791184cbc3bd4344c') in 0.012726 seconds
-  Import took 0.015227 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000172 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 15.wav
-  artifactKey: Guid(ff7bb76d4ae0d854fa20a871ef036317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 15.wav using Guid(ff7bb76d4ae0d854fa20a871ef036317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16af390c6e4a57ff39801183c469bef9') in 0.011682 seconds
-  Import took 0.014283 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000202 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 07.wav
-  artifactKey: Guid(06f3207680add8a42b756669149663d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 07.wav using Guid(06f3207680add8a42b756669149663d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14eb01a68be407a928ab7b9809bb3d95') in 0.011966 seconds
-  Import took 0.015169 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000233 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 02.wav
-  artifactKey: Guid(dc5b83aba6cf6314aa82f67bb76be429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 02.wav using Guid(dc5b83aba6cf6314aa82f67bb76be429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1b2bc12a3e760ccd7e2b1c18951a353') in 0.012272 seconds
-  Import took 0.014652 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000213 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 20.wav
-  artifactKey: Guid(81681d167a26f5a4db8a9ea0d567f9b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 20.wav using Guid(81681d167a26f5a4db8a9ea0d567f9b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd12514f74dcffe49e9cceefbb553368a') in 0.011943 seconds
-  Import took 0.014288 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000164 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 20.wav
-  artifactKey: Guid(31a58d94b8d67744294296d8fe563753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 20.wav using Guid(31a58d94b8d67744294296d8fe563753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aab0250337b0bc958669bb11155f13b1') in 0.012762 seconds
-  Import took 0.015140 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000169 seconds.
-  path: Assets/Human Sounds/Male/Male Sigh 03.wav
-  artifactKey: Guid(4f14b526cf186b949992a9bfe29e28d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Sigh 03.wav using Guid(4f14b526cf186b949992a9bfe29e28d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '278edfbecb3af87dfc51e4fd2552c62e') in 0.010591 seconds
-  Import took 0.012832 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000169 seconds.
-  path: Assets/Human Sounds/Male/Male Angry 02.wav
-  artifactKey: Guid(c9816e45851313a49b57563c56efd9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Angry 02.wav using Guid(c9816e45851313a49b57563c56efd9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d2affcc23d8398c50f55879ea2f3ee3') in 0.011474 seconds
-  Import took 0.013927 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000171 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 04.wav
-  artifactKey: Guid(e6254d1c51826554dbc6ae2691db3862) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 04.wav using Guid(e6254d1c51826554dbc6ae2691db3862) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0ffff64fadda880a910ab3f9329a879') in 0.011918 seconds
-  Import took 0.014484 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000179 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 18.wav
-  artifactKey: Guid(0c51060af0e7f094ba69288d7584a908) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 18.wav using Guid(0c51060af0e7f094ba69288d7584a908) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8c54cef87c1d3d47006ca65aa2050c7') in 0.011693 seconds
-  Import took 0.014476 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000174 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 08.wav
-  artifactKey: Guid(b8e35b14dcecf8f438965e105c900196) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 08.wav using Guid(b8e35b14dcecf8f438965e105c900196) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27be502ba23f0629293dbb096d4dce6d') in 0.012611 seconds
-  Import took 0.014955 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000218 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 17.wav
-  artifactKey: Guid(88143996b91b11843bd17b906c3d308f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 17.wav using Guid(88143996b91b11843bd17b906c3d308f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31be94d1573e84a380c832267a516a3d') in 0.014130 seconds
-  Import took 0.016587 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000159 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 05.wav
-  artifactKey: Guid(96f222e5c49f7174f8d19f4ce09ed0ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 05.wav using Guid(96f222e5c49f7174f8d19f4ce09ed0ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85285f396bf7e2650a4b3d37f003bfbb') in 0.012160 seconds
-  Import took 0.014545 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000227 seconds.
-  path: Assets/Human Sounds/Male/Male Effort 02.wav
-  artifactKey: Guid(b602e2ee0f45fc34da6325b1b5e187a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort 02.wav using Guid(b602e2ee0f45fc34da6325b1b5e187a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e24f2ff44724109009c699b720554c6') in 0.012187 seconds
-  Import took 0.014522 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000198 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 04.wav
-  artifactKey: Guid(8462428142dfaf844aaab583fe9e7189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 04.wav using Guid(8462428142dfaf844aaab583fe9e7189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67bfcac0dd9c1ca7c303304f2ab9d500') in 0.012978 seconds
-  Import took 0.015688 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000204 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 11.wav
-  artifactKey: Guid(319d534831d5f854bada49803c961cb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 11.wav using Guid(319d534831d5f854bada49803c961cb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53ee6c7508802426fc26e67196741f8c') in 0.012110 seconds
-  Import took 0.014469 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000164 seconds.
-  path: Assets/Human Sounds/Male/Male Effort 09.wav
-  artifactKey: Guid(0e508ff98558c1e48a55c08a62f30694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort 09.wav using Guid(0e508ff98558c1e48a55c08a62f30694) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aea1b595a8e896a75907919ecfd290ed') in 0.014623 seconds
-  Import took 0.017001 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000193 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 10.wav
-  artifactKey: Guid(eef8560ee55b1a544b202a039ec46e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 10.wav using Guid(eef8560ee55b1a544b202a039ec46e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d5888abfd5d35359a9827b1bbae55c9') in 0.011302 seconds
-  Import took 0.014028 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000243 seconds.
-  path: Assets/Human Sounds/Male/Male Cough 06.wav
-  artifactKey: Guid(8ee2d551c11175e44a194a1a61aba8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Cough 06.wav using Guid(8ee2d551c11175e44a194a1a61aba8da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb09ed0d23b016e772da6540ca580038') in 0.013246 seconds
-  Import took 0.015803 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000218 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 10.wav
-  artifactKey: Guid(67a131ca5c790424aadcd08d2d6166f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 10.wav using Guid(67a131ca5c790424aadcd08d2d6166f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cfffef7e25a752baf8f8b262ce3d1de') in 0.012374 seconds
-  Import took 0.015329 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000211 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 13.wav
-  artifactKey: Guid(1d2ce24af6aabe14b8e60a4e1a54e3b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 13.wav using Guid(1d2ce24af6aabe14b8e60a4e1a54e3b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4349104092b005fa357f7bf09ffbc80') in 0.011553 seconds
-  Import took 0.014060 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000197 seconds.
-  path: Assets/Human Sounds/Male/Male Effort 03.wav
-  artifactKey: Guid(6b270fd5651e69b49bb7e76941d40d8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort 03.wav using Guid(6b270fd5651e69b49bb7e76941d40d8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c89a702e70342e82fb718f56a5334839') in 0.010922 seconds
-  Import took 0.013246 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000204 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 12.wav
-  artifactKey: Guid(5a21d439d0824ae4a8e67a89acf40f2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 12.wav using Guid(5a21d439d0824ae4a8e67a89acf40f2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cde39c40be31f2fef36ca7cfaf124f81') in 0.011893 seconds
-  Import took 0.014427 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000190 seconds.
-  path: Assets/Human Sounds/Male/Male Sigh 01.wav
-  artifactKey: Guid(56689b8469354e14e9bc82bbbea6f44a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Sigh 01.wav using Guid(56689b8469354e14e9bc82bbbea6f44a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90c9593bf955eac7476c93046a1bc825') in 0.011575 seconds
-  Import took 0.014202 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000249 seconds.
-  path: Assets/Human Sounds/Male/Male Effort 04.wav
-  artifactKey: Guid(8797b2e01606e8141a5c1cbcfb4e0ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort 04.wav using Guid(8797b2e01606e8141a5c1cbcfb4e0ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6181615a12e8d53760c4fd6fc8b46e46') in 0.013047 seconds
-  Import took 0.015311 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000218 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 14.wav
-  artifactKey: Guid(418605218ba2a734b882fac6f62a16ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 14.wav using Guid(418605218ba2a734b882fac6f62a16ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11ee3e1ba7968497196f596099fbcea8') in 0.011298 seconds
-  Import took 0.013843 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000173 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 04.wav
-  artifactKey: Guid(f9322555a597c6f4caaa080fbb08415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 04.wav using Guid(f9322555a597c6f4caaa080fbb08415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7db2d8002167cc24ad71364c76f400e') in 0.011239 seconds
-  Import took 0.013706 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000228 seconds.
-  path: Assets/Human Sounds/Male/Male Effort Jump and Fall 03.wav
-  artifactKey: Guid(6cb4c8b3746090341877d3232799a44d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort Jump and Fall 03.wav using Guid(6cb4c8b3746090341877d3232799a44d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be0fccbb2e2f779e463f541e21a049d9') in 0.013030 seconds
-  Import took 0.015355 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000235 seconds.
-  path: Assets/Human Sounds/Male/Male Angry 06.wav
-  artifactKey: Guid(806be7c7f7ae8db429b561890d3a0916) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Angry 06.wav using Guid(806be7c7f7ae8db429b561890d3a0916) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f1620c4c05a15b958a8b28a1778c429') in 0.011036 seconds
-  Import took 0.013380 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000219 seconds.
-  path: Assets/Human Sounds/Male/Male Cough 04.wav
-  artifactKey: Guid(6711a7ca330ad374c8e1e176020e975d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Cough 04.wav using Guid(6711a7ca330ad374c8e1e176020e975d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '642af84c70fa922596e30963cfbc91b8') in 0.010923 seconds
-  Import took 0.013261 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000245 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 05.wav
-  artifactKey: Guid(da78f9e5c2d1dae4ea048abede6c30f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 05.wav using Guid(da78f9e5c2d1dae4ea048abede6c30f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71a394674ba30a174db6c7df2dafd596') in 0.011740 seconds
-  Import took 0.014965 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000219 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 08.wav
-  artifactKey: Guid(62a14edcc8d9f7543b83d8e744ee0cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 08.wav using Guid(62a14edcc8d9f7543b83d8e744ee0cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af419020107c2bfb65cc10b559951947') in 0.012743 seconds
-  Import took 0.015682 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000179 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 02.wav
-  artifactKey: Guid(c9a76e483e4372d40ba87b23a8f712d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 02.wav using Guid(c9a76e483e4372d40ba87b23a8f712d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7706e0a2c7cc749e679c54f12f67d391') in 0.014301 seconds
-  Import took 0.016983 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000179 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 14.wav
-  artifactKey: Guid(7f94375ff562b0b4c8c5820bbe5bbf63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 14.wav using Guid(7f94375ff562b0b4c8c5820bbe5bbf63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8873c85f8a4bdbac57196ef01dc0645') in 0.012199 seconds
-  Import took 0.014828 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000213 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 02.wav
-  artifactKey: Guid(314565da14e79a540a03bc8f3eceec9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 02.wav using Guid(314565da14e79a540a03bc8f3eceec9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f00d6b0da948dd4af30d20a2b30952b') in 0.014574 seconds
-  Import took 0.017592 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000173 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 12.wav
-  artifactKey: Guid(99b810d43b0c4024d942e0d2f126ecfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 12.wav using Guid(99b810d43b0c4024d942e0d2f126ecfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5632a6ce04ee3a998bed1a24584d3187') in 0.013352 seconds
-  Import took 0.016235 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000181 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 06.wav
-  artifactKey: Guid(257e06fad29afd04c867be971b340846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 06.wav using Guid(257e06fad29afd04c867be971b340846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b902f04e121753b9f6f8e6415df14d2') in 0.017921 seconds
-  Import took 0.021308 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000198 seconds.
-  path: Assets/Human Sounds/Male/Male Effort 07.wav
-  artifactKey: Guid(c34ba222ad0c7d44cbe1a314d5c2f669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort 07.wav using Guid(c34ba222ad0c7d44cbe1a314d5c2f669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7739aa6720d909fb6cb6bdc30aedf38e') in 0.015846 seconds
-  Import took 0.019753 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000211 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 19.wav
-  artifactKey: Guid(ee6e4252b7f34614cae285dabe8884bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 19.wav using Guid(ee6e4252b7f34614cae285dabe8884bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b9babd983e73412667c5b0062d63170') in 0.032680 seconds
-  Import took 0.036834 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000176 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 14.wav
-  artifactKey: Guid(4685e944b863fd84d85a265243475c1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 14.wav using Guid(4685e944b863fd84d85a265243475c1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b11b9463099825ab0e61646985f6417') in 0.015391 seconds
-  Import took 0.018434 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000191 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 06.wav
-  artifactKey: Guid(c9d1d9c314b8e2e44a89d89c9904e0e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 06.wav using Guid(c9d1d9c314b8e2e44a89d89c9904e0e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ab840b4cd20a74a5815ee664b4e7d5f') in 0.015646 seconds
-  Import took 0.019513 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000223 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 08.wav
-  artifactKey: Guid(0a3ca4f9a66e14d4cb1f9d47d9270175) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 08.wav using Guid(0a3ca4f9a66e14d4cb1f9d47d9270175) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25662959e7b3d2db2b6e1ac70a566d5c') in 0.015584 seconds
-  Import took 0.019708 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000198 seconds.
-  path: Assets/Human Sounds/Male/Male Angry 07.wav
-  artifactKey: Guid(e28fa2442340a404d8fa7494dc413dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Angry 07.wav using Guid(e28fa2442340a404d8fa7494dc413dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b97b26d2b584397bdbe779d116f6b8e9') in 0.017280 seconds
-  Import took 0.020553 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000185 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 03.wav
-  artifactKey: Guid(ad7fffec2fa741f468dab68a0c6be540) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 03.wav using Guid(ad7fffec2fa741f468dab68a0c6be540) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c119719bcff45b1335f6ddfe08024552') in 0.014095 seconds
-  Import took 0.017190 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000249 seconds.
-  path: Assets/Human Sounds/Male/Male Effort 01.wav
-  artifactKey: Guid(afe8e5b6876a3e442b6c67b19008bd28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort 01.wav using Guid(afe8e5b6876a3e442b6c67b19008bd28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08f746c3517d1e61a97c6b101ab7698b') in 0.017781 seconds
-  Import took 0.021146 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000197 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 13.wav
-  artifactKey: Guid(4b975ae97328bec4c980fcd38bbfefe9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 13.wav using Guid(4b975ae97328bec4c980fcd38bbfefe9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6f4b07cf2780c04190032b73db66a7c') in 0.013939 seconds
-  Import took 0.017087 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000206 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 21.wav
-  artifactKey: Guid(78ba881eba0e3234c97fc1d2af7cc757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 21.wav using Guid(78ba881eba0e3234c97fc1d2af7cc757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95a925b5b765d938e61c772e9c48a421') in 0.015337 seconds
-  Import took 0.018932 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000187 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 15.wav
-  artifactKey: Guid(fccabff07de823149b26f650e5362aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 15.wav using Guid(fccabff07de823149b26f650e5362aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b428cdb24fe192c62fff47bffd2e913') in 0.013388 seconds
-  Import took 0.016367 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000224 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 05.wav
-  artifactKey: Guid(04dae4db7f8aae44bb84ac476089d27a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 05.wav using Guid(04dae4db7f8aae44bb84ac476089d27a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd486bb47d029fad865da4c4fda09cf34') in 0.016242 seconds
-  Import took 0.019577 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000181 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 01.wav
-  artifactKey: Guid(b0183e181c588814b8e0df68918dc64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 01.wav using Guid(b0183e181c588814b8e0df68918dc64b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24ec30cde24d7183afc6a9df76bb78c0') in 0.016115 seconds
-  Import took 0.020272 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000232 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 03.wav
-  artifactKey: Guid(9f5740d92054fd14482c5f9a1ab815dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 03.wav using Guid(9f5740d92054fd14482c5f9a1ab815dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36c8a724907108a6da68dad6ce3ba52c') in 0.015466 seconds
-  Import took 0.018747 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000159 seconds.
-  path: Assets/Human Sounds/Male/Male Angry 04.wav
-  artifactKey: Guid(a5b99a0a516161545b5c9c2f3c61ac52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Angry 04.wav using Guid(a5b99a0a516161545b5c9c2f3c61ac52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb089ab3720e476b5537217744b314ac') in 0.013460 seconds
-  Import took 0.016625 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000380 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 04.wav
-  artifactKey: Guid(60e072814e8f6ac419a799bba481d2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 04.wav using Guid(60e072814e8f6ac419a799bba481d2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6749aebc4ff05b42b9d82522089eb81') in 0.013422 seconds
-  Import took 0.016385 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000181 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 10.wav
-  artifactKey: Guid(22d6b08af342c41449874accb783706f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 10.wav using Guid(22d6b08af342c41449874accb783706f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd87fc54019edee469d38ee1081e32617') in 0.013021 seconds
-  Import took 0.016265 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000171 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 12.wav
-  artifactKey: Guid(8ac12be252fe9eb46bc5a07ce0c42d86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 12.wav using Guid(8ac12be252fe9eb46bc5a07ce0c42d86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9c231b7968d097f2ebc23477b385dd2') in 0.015340 seconds
-  Import took 0.018630 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000185 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 13.wav
-  artifactKey: Guid(d56e7f6621b83d346afed7665f40b461) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 13.wav using Guid(d56e7f6621b83d346afed7665f40b461) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c01fd2fc6034d52780da887c092e4ba') in 0.011147 seconds
-  Import took 0.013613 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000174 seconds.
-  path: Assets/Human Sounds/Male/Male Effort 08.wav
-  artifactKey: Guid(1cc066b8b3fa1fc4597c965c5d0d3fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort 08.wav using Guid(1cc066b8b3fa1fc4597c965c5d0d3fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09c9c1ceac27937958f8df4212faefa6') in 0.010719 seconds
-  Import took 0.013579 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000186 seconds.
-  path: Assets/Human Sounds/Male/Male Cough 05.wav
-  artifactKey: Guid(ecfdb9bf2254d9346a381215ab66a363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Cough 05.wav using Guid(ecfdb9bf2254d9346a381215ab66a363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cec416f22a0e0f9cb8254af60b5d2d20') in 0.011321 seconds
-  Import took 0.013872 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000194 seconds.
-  path: Assets/Human Sounds/Male/Male Effort 05.wav
-  artifactKey: Guid(2b4baae9b7d0a874cbaa912484fab512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort 05.wav using Guid(2b4baae9b7d0a874cbaa912484fab512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10905f2a5690cc3325e18fca2809e52a') in 0.011684 seconds
-  Import took 0.014246 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000182 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 07.wav
-  artifactKey: Guid(71a032f8e975bd54192970ecff58f236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 07.wav using Guid(71a032f8e975bd54192970ecff58f236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97eb730732937cd79c5f9a8b28bbfde9') in 0.011245 seconds
-  Import took 0.013814 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000197 seconds.
-  path: Assets/Human Sounds/Male/Male Angry 03.wav
-  artifactKey: Guid(1ab917311d59d5e4a99a7e95d03b47c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Angry 03.wav using Guid(1ab917311d59d5e4a99a7e95d03b47c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f2c43b5b6dbdba38dfdad11f92b8f94') in 0.011160 seconds
-  Import took 0.013752 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000178 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 11.wav
-  artifactKey: Guid(8d0131e903b14c345ba098e118a01da3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 11.wav using Guid(8d0131e903b14c345ba098e118a01da3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c5a0d0d02e305acc8cf3bb02833302c') in 0.013112 seconds
-  Import took 0.015529 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000155 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 03.wav
-  artifactKey: Guid(bfc97a0fac6a6414c85c0b65cacef051) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 03.wav using Guid(bfc97a0fac6a6414c85c0b65cacef051) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8097d38d3a60e91ad1913264a0bef8f0') in 0.010545 seconds
-  Import took 0.013011 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000156 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 15.wav
-  artifactKey: Guid(53641c40c739cdc45853878d671bcf5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 15.wav using Guid(53641c40c739cdc45853878d671bcf5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '962612657792a7e4075578b164955411') in 0.011463 seconds
-  Import took 0.013697 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000156 seconds.
-  path: Assets/Human Sounds/Male/Male Fear and Cold 11.wav
-  artifactKey: Guid(700691501534b1d45aa2ff9d7e8fd717) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Fear and Cold 11.wav using Guid(700691501534b1d45aa2ff9d7e8fd717) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46a88ec0ecb5f7f8dd5b71c9c3273e1b') in 0.011345 seconds
-  Import took 0.013786 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000161 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 02.wav
-  artifactKey: Guid(a79a3ce3f49393e439ab2890fb53115b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 02.wav using Guid(a79a3ce3f49393e439ab2890fb53115b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '512cf11aff8a1afedc7fca9652372fbb') in 0.013426 seconds
-  Import took 0.015740 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000158 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 06.wav
-  artifactKey: Guid(3845c6d3e43e56a43a39352b5abaf531) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 06.wav using Guid(3845c6d3e43e56a43a39352b5abaf531) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '253e8fddc6dbbb73d2a5c8c8cdde7dff') in 0.012402 seconds
-  Import took 0.014890 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000170 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 07.wav
-  artifactKey: Guid(c7a614c205f566e4781edf5a19dc70ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 07.wav using Guid(c7a614c205f566e4781edf5a19dc70ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75089cb5c0a80c04cabeafadcc41e870') in 0.010916 seconds
-  Import took 0.013556 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000189 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 01.wav
-  artifactKey: Guid(89573aa738330a14294c480684040bc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 01.wav using Guid(89573aa738330a14294c480684040bc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53191ec3e25ab545ed8fd7b7cb01c97e') in 0.011461 seconds
-  Import took 0.013981 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000219 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 17.wav
-  artifactKey: Guid(216fef9c835b3a54588e47a185199dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 17.wav using Guid(216fef9c835b3a54588e47a185199dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2580611eafc136278c53b315edd726f') in 0.011752 seconds
-  Import took 0.014209 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000191 seconds.
-  path: Assets/Human Sounds/Male/Male Effort Jump and Fall 05.wav
-  artifactKey: Guid(e0052e738ccdee940b4aa75082368bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort Jump and Fall 05.wav using Guid(e0052e738ccdee940b4aa75082368bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a20aaec7689ad3b9d2e3d0b6c8109a92') in 0.011975 seconds
-  Import took 0.014562 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000192 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 18.wav
-  artifactKey: Guid(812f83c53df59654bbaf39e06a3562bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 18.wav using Guid(812f83c53df59654bbaf39e06a3562bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3309a61a0aac949e18652068595f0c25') in 0.011965 seconds
-  Import took 0.014676 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000224 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 09.wav
-  artifactKey: Guid(0b4e43785e5ff7f469db8ea8f026e0cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 09.wav using Guid(0b4e43785e5ff7f469db8ea8f026e0cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af5aac8d7f1cda28666760c28ab08c34') in 0.011809 seconds
-  Import took 0.014371 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000193 seconds.
-  path: Assets/Human Sounds/Male/Male Effort 10.wav
-  artifactKey: Guid(cbf02ff0ee0d1ed4abdef106e65e8a16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort 10.wav using Guid(cbf02ff0ee0d1ed4abdef106e65e8a16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'deea1b75741c242e7aff8b2df0128276') in 0.011825 seconds
-  Import took 0.014557 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000247 seconds.
-  path: Assets/Human Sounds/Male/Male Cough 02.wav
-  artifactKey: Guid(e00c0c730b36aee45abbe80d0dddab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Cough 02.wav using Guid(e00c0c730b36aee45abbe80d0dddab54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5a6a882951dd36d068d6496d542d525') in 0.013889 seconds
-  Import took 0.016557 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000195 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 06.wav
-  artifactKey: Guid(8bf7b6291eff6a140acffd0d2161511a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 06.wav using Guid(8bf7b6291eff6a140acffd0d2161511a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cc9e7b1913a44acc2f5661f84897f5e') in 0.014676 seconds
-  Import took 0.018381 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000177 seconds.
-  path: Assets/Human Sounds/Male/Male Scream 11.wav
-  artifactKey: Guid(bc11b938de37f774ca7dae095e769329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Scream 11.wav using Guid(bc11b938de37f774ca7dae095e769329) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f0a8e8c55c1e3ac790a362e01e79931') in 0.012707 seconds
-  Import took 0.015822 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000212 seconds.
-  path: Assets/Human Sounds/Male/Male Effort Jump and Fall 06.wav
-  artifactKey: Guid(d62389bc1ae582942ac087060ad770e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort Jump and Fall 06.wav using Guid(d62389bc1ae582942ac087060ad770e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2979db4dc4c51c59d12f7b03e09bb3ef') in 0.011262 seconds
-  Import took 0.013900 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000193 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 01.wav
-  artifactKey: Guid(fa920070cf45cf64c8152564325a8320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 01.wav using Guid(fa920070cf45cf64c8152564325a8320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebc81c31aa6a6ac31209225885b8418e') in 0.010734 seconds
-  Import took 0.013554 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000212 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 08.wav
-  artifactKey: Guid(248487d9b4fd5fd49aca83da51be5de3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 08.wav using Guid(248487d9b4fd5fd49aca83da51be5de3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dbe8d810167babd26dc348cff99a7a3') in 0.011653 seconds
-  Import took 0.014181 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000212 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 13.wav
-  artifactKey: Guid(af83b7b248dd9c14d8af69f751b601e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 13.wav using Guid(af83b7b248dd9c14d8af69f751b601e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b3b605c4e3cf10a09246df01b0a87d9') in 0.011591 seconds
-  Import took 0.014493 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000227 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 08.wav
-  artifactKey: Guid(43b76c4143b65af46add2ba909cde9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 08.wav using Guid(43b76c4143b65af46add2ba909cde9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b111f5ddef88c74c00729be9db09fff') in 0.013484 seconds
-  Import took 0.016271 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000181 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 07.wav
-  artifactKey: Guid(876e2b69cdb5fbd4d9ef9d00c8179fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 07.wav using Guid(876e2b69cdb5fbd4d9ef9d00c8179fa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2af163f33b2292d53b58d6d208bfd20c') in 0.012098 seconds
-  Import took 0.014557 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000216 seconds.
-  path: Assets/Human Sounds/Male/Male Effort Jump and Fall 08.wav
-  artifactKey: Guid(7b0125aee80f6cc4488995fdd4bc864c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Effort Jump and Fall 08.wav using Guid(7b0125aee80f6cc4488995fdd4bc864c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c2a1b8bbca4f7280f575083652fdf85') in 0.011687 seconds
-  Import took 0.015196 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000233 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 08.wav
-  artifactKey: Guid(43b76c4143b65af46add2ba909cde9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 08.wav using Guid(43b76c4143b65af46add2ba909cde9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b111f5ddef88c74c00729be9db09fff') in 0.007408 seconds
-  Import took 0.010235 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000201 seconds.
-  path: Assets/Human Sounds/Male/Male Grunt 03.wav
-  artifactKey: Guid(e0a42b146b3035143a5c69896459406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Grunt 03.wav using Guid(e0a42b146b3035143a5c69896459406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9015d733683d1cf560a4e438d54b1a3d') in 0.014143 seconds
-  Import took 0.017116 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Assets/Human Sounds/Male/Male Breath 21.wav
-  artifactKey: Guid(2cdbe11e92cb2e2478b01736b4a0243e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Breath 21.wav using Guid(2cdbe11e92cb2e2478b01736b4a0243e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c662f081660a9481c61ab9c90b57644f') in 0.011951 seconds
-  Import took 0.014525 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000174 seconds.
-  path: Assets/Human Sounds/Male/Male Laugh 09.wav
-  artifactKey: Guid(09713f8cc7eed5a4ebe9a61c928e5079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Laugh 09.wav using Guid(09713f8cc7eed5a4ebe9a61c928e5079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ca0906a697b0dbba0ece5211d55f2f8') in 0.013201 seconds
-  Import took 0.015665 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.296805 seconds.
-  path: Assets/Human Sounds/Male/Male Sigh 04.wav
-  artifactKey: Guid(2097b9d98ba366947aaa3c1f96d894db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Sigh 04.wav using Guid(2097b9d98ba366947aaa3c1f96d894db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c3a70fd2abac13e3f920120122494c8') in 0.012622 seconds
-  Import took 0.015671 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000293 seconds.
-  path: Assets/Human Sounds/Male/Male Thinking 01.wav
-  artifactKey: Guid(2f285195ab899ae49a8393cd50453107) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Thinking 01.wav using Guid(2f285195ab899ae49a8393cd50453107) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ab7620c4700c8abff5f405d6bf9acf6') in 0.015056 seconds
-  Import took 0.017625 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Assets/Human Sounds/Male/Male Thinking 03.wav
-  artifactKey: Guid(e83d2ff5bada0ef4a8d1134146e55992) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Thinking 03.wav using Guid(e83d2ff5bada0ef4a8d1134146e55992) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da7c08550ed1324cceae042924a2057d') in 0.024285 seconds
-  Import took 0.027395 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000259 seconds.
-  path: Assets/Human Sounds/Male/Male Sigh 09.wav
-  artifactKey: Guid(9e5c96ddfe16c20459974e4647940e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Sigh 09.wav using Guid(9e5c96ddfe16c20459974e4647940e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e8774205fab3a850d14b8ac4fa99daf') in 0.013085 seconds
-  Import took 0.016499 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000302 seconds.
-  path: Assets/Human Sounds/Male/Male Sigh 07.wav
-  artifactKey: Guid(63f3f98b46d78fd45bb8c49ff9836304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Sigh 07.wav using Guid(63f3f98b46d78fd45bb8c49ff9836304) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1a3569ddc9b724613634d420fbedc47') in 0.021578 seconds
-  Import took 0.024676 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000250 seconds.
-  path: Assets/Human Sounds/Male/Male Thinking 02.wav
-  artifactKey: Guid(e02f06ad250f3d64c88ec0cf77e29d63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Thinking 02.wav using Guid(e02f06ad250f3d64c88ec0cf77e29d63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cffceab4ac2887e7e96d304447bdeb3e') in 0.027082 seconds
-  Import took 0.030036 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000205 seconds.
-  path: Assets/Human Sounds/Male/Male Thinking 04.wav
-  artifactKey: Guid(824deefbd0307304391a01423fe48903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Thinking 04.wav using Guid(824deefbd0307304391a01423fe48903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b590aaf15756a97138f32a40e3dbd009') in 0.020099 seconds
-  Import took 0.023435 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000282 seconds.
-  path: Assets/Human Sounds/Male/Male Sigh 06.wav
-  artifactKey: Guid(56e4ce2e5a8963b448105a0ba667de2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Sigh 06.wav using Guid(56e4ce2e5a8963b448105a0ba667de2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf52cd31b880afd7ba309d4f769320f2') in 0.018875 seconds
-  Import took 0.021642 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000203 seconds.
-  path: Assets/Human Sounds/Male/Male Sigh 05.wav
-  artifactKey: Guid(5f50ed9ce2390d34884bbc6a3161e26c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Sigh 05.wav using Guid(5f50ed9ce2390d34884bbc6a3161e26c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '294c213910e993a6c310bf57f2659667') in 0.012180 seconds
-  Import took 0.015037 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000180 seconds.
-  path: Assets/Human Sounds/Male/Male Sigh 10.wav
-  artifactKey: Guid(408962b263642cd4c9edefd39982383b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Sigh 10.wav using Guid(408962b263642cd4c9edefd39982383b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b1482fe843e5a448f8d7bcd71a318d7') in 0.012551 seconds
-  Import took 0.014937 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000177 seconds.
-  path: Assets/Human Sounds/Male/Male Thinking 05.wav
-  artifactKey: Guid(701e36a58d2d0b74a8017d029774521c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Thinking 05.wav using Guid(701e36a58d2d0b74a8017d029774521c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d322ba59c8d1c15fd3da00aaeb9427f') in 0.019398 seconds
-  Import took 0.021721 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000185 seconds.
-  path: Assets/Human Sounds/Male/Male Sigh 08.wav
-  artifactKey: Guid(cf8cfca64dd1a9047811b88009a05e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Sigh 08.wav using Guid(cf8cfca64dd1a9047811b88009a05e6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a99114b3ebc00efbad9098223582f265') in 0.014076 seconds
-  Import took 0.016748 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000189 seconds.
-  path: Assets/Human Sounds/Male/Male Thinking 05.wav
-  artifactKey: Guid(701e36a58d2d0b74a8017d029774521c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/Male/Male Thinking 05.wav using Guid(701e36a58d2d0b74a8017d029774521c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d322ba59c8d1c15fd3da00aaeb9427f') in 0.010619 seconds
-  Import took 0.013570 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 18.790413 seconds.
-  path: Assets/Human Sounds/BONUS/Bone Break 01.wav
-  artifactKey: Guid(428b1a4412393e6488799c436d4ba15c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/BONUS/Bone Break 01.wav using Guid(428b1a4412393e6488799c436d4ba15c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5616a9cb8e7019565d3b139dd940342') in 0.016831 seconds
-  Import took 0.020515 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000232 seconds.
-  path: Assets/Human Sounds/BONUS/Heartbeat 1 Fast.wav
-  artifactKey: Guid(22d1100f2080f3243b344675eda82446) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/BONUS/Heartbeat 1 Fast.wav using Guid(22d1100f2080f3243b344675eda82446) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86c3ebd4f09a4fe1bf6309bd879d3965') in 0.014490 seconds
-  Import took 0.017376 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000195 seconds.
-  path: Assets/Human Sounds/BONUS/Bone Break 05.wav
-  artifactKey: Guid(4744c8692fa0c7e4a8b0e084fb0f48b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/BONUS/Bone Break 05.wav using Guid(4744c8692fa0c7e4a8b0e084fb0f48b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cfae4c3401ad17d902418b6b38b5916') in 0.030409 seconds
-  Import took 0.033312 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000207 seconds.
-  path: Assets/Human Sounds/BONUS/Bone Break 04.wav
-  artifactKey: Guid(0544c4f82f434b14dbac43ddb729b655) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/BONUS/Bone Break 04.wav using Guid(0544c4f82f434b14dbac43ddb729b655) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9902b5cd667cb18519c194064721b51d') in 0.015104 seconds
-  Import took 0.017569 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000218 seconds.
-  path: Assets/Human Sounds/BONUS/Bone Break 06.wav
-  artifactKey: Guid(a021c6a7b63f29b4487669f216938528) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/BONUS/Bone Break 06.wav using Guid(a021c6a7b63f29b4487669f216938528) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97bbc62759e75666e69b068c155b12c5') in 0.020054 seconds
-  Import took 0.023080 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000180 seconds.
-  path: Assets/Human Sounds/BONUS/Bone Break 03.wav
-  artifactKey: Guid(5ef1d9e05cd2d8f4796cda8554b6500c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/BONUS/Bone Break 03.wav using Guid(5ef1d9e05cd2d8f4796cda8554b6500c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a8926996ac913264e31a021138600e2') in 0.012413 seconds
-  Import took 0.015176 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000195 seconds.
-  path: Assets/Human Sounds/BONUS/Heartbeat 2 Slow.wav
-  artifactKey: Guid(638b86439d2490f40b1dfe0e5a359845) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/BONUS/Heartbeat 2 Slow.wav using Guid(638b86439d2490f40b1dfe0e5a359845) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcd28a41eb10171265c36dbb56835c3f') in 0.020347 seconds
-  Import took 0.023259 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000191 seconds.
-  path: Assets/Human Sounds/BONUS/Bone Break 02.wav
-  artifactKey: Guid(8843cd0afc399944c97715f1a4e15b28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/BONUS/Bone Break 02.wav using Guid(8843cd0afc399944c97715f1a4e15b28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a8a33be7fa0b5f0e0c015853cd399de') in 0.015103 seconds
-  Import took 0.018173 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000174 seconds.
-  path: Assets/Human Sounds/BONUS/Heartbeat 1 Slow.wav
-  artifactKey: Guid(66e18767072b7314eb647f58ddcddc38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/BONUS/Heartbeat 1 Slow.wav using Guid(66e18767072b7314eb647f58ddcddc38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5d66babe20f2971f78d438b64997410') in 0.014829 seconds
-  Import took 0.017859 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000196 seconds.
-  path: Assets/Human Sounds/BONUS/Heartbeat 2 Fast.wav
-  artifactKey: Guid(82159987567699d4984d586a97212088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/BONUS/Heartbeat 2 Fast.wav using Guid(82159987567699d4984d586a97212088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ace62a9b8d7d0b0c765dd959d2c59edc') in 0.013440 seconds
-  Import took 0.016278 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.006557 seconds.
-  path: Assets/Human Sounds/BONUS/Heartbeat 2 Fast.wav
-  artifactKey: Guid(82159987567699d4984d586a97212088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Human Sounds/BONUS/Heartbeat 2 Fast.wav using Guid(82159987567699d4984d586a97212088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ace62a9b8d7d0b0c765dd959d2c59edc') in 0.010718 seconds
-  Import took 0.013489 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001227 seconds.
+Registered in 0.001214 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
@@ -1525,44 +194,281 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.902 seconds
+- Completed reload, in  0.824 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.9 MB.
-System memory in use after: 84.0 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2031.
-Total: 1.703800 ms (FindLiveObjects: 0.154600 ms CreateObjectMapping: 0.048100 ms MarkObjects: 1.442200 ms  DeleteObjects: 0.057500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001157 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.6 MB.
+System memory in use after: 83.7 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2014.
+Total: 2.194600 ms (FindLiveObjects: 0.283300 ms CreateObjectMapping: 0.045500 ms MarkObjects: 1.811000 ms  DeleteObjects: 0.053400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1112.891395 seconds.
+  path: Assets/Sprites/bloodExplosion.aseprite
+  artifactKey: Guid(cbdb2d6ba9c193a41bb205c0e6287c3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/bloodExplosion.aseprite using Guid(cbdb2d6ba9c193a41bb205c0e6287c3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa37064f29d1487bc350aa052b0ffaa3') in 0.018371 seconds
+  Import took 0.020973 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.649418 seconds.
+  path: Assets/Sprites/bloodExplosion-Sheet.png
+  artifactKey: Guid(81a14070e1aa1f7409fd3638e082e899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/bloodExplosion-Sheet.png using Guid(81a14070e1aa1f7409fd3638e082e899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d6ea361ef62984e682025fe8be2a694') in 0.039793 seconds
+  Import took 0.042778 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.224570 seconds.
+  path: Assets/Sprites/bloodExplosion-Sheet.png
+  artifactKey: Guid(81a14070e1aa1f7409fd3638e082e899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/bloodExplosion-Sheet.png using Guid(81a14070e1aa1f7409fd3638e082e899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5d524824736f3c8029815aa518685b6') in 0.014009 seconds
+  Import took 0.017132 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006388 seconds.
+  path: Assets/Sprites/bloodExplosion-Sheet.png
+  artifactKey: Guid(81a14070e1aa1f7409fd3638e082e899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/bloodExplosion-Sheet.png using Guid(81a14070e1aa1f7409fd3638e082e899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5d524824736f3c8029815aa518685b6') in 0.017619 seconds
+  Import took 0.020893 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 30.081312 seconds.
+  path: Assets/Sprites/bloodExplosion-Sheet.png
+  artifactKey: Guid(81a14070e1aa1f7409fd3638e082e899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/bloodExplosion-Sheet.png using Guid(81a14070e1aa1f7409fd3638e082e899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45e8a41cb52acaf965b1f55321b6cb48') in 0.051108 seconds
+  Import took 0.053620 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.015591 seconds.
+  path: Assets/Sprites/bloodExplosion-Sheet.png
+  artifactKey: Guid(81a14070e1aa1f7409fd3638e082e899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/bloodExplosion-Sheet.png using Guid(81a14070e1aa1f7409fd3638e082e899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69de5d0dc22b2f4161cebe5370faadca') in 0.045742 seconds
+  Import took 0.048555 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 133.761614 seconds.
+  path: Assets/Animations/explosion.controller
+  artifactKey: Guid(1a3241ba2bb4353409d916f2cf29e2c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/explosion.controller using Guid(1a3241ba2bb4353409d916f2cf29e2c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25b9c9dbee037028a489f7b9313c0291') in 0.010496 seconds
+  Import took 0.013707 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.145838 seconds.
+  path: Assets/Animations/explosion.anim
+  artifactKey: Guid(31b4f92bbcdb63c4a89b7355d45d2167) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/explosion.anim using Guid(31b4f92bbcdb63c4a89b7355d45d2167) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecf7ef731caa1b09d5a2b27e3e47ccf5') in 0.005028 seconds
+  Import took 0.007634 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.007766 seconds.
+  path: Assets/Animations/explosion.anim
+  artifactKey: Guid(31b4f92bbcdb63c4a89b7355d45d2167) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/explosion.anim using Guid(31b4f92bbcdb63c4a89b7355d45d2167) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecf7ef731caa1b09d5a2b27e3e47ccf5') in 0.003518 seconds
+  Import took 0.006774 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 43.969784 seconds.
+  path: Assets/Prefabs/AmmoPickup.prefab
+  artifactKey: Guid(a9f5cf08a171a3f4fb157ed9978dbcd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/AmmoPickup.prefab using Guid(a9f5cf08a171a3f4fb157ed9978dbcd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bb94fc86a0b412c4e87039bb19139be') in 0.042599 seconds
+  Import took 0.045188 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Prefabs/Enemy.prefab
+  artifactKey: Guid(9692bb8661861a741ace4d97d04ef459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy.prefab using Guid(9692bb8661861a741ace4d97d04ef459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c068b31cfa1248fa7850deb8000c1d79') in 0.021753 seconds
+  Import took 0.025654 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/Prefabs/Player.prefab
+  artifactKey: Guid(5014468dfcef7854ab63ca23bf1abc03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Player.prefab using Guid(5014468dfcef7854ab63ca23bf1abc03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d4ec7fa2aa0e932891bc15f7d080031') in 0.010962 seconds
+  Import took 0.026411 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000336 seconds.
+  path: Assets/Prefabs/HealthPickup.prefab
+  artifactKey: Guid(94d84c7b07e780345a7c615a94a919f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HealthPickup.prefab using Guid(94d84c7b07e780345a7c615a94a919f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e23b069d8f7245575c7b26564ea8e39a') in 0.017261 seconds
+  Import took 0.020218 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Prefabs/UI.prefab
+  artifactKey: Guid(f1d9ac43815414442b2c5996161c2948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI.prefab using Guid(f1d9ac43815414442b2c5996161c2948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74731fe900f3a3c144506f7f784091ee') in 0.027510 seconds
+  Import took 0.031161 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001486 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.891 seconds
+- Completed reload, in  0.816 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.8 MB.
+System memory in use after: 83.8 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 2024.
+Total: 2.221200 ms (FindLiveObjects: 0.144800 ms CreateObjectMapping: 0.045400 ms MarkObjects: 1.978700 ms  DeleteObjects: 0.051500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 212.174143 seconds.
+  path: Assets/Prefabs/explosion.prefab
+  artifactKey: Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/explosion.prefab using Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b3e2437b7eb64067925ba34511ee181') in 0.022483 seconds
+  Import took 0.025633 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001220 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.827 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.8 MB.
+System memory in use after: 83.8 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2027.
+Total: 2.317300 ms (FindLiveObjects: 0.138000 ms CreateObjectMapping: 0.048400 ms MarkObjects: 2.081000 ms  DeleteObjects: 0.049300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.822336 seconds.
+  path: Assets/Prefabs/explosion.prefab
+  artifactKey: Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/explosion.prefab using Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79fec161555623a87a42af58954317c6') in 0.023777 seconds
+  Import took 0.026337 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.326205 seconds.
+  path: Assets/Prefabs/explosion.prefab
+  artifactKey: Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/explosion.prefab using Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dafef6d99051792da9d153527f26837') in 0.003704 seconds
+  Import took 0.006195 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001255 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.807 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.8 MB.
+System memory in use after: 83.8 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2030.
+Total: 2.305300 ms (FindLiveObjects: 0.134200 ms CreateObjectMapping: 0.045200 ms MarkObjects: 2.075400 ms  DeleteObjects: 0.049600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.503588 seconds.
+  path: Assets/Prefabs/explosion.prefab
+  artifactKey: Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/explosion.prefab using Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9905029d519dcdb5366735edccc6493b') in 0.021590 seconds
+  Import took 0.024064 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.796405 seconds.
+  path: Assets/Prefabs/explosion.prefab
+  artifactKey: Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/explosion.prefab using Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55fcd5f4ca2f955ce15d8441ecdc703b') in 0.004409 seconds
+  Import took 0.007332 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.001250 seconds.
+  path: Assets/Prefabs/explosion.prefab
+  artifactKey: Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/explosion.prefab using Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a412dda1d091120ae2941cee3e95ea3a') in 0.003695 seconds
+  Import took 0.006617 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001153 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.804 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.9 MB.
-System memory in use after: 84.0 MB.
+System memory in use before: 83.8 MB.
+System memory in use after: 83.9 MB.
 
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2034.
-Total: 2.192200 ms (FindLiveObjects: 0.257200 ms CreateObjectMapping: 0.066200 ms MarkObjects: 1.811300 ms  DeleteObjects: 0.056100 ms)
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2033.
+Total: 2.392600 ms (FindLiveObjects: 0.140200 ms CreateObjectMapping: 0.048900 ms MarkObjects: 2.153100 ms  DeleteObjects: 0.049700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.381347 seconds.
+  path: Assets/Prefabs/explosion.prefab
+  artifactKey: Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/explosion.prefab using Guid(5532d3ecca7a0724b8673395b091778c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe996deeb14d961c5ee89ef76cfe23a4') in 0.020087 seconds
+  Import took 0.022476 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001206 seconds.
+Registered in 0.001192 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
@@ -1571,38 +477,92 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.917 seconds
+- Completed reload, in  0.841 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.9 MB.
-System memory in use after: 84.0 MB.
+System memory in use before: 83.8 MB.
+System memory in use after: 83.9 MB.
 
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2037.
-Total: 2.352600 ms (FindLiveObjects: 0.220600 ms CreateObjectMapping: 0.054900 ms MarkObjects: 2.020600 ms  DeleteObjects: 0.055200 ms)
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2036.
+Total: 2.257600 ms (FindLiveObjects: 0.169200 ms CreateObjectMapping: 0.051400 ms MarkObjects: 1.980000 ms  DeleteObjects: 0.055700 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001165 seconds.
+Registered in 0.001222 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.815 seconds
+- Completed reload, in  0.824 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.9 MB.
-System memory in use after: 84.0 MB.
+System memory in use before: 83.8 MB.
+System memory in use after: 83.9 MB.
 
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2040.
-Total: 4.174100 ms (FindLiveObjects: 0.288800 ms CreateObjectMapping: 0.091300 ms MarkObjects: 3.716000 ms  DeleteObjects: 0.076200 ms)
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2039.
+Total: 2.244200 ms (FindLiveObjects: 0.159600 ms CreateObjectMapping: 0.048100 ms MarkObjects: 1.986000 ms  DeleteObjects: 0.049400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001164 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.859 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.8 MB.
+System memory in use after: 83.9 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2042.
+Total: 2.863000 ms (FindLiveObjects: 0.225400 ms CreateObjectMapping: 0.072800 ms MarkObjects: 2.494100 ms  DeleteObjects: 0.069800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 158.804533 seconds.
+  path: Assets/Prefabs/Player.prefab
+  artifactKey: Guid(5014468dfcef7854ab63ca23bf1abc03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Player.prefab using Guid(5014468dfcef7854ab63ca23bf1abc03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '992410be6c1092a045ae83c4a6cbb9e8') in 0.022847 seconds
+  Import took 0.025607 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001151 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.34 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.825 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1531 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.8 MB.
+System memory in use after: 83.9 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2045.
+Total: 2.375900 ms (FindLiveObjects: 0.142200 ms CreateObjectMapping: 0.165600 ms MarkObjects: 2.017300 ms  DeleteObjects: 0.050000 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

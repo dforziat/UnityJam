@@ -41,6 +41,7 @@ public class PlayerControls : MonoBehaviour
 
     private AudioSource audioSource;
     public AudioClip injuredAudioClip;
+    public AudioClip deathAudioClip;
     bool canShoot = true;
     float rateOfFire = .5f;
     void Awake()
@@ -113,6 +114,7 @@ public class PlayerControls : MonoBehaviour
         {
             hpText.text = "000";
             GetComponent<DeathHandler>().HandleDeath();
+            audioSource.PlayOneShot(deathAudioClip);
             isDead = true;
         }
     }
