@@ -18,7 +18,7 @@ public class PlayerControls : MonoBehaviour
     [Header("Camera")]
     [SerializeField] float lookSensitivity;
 
-    public int curHp = 50;
+    public int curHp = 90;
     public int maxHp = 100;
     public int currentAmmo = 20;
     public int gunDamage = 1;
@@ -61,7 +61,6 @@ public class PlayerControls : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        curHp = maxHp;
         hpText.text = curHp.ToString("D3");
         ammoText.text = currentAmmo.ToString("D3");
     }

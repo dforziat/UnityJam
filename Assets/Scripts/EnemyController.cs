@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     public int damage = 10;
     public GameObject explosion;
     private float verticalOffset = 0;
-    public Transform target;
+    private Transform target;
     private NavMeshAgent navMeshAgent;
     private float chaseRange = 5;
     private float distanceToTarget = Mathf.Infinity;
@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
+        target = FindObjectOfType<PlayerControls>().transform;
     }
 
     // Update is called once per frame
