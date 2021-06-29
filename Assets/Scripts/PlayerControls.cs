@@ -172,6 +172,10 @@ public class PlayerControls : MonoBehaviour
             {
                 hit.transform.GetComponent<EnemyController>().takeDamage(gunDamage);
             }
+            if(hit.transform.tag == "Button")
+            {
+                hit.transform.GetComponent<ButtonController>().Activate();
+            }
         }
         yield return new WaitForSeconds(rateOfFire);
         canShoot = true;

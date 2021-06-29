@@ -7,6 +7,7 @@ public class DoorProximityScript : MonoBehaviour
     // Start is called before the first frame update
     private float distToPlayer = Mathf.Infinity;
     private float activationDistance = 2f;
+    public bool isUnlocked = true;
     private Transform playerTransform;
     private Animator animator;
 
@@ -24,7 +25,7 @@ public class DoorProximityScript : MonoBehaviour
     {
         distToPlayer = Vector3.Distance(playerTransform.position, transform.position);
 
-        if(distToPlayer <= activationDistance)
+        if(distToPlayer <= activationDistance && isUnlocked)
         {
            
             animator.SetBool("open", true);          
@@ -33,6 +34,7 @@ public class DoorProximityScript : MonoBehaviour
         {
             animator.SetBool("open", false);
         }
+
     }
 
     //Called by Animation Event

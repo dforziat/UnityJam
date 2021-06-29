@@ -76,6 +76,7 @@ public class EnemyController : MonoBehaviour
 
     public void takeDamage(int damage)
     {
+        isProvoked = true;
         health -= damage;
         GetComponent<Animator>().SetTrigger("damaged");
         audioSource.PlayOneShot(damagedClip);
