@@ -63,6 +63,7 @@ public class PlayerControls : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         hpText.text = curHp.ToString("D3");
         ammoText.text = currentAmmo.ToString("D3");
+        lookSensitivity = PlayerPrefs.GetFloat("mouseSens");
     }
 
     void Update()
