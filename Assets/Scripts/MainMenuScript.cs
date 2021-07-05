@@ -10,6 +10,12 @@ public class MainMenuScript : MonoBehaviour
     public Canvas settingMenuCanvas;
     public Slider mouseSensSlider;
     public Text sensText;
+
+
+    private void Awake()
+    {
+        mouseSensSlider.value = PlayerPrefs.GetFloat("mouseSens");
+    }
     void Start()
     {
         sensText.text = mouseSensSlider.value.ToString();

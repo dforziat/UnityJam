@@ -64,6 +64,11 @@ public class PlayerControls : MonoBehaviour
         hpText.text = curHp.ToString("D3");
         ammoText.text = currentAmmo.ToString("D3");
         lookSensitivity = PlayerPrefs.GetFloat("mouseSens");
+        //failsafe
+        if(lookSensitivity <= 0f)
+        {
+            lookSensitivity = 1f;
+        }
     }
 
     void Update()
@@ -147,7 +152,7 @@ public class PlayerControls : MonoBehaviour
     }
 
 
-    public void shootGun()
+    public void shootGun()//TODO Move to seperate class
     {
         if (Input.GetMouseButtonDown(0) && canShoot && currentAmmo > 0)
         {
@@ -156,7 +161,7 @@ public class PlayerControls : MonoBehaviour
 
     }
 
-    IEnumerator Shoot()
+    IEnumerator Shoot() //TODO Move to seperate class
     {
         canShoot = false;
         gunAnimator.SetTrigger("shoot");

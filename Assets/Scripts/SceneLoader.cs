@@ -9,12 +9,17 @@ public class SceneLoader : MonoBehaviour
 
     public void ReloadGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1;
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
