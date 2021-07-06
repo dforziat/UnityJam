@@ -21,7 +21,7 @@ public class AmmoPickup : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>().RecieveAmmo(ammoAmount);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>().RecieveHandgunAmmo(ammoAmount);
             Destroy(gameObject);
         }
     }

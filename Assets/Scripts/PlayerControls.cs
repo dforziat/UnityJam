@@ -20,8 +20,7 @@ public class PlayerControls : MonoBehaviour
 
     public int curHp = 90;
     public int maxHp = 100;
-    public int currentAmmo = 20;
-    public int gunDamage = 1;
+    public int handgunAmmo = 20;
     private bool isDead = false;
 
     public Text hpText;
@@ -47,8 +46,6 @@ public class PlayerControls : MonoBehaviour
     public AudioClip ammoPickupClip;
     public AudioClip healthPickupClip;
 
-    bool canShoot = true;
-    float rateOfFire = .5f;
     void Awake()
     {
         // get the components
@@ -62,7 +59,7 @@ public class PlayerControls : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         hpText.text = curHp.ToString("D3");
-        ammoText.text = currentAmmo.ToString("D3");
+        ammoText.text = handgunAmmo.ToString("D3");
         lookSensitivity = PlayerPrefs.GetFloat("mouseSens");
         //failsafe
         if(lookSensitivity <= 0f)
@@ -80,7 +77,6 @@ public class PlayerControls : MonoBehaviour
             Gravity();
             CamLook();
             Movement();
-            shootGun();
     }
 
     void Movement()
@@ -144,50 +140,11 @@ public class PlayerControls : MonoBehaviour
         audioSource.PlayOneShot(healthPickupClip);
     }
 
-    public void RecieveAmmo(int ammoAmount)
+    public void RecieveHandgunAmmo(int ammoAmount)
     {
         audioSource.PlayOneShot(ammoPickupClip);
-        currentAmmo += ammoAmount;
-        ammoText.text = currentAmmo.ToString("D3");
+        handgunAmmo += ammoAmount;
+        ammoText.text = handgunAmmo.ToString("D3");
     }
-
-
-    public void shootGun()//TODO Move to seperate class
-    {
-        if (Input.GetMouseButtonDown(0) && canShoot && currentAmmo > 0)
-        {
-            StartCoroutine(Shoot());
-        }
-
-    }
-
-    IEnumerator Shoot() //TODO Move to seperate class
-    {
-        canShoot = false;
-        gunAnimator.SetTrigger("shoot");
-        gun.GetComponent<AudioSource>().Play();
-        currentAmmo--;
-        ammoText.text = currentAmmo.ToString("D3");
-        RaycastHit hit;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
-        {
-            GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impact, .3f);
-
-            if (hit.transform.tag == "Enemy")
-            {
-                hit.transform.GetComponent<EnemyController>().takeDamage(gunDamage);
-            }
-            if(hit.transform.tag == "Button")
-            {
-                hit.transform.GetComponent<ButtonController>().Activate();
-            }
-        }
-        yield return new WaitForSeconds(rateOfFire);
-        canShoot = true;
-    }
-
-
-
 
 }
