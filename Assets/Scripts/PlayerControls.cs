@@ -21,6 +21,7 @@ public class PlayerControls : MonoBehaviour
     public int curHp = 90;
     public int maxHp = 100;
     public int handgunAmmo = 20;
+    public int shotgunAmmo = 20;
     private bool isDead = false;
 
     public Text hpText;
