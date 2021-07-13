@@ -20,15 +20,14 @@ public class PlayerControls : MonoBehaviour
 
     public int curHp = 90;
     public int maxHp = 100;
-    public int handgunAmmo = 20;
-    public int shotgunAmmo = 20;
     private bool isDead = false;
 
     public Text hpText;
     public Text ammoText;
 
+    public int handgunAmmo = 20;
+    public int shotgunAmmo = 10;
 
-    Camera cam;
 
     Vector3 vel;
     [SerializeField] CharacterController controller;
@@ -44,13 +43,10 @@ public class PlayerControls : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip injuredAudioClip;
     public AudioClip deathAudioClip;
-    public AudioClip ammoPickupClip;
     public AudioClip healthPickupClip;
 
     void Awake()
     {
-        // get the components
-        cam = Camera.main;
         //disable cursor
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -60,7 +56,6 @@ public class PlayerControls : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         hpText.text = curHp.ToString("D3");
-        ammoText.text = handgunAmmo.ToString("D3");
         lookSensitivity = PlayerPrefs.GetFloat("mouseSens");
         //failsafe
         if(lookSensitivity <= 0f)
@@ -143,7 +138,6 @@ public class PlayerControls : MonoBehaviour
 
     public void RecieveHandgunAmmo(int ammoAmount)
     {
-        audioSource.PlayOneShot(ammoPickupClip);
         handgunAmmo += ammoAmount;
         ammoText.text = handgunAmmo.ToString("D3");
     }

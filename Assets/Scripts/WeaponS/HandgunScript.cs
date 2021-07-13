@@ -8,19 +8,31 @@ public class HandgunScript : MonoBehaviour
     // Start is called before the first frame update
 
     bool canShoot = true;
-    PlayerControls playerControls;
     int damage = 1;
     float rateOfFire = .5f;
     Animator gunAnimator;
+    PlayerControls playerControls;
 
     public Text ammoText;
+    public Image ammoIcon;
     public Camera cam;
     public GameObject hitEffect;
 
     void Start()
     {
         gunAnimator = GetComponent<Animator>();
-        playerControls = FindObjectOfType<PlayerControls>();
+    }
+
+    private void OnEnable()
+    {
+        playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
+        ammoText.text = playerControls.handgunAmmo.ToString("D3");
+        ammoIcon.enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        ammoIcon.enabled = false;
     }
 
     // Update is called once per frame
@@ -64,4 +76,6 @@ public class HandgunScript : MonoBehaviour
         yield return new WaitForSeconds(rateOfFire);
         canShoot = true;
     }
+
+
 }

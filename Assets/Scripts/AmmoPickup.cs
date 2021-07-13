@@ -6,9 +6,10 @@ public class AmmoPickup : MonoBehaviour
 {
     // Start is called before the first frame update
     int ammoAmount = 20;
+    private AudioSource audioSource;
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class AmmoPickup : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            audioSource.Play();
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>().RecieveHandgunAmmo(ammoAmount);
             Destroy(gameObject);
         }
