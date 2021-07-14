@@ -15,6 +15,7 @@ public class ShotgunScript : MonoBehaviour
     float spread = .1f;
     PlayerControls playerControls;
 
+    public Image ammoIcon;
     public Text ammoText;
     public Camera cam;
     public GameObject hitEffect;
@@ -22,7 +23,6 @@ public class ShotgunScript : MonoBehaviour
 
     void Start()
     {
-        
         gunAnimator = GetComponent<Animator>();
     }
 
@@ -30,6 +30,13 @@ public class ShotgunScript : MonoBehaviour
     {
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
         ammoText.text = playerControls.shotgunAmmo.ToString("D3");
+        ammoIcon.enabled = true;
+        canShoot = true;
+    }
+
+    private void OnDisable()
+    {
+        ammoIcon.enabled = false;
     }
 
     // Update is called once per frame
@@ -41,8 +48,9 @@ public class ShotgunScript : MonoBehaviour
 
     public void shootGun()
     {
-        if (Input.GetMouseButtonDown(0) && canShoot && playerControls.shotgunAmmo > 0)
+        if (Input.GetMouseButtonDown(0) && canShoot && playerControls.shotgunAmmo > 0 && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("ShotgunIdle"))
         {
+            Debug.Log("Im Shooting");
             StartCoroutine(Shoot());
         }
 

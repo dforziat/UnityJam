@@ -28,6 +28,7 @@ public class HandgunScript : MonoBehaviour
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
         ammoText.text = playerControls.handgunAmmo.ToString("D3");
         ammoIcon.enabled = true;
+        canShoot = true;
     }
 
     private void OnDisable()
@@ -44,8 +45,9 @@ public class HandgunScript : MonoBehaviour
 
     public void shootGun()
     {
-        if (Input.GetMouseButtonDown(0) && canShoot && playerControls.handgunAmmo > 0)
+        if (Input.GetMouseButtonDown(0) && canShoot && playerControls.handgunAmmo > 0 && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("Gun__Idle"))
         {
+            Debug.Log("Im Shooting");
             StartCoroutine(Shoot());
         }
 

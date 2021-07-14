@@ -67,6 +67,7 @@ public class WeaponSwitching : MonoBehaviour
             else
             {
                 weapon.gameObject.SetActive(false);
+                //weapon.gameObject.GetComponent<Animator>().SetTrigger("stash");
             }
             i++;
         }
