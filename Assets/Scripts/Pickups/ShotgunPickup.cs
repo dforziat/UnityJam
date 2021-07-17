@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShotgunPickup : MonoBehaviour
 {
+    public Transform shotgun;
+    public GameObject weaponsHud;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,10 @@ public class ShotgunPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            var shotgun = Instantiate(poisonSmoke, Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            myNewSmoke.transform.parent = gameObject.transform;
+            //play special sfx
+            weaponsHud.GetComponent<WeaponSwitching>().selectedWeapon = 1;
+            weaponsHud.GetComponent<WeaponSwitching>().SelectWeapon();
+            shotgun.tag = "unlocked";
             Destroy(gameObject);
         }
     }
