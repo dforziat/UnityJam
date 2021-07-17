@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Game
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 2560
     height: 947
-  m_MinSize: {x: 679, y: 492}
+  m_MinSize: {x: 678, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 18
+  controlID: 111
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -95,8 +95,8 @@ MonoBehaviour:
     y: 0
     width: 254
     height: 572
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -226,10 +226,10 @@ MonoBehaviour:
     y: 0
     width: 2041
     height: 947
-  m_MinSize: {x: 403, y: 492}
+  m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 93
+  controlID: 17
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,10 +251,10 @@ MonoBehaviour:
     y: 0
     width: 2041
     height: 572
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 94
+  controlID: 18
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -545,22 +545,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Pickups
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Pickups
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\bombe\Documents\Unity3D\SecondJam
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 66}
-    m_SelectedIDs: 5c540000
-    m_LastClickedID: 21596
-    m_ExpandedIDs: 00000000525300005453000056530000585300005a5300005c5300005e53000060530000625300006453000000ca9a3b
+    scrollPos: {x: 0, y: 186}
+    m_SelectedIDs: 80530000
+    m_LastClickedID: 21376
+    m_ExpandedIDs: 0000000076530000785300007a5300007c5300007e530000805300008253000084530000865300008853000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -588,7 +588,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000525300005453000056530000585300005a5300005c5300005e530000605300006253000064530000
+    m_ExpandedIDs: 0000000076530000785300007a5300007c5300007e5300008053000082530000845300008653000088530000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -709,23 +709,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: e4060000
       m_LastClickedID: 0
-      m_ExpandedIDs: d2c6ffffeac6ffff52c7ffff52fbffff
+      m_ExpandedIDs: c0ceffff52fbffff08490000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Enemy
+        m_OriginalName: Enemy
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 135728
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -771,9 +771,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.33261812, y: 0.7956988, z: -0.36593968}
+    m_Target: {x: 6.6041055, y: 0.35018104, z: 14.009768}
     speed: 2
-    m_Value: {x: -0.33261812, y: 0.7956988, z: -0.36593968}
+    m_Value: {x: 6.6041055, y: 0.35018104, z: 14.009768}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -820,13 +820,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.06144313, y: 0.8068779, z: -0.08528746, w: 0.58129257}
+    m_Target: {x: 0.09466783, y: -0.0000045918946, z: 0.0000005800085, w: 0.99551034}
     speed: 2
-    m_Value: {x: 0.061443064, y: 0.806877, z: -0.08528737, w: 0.581292}
+    m_Value: {x: 0.094667695, y: -0.0000045918882, z: 0.0000005800076, w: 0.9955089}
   m_Size:
-    m_Target: 0.43301284
+    m_Target: 1.507395
     speed: 2
-    m_Value: 0.43301284
+    m_Value: 1.507395
   m_Ortho:
     m_Target: 0
     speed: 2

@@ -93,12 +93,12 @@ GameObject:
   - component: {fileID: 658897097454416177}
   - component: {fileID: 658897097454416176}
   - component: {fileID: 658897097454416191}
-  - component: {fileID: 658897097454416190}
   - component: {fileID: 658897097454416188}
   - component: {fileID: 658897097454416189}
   - component: {fileID: 3489449522323712671}
   - component: {fileID: 1888440970}
   - component: {fileID: 337707699}
+  - component: {fileID: 4237846491791443191}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -171,19 +171,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!135 &658897097454416190
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658897097454416179}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &658897097454416188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +186,6 @@ MonoBehaviour:
   health: 3
   damage: 10
   explosion: {fileID: 8579213436375878188, guid: 5532d3ecca7a0724b8673395b091778c, type: 3}
-  target: {fileID: 0}
   damagedClip: {fileID: 8300000, guid: c774c6fed800e8c44ba88d9a51a31b87, type: 3}
   deathClip: {fileID: 8300000, guid: d746cd387ddd2ff4b90e96425c167953, type: 3}
 --- !u!212 &658897097454416189
@@ -390,3 +376,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &4237846491791443191
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658897097454416179}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

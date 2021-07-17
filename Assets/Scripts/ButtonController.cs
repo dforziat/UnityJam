@@ -25,9 +25,11 @@ public class ButtonController : MonoBehaviour
 
     public void Activate()
     {
-        isActivated = true;
-        animator.SetTrigger("activate");
-        door.GetComponent<DoorProximityScript>().isUnlocked = true;
-        audioSource.PlayOneShot(buttonClip);
+        if(isActivated == false) { 
+            isActivated = true;
+            animator.SetTrigger("activate");
+            door.GetComponent<DoorProximityScript>().isUnlocked = true;
+            audioSource.PlayOneShot(buttonClip);
+        }
     }
 }
