@@ -45,6 +45,7 @@ public class PlayerControls : MonoBehaviour
     public AudioClip deathAudioClip;
     public AudioClip healthPickupClip;
     public AudioClip ammoPickupClip;
+    public AudioClip shotgunPickupClip;
 
     void Awake()
     {
@@ -149,6 +150,11 @@ public class PlayerControls : MonoBehaviour
         audioSource.PlayOneShot(ammoPickupClip);
         shotgunAmmo += ammoAmount;
         ammoText.text = shotgunAmmo.ToString("D3");
+    }
+
+    public void playShotgunPickupSound()
+    {
+        audioSource.PlayOneShot(shotgunPickupClip);
     }
 
 }
