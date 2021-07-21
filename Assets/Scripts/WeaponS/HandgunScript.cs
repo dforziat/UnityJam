@@ -12,7 +12,10 @@ public class HandgunScript : MonoBehaviour
     float rateOfFire = .5f;
     Animator gunAnimator;
     PlayerControls playerControls;
+    AudioSource audioSource;
 
+    public AudioClip shootClip;
+    public AudioClip weaponSwitchClip;
     public Text ammoText;
     public Image ammoIcon;
     public Camera cam;
@@ -20,11 +23,14 @@ public class HandgunScript : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         gunAnimator = GetComponent<Animator>();
     }
 
     private void OnEnable()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(weaponSwitchClip);
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
         ammoText.text = playerControls.handgunAmmo.ToString("D3");
         ammoIcon.enabled = true;
@@ -47,7 +53,6 @@ public class HandgunScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && canShoot && playerControls.handgunAmmo > 0 && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("Gun__Idle"))
         {
-            Debug.Log("Im Shooting");
             StartCoroutine(Shoot());
         }
 
@@ -57,7 +62,7 @@ public class HandgunScript : MonoBehaviour
     {
         canShoot = false;
         gunAnimator.SetTrigger("shoot");
-        GetComponent<AudioSource>().Play();
+        audioSource.PlayOneShot(shootClip);
         playerControls.handgunAmmo--;
         ammoText.text = playerControls.handgunAmmo.ToString("D3");
         RaycastHit hit;

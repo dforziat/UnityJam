@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 7498298662875697774}
   m_Layer: 5
   m_Name: Weapons
-  m_TagString: Untagged
+  m_TagString: WeaponsHud
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1705,6 +1705,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65007587680b93246b04d2f0d4a67831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootClip: {fileID: 8300000, guid: 8b6e974f368aa57478b0432e065a85dd, type: 3}
+  weaponSwitchClip: {fileID: 8300000, guid: 9934f4f3f1685a041a251231451c4751, type: 3}
   ammoText: {fileID: 3168925971003448115}
   ammoIcon: {fileID: 519861673426790415}
   cam: {fileID: 0}
@@ -2100,6 +2102,14 @@ PrefabInstance:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 3168925971003448115}
+    - target: {fileID: 4642130615541826502, guid: 6f0a5e0cd88b6de43bc4085129f9450c, type: 3}
+      propertyPath: shootClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 268a1f45cc654c64e90a1b839a0eb628, type: 3}
+    - target: {fileID: 4642130615541826502, guid: 6f0a5e0cd88b6de43bc4085129f9450c, type: 3}
+      propertyPath: weaponSwitchClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 458f3ea0c3ff7d94381e22e6a2b579c9, type: 3}
     - target: {fileID: 8824066507730215174, guid: 6f0a5e0cd88b6de43bc4085129f9450c, type: 3}
       propertyPath: m_Name
       value: Shotgun

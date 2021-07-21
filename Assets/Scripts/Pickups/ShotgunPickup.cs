@@ -23,7 +23,6 @@ public class ShotgunPickup : MonoBehaviour
         if (other.tag == "Player")
         {
             //play special sfx
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>().playShotgunPickupSound();
             weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
             weaponsHud.GetComponent<WeaponSwitching>().selectedWeapon = 1;
             weaponsHud.GetComponent<WeaponSwitching>().SelectWeapon();

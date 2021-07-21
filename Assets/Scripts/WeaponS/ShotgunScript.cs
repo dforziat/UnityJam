@@ -14,7 +14,10 @@ public class ShotgunScript : MonoBehaviour
     int buckshot = 4;
     float spread = .1f;
     PlayerControls playerControls;
+    AudioSource audioSource;
 
+    public AudioClip shootClip;
+    public AudioClip weaponSwitchClip;
     public Image ammoIcon;
     public Text ammoText;
     public Camera cam;
@@ -23,11 +26,14 @@ public class ShotgunScript : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         gunAnimator = GetComponent<Animator>();
     }
 
     private void OnEnable()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(weaponSwitchClip);
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
         ammoText.text = playerControls.shotgunAmmo.ToString("D3");
         ammoIcon.enabled = true;
@@ -60,7 +66,7 @@ public class ShotgunScript : MonoBehaviour
     {
         canShoot = false;
         gunAnimator.SetTrigger("shoot");
-        GetComponent<AudioSource>().Play();
+        audioSource.PlayOneShot(shootClip);
         playerControls.shotgunAmmo--;
         ammoText.text = playerControls.shotgunAmmo.ToString("D3");
         RaycastHit hit;
