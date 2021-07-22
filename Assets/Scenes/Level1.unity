@@ -19520,14 +19520,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 8600884969396976594, guid: 9914cceeba4fcc64485ce8fb382b7e89, type: 3}
-      propertyPath: deathClip
-      value: 
-      objectReference: {fileID: 8300000, guid: af8c70fe78df2a04fbab0c38f60ee86b, type: 3}
-    - target: {fileID: 8600884969396976594, guid: 9914cceeba4fcc64485ce8fb382b7e89, type: 3}
-      propertyPath: damagedClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 877ca48f4d1b3734b90a0c7f4e5dcf12, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9914cceeba4fcc64485ce8fb382b7e89, type: 3}
 --- !u!1001 &487903290
@@ -86736,6 +86728,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1732265009, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 434152138127771313, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: cam
       value: 

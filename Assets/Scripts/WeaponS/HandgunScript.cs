@@ -23,7 +23,6 @@ public class HandgunScript : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         gunAnimator = GetComponent<Animator>();
     }
 

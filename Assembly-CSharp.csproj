@@ -56,25 +56,25 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\WeaponS\WeaponSwitching.cs" />
+    <Compile Include="Assets\Scripts\Weapons\WeaponSwitching.cs" />
     <Compile Include="Assets\Scripts\TimerDestroy.cs" />
     <Compile Include="Assets\Scripts\DoorProximityScript.cs" />
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\ButtonController.cs" />
     <Compile Include="Assets\Scripts\Billboard.cs" />
-    <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
     <Compile Include="Assets\Scripts\LevelComplete.cs" />
     <Compile Include="Assets\Scripts\DamageEffect.cs" />
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Pickups\AmmoPickup.cs" />
+    <Compile Include="Assets\Scripts\Enemy\TurretEnemyController.cs" />
     <Compile Include="Assets\Scripts\Pickups\ShotgunAmmoPickup.cs" />
     <Compile Include="Assets\Scripts\DeathHandler.cs" />
     <Compile Include="Assets\Scripts\Pickups\ShotgunPickup.cs" />
     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
-    <Compile Include="Assets\Scripts\WeaponS\ShotgunScript.cs" />
-    <Compile Include="Assets\Scripts\WeaponS\HandgunScript.cs" />
+    <Compile Include="Assets\Scripts\Weapons\ShotgunScript.cs" />
+    <Compile Include="Assets\Scripts\Weapons\HandgunScript.cs" />
     <Compile Include="Assets\Scripts\Pickups\HealthPickup.cs" />
-    <Compile Include="Assets\Scripts\TurretEnemyController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

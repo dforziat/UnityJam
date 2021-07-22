@@ -26,7 +26,6 @@ public class ShotgunScript : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         gunAnimator = GetComponent<Animator>();
     }
 
