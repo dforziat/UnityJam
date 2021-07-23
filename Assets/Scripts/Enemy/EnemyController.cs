@@ -16,7 +16,6 @@ public class EnemyController : MonoBehaviour
     private bool isProvoked = false;
     private AudioSource audioSource;
     public AudioClip damagedClip;
-    public AudioClip deathClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,7 +80,6 @@ public class EnemyController : MonoBehaviour
         GetComponent<Animator>().SetTrigger("damaged");
         audioSource.PlayOneShot(damagedClip);
         if (health <= 0) {
-            audioSource.PlayOneShot(deathClip);
             Instantiate(explosion, new Vector3(transform.position.x,transform.position.y - verticalOffset,transform.position.z), transform.rotation);
             Destroy(gameObject);
         }

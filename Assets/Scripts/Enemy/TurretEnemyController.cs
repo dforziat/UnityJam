@@ -13,7 +13,6 @@ public class TurretEnemyController : MonoBehaviour
 
     public GameObject explosion;
     public AudioClip damagedClip;
-    public AudioClip deathClip;
     private AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -52,7 +51,6 @@ public class TurretEnemyController : MonoBehaviour
         audioSource.PlayOneShot(damagedClip);
         if (health <= 0)
         {
-            audioSource.PlayOneShot(deathClip);
             Instantiate(explosion, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
             Destroy(gameObject);
         }
@@ -63,5 +61,6 @@ public class TurretEnemyController : MonoBehaviour
     public void fireBulletEvent()//This method is called by an Animation event
     {
         //Debug.Log("Fired Bullet");
+       // var bullet = Instantiate(explosion, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
     }
 }

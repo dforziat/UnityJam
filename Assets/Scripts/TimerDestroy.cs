@@ -5,7 +5,7 @@ using UnityEngine;
 public class TimerDestroy : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float destroyTimer = .6f;
+    private float destroyTimer = 1f;
     public AudioClip explosionSfx;
     void Start()
     {
