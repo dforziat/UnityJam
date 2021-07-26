@@ -10,7 +10,10 @@ public class TurretEnemyController : MonoBehaviour
     private float distanceToTarget = Mathf.Infinity;
     private float detectRange = 4;
     private Animator animator;
+    private float bulletSpeed = 600;
+    private float yOffset = .1f;
 
+    public GameObject bullet;
     public GameObject explosion;
     public AudioClip damagedClip;
     private AudioSource audioSource;
@@ -60,7 +63,10 @@ public class TurretEnemyController : MonoBehaviour
 
     public void fireBulletEvent()//This method is called by an Animation event
     {
-        //Debug.Log("Fired Bullet");
-       // var bullet = Instantiate(explosion, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+        Debug.Log("Fired Bullet");
+        GameObject shootingBullet = Instantiate(bullet);
+        shootingBullet.transform.position = new Vector3(transform.position.x, transform.position.y + yOffset, transform.position.z);
+        shootingBullet.GetComponent<Rigidbody>().velocity = transform.forward.normalized * bulletSpeed * Time.deltaTime;
+
     }
 }
