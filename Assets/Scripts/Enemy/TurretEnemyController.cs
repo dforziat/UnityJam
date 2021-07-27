@@ -8,14 +8,16 @@ public class TurretEnemyController : MonoBehaviour
     private Transform target;
     private bool isDetected = false;
     private float distanceToTarget = Mathf.Infinity;
-    private float detectRange = 4;
+    private float detectRange = 5f;
     private Animator animator;
-    private float bulletSpeed = 600;
-    private float yOffset = .1f;
+    private float bulletSpeed = 5;
+    private float yOffset = .2f;
 
     public GameObject bullet;
     public GameObject explosion;
+    public AudioClip alertClip;
     public AudioClip damagedClip;
+    public AudioClip shootClip;
     private AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -34,7 +36,8 @@ public class TurretEnemyController : MonoBehaviour
 
         if (distanceToTarget <= detectRange && !isDetected)
         {
-            Debug.Log("Is Detected"); 
+            Debug.Log("Is Detected");
+            audioSource.PlayOneShot(alertClip);
             GetComponent<CapsuleCollider>().enabled = true;
             animator.SetBool("detected", true);
             isDetected = true;
@@ -63,10 +66,9 @@ public class TurretEnemyController : MonoBehaviour
 
     public void fireBulletEvent()//This method is called by an Animation event
     {
-        Debug.Log("Fired Bullet");
+        audioSource.PlayOneShot(shootClip);
         GameObject shootingBullet = Instantiate(bullet);
         shootingBullet.transform.position = new Vector3(transform.position.x, transform.position.y + yOffset, transform.position.z);
-        shootingBullet.GetComponent<Rigidbody>().velocity = transform.forward.normalized * bulletSpeed * Time.deltaTime;
-
+        shootingBullet.GetComponent<Rigidbody>().velocity = transform.forward.normalized * bulletSpeed;
     }
 }

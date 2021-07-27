@@ -6,7 +6,6 @@ public class TurretBullet : MonoBehaviour
 {
     // Start is called before the first frame update
     int damage = 5;
-    float bulletSpeed = 10f;
 
     void Start()
     {
