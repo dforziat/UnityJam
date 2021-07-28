@@ -9,11 +9,12 @@ public class PlayerControls : MonoBehaviour
     float moveSpeed = 5;
 
     [Header("Gravity")]
-    float grav = -18f;
+    float grav = -8f;
     [SerializeField] Transform groundCheck;
     float groundDistance = 0.4f;
     [SerializeField] LayerMask groundMask;
     bool isGrounded;
+    private float jumpHeight = 5f;
 
     [Header("Camera")]
     [SerializeField] float lookSensitivity;
@@ -94,10 +95,10 @@ public class PlayerControls : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-           // vel.y = Mathf.Sqrt(jumpHeight * -2f * grav);
-        }
+       // if (Input.GetButtonDown("Jump") && isGrounded)
+       // {
+       //     Jump();
+       // }
 
         vel.y += grav * Time.deltaTime;
         controller.Move(vel * Time.deltaTime);
@@ -151,5 +152,10 @@ public class PlayerControls : MonoBehaviour
         ammoText.text = shotgunAmmo.ToString("D3");
     }
 
+
+    public void Jump(float jumpHeight)
+    {
+        vel.y = Mathf.Sqrt(jumpHeight * -2f * grav);
+    }
 
 }
