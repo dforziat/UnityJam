@@ -68,7 +68,7 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
-        if (isDead)
+        if (isDead || PauseMenu.GameIsPaused)
         {
             return;
         }

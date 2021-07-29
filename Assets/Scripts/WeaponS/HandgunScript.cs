@@ -44,6 +44,10 @@ public class HandgunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.GameIsPaused)
+        {
+            return;
+        }
         shootGun();
     }
 

@@ -15,8 +15,34 @@ public class WeaponSwitching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.GameIsPaused)
+        {
+            return;
+        }
+        ChangeWeapon();
+    }
+
+    public void SelectWeapon()
+    {
+        int i = 0;
+        foreach(Transform weapon in transform)
+        {
+                if (i == selectedWeapon)
+                {
+                    weapon.gameObject.SetActive(true);
+                }
+                else
+                {
+                    weapon.gameObject.SetActive(false);
+                }
+                i++;
+        }
+    }
+
+    public void ChangeWeapon()
+    {
         int previousSelectedWeapon = selectedWeapon;
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f) 
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             if (selectedWeapon >= transform.childCount - 1)
             {
@@ -25,7 +51,7 @@ public class WeaponSwitching : MonoBehaviour
             else
             {
                 selectedWeapon++;
-            }  
+            }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
@@ -49,7 +75,7 @@ public class WeaponSwitching : MonoBehaviour
             selectedWeapon = 1;
         }
 
-       
+
 
         if (previousSelectedWeapon != selectedWeapon && transform.GetChild(selectedWeapon).tag == "unlocked")
         {
@@ -57,20 +83,4 @@ public class WeaponSwitching : MonoBehaviour
         }
     }
 
-    public void SelectWeapon()
-    {
-        int i = 0;
-        foreach(Transform weapon in transform)
-        {
-                if (i == selectedWeapon)
-                {
-                    weapon.gameObject.SetActive(true);
-                }
-                else
-                {
-                    weapon.gameObject.SetActive(false);
-                }
-                i++;
-        }
-    }
 }
