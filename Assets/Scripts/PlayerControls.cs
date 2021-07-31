@@ -24,7 +24,9 @@ public class PlayerControls : MonoBehaviour
     private bool isDead = false;
 
     public Text hpText;
-    public Text ammoText;
+    public Text handgunAmmoText;
+    public Text shotgunAmmoText;
+
 
     public int handgunAmmo = 20;
     public int shotgunAmmo = 10;
@@ -36,7 +38,6 @@ public class PlayerControls : MonoBehaviour
     public Vector3 dir;
 
     public GameObject hitEffect;
-    public GameObject gun;
     public Animator gunAnimator;
     public Image damageEffect;
 
@@ -142,14 +143,14 @@ public class PlayerControls : MonoBehaviour
     {
         audioSource.PlayOneShot(ammoPickupClip);
         handgunAmmo += ammoAmount;
-        ammoText.text = handgunAmmo.ToString("D3");
+        handgunAmmoText.text = handgunAmmo.ToString("D3");
     }
 
     public void RecieveShotgunAmmo(int ammoAmount)
     {
         audioSource.PlayOneShot(ammoPickupClip);
         shotgunAmmo += ammoAmount;
-        ammoText.text = shotgunAmmo.ToString("D3");
+        shotgunAmmoText.text = shotgunAmmo.ToString("D3");
     }
 
 

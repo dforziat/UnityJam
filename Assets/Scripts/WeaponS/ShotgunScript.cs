@@ -19,7 +19,7 @@ public class ShotgunScript : MonoBehaviour
     public AudioClip shootClip;
     public AudioClip weaponSwitchClip;
     public Image ammoIcon;
-    public Text ammoText;
+    public Text shotgunAmmoText;
     public Camera cam;
     public GameObject hitEffect;
 
@@ -34,13 +34,15 @@ public class ShotgunScript : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(weaponSwitchClip);
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
-        ammoText.text = playerControls.shotgunAmmo.ToString("D3");
+        shotgunAmmoText.enabled = true;
+        shotgunAmmoText.text = playerControls.shotgunAmmo.ToString("D3");
         ammoIcon.enabled = true;
         canShoot = true;
     }
 
     private void OnDisable()
     {
+        shotgunAmmoText.enabled = false;
         ammoIcon.enabled = false;
     }
 
@@ -71,7 +73,7 @@ public class ShotgunScript : MonoBehaviour
         gunAnimator.SetTrigger("shoot");
         audioSource.PlayOneShot(shootClip);
         playerControls.shotgunAmmo--;
-        ammoText.text = playerControls.shotgunAmmo.ToString("D3");
+        shotgunAmmoText.text = playerControls.shotgunAmmo.ToString("D3");
         RaycastHit hit;
 
         for(int i = 0; i < buckshot; i++)

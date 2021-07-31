@@ -16,7 +16,7 @@ public class HandgunScript : MonoBehaviour
 
     public AudioClip shootClip;
     public AudioClip weaponSwitchClip;
-    public Text ammoText;
+    public Text handgunAmmoText;
     public Image ammoIcon;
     public Camera cam;
     public GameObject hitEffect;
@@ -31,13 +31,15 @@ public class HandgunScript : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(weaponSwitchClip);
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
-        ammoText.text = playerControls.handgunAmmo.ToString("D3");
+        handgunAmmoText.enabled = true;
+        handgunAmmoText.text = playerControls.handgunAmmo.ToString("D3");
         ammoIcon.enabled = true;
         canShoot = true;
     }
 
     private void OnDisable()
     {
+        handgunAmmoText.enabled = false;
         ammoIcon.enabled = false;
     }
 
@@ -67,7 +69,7 @@ public class HandgunScript : MonoBehaviour
         gunAnimator.SetTrigger("shoot");
         audioSource.PlayOneShot(shootClip);
         playerControls.handgunAmmo--;
-        ammoText.text = playerControls.handgunAmmo.ToString("D3");
+        handgunAmmoText.text = playerControls.handgunAmmo.ToString("D3");
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
         {
