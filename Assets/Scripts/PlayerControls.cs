@@ -30,6 +30,7 @@ public class PlayerControls : MonoBehaviour
 
     public int handgunAmmo = 20;
     public int shotgunAmmo = 10;
+    public int grapplegunAmmo = 20;
 
 
     Vector3 vel;
@@ -159,4 +160,8 @@ public class PlayerControls : MonoBehaviour
         vel.y = Mathf.Sqrt(jumpHeight * -2f * grav);
     }
 
+    public void StartGrapple(float grappleSpeed)
+    {
+        controller.Move(Vector3.forward * grappleSpeed * Time.deltaTime);
+    }
 }
