@@ -55,17 +55,26 @@ public class PlayerControls : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         isDead = false;
+
+
+
     }
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         hpText.text = curHp.ToString("D3");
+
+        //TODO: move to LoadFromPrefs when that is complete
         lookSensitivity = PlayerPrefs.GetFloat("mouseSens");
+        
         //failsafe
         if(lookSensitivity <= 0f)
         {
             lookSensitivity = 1f;
         }
+       
+        //Load from PlayerPrefs
+        //LoadFromPrefs();
     }
 
     void Update()
@@ -163,5 +172,12 @@ public class PlayerControls : MonoBehaviour
     public void StartGrapple(float grappleSpeed)
     {
         controller.Move(Vector3.forward * grappleSpeed * Time.deltaTime);
+    }
+
+    void LoadFromPrefs()
+    {
+        handgunAmmo = PlayerPrefs.GetInt("handgunAmmo");
+        shotgunAmmo = PlayerPrefs.GetInt("shotgunAmmo");
+        curHp = PlayerPrefs.GetInt("curHP");
     }
 }

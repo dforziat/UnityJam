@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelComplete : MonoBehaviour
 {
+    
 
     public Canvas levelCompleteCanvas;
     // Start is called before the first frame update
@@ -22,5 +23,6 @@ public class LevelComplete : MonoBehaviour
     {
         levelCompleteCanvas.enabled = true;
         Time.timeScale = 0;
+       
     }
 }
