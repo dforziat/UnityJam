@@ -33,6 +33,7 @@ public class PlayerControls : MonoBehaviour
     public int shotgunAmmo = 10;
     public int grapplegunAmmo = 20;
 
+    public int curLevel = 2;
 
     Vector3 vel;
     [SerializeField] CharacterController controller;
@@ -65,7 +66,7 @@ public class PlayerControls : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         hpText.text = curHp.ToString("D3");
 
-        //TODO: move to LoadFromPrefs when that is complete
+        //TODO: move to SaveManager when that is complete
         lookSensitivity = PlayerPrefs.GetFloat("mouseSens");
         
         //failsafe
@@ -74,8 +75,6 @@ public class PlayerControls : MonoBehaviour
             lookSensitivity = 1f;
         }
        
-        //Load from PlayerPrefs
-        //LoadFromPrefs();
     }
 
     void Update()
@@ -176,10 +175,4 @@ public class PlayerControls : MonoBehaviour
         //setAnimationstate;
     }
 
-    void LoadFromPrefs()
-    {
-        handgunAmmo = PlayerPrefs.GetInt("handgunAmmo");
-        shotgunAmmo = PlayerPrefs.GetInt("shotgunAmmo");
-        curHp = PlayerPrefs.GetInt("curHP");
-    }
 }
