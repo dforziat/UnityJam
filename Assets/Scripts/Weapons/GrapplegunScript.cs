@@ -9,11 +9,13 @@ public class GrapplegunScript : MonoBehaviour
 
     bool canShoot = true;
     int damage = 1;
-    float grappleSpeed = 2f;
     float rateOfFire = .5f;
+    float laserYPosOffset = .1f;
+    float laserZPosOffset = .4f;
     Animator gunAnimator;
     PlayerControls playerControls;
     AudioSource audioSource;
+    private LineRenderer lineRenderer;
 
     public AudioClip shootClip;
     public AudioClip weaponSwitchClip;
@@ -25,6 +27,7 @@ public class GrapplegunScript : MonoBehaviour
 
     void Start()
     {
+        lineRenderer = GetComponent<LineRenderer>();
         gunAnimator = GetComponent<Animator>();
     }
 
@@ -77,6 +80,10 @@ public class GrapplegunScript : MonoBehaviour
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
         {
+            lineRenderer.enabled = true;
+            lineRenderer.SetPosition(0, new Vector3(playerControls.transform.position.x, playerControls.transform.position.y - laserYPosOffset, playerControls.transform.position.z - laserZPosOffset));
+            lineRenderer.SetPosition(1, hit.point);
+
             GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impact, .3f);
 
@@ -90,12 +97,15 @@ public class GrapplegunScript : MonoBehaviour
             }
             if(hit.transform.tag == "GrapplePoint")
             {
-                playerControls.StartGrapple(grappleSpeed);
+                Debug.Log("Started Grapple");
+                playerControls.StartGrapple();
             }
         }
 
         yield return new WaitForSeconds(rateOfFire);
         gunAnimator.SetBool("shooting", false);
+        playerControls.isGrappling = false;
+        lineRenderer.enabled = false;
         canShoot = true;
     }
 }

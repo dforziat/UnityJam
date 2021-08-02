@@ -15,6 +15,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] LayerMask groundMask;
     bool isGrounded;
     private float jumpHeight = 5f;
+    public bool isGrappling = false;
 
     [Header("Camera")]
     [SerializeField] float lookSensitivity;
@@ -79,7 +80,7 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
-        if (isDead || PauseMenu.GameIsPaused)
+        if (isDead || PauseMenu.GameIsPaused || isGrappling)
         {
             return;
         }
@@ -92,7 +93,7 @@ public class PlayerControls : MonoBehaviour
     {
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
-        Vector3 dir = (transform.right * x + transform.forward * z).normalized;
+        dir = (transform.right * x + transform.forward * z).normalized;
         controller.Move(dir * moveSpeed * Time.deltaTime);
     }
 
@@ -169,9 +170,10 @@ public class PlayerControls : MonoBehaviour
         vel.y = Mathf.Sqrt(jumpHeight * -2f * grav);
     }
 
-    public void StartGrapple(float grappleSpeed)
+    public void StartGrapple()
     {
-        controller.Move(Vector3.forward * grappleSpeed * Time.deltaTime);
+        isGrappling = true;
+        //setAnimationstate;
     }
 
     void LoadFromPrefs()
