@@ -69,7 +69,7 @@ public class GrapplegunScript : MonoBehaviour
     IEnumerator Shoot() 
     {
         canShoot = false;
-        gunAnimator.SetTrigger("shoot");
+        gunAnimator.SetBool("shooting", true);
         audioSource.PlayOneShot(shootClip);
         playerControls.grapplegunAmmo--;
         grapplegunAmmoText.text = playerControls.grapplegunAmmo.ToString("D3");
@@ -95,6 +95,7 @@ public class GrapplegunScript : MonoBehaviour
         }
 
         yield return new WaitForSeconds(rateOfFire);
+        gunAnimator.SetBool("shooting", false);
         canShoot = true;
     }
 }
