@@ -1,48 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
 
     PlayerControls playerControls;
 
+    //How to unlock weapon
+    public Transform shotgun;
+    public Transform grapplegun;
+    private GameObject weaponsHud;
+
     // Start is called before the first frame update
     void Start()
     {
-        SetPrefs();
-
+        playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
+        weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
+        LoadPref();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //LoadPref();
+        //Press H to reset player prefs to a default
+        DebugPref();
     }
 
-    public void SetPrefs()
+    public void SavePrefs()
     {
         //Happens at End of Level, pushes current loadout to preferences
 
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
-
+        weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
 
         //HandgunAmmo
         PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, playerControls.handgunAmmo);
-        PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, 99);
-        
-
 
         //ShotgunAmmo;
-        PlayerPrefs.SetInt("shotgunAmmo", playerControls.shotgunAmmo);
+        PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN_AMMO, playerControls.shotgunAmmo);
         
 
         //Current HP
-        PlayerPrefs.SetInt("curHp", playerControls.curHp);
+        PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_HP, playerControls.curHp);
 
         //Set curLevel
         //TODO: Change LevelComplete Script to LevelManager
-        PlayerPrefs.SetInt("curLevel", playerControls.curLevel);
+        PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, playerControls.curLevel);
+
+        //Set Weapons
+        if (shotgun.tag == "unlocked")
+            PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN, 1);
+
+        if (grapplegun.tag == "unlocked")
+            PlayerPrefs.SetInt(PlayerPrefsConstants.GRAPPLEGUN, 1);
 
         //Save
         PlayerPrefs.Save();
@@ -50,18 +62,55 @@ public class SaveManager : MonoBehaviour
 
     }
 
-    void LoadPref()
+    public void LoadPref()
+    {
+        playerControls.handgunAmmo = PlayerPrefs.GetInt(PlayerPrefsConstants.HANDGUN_AMMO);
+        playerControls.shotgunAmmo = PlayerPrefs.GetInt(PlayerPrefsConstants.SHOTGUN_AMMO);
+        playerControls.curHp = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_HP);
+        playerControls.curLevel = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL);
+
+        if (PlayerPrefs.GetInt(PlayerPrefsConstants.SHOTGUN) == 1)
+            shotgun.tag = "unlocked";
+        else
+            shotgun.tag = "Untagged";
+
+        if (PlayerPrefs.GetInt(PlayerPrefsConstants.GRAPPLEGUN) == 1)
+            grapplegun.tag = "unlocked";
+        else
+            grapplegun.tag = "Untagged";
+
+
+        Debug.Log("Loaded PREFS");
+
+    }
+
+    void DebugPref()
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            SetPrefs();
-            PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, 99);
-            playerControls.handgunAmmo = PlayerPrefs.GetInt(PlayerPrefsConstants.HANDGUN_AMMO);
-            playerControls.shotgunAmmo = PlayerPrefs.GetInt(PlayerPrefsConstants.HANDGUN_AMMO);
-            playerControls.curHp = PlayerPrefs.GetInt("curHP");
-            playerControls.curLevel = PlayerPrefs.GetInt("curLevel");
-            Debug.Log("Loaded PREFS");
+            playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
 
+            //HandgunAmmo
+            PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, 20);
+
+            //ShotgunAmmo;
+            PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN_AMMO, 20);
+
+
+            //Current HP
+            PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_HP, 100);
+
+            //Set curLevel
+            PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, SceneManager.GetActiveScene().buildIndex);
+
+            //Delete Weapons
+            PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN, 0);
+            PlayerPrefs.SetInt(PlayerPrefsConstants.GRAPPLEGUN, 0);
+
+            //Save
+            PlayerPrefs.Save();
+
+            LoadPref();
         }
 
     }

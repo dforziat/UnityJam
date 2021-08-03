@@ -7,9 +7,7 @@ public class LevelManager : MonoBehaviour
     SaveManager SaveManager;
     PlayerControls playerControls;
 
-    //How to unlock weapon
-    //public Transform shotgun;
-    //private GameObject weaponsHud;
+
 
 
 
@@ -17,10 +15,6 @@ public class LevelManager : MonoBehaviour
     {
         SaveManager = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
-
-        //How to unlock weapon
-        //weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
-      //  shotgun.tag = "unlocked";
     }
 
     // Update is called once per frame
@@ -33,7 +27,7 @@ public class LevelManager : MonoBehaviour
     {
         
         playerControls.curLevel++;
-        SaveManager.SetPrefs();
+        SaveManager.SavePrefs();
 
     }
 
