@@ -28,8 +28,8 @@ public class SaveManager : MonoBehaviour
 
 
         //HandgunAmmo
-        PlayerPrefs.SetInt("handgunAmmo", playerControls.handgunAmmo);
-        PlayerPrefs.SetInt("handgunAmmo", 99);
+        PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, playerControls.handgunAmmo);
+        PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, 99);
         
 
 
@@ -55,9 +55,9 @@ public class SaveManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
             SetPrefs();
-            PlayerPrefs.SetInt("handgunAmmo", 99);
-            playerControls.handgunAmmo = PlayerPrefs.GetInt("handgunAmmo");
-            playerControls.shotgunAmmo = PlayerPrefs.GetInt("shotgunAmmo");
+            PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, 99);
+            playerControls.handgunAmmo = PlayerPrefs.GetInt(PlayerPrefsConstants.HANDGUN_AMMO);
+            playerControls.shotgunAmmo = PlayerPrefs.GetInt(PlayerPrefsConstants.HANDGUN_AMMO);
             playerControls.curHp = PlayerPrefs.GetInt("curHP");
             playerControls.curLevel = PlayerPrefs.GetInt("curLevel");
             Debug.Log("Loaded PREFS");

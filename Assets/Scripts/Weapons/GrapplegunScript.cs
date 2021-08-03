@@ -98,13 +98,12 @@ public class GrapplegunScript : MonoBehaviour
             if(hit.transform.tag == "GrapplePoint")
             {
                 Debug.Log("Started Grapple");
-                playerControls.StartGrapple();
+                playerControls.isGrappling = true;
             }
         }
 
         yield return new WaitForSeconds(rateOfFire);
         gunAnimator.SetBool("shooting", false);
-        playerControls.isGrappling = false;
         lineRenderer.enabled = false;
         canShoot = true;
     }

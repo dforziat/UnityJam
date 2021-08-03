@@ -71,17 +71,20 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  isGrappling: 0
   lookSensitivity: 1
   curHp: 50
   maxHp: 100
   hpText: {fileID: 0}
-  ammoText: {fileID: 0}
+  handgunAmmoText: {fileID: 0}
+  shotgunAmmoText: {fileID: 0}
   handgunAmmo: 20
   shotgunAmmo: 10
+  grapplegunAmmo: 20
+  curLevel: 2
   controller: {fileID: 5028391134535262240}
   dir: {x: 0, y: 0, z: 0}
   hitEffect: {fileID: 2898759667554780206, guid: 8b40a3302a1e9f444ac62fee5de4afe7, type: 3}
-  gun: {fileID: 0}
   gunAnimator: {fileID: 0}
   damageEffect: {fileID: 0}
   injuredAudioClip: {fileID: 8300000, guid: 88212d15603516247816dbce7db48707, type: 3}

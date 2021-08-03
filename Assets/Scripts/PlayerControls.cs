@@ -59,11 +59,11 @@ public class PlayerControls : MonoBehaviour
         isDead = false;
 
 
-
     }
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
         hpText.text = curHp.ToString("D3");
 
         //TODO: move to SaveManager when that is complete
@@ -79,13 +79,16 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
-        if (isDead || PauseMenu.GameIsPaused || isGrappling)
+            
+        if (isDead || PauseMenu.GameIsPaused)
         {
             return;
         }
             Gravity();
             CamLook();
             Movement();
+            Grapple();
+
     }
 
     void Movement()
@@ -169,10 +172,13 @@ public class PlayerControls : MonoBehaviour
         vel.y = Mathf.Sqrt(jumpHeight * -2f * grav);
     }
 
-    public void StartGrapple()
+    public void Grapple()
     {
-        isGrappling = true;
-        //setAnimationstate;
+        if (isGrappling)
+        {
+            controller.Move(controller.transform.forward * Mathf.Sqrt(1 * Time.deltaTime));
+        }
+        
     }
 
 }
