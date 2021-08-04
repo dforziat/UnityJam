@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HandgunScript : MonoBehaviour
+public class HandgunScript : AbstractGun
 {
     // Start is called before the first frame update
-
-    bool canShoot = true;
+    private bool canShoot = true;
     int damage = 1;
     float rateOfFire = .5f;
     Animator gunAnimator;

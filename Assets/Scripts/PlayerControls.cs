@@ -84,9 +84,12 @@ public class PlayerControls : MonoBehaviour
         {
             return;
         }
+        if (!isGrappling)
+        {
             Gravity();
             CamLook();
             Movement();
+        }
             Grapple();
 
     }

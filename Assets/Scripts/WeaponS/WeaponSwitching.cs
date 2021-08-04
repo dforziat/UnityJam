@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponSwitching : MonoBehaviour
 {
     public int selectedWeapon = 0;
+    public bool lockWeaponSwitch = false;
     public Transform nextWeapon;
     // Start is called before the first frame update
     void Start()
@@ -81,7 +82,7 @@ public class WeaponSwitching : MonoBehaviour
 
 
 
-        if (previousSelectedWeapon != selectedWeapon && transform.GetChild(selectedWeapon).tag == "unlocked")
+        if (previousSelectedWeapon != selectedWeapon && transform.GetChild(selectedWeapon).tag == "unlocked" && !lockWeaponSwitch)
         {
             SelectWeapon();
         }

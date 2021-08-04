@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class ShotgunScript : MonoBehaviour
 {
     // Start is called before the first frame update
-
-    bool canShoot = true;
+    private bool canShoot = true;
     int damage = 1;
     float rateOfFire = .5f;
     Animator gunAnimator;

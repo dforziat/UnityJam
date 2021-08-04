@@ -6,9 +6,8 @@ using UnityEngine.UI;
 public class GrapplegunScript : MonoBehaviour
 {
     // Start is called before the first frame update
-
-    bool canShoot = true;
-    int damage = 1;
+    private bool canShoot = true;
+    int damage = 2;
     float rateOfFire = .5f;
     float laserYPosOffset = .1f;
     float laserZPosOffset = .4f;
@@ -16,6 +15,7 @@ public class GrapplegunScript : MonoBehaviour
     PlayerControls playerControls;
     AudioSource audioSource;
     private LineRenderer lineRenderer;
+    private WeaponSwitching weaponSwitching;
 
     public AudioClip shootClip;
     public AudioClip weaponSwitchClip;
@@ -27,6 +27,7 @@ public class GrapplegunScript : MonoBehaviour
 
     void Start()
     {
+        weaponSwitching = GetComponentInParent<WeaponSwitching>();
         lineRenderer = GetComponent<LineRenderer>();
         gunAnimator = GetComponent<Animator>();
     }
@@ -39,6 +40,7 @@ public class GrapplegunScript : MonoBehaviour
         grapplegunAmmoText.enabled = true;
         grapplegunAmmoText.text = playerControls.grapplegunAmmo.ToString("D3");
         ammoIcon.enabled = true;
+        lineRenderer.enabled = false;
         canShoot = true;
     }
 
@@ -71,6 +73,7 @@ public class GrapplegunScript : MonoBehaviour
 
     IEnumerator Shoot() 
     {
+        weaponSwitching.lockWeaponSwitch = true;
         canShoot = false;
         gunAnimator.SetBool("shooting", true);
         audioSource.PlayOneShot(shootClip);
@@ -81,7 +84,7 @@ public class GrapplegunScript : MonoBehaviour
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
         {
             lineRenderer.enabled = true;
-            lineRenderer.SetPosition(0, new Vector3(playerControls.transform.position.x, playerControls.transform.position.y - laserYPosOffset, playerControls.transform.position.z - laserZPosOffset));
+            lineRenderer.SetPosition(0, new Vector3(cam.transform.position.x, cam.transform.position.y - laserYPosOffset, cam.transform.position.z));
             lineRenderer.SetPosition(1, hit.point);
 
             GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
@@ -103,6 +106,18 @@ public class GrapplegunScript : MonoBehaviour
         }
 
         yield return new WaitForSeconds(rateOfFire);
+        if (hit.transform.tag != "GrapplePoint")
+        {
+            weaponSwitching.lockWeaponSwitch = false;
+            gunAnimator.SetBool("shooting", false);
+            lineRenderer.enabled = false;
+            canShoot = true;
+        }
+    }
+
+    public void ShootingRecovery()//CALL FROM GRAPPLE POINT COLLISION TO RESET SHOOTING
+    {
+        weaponSwitching.lockWeaponSwitch = false;
         gunAnimator.SetBool("shooting", false);
         lineRenderer.enabled = false;
         canShoot = true;
