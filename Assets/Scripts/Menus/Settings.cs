@@ -9,17 +9,16 @@ public class Settings : MonoBehaviour
 
 
     //This will be present in the main menu as well as the pause menu
-    //This is will save and apply, apply method should be public so it can fire in the main menu at start from prefs
-
-    //Mouse Sensativity
-
-    //Resolution
-
-    //Volume
 
     public AudioMixer audioMixer;
     public Dropdown resolutionDropdown;
     Resolution[] resolutions;
+
+    public Slider mouseSensSlider;
+    public Slider volumeSlider;
+
+    //in the pause menu
+    public GameObject settingMenu;
 
     private void Start()
     {
@@ -27,21 +26,24 @@ public class Settings : MonoBehaviour
         LoadSettings();
 
 
+
+        //FAILSAFE
+        if (PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS) == 0)
+        {
+            PlayerPrefs.SetFloat(PlayerPrefsConstants.MOUSE_SENS, 1f);
+        }
+        
     }
 
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("masterVolume", volume);
-
         PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, volume);
-
-
-
     }
 
     public void SetSensitivity(float Sensitivity)
     {
-
+        PlayerPrefs.SetFloat(PlayerPrefsConstants.MOUSE_SENS, Sensitivity);
     }
 
     public void SetFullscreen(bool isFullscreen)
@@ -56,7 +58,6 @@ public class Settings : MonoBehaviour
 
         PlayerPrefs.SetInt(PlayerPrefsConstants.RESOLUTION_WIDTH, resolution.width);
         PlayerPrefs.SetInt(PlayerPrefsConstants.RESOLUTION_HEIGHT, resolution.height);
-
     }
 
     void LoadResolutions()
@@ -89,16 +90,28 @@ public class Settings : MonoBehaviour
     {
         //Master Volume
         audioMixer.SetFloat("masterVolume", PlayerPrefs.GetFloat(PlayerPrefsConstants.MASTER_VOLUME));
-
+        volumeSlider.value = PlayerPrefs.GetFloat(PlayerPrefsConstants.MASTER_VOLUME);
 
         //Resolution
         Screen.SetResolution(PlayerPrefs.GetInt(PlayerPrefsConstants.RESOLUTION_WIDTH), PlayerPrefs.GetInt(PlayerPrefsConstants.RESOLUTION_HEIGHT), Screen.fullScreen);
 
         //Mouse Sensitivity
-
-
+        mouseSensSlider.value = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
 
     }
 
+    public void closeSettings()
+    {
+        //TO DO: add this as button
+        settingMenu.SetActive(false);
+        //updates setttings
+    }
+
+    public void openSettings()
+    {
+        //TO DO: add this as button
+        settingMenu.SetActive(true);
+        //updates setttings
+    }
 
 }

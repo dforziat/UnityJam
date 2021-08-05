@@ -7,35 +7,35 @@ using UnityEngine.UI;
 public class MainMenuScript : MonoBehaviour
 {
     public Canvas mainMenuCanvas;
-    public Canvas settingMenuCanvas;
-    public Slider mouseSensSlider;
-    public Text sensText;
+    public GameObject settingMenuCanvas;
+    //public Slider mouseSensSlider;
+   // public Text sensText;
 
 
     private void Awake()
     {
-        mouseSensSlider.value = PlayerPrefs.GetFloat("mouseSens");
+        //mouseSensSlider.value = PlayerPrefs.GetFloat("mouseSens");
     }
     void Start()
     {
-        sensText.text = mouseSensSlider.value.ToString();
-        settingMenuCanvas.enabled = false;
+        // sensText.text = mouseSensSlider.value.ToString();
+        settingMenuCanvas.SetActive(false);
         //Load Default PlayerPrefOptions
-        if (PlayerPrefs.GetFloat("mouseSens") == 0)
-        {
-            PlayerPrefs.SetFloat("mouseSens", 1f);
-        }
+       // if (PlayerPrefs.GetFloat("mouseSens") == 0)
+       // {
+       //     PlayerPrefs.SetFloat("mouseSens", 1f);
+      //  }
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(mouseSensSlider.enabled == true)
-        {
-            SetMouseSens(mouseSensSlider.value);
-            sensText.text = mouseSensSlider.value.ToString();
-        }
+       // if(mouseSensSlider.enabled == true)
+       // {
+        //    SetMouseSens(mouseSensSlider.value);
+        //    sensText.text = mouseSensSlider.value.ToString();
+       // }
     }
 
     public void NewGame()
@@ -46,13 +46,13 @@ public class MainMenuScript : MonoBehaviour
     public void DisplaySettings()
     {
         mainMenuCanvas.enabled = false;
-        settingMenuCanvas.enabled = true;
+        settingMenuCanvas.SetActive(true);
     }
 
     public void DisplayMainMenu()
     {
         mainMenuCanvas.enabled = true;
-        settingMenuCanvas.enabled = false;
+        settingMenuCanvas.SetActive(false);
     }
 
     public void QuitGame()
@@ -60,8 +60,8 @@ public class MainMenuScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void SetMouseSens(float mouseSens)
-    {
-        PlayerPrefs.SetFloat("mouseSens", mouseSens);
-    }
+   // public void SetMouseSens(float mouseSens)
+   // {
+    //    PlayerPrefs.SetFloat("mouseSens", mouseSens);
+   // }
 }

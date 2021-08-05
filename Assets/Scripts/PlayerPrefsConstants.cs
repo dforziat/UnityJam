@@ -13,4 +13,8 @@ public static class PlayerPrefsConstants
     public const string RESOLUTION_WIDTH = "resolutionWidth";
     public const string RESOLUTION_HEIGHT = "resolutionHeight";
     public const string MASTER_VOLUME = "masterVolume";
+    public const string MOUSE_SENS = "mouseSens";
+    
+
+
 }

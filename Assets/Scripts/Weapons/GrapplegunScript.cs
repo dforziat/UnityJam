@@ -28,12 +28,13 @@ public class GrapplegunScript : MonoBehaviour
     void Start()
     {
         weaponSwitching = GetComponentInParent<WeaponSwitching>();
-        lineRenderer = GetComponent<LineRenderer>();
+
         gunAnimator = GetComponent<Animator>();
     }
 
     private void OnEnable()
     {
+        lineRenderer = GetComponent<LineRenderer>();
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(weaponSwitchClip);
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();

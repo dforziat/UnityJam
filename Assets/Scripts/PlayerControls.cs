@@ -67,12 +67,13 @@ public class PlayerControls : MonoBehaviour
         hpText.text = curHp.ToString("D3");
 
         //TODO: move to SaveManager when that is complete
-        lookSensitivity = PlayerPrefs.GetFloat("mouseSens");
+        lookSensitivity = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
         
         //failsafe
         if(lookSensitivity <= 0f)
         {
             lookSensitivity = 1f;
+            PlayerPrefs.SetFloat(PlayerPrefsConstants.MOUSE_SENS, 1);
         }
        
     }
