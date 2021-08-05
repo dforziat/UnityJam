@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26ff928f44f23349915b43f6cf87960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUnlocked: 1
   doorOpenClip: {fileID: 8300000, guid: 2fa36cf008ec3fc4bafa2b1bac3e8984, type: 3}
 --- !u!95 &8883284029716380204
 Animator:
@@ -266,7 +267,7 @@ AudioSource:
   m_GameObject: {fileID: 3514432130381521277}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

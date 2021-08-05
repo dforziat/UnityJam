@@ -9813,7 +9813,7 @@ AudioSource:
   m_GameObject: {fileID: 233641833}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
   m_audioClip: {fileID: 8300000, guid: f2e751d0793744340b8f5b6e14357ddf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.8
@@ -32844,6 +32844,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 391964333}
     m_Modifications:
+    - target: {fileID: 529338905, guid: f9b4890f6421e80448fc1fc7be3fb1be, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
     - target: {fileID: 3514432130381521277, guid: f9b4890f6421e80448fc1fc7be3fb1be, type: 3}
       propertyPath: m_Name
       value: RedDoor
@@ -48416,6 +48420,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 391964333}
     m_Modifications:
+    - target: {fileID: 529338905, guid: 93545fe642ee37f4287038adf1b50e9c, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
     - target: {fileID: 3514432130381521277, guid: 93545fe642ee37f4287038adf1b50e9c, type: 3}
       propertyPath: m_Name
       value: BlueDoor
@@ -48904,6 +48912,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1207407948}
     m_Modifications:
+    - target: {fileID: 5342742259753415497, guid: a9f5cf08a171a3f4fb157ed9978dbcd6, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
     - target: {fileID: 7419672412132425509, guid: a9f5cf08a171a3f4fb157ed9978dbcd6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -76681,6 +76693,10 @@ PrefabInstance:
       propertyPath: damageEffect
       value: 
       objectReference: {fileID: 883483311}
+    - target: {fileID: 1303419519, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
     - target: {fileID: 5028391134535262240, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
       propertyPath: m_StepOffset
       value: 0.3
@@ -87028,6 +87044,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5342742259753415497, guid: 877fe214dce98104b9294b586d67a03c, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
     - target: {fileID: 7419672412132425509, guid: 877fe214dce98104b9294b586d67a03c, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -89266,6 +89286,38 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1857184724}
+    - target: {fileID: 887930895726743039, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
+    - target: {fileID: 1646478736519081790, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646478736519081790, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646478736519081790, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6216474775089520115}
+    - target: {fileID: 1646478736519081790, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646478736519081790, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: closeSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646478736519081790, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Settings, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646478736519081790, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1979327005069633382, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: settingMenu
       value: 
@@ -89282,6 +89334,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3480689939614903340, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
+    - target: {fileID: 4134553122272045597, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
     - target: {fileID: 4412032328294747392, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: cam
       value: 

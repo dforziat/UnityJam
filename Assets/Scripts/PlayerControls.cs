@@ -18,7 +18,7 @@ public class PlayerControls : MonoBehaviour
     public bool isGrappling = false;
 
     [Header("Camera")]
-    [SerializeField] float lookSensitivity;
+    public float lookSensitivity;
 
     public int curHp = 90;
     public int maxHp = 100;
@@ -33,7 +33,7 @@ public class PlayerControls : MonoBehaviour
     public int shotgunAmmo = 10;
     public int grapplegunAmmo = 20;
 
-    public int curLevel = 2;
+    public int curLevel = 1;
 
     Vector3 vel;
     [SerializeField] CharacterController controller;
@@ -66,7 +66,7 @@ public class PlayerControls : MonoBehaviour
 
         hpText.text = curHp.ToString("D3");
 
-        //TODO: move to SaveManager when that is complete
+        
         lookSensitivity = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
         
         //failsafe
@@ -126,6 +126,11 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
+    public void UpdateLookSens()
+    {
+        lookSensitivity = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
+    }
+    
     public void TakeDamage(int damage)
     {
         GetComponent<DamageEffect>().ShowDamageEffect();

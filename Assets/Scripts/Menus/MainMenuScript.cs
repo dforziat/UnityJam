@@ -8,39 +8,36 @@ public class MainMenuScript : MonoBehaviour
 {
     public Canvas mainMenuCanvas;
     public GameObject settingMenuCanvas;
-    //public Slider mouseSensSlider;
-   // public Text sensText;
 
 
-    private void Awake()
-    {
-        //mouseSensSlider.value = PlayerPrefs.GetFloat("mouseSens");
-    }
+
     void Start()
     {
-        // sensText.text = mouseSensSlider.value.ToString();
         settingMenuCanvas.SetActive(false);
-        //Load Default PlayerPrefOptions
-       // if (PlayerPrefs.GetFloat("mouseSens") == 0)
-       // {
-       //     PlayerPrefs.SetFloat("mouseSens", 1f);
-      //  }
-        
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-       // if(mouseSensSlider.enabled == true)
-       // {
-        //    SetMouseSens(mouseSensSlider.value);
-        //    sensText.text = mouseSensSlider.value.ToString();
-       // }
+
     }
 
     public void NewGame()
     {
         SceneManager.LoadScene("Level1");
+        PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, 1);
+    }
+
+    public void ContinueButton()
+    { 
+        //failsafe for how many levels we have
+        if (PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) < 1 || PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) > 10)
+        {
+            PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, 1);
+            SceneManager.LoadScene(PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL));
+        }
+        else
+            SceneManager.LoadScene(PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL));
     }
 
     public void DisplaySettings()
@@ -60,8 +57,4 @@ public class MainMenuScript : MonoBehaviour
         Application.Quit();
     }
 
-   // public void SetMouseSens(float mouseSens)
-   // {
-    //    PlayerPrefs.SetFloat("mouseSens", mouseSens);
-   // }
 }

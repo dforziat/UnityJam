@@ -20,11 +20,12 @@ public class Settings : MonoBehaviour
     //in the pause menu
     public GameObject settingMenu;
 
+
+
     private void Start()
     {
         LoadResolutions();
         LoadSettings();
-
 
 
         //FAILSAFE
@@ -98,20 +99,19 @@ public class Settings : MonoBehaviour
         //Mouse Sensitivity
         mouseSensSlider.value = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
 
+
+
     }
 
     public void closeSettings()
     {
-        //TO DO: add this as button
         settingMenu.SetActive(false);
-        //updates setttings
+        
     }
 
     public void openSettings()
     {
-        //TO DO: add this as button
         settingMenu.SetActive(true);
-        //updates setttings
     }
 
 }

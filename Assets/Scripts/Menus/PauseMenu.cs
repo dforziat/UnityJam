@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused;
     public GameObject PauseMenuObj;
     public GameObject settingMenu;
+    PlayerControls playerControls;
+
 
 
     void Awake()
@@ -18,6 +20,7 @@ public class PauseMenu : MonoBehaviour
         Resume();
         Cursor.lockState = CursorLockMode.Locked;
     }
+
 
     void Update()
     {
@@ -32,6 +35,9 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         GameIsPaused = false;
+        playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
+        playerControls.lookSensitivity = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
+
     }
     void Pause()
     {
@@ -55,7 +61,6 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartLevel()
     {
-        //IDEA: At end of scene saves item info - at scene start it pulls those prefs
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Resume();
     }

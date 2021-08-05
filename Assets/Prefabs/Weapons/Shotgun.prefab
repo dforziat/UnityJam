@@ -87,7 +87,7 @@ AudioSource:
   m_GameObject: {fileID: 8824066507730215174}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
   m_audioClip: {fileID: 8300000, guid: 268a1f45cc654c64e90a1b839a0eb628, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -186,8 +186,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e116420740019e43b28424b6d6363af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootClip: {fileID: 0}
+  weaponSwitchClip: {fileID: 0}
   ammoIcon: {fileID: 0}
-  ammoText: {fileID: 0}
+  shotgunAmmoText: {fileID: 0}
   cam: {fileID: 0}
   hitEffect: {fileID: 2898759667554780206, guid: 8b40a3302a1e9f444ac62fee5de4afe7, type: 3}
 --- !u!95 &5073940646138691910
