@@ -20,7 +20,11 @@ public class GrapplePointScript : MonoBehaviour
         if (other.tag == "Player")
         {
             other.GetComponent<PlayerControls>().isGrappling = false;
-            GameObject.FindGameObjectWithTag("WeaponsHud").GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
+            //GameObject.FindGameObjectWithTag("WeaponsHud").GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
+            if(GameObject.FindGameObjectWithTag("WeaponsHud").GetComponentInChildren<GrapplegunScript>() != null)
+            {
+                GameObject.FindGameObjectWithTag("WeaponsHud").GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
+            }
         }
     }
 }

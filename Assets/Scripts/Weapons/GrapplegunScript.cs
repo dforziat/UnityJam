@@ -10,7 +10,6 @@ public class GrapplegunScript : MonoBehaviour
     int damage = 2;
     float rateOfFire = .5f;
     float laserYPosOffset = .1f;
-    float laserZPosOffset = .4f;
     Animator gunAnimator;
     PlayerControls playerControls;
     AudioSource audioSource;
@@ -47,6 +46,7 @@ public class GrapplegunScript : MonoBehaviour
 
     private void OnDisable()
     {
+        weaponSwitching.lockWeaponSwitch = false;
         grapplegunAmmoText.enabled = false;
         ammoIcon.enabled = false;
     }
@@ -85,7 +85,7 @@ public class GrapplegunScript : MonoBehaviour
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
         {
             lineRenderer.enabled = true;
-            lineRenderer.SetPosition(0, new Vector3(cam.transform.position.x, cam.transform.position.y - laserYPosOffset, cam.transform.position.z));
+            lineRenderer.SetPosition(0, new Vector3(cam.transform.position.x, cam.transform.position.y - laserYPosOffset, cam.transform.position.z) + cam.transform.forward/2);
             lineRenderer.SetPosition(1, hit.point);
 
             GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
@@ -107,7 +107,7 @@ public class GrapplegunScript : MonoBehaviour
         }
 
         yield return new WaitForSeconds(rateOfFire);
-        if (hit.transform.tag != "GrapplePoint")
+        if (hit.transform == null || !hit.transform.CompareTag("GrapplePoint"))
         {
             weaponSwitching.lockWeaponSwitch = false;
             gunAnimator.SetBool("shooting", false);
