@@ -22,7 +22,7 @@ public class PlayerControls : MonoBehaviour
 
     public int curHp = 90;
     public int maxHp = 100;
-    private bool isDead = false;
+    static public bool isDead = false;
 
     public Text hpText;
     public Text handgunAmmoText;
@@ -81,7 +81,7 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
             
-        if (isDead || PauseMenu.GameIsPaused)
+        if (isDead || PauseMenu.GameIsPaused || LevelManager.levelLoading)
         {
             return;
         }

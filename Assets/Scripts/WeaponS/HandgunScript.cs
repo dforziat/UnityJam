@@ -45,7 +45,7 @@ public class HandgunScript : AbstractGun
     // Update is called once per frame
     void Update()
     {
-        if (PauseMenu.GameIsPaused)
+        if (PauseMenu.GameIsPaused || LevelManager.levelLoading || PlayerControls.isDead)
         {
             return;
         }

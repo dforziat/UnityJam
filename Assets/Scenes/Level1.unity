@@ -32395,6 +32395,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5188078946274966914, guid: 56d1c2f1c3f3be149b7489b67bef2c4b, type: 3}
   m_PrefabInstance: {fileID: 786691488}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &789688988 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8912155985682499381, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 6216474775089520114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &793850343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46167,6 +46172,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 892db66b320de0d45ab7297a371a3ab1, type: 3}
+--- !u!1 &1108209113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1239703134108287167, guid: 22752a4003cdb4a4dad50d113e1e22d6, type: 3}
+  m_PrefabInstance: {fileID: 1239703135391814600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1108209114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108209113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c82cd691025fc8d4a8ceec3852df3953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelCompleteCanvas: {fileID: 789688988}
 --- !u!1001 &1109130868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48478,11 +48501,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4095539337670417570, guid: 93545fe642ee37f4287038adf1b50e9c, type: 3}
   m_PrefabInstance: {fileID: 1177588807}
-  m_PrefabAsset: {fileID: 0}
---- !u!223 &1181807068 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 4136380767217716960, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
-  m_PrefabInstance: {fileID: 6216474775089520114}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1183113357 stripped
 Transform:
@@ -89154,7 +89172,7 @@ PrefabInstance:
     - target: {fileID: 1239703134108287152, guid: 22752a4003cdb4a4dad50d113e1e22d6, type: 3}
       propertyPath: levelCompleteCanvas
       value: 
-      objectReference: {fileID: 1181807068}
+      objectReference: {fileID: 0}
     - target: {fileID: 1239703134108287154, guid: 22752a4003cdb4a4dad50d113e1e22d6, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -89203,7 +89221,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinBox
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1239703134108287152, guid: 22752a4003cdb4a4dad50d113e1e22d6, type: 3}
+    - {fileID: 2713458507595896083, guid: 22752a4003cdb4a4dad50d113e1e22d6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 22752a4003cdb4a4dad50d113e1e22d6, type: 3}
 --- !u!1001 &1797602480415032797
 PrefabInstance:
@@ -89290,6 +89310,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
+    - target: {fileID: 1161231984272676272, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_Text
+      value: Next Level
+      objectReference: {fileID: 0}
     - target: {fileID: 1646478736519081790, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -89322,6 +89346,18 @@ PrefabInstance:
       propertyPath: settingMenu
       value: 
       objectReference: {fileID: 701102368}
+    - target: {fileID: 2092433768137857797, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092433768137857797, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092433768137857797, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2495816128428023546, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: cam
       value: 
@@ -89342,6 +89378,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
+    - target: {fileID: 4228603232238572098, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_Name
+      value: Next Level Button
+      objectReference: {fileID: 0}
     - target: {fileID: 4412032328294747392, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: cam
       value: 
@@ -89538,7 +89578,8 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetSensitivity
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6216474776588816490, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
 --- !u!114 &6216474775089520115 stripped
 MonoBehaviour:
