@@ -78,10 +78,14 @@ public class EnemyController : MonoBehaviour
         isProvoked = true;
         health -= damage;
         GetComponent<Animator>().SetTrigger("damaged");
-        audioSource.PlayOneShot(damagedClip);
+        
         if (health <= 0) {
             Instantiate(explosion, new Vector3(transform.position.x,transform.position.y - verticalOffset,transform.position.z), transform.rotation);
             Destroy(gameObject);
+        }
+        if(audioSource.enabled == true)
+        {
+            audioSource.PlayOneShot(damagedClip);
         }
     }
 }

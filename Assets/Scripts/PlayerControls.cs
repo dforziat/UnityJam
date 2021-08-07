@@ -20,15 +20,18 @@ public class PlayerControls : MonoBehaviour
     [Header("Camera")]
     public float lookSensitivity;
 
+    [Header("Stats")]
     public int curHp = 90;
     public int maxHp = 100;
     static public bool isDead = false;
 
+    [Header("GUI Ammo Text")]
     public Text hpText;
     public Text handgunAmmoText;
     public Text shotgunAmmoText;
+    public Text grapplegunAmmoText;
 
-
+    [Header("Ammo Count")]
     public int handgunAmmo = 20;
     public int shotgunAmmo = 10;
     public int grapplegunAmmo = 20;
@@ -173,6 +176,12 @@ public class PlayerControls : MonoBehaviour
         audioSource.PlayOneShot(ammoPickupClip);
         shotgunAmmo += ammoAmount;
         shotgunAmmoText.text = shotgunAmmo.ToString("D3");
+    }
+    public void RecieveGrapplegunAmmo(int ammoAmount)
+    {
+        audioSource.PlayOneShot(ammoPickupClip);
+        grapplegunAmmo += ammoAmount;
+        grapplegunAmmoText.text = grapplegunAmmo.ToString("D3");
     }
 
 

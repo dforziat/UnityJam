@@ -46,7 +46,10 @@ public class GrapplegunScript : MonoBehaviour
 
     private void OnDisable()
     {
-        weaponSwitching.lockWeaponSwitch = false;
+        if(weaponSwitching != null)
+        {
+            weaponSwitching.lockWeaponSwitch = false;
+        }  
         grapplegunAmmoText.enabled = false;
         ammoIcon.enabled = false;
     }

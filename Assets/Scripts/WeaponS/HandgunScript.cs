@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HandgunScript : AbstractGun
+public class HandgunScript : MonoBehaviour
 {
     // Start is called before the first frame update
     private bool canShoot = true;

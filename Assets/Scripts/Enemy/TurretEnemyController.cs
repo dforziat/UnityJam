@@ -54,7 +54,10 @@ public class TurretEnemyController : MonoBehaviour
     public void takeDamage(int damage)
     {
         health -= damage;
-        audioSource.PlayOneShot(damagedClip);
+        if (audioSource.enabled == true)
+        {
+            audioSource.PlayOneShot(damagedClip);
+        }
         if (health <= 0)
         {
             Instantiate(explosion, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
