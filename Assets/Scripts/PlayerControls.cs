@@ -7,6 +7,7 @@ public class PlayerControls : MonoBehaviour
 {
     [Header("Movement")]
     float moveSpeed = 5;
+    float grappleSpeed = 100;
 
     [Header("Gravity")]
     float grav = -8f;
@@ -187,14 +188,14 @@ public class PlayerControls : MonoBehaviour
 
     public void Jump(float jumpHeight)
     {
-        vel.y = Mathf.Sqrt(jumpHeight * -2f * grav);
+        vel.y = Mathf.Sqrt(jumpHeight * -2f * grav * Time.deltaTime);
     }
 
     public void Grapple()
     {
         if (isGrappling)
         {
-            controller.Move(controller.transform.forward * Mathf.Sqrt(1 * Time.deltaTime));
+            controller.Move(controller.transform.forward * Mathf.Sqrt(grappleSpeed) * Time.deltaTime);
         }
         
     }

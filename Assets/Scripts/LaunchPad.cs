@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LaunchPad : MonoBehaviour
 {
-    public float jumpHeight = 5f;
+    public float jumpHeight = 100f;
     private bool hasCollided = false;
 
     public AudioClip humClip;
