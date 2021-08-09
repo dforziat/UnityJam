@@ -15,11 +15,19 @@ public class SkullScript : MonoBehaviour
     private float chaseRange = 5;
     private float distanceToTarget = Mathf.Infinity;
     private bool isProvoked = false;
+    public GameObject fireball;
+    private float fireballSpeed = 5f;
+    private float yOffset = -0.1f;
+    private Animator animator;
+
+
     private AudioSource audioSource;
     public AudioClip damagedClip;
+    public AudioClip fireballClip;
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
         target = FindObjectOfType<PlayerControls>().transform;
@@ -32,7 +40,6 @@ public class SkullScript : MonoBehaviour
 
         if (isProvoked)
         {
-            Debug.Log("Is Provoked");
             EngageTarget();
         }
         else if (distanceToTarget <= chaseRange)
@@ -55,30 +62,36 @@ public class SkullScript : MonoBehaviour
 
     private void ChaseTarget()
     {
-        Debug.Log("Is Chasing Target");
-        GetComponent<Animator>().SetBool("attack", false);
         navMeshAgent.SetDestination(target.position);
     }
 
     private void AttackTarget()
     {
-        GetComponent<Animator>().SetBool("attack", true);
+        if (!animator.GetBool("shoot"))
+        {
+            animator.SetBool("shoot", true);
+        }
     }
 
-    public void AttackHitEvent()//have animation call this method
+    public void ShootFireEvent()//have animation call this method
     {
-        if (target == null)
-        {
-            return;
-        }
-        target.GetComponent<PlayerControls>().TakeDamage(damage);
+        Debug.Log("Shoot Event");
+        audioSource.PlayOneShot(fireballClip);
+        GameObject shootingBullet = Instantiate(fireball);
+        shootingBullet.transform.position = new Vector3(transform.position.x, transform.position.y + yOffset, transform.position.z);
+        shootingBullet.GetComponent<Rigidbody>().velocity = transform.forward.normalized * fireballSpeed;
+    }
+    
+    public void ShootRecoveryEvent()//have animation call this method
+    {
+        animator.SetBool("shoot", false);
     }
 
     public void takeDamage(int damage)
     {
         isProvoked = true;
         health -= damage;
-        GetComponent<Animator>().SetTrigger("damaged");
+        StartCoroutine(FlashRed());
 
         if (health <= 0)
         {
@@ -89,5 +102,12 @@ public class SkullScript : MonoBehaviour
         {
             audioSource.PlayOneShot(damagedClip);
         }
+    }
+
+    IEnumerator FlashRed()
+    {
+        GetComponentInChildren<SpriteRenderer>().color = Color.red;
+        yield return new WaitForSeconds(.1f);
+        GetComponentInChildren<SpriteRenderer>().color = Color.white;
     }
 }
