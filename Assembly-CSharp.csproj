@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9FBB98EE-394E-0591-761E-6569147AD45C}</ProjectGuid>
+    <ProjectGuid>{BC5DF9DE-1506-7FF8-1B64-52043C2770A3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -57,18 +57,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
-    <Compile Include="Assets\Scripts\Weapons\WeaponSwitching.cs" />
+    <Compile Include="Assets\Scripts\WeaponS\WeaponSwitching.cs" />
     <Compile Include="Assets\Scripts\LaunchPad.cs" />
     <Compile Include="Assets\Scripts\TimerDestroy.cs" />
     <Compile Include="Assets\Scripts\DoorProximityScript.cs" />
-    <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\ButtonController.cs" />
+    <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\Billboard.cs" />
     <Compile Include="Assets\Scripts\Enemy\SkullScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
     <Compile Include="Assets\Scripts\DamageEffect.cs" />
     <Compile Include="Assets\Scripts\Pickups\AmmoPickup.cs" />
-    <Compile Include="Assets\Scripts\Weapons\GrapplegunScript.cs" />
+    <Compile Include="Assets\Scripts\WeaponS\GrapplegunScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\TurretEnemyController.cs" />
     <Compile Include="Assets\Scripts\Pickups\ShotgunAmmoPickup.cs" />
     <Compile Include="Assets\Scripts\DeathHandler.cs" />
@@ -80,9 +80,9 @@
     <Compile Include="Assets\Scripts\Menus\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Pickups\GrapplegunPickup.cs" />
     <Compile Include="Assets\Scripts\GrapplePointScript.cs" />
-    <Compile Include="Assets\Scripts\Weapons\ShotgunScript.cs" />
+    <Compile Include="Assets\Scripts\WeaponS\ShotgunScript.cs" />
     <Compile Include="Assets\Scripts\Pickups\GrapplegunAmmoScript.cs" />
-    <Compile Include="Assets\Scripts\Weapons\HandgunScript.cs" />
+    <Compile Include="Assets\Scripts\WeaponS\HandgunScript.cs" />
     <Compile Include="Assets\Scripts\Pickups\HealthPickup.cs" />
     <Compile Include="Assets\Scripts\TurretBullet.cs" />
     <Compile Include="Assets\Scripts\PlayerPrefsConstants.cs" />
@@ -726,18 +726,6 @@
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder">
-      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
