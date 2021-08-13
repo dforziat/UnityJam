@@ -6,7 +6,7 @@ public class DoorProximityScript : MonoBehaviour
 {
     // Start is called before the first frame update
     private float distToPlayer = Mathf.Infinity;
-    private float activationDistance = 2f;
+    private float activationDistance = 2.5f;
     public bool isUnlocked = true;
     private Transform playerTransform;
     private Animator animator;
