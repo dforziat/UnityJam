@@ -8,7 +8,7 @@ public class HandgunScript : MonoBehaviour
     // Start is called before the first frame update
     private bool canShoot = true;
     int damage = 1;
-    float rateOfFire = .5f;
+    float rateOfFire = .4f;
     Animator gunAnimator;
     PlayerControls playerControls;
     AudioSource audioSource;

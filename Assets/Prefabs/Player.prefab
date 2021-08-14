@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8792288934121060228}
   - component: {fileID: 1303419519}
   - component: {fileID: 1303419515}
+  - component: {fileID: 1400614379}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -51,7 +52,7 @@ CharacterController:
   m_Height: 1
   m_Radius: 0.4
   m_SlopeLimit: 45
-  m_StepOffset: 0.7
+  m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -78,6 +79,7 @@ MonoBehaviour:
   hpText: {fileID: 0}
   handgunAmmoText: {fileID: 0}
   shotgunAmmoText: {fileID: 0}
+  grapplegunAmmoText: {fileID: 0}
   handgunAmmo: 20
   shotgunAmmo: 10
   grapplegunAmmo: 20
@@ -214,6 +216,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageEffect: {fileID: 0}
   effectDuration: 0.3
+--- !u!95 &1400614379
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5028391134535262241}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2e0dc0521131a154d8cdc8c4f7b711ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5028391134863407062
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +290,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
