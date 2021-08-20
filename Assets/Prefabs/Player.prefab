@@ -51,8 +51,8 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1
   m_Radius: 0.35
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_SlopeLimit: 90
+  m_StepOffset: 0.2
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -291,7 +291,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 1000
+  far clip plane: 15
   field of view: 60
   orthographic: 0
   orthographic size: 5
