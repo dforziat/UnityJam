@@ -10,7 +10,7 @@ public class PlayerControls : MonoBehaviour
     float grappleSpeed = 100;
 
     [Header("Gravity")]
-    float grav = -8f;
+    float grav = -10f;
     [SerializeField] Transform groundCheck;
     float groundDistance = 0.4f;
     [SerializeField] LayerMask groundMask;
