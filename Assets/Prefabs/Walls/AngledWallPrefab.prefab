@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9198759048145065336}
   - component: {fileID: 9002910783333094273}
   - component: {fileID: 5367700704426678395}
+  - component: {fileID: 6317032757681556812}
   m_Layer: 0
   m_Name: AngledWallPrefab
   m_TagString: Untagged
@@ -96,3 +97,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 29ef569a055ac8c458390bd20d39a4c7, type: 2}
+--- !u!208 &6317032757681556812
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2177637633026938084}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.50200003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.5, y: 0.5, z: -0.50200003}
+  m_TimeToStationary: 0.5
