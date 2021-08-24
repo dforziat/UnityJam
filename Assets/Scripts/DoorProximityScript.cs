@@ -8,9 +8,11 @@ public class DoorProximityScript : MonoBehaviour
     private float distToPlayer = Mathf.Infinity;
     private float activationDistance = 2.5f;
     public bool isUnlocked = true;
+    private bool isNearEnemy = false;
     private Transform playerTransform;
     private Animator animator;
-
+    private float dooCloseTime = 1f;
+    private bool autoDoorShut = false;
     public AudioClip doorOpenClip;
     private AudioSource audioSource;
     void Start()
@@ -24,15 +26,26 @@ public class DoorProximityScript : MonoBehaviour
     void Update()
     {
         distToPlayer = Vector3.Distance(playerTransform.position, transform.position);
-
-        if(distToPlayer <= activationDistance && isUnlocked)
+        if (isUnlocked)
         {
-           
-            animator.SetBool("open", true);          
+            if (distToPlayer <= activationDistance || isNearEnemy)
+            {
+                animator.SetBool("open", true);
+            }
+            else 
+            {
+                animator.SetBool("open", false);
+                dooCloseTime = 1f;
+            }
         }
-        else
+
+        if (autoDoorShut)
         {
-            animator.SetBool("open", false);
+            dooCloseTime -= Time.deltaTime;
+            if(dooCloseTime <= 0)
+            {
+                isNearEnemy = false;
+            }
         }
 
     }
@@ -50,4 +63,23 @@ public class DoorProximityScript : MonoBehaviour
         audioSource.pitch = -1f;
         audioSource.PlayOneShot(doorOpenClip);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.tag + ": entered door collider");
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            isNearEnemy = true;
+            autoDoorShut = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            isNearEnemy = false;
+        }
+    } 
+
 }

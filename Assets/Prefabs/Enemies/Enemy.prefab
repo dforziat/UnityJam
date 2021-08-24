@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 1888440970}
   - component: {fileID: 337707699}
   - component: {fileID: 4237846491791443191}
+  - component: {fileID: 1554892038}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -187,6 +188,7 @@ MonoBehaviour:
   damage: 10
   explosion: {fileID: 8579213436375878188, guid: 5532d3ecca7a0724b8673395b091778c, type: 3}
   damagedClip: {fileID: 8300000, guid: c774c6fed800e8c44ba88d9a51a31b87, type: 3}
+  EnemyList: []
 --- !u!212 &658897097454416189
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -389,3 +391,19 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1554892038
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658897097454416179}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
