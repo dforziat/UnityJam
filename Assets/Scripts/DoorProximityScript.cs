@@ -11,7 +11,7 @@ public class DoorProximityScript : MonoBehaviour
     private bool isNearEnemy = false;
     private Transform playerTransform;
     private Animator animator;
-    private float dooCloseTime = 1f;
+    private float doorCloseTime = 1f;
     private bool autoDoorShut = false;
     public AudioClip doorOpenClip;
     private AudioSource audioSource;
@@ -35,14 +35,14 @@ public class DoorProximityScript : MonoBehaviour
             else 
             {
                 animator.SetBool("open", false);
-                dooCloseTime = 1f;
+                doorCloseTime = 1f;
             }
         }
 
         if (autoDoorShut)
         {
-            dooCloseTime -= Time.deltaTime;
-            if(dooCloseTime <= 0)
+            doorCloseTime -= Time.deltaTime;
+            if(doorCloseTime <= 0)
             {
                 isNearEnemy = false;
             }
