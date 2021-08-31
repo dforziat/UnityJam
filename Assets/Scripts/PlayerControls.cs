@@ -45,7 +45,6 @@ public class PlayerControls : MonoBehaviour
     public Vector3 dir;
 
     public GameObject hitEffect;
-    public Animator gunAnimator;
     public Image damageEffect;
 
     [Header("Audio")]
