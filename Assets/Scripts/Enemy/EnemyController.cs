@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : EnemyParent
 {
-    public int health = 3;
-    public int damage = 10;
-    public GameObject explosion;
-    private float verticalOffset = 0;
+    public GameObject childExplosion;
     private Transform target;
     private NavMeshAgent navMeshAgent;
+    private AudioSource childAudioSource;
+    private SpriteRenderer childSpriteRenderer;
     private float chaseRange = 5;
     private float distanceToTarget = Mathf.Infinity;
-    private bool isProvoked = false;
-    private AudioSource audioSource;
-    public AudioClip damagedClip;
     public GameObject[] EnemyList;
     // Start is called before the first frame update
     void Start()
     {
+        explosion = childExplosion;
+        childAudioSource = GetComponent<AudioSource>();
+        audioSource = childAudioSource;
+        childSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer = childSpriteRenderer;
         navMeshAgent = GetComponent<NavMeshAgent>();
-        audioSource = GetComponent<AudioSource>();
         target = FindObjectOfType<PlayerControls>().transform;
         EnemyList = GameObject.FindGameObjectsWithTag("Enemy");
     }
@@ -73,22 +73,6 @@ public class EnemyController : MonoBehaviour
         target.GetComponent<PlayerControls>().TakeDamage(damage);
     }
 
-    public void takeDamage(int damage)
-    {
-        isProvoked = true;
-        BroadcastAggroMessageToOtherEnemies();
-        health -= damage;
-        GetComponent<Animator>().SetTrigger("damaged");
-        
-        if (health <= 0) {
-            Instantiate(explosion, new Vector3(transform.position.x,transform.position.y - verticalOffset,transform.position.z), transform.rotation);
-            Destroy(gameObject);
-        }
-        if(audioSource.enabled == true)
-        {
-            audioSource.PlayOneShot(damagedClip);
-        }
-    }
 
     public bool canSeePlayer()
     {
