@@ -176,10 +176,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  bullet: {fileID: 8425132720108540564, guid: d115c36b981a46f459bbf2393eab07c2, type: 3}
+  damage: 10
+  isProvoked: 0
   explosion: {fileID: 8579213436375878188, guid: 4bdc1c35b7082374ebbba56e08168e2f, type: 3}
-  alertClip: {fileID: 8300000, guid: fc02b6397cf66544086bc866c57dcf05, type: 3}
+  droprate: 20
+  ammoPickup: {fileID: 7419672412132425511, guid: a9f5cf08a171a3f4fb157ed9978dbcd6, type: 3}
+  healthPickup: {fileID: 8827575525327108626, guid: 94d84c7b07e780345a7c615a94a919f6, type: 3}
+  spriteRenderer: {fileID: 0}
+  audioSource: {fileID: 0}
   damagedClip: {fileID: 8300000, guid: 877ca48f4d1b3734b90a0c7f4e5dcf12, type: 3}
+  bullet: {fileID: 8425132720108540564, guid: d115c36b981a46f459bbf2393eab07c2, type: 3}
+  alertClip: {fileID: 8300000, guid: fc02b6397cf66544086bc866c57dcf05, type: 3}
   shootClip: {fileID: 8300000, guid: dbc013a67c9d20c4fb98327fb3b3a3ed, type: 3}
 --- !u!82 &1609564650991879412
 AudioSource:

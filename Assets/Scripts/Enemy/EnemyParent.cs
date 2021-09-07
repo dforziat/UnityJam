@@ -50,10 +50,12 @@ public class EnemyParent : MonoBehaviour
 
     IEnumerator FlashRed()
     {
-        Debug.Log("Flash Red");
+        
         spriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(.1f);
+        Debug.Log(spriteRenderer.color.ToString());
+        yield return new WaitForSeconds(.15f);
         spriteRenderer.color = Color.white;
+        Debug.Log(spriteRenderer.color.ToString());
     }
 
     public void dropItem()

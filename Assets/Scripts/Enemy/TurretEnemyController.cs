@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretEnemyController : MonoBehaviour
+public class TurretEnemyController : EnemyParent
 {
-    public int health = 3;
     private Transform target;
     private bool isDetected = false;
     private float distanceToTarget = Mathf.Infinity;
@@ -14,11 +13,9 @@ public class TurretEnemyController : MonoBehaviour
     private float yOffset = .2f;
 
     public GameObject bullet;
-    public GameObject explosion;
     public AudioClip alertClip;
-    public AudioClip damagedClip;
     public AudioClip shootClip;
-    private AudioSource audioSource;
+    private AudioSource childAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +23,9 @@ public class TurretEnemyController : MonoBehaviour
         GetComponent<CapsuleCollider>().enabled = false;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        childAudioSource = GetComponent<AudioSource>();
+        audioSource = childAudioSource;
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -50,21 +49,6 @@ public class TurretEnemyController : MonoBehaviour
             isDetected = false;
         }
     }
-
-    public void takeDamage(int damage)
-    {
-        health -= damage;
-        if (audioSource.enabled == true)
-        {
-            audioSource.PlayOneShot(damagedClip);
-        }
-        if (health <= 0)
-        {
-            Instantiate(explosion, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
-            Destroy(gameObject);
-        }
-    }
-
 
 
     public void fireBulletEvent()//This method is called by an Animation event

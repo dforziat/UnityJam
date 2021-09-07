@@ -4,33 +4,35 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class SkullScript : MonoBehaviour
+public class SkullScript : EnemyParent
 {
-    public int health = 3;
-    public int damage = 10;
-    public GameObject explosion;
+    public GameObject childExplosion;
     private float verticalOffset = 0;
     private Transform target;
     private NavMeshAgent navMeshAgent;
     private float chaseRange = 5;
     private float distanceToTarget = Mathf.Infinity;
-    private bool isProvoked = false;
     public GameObject fireball;
     private float fireballSpeed = 5f;
     private float yOffset = -0.1f;
     private Animator animator;
 
 
-    private AudioSource audioSource;
-    public AudioClip damagedClip;
+    private AudioSource childAudioSource;
+    public AudioClip childDamagedClip;
     public AudioClip fireballClip;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
-        audioSource = GetComponent<AudioSource>();
+        childAudioSource = GetComponent<AudioSource>();
         target = FindObjectOfType<PlayerControls>().transform;
+        //set parent vars
+        explosion = childExplosion;
+        audioSource = childAudioSource;
+        damagedClip = childDamagedClip;
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -76,7 +78,7 @@ public class SkullScript : MonoBehaviour
     public void ShootFireEvent()//have animation call this method
     {
         Debug.Log("Shoot Event");
-        audioSource.PlayOneShot(fireballClip);
+        childAudioSource.PlayOneShot(fireballClip);
         GameObject shootingBullet = Instantiate(fireball);
         shootingBullet.transform.position = new Vector3(transform.position.x, transform.position.y + yOffset, transform.position.z);
         shootingBullet.GetComponent<Rigidbody>().velocity = transform.forward.normalized * fireballSpeed;
@@ -87,27 +89,4 @@ public class SkullScript : MonoBehaviour
         animator.SetBool("shoot", false);
     }
 
-    public void takeDamage(int damage)
-    {
-        isProvoked = true;
-        health -= damage;
-        StartCoroutine(FlashRed());
-
-        if (health <= 0)
-        {
-            Instantiate(explosion, new Vector3(transform.position.x, transform.position.y - verticalOffset, transform.position.z), transform.rotation);
-            Destroy(gameObject);
-        }
-        if (audioSource.enabled == true)
-        {
-            audioSource.PlayOneShot(damagedClip);
-        }
-    }
-
-    IEnumerator FlashRed()
-    {
-        GetComponentInChildren<SpriteRenderer>().color = Color.red;
-        yield return new WaitForSeconds(.1f);
-        GetComponentInChildren<SpriteRenderer>().color = Color.white;
-    }
 }

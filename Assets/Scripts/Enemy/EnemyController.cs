@@ -5,25 +5,23 @@ using UnityEngine.AI;
 
 public class EnemyController : EnemyParent
 {
-    public GameObject childExplosion;
     private Transform target;
     private NavMeshAgent navMeshAgent;
     private AudioSource childAudioSource;
-    private SpriteRenderer childSpriteRenderer;
     private float chaseRange = 5;
     private float distanceToTarget = Mathf.Infinity;
     public GameObject[] EnemyList;
     // Start is called before the first frame update
     void Start()
     {
-        explosion = childExplosion;
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         childAudioSource = GetComponent<AudioSource>();
-        audioSource = childAudioSource;
-        childSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        spriteRenderer = childSpriteRenderer;
         navMeshAgent = GetComponent<NavMeshAgent>();
         target = FindObjectOfType<PlayerControls>().transform;
         EnemyList = GameObject.FindGameObjectsWithTag("Enemy");
+        //set parent vars
+        audioSource = childAudioSource;
+        
     }
 
     // Update is called once per frame
@@ -35,7 +33,7 @@ public class EnemyController : EnemyParent
         {
             EngageTarget();
         }
-        else if(distanceToTarget <= chaseRange || canSeePlayer())
+        else if(canSeePlayer())
         {
             isProvoked = true;
         }
