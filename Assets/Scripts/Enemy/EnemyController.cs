@@ -11,17 +11,21 @@ public class EnemyController : EnemyParent
     private float chaseRange = 5;
     private float distanceToTarget = Mathf.Infinity;
     public GameObject[] EnemyList;
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         childAudioSource = GetComponent<AudioSource>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         target = FindObjectOfType<PlayerControls>().transform;
         EnemyList = GameObject.FindGameObjectsWithTag("Enemy");
+
         //set parent vars
         audioSource = childAudioSource;
-        
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -53,13 +57,13 @@ public class EnemyController : EnemyParent
 
     private void ChaseTarget()
     {
-        GetComponent<Animator>().SetBool("attack", false);
+        animator.SetBool("attack", false);
         navMeshAgent.SetDestination(target.position);
     }
 
     private void AttackTarget()
     {
-        GetComponent<Animator>().SetBool("attack", true);
+        animator.SetBool("attack", true);
     }
 
     public void AttackHitEvent()//have animation call this method
