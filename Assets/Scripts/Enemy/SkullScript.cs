@@ -7,7 +7,6 @@ using UnityEngine.AI;
 public class SkullScript : EnemyParent
 {
     public GameObject childExplosion;
-    private float verticalOffset = 0;
     private Transform target;
     private NavMeshAgent navMeshAgent;
     private float chaseRange = 5;
