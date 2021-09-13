@@ -164,11 +164,25 @@ public class PlayerControls : MonoBehaviour
         audioSource.PlayOneShot(healthPickupClip);
     }
 
-    public void RecieveHandgunAmmo(int ammoAmount)
+    public void RecieveAmmo()
     {
         audioSource.PlayOneShot(ammoPickupClip);
-        handgunAmmo += ammoAmount;
-        handgunAmmoText.text = handgunAmmo.ToString("D3");
+        handgunAmmo += 10;
+        shotgunAmmo += 5;
+        grapplegunAmmo += 10;
+
+        if (handgunAmmoText.enabled)
+        {
+            handgunAmmoText.text = handgunAmmo.ToString("D3");
+        }
+        if (shotgunAmmoText.enabled)
+        {
+            shotgunAmmoText.text = shotgunAmmo.ToString("D3");
+        }
+        if (grapplegunAmmoText.enabled)
+        {
+            grapplegunAmmoText.text = grapplegunAmmo.ToString("D3");
+        }
     }
 
     public void RecieveShotgunAmmo(int ammoAmount)

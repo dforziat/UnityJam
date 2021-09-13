@@ -12,6 +12,10 @@ public class EnemyController : EnemyParent
     private float distanceToTarget = Mathf.Infinity;
     public GameObject[] EnemyList;
     private Animator animator;
+    private float cVerticalOffset = 0f;
+
+    public Sprite damagedSprite;
+    public Sprite idleSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +29,6 @@ public class EnemyController : EnemyParent
         //set parent vars
         audioSource = childAudioSource;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-
     }
 
     // Update is called once per frame
@@ -75,6 +78,30 @@ public class EnemyController : EnemyParent
         target.GetComponent<PlayerControls>().TakeDamage(damage);
     }
 
+    new public void takeDamage(int damage)
+    {
+        isProvoked = true;
+        health -= damage;
+        StartCoroutine(FlashRed());
+
+        if (health <= 0)
+        {
+            Instantiate(explosion, new Vector3(transform.position.x, transform.position.y - cVerticalOffset, transform.position.z), transform.rotation);
+            dropItem();
+            Destroy(gameObject);
+        }
+        if (audioSource.enabled == true)
+        {
+            audioSource.PlayOneShot(damagedClip);
+        }
+    }
+
+    private IEnumerator FlashRed()
+    {
+        spriteRenderer.sprite = damagedSprite;
+        yield return new WaitForSeconds(.15f);
+        spriteRenderer.sprite = idleSprite;
+    }
 
     public bool canSeePlayer()
     {

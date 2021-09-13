@@ -27,7 +27,7 @@ public class EnemyParent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void takeDamage(int damage)
@@ -48,22 +48,20 @@ public class EnemyParent : MonoBehaviour
         }
     }
 
-    IEnumerator FlashRed()
+    private IEnumerator FlashRed()
     {
-        
         spriteRenderer.color = Color.red;
-        Debug.Log(spriteRenderer.color.ToString());
         yield return new WaitForSeconds(.15f);
         spriteRenderer.color = Color.white;
-        Debug.Log(spriteRenderer.color.ToString());
     }
 
     public void dropItem()
     {
         int dropRandomNum = Random.Range(0, 100);
-        if(dropRandomNum <= droprate)
+        if (dropRandomNum <= droprate)
         {
-            int ammoOrHealthRandomNum = Random.Range(1, 2);
+            int ammoOrHealthRandomNum = Random.Range(1, 3);
+            Debug.Log("Health or Ammo num:" + ammoOrHealthRandomNum);
             switch (ammoOrHealthRandomNum)
             {
                 case 1:
