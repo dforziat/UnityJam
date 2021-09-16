@@ -37,7 +37,7 @@ public class PlayerControls : MonoBehaviour
     public int shotgunAmmo = 10;
     public int grapplegunAmmo = 20;
 
-    public int curLevel = 1;
+    public int curLevel;
 
     Vector3 vel;
     [SerializeField] CharacterController controller;
@@ -68,12 +68,11 @@ public class PlayerControls : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         hpText.text = curHp.ToString("D3");
-
         
         lookSensitivity = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
-        
+
         //failsafe
-        if(lookSensitivity <= 0f)
+        if (lookSensitivity <= 0f)
         {
             lookSensitivity = 1f;
             PlayerPrefs.SetFloat(PlayerPrefsConstants.MOUSE_SENS, 1);

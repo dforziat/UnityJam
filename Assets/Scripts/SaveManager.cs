@@ -46,7 +46,6 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_HP, playerControls.curHp);
 
         //Set curLevel
-        //TODO: Change LevelComplete Script to LevelManager
         PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, playerControls.curLevel);
 
         //Set Weapons
