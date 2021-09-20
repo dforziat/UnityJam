@@ -43,7 +43,7 @@ public class SkullScript : EnemyParent
         {
             EngageTarget();
         }
-        else if (distanceToTarget <= chaseRange)
+        else if (canSeePlayer())
         {
             isProvoked = true;
         }
@@ -88,4 +88,16 @@ public class SkullScript : EnemyParent
         animator.SetBool("shoot", false);
     }
 
+    public bool canSeePlayer()
+    {
+        NavMeshHit navMeshHit;
+        if (!navMeshAgent.Raycast(target.position, out navMeshHit))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
