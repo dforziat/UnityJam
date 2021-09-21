@@ -19,6 +19,8 @@ public class MovingPlatform : MonoBehaviour
     public bool automatic;
     public bool isReversable;
 
+    public bool isActivated; 
+
     void Start()
     {
         if(points.Length > 0)
@@ -30,6 +32,11 @@ public class MovingPlatform : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!isActivated)
+        {
+            return;
+        }
+
         if(this.transform.localPosition != current_target)
         {
             MovePlatform();
@@ -81,8 +88,16 @@ public class MovingPlatform : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!isActivated)
+        {
+            isActivated = true;
+        }
+
         if (other.gameObject == Player)
+        {
             Player.transform.parent = transform;
+        }
+            
     }
 
     private void OnTriggerExit(Collider other)
