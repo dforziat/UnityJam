@@ -27,6 +27,8 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene("Level1");
         PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, 1);
         //Add in "Default Values" for player prefs, to esstentially delete saved data and start fresh
+        PlayerPrefs.SetInt(PlayerPrefsConstants.GRAPPLEGUN, 0);
+        PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN, 0);
     }
 
     public void ContinueButton()

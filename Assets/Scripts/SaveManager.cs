@@ -25,7 +25,7 @@ public class SaveManager : MonoBehaviour
     void Update()
     {
         //Press H to reset player prefs to a default
-        DebugPref();
+        //DebugPref();
     }
 
     public void SavePrefs()
@@ -36,14 +36,14 @@ public class SaveManager : MonoBehaviour
         weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
 
         //HandgunAmmo
-        PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, playerControls.handgunAmmo);
+        //PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, playerControls.handgunAmmo);
 
         //ShotgunAmmo;
-        PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN_AMMO, playerControls.shotgunAmmo);
+       // PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN_AMMO, playerControls.shotgunAmmo);
         
 
         //Current HP
-        PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_HP, playerControls.curHp);
+        //PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_HP, playerControls.curHp);
 
         //Set curLevel
         PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, playerControls.curLevel);
@@ -63,9 +63,12 @@ public class SaveManager : MonoBehaviour
 
     public void LoadPref()
     {
-        playerControls.handgunAmmo = PlayerPrefs.GetInt(PlayerPrefsConstants.HANDGUN_AMMO);
-        playerControls.shotgunAmmo = PlayerPrefs.GetInt(PlayerPrefsConstants.SHOTGUN_AMMO);
-        playerControls.curHp = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_HP);
+        //Level Start Default Ammo
+        playerControls.handgunAmmo = 20;
+        playerControls.shotgunAmmo = 10;
+        playerControls.curHp = 100;
+
+        
         playerControls.curLevel = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL);
 
         if (PlayerPrefs.GetInt(PlayerPrefsConstants.SHOTGUN) == 1)
