@@ -33,7 +33,7 @@ public class PlayerControls : MonoBehaviour
     public Text grapplegunAmmoText;
 
     [Header("Ammo Count")]
-    public int handgunAmmo = 20;
+    public int handgunAmmo = 25;
     public int shotgunAmmo = 10;
     public int grapplegunAmmo = 20;
 
@@ -60,15 +60,13 @@ public class PlayerControls : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         isDead = false;
-
-
     }
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
 
         hpText.text = curHp.ToString("D3");
-        
+
         lookSensitivity = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
 
         //failsafe
@@ -77,7 +75,7 @@ public class PlayerControls : MonoBehaviour
             lookSensitivity = 1f;
             PlayerPrefs.SetFloat(PlayerPrefsConstants.MOUSE_SENS, 1);
         }
-       
+
     }
 
     void Update()
@@ -170,18 +168,7 @@ public class PlayerControls : MonoBehaviour
         shotgunAmmo += 5;
         grapplegunAmmo += 10;
 
-        if (handgunAmmoText.enabled)
-        {
-            handgunAmmoText.text = handgunAmmo.ToString("D3");
-        }
-        if (shotgunAmmoText.enabled)
-        {
-            shotgunAmmoText.text = shotgunAmmo.ToString("D3");
-        }
-        if (grapplegunAmmoText.enabled)
-        {
-            grapplegunAmmoText.text = grapplegunAmmo.ToString("D3");
-        }
+        updateGUIAmmo();
     }
 
     public void RecieveShotgunAmmo(int ammoAmount)
@@ -212,4 +199,19 @@ public class PlayerControls : MonoBehaviour
         
     }
 
+    public void updateGUIAmmo()
+    {
+        if (handgunAmmoText.enabled)
+        {
+            handgunAmmoText.text = handgunAmmo.ToString("D3");
+        }
+        if (shotgunAmmoText.enabled)
+        {
+            shotgunAmmoText.text = shotgunAmmo.ToString("D3");
+        }
+        if (grapplegunAmmoText.enabled)
+        {
+            grapplegunAmmoText.text = grapplegunAmmo.ToString("D3");
+        }
+    }
 }
