@@ -7,9 +7,10 @@ public class TurretEnemyController : EnemyParent
     private Transform target;
     private bool isDetected = false;
     private float distanceToTarget = Mathf.Infinity;
-    private float detectRange = 5f;
+    private float detectRange = 6f;
+    //Rate of fire is due to animation.
     private Animator animator;
-    private float bulletSpeed = 5;
+    private float bulletSpeed = 7f;
     private float yOffset = .2f;
 
     public GameObject bullet;

@@ -9,9 +9,10 @@ public class EnemyParent : MonoBehaviour
     public bool isProvoked = false;
     private float verticalOffset = 0;
     public GameObject explosion;
-    public int droprate = 20; //20% drop rate of pickup
+    public int droprate = 25; //20% drop rate of pickup
     public GameObject ammoPickup;
     public GameObject healthPickup;
+    private int AmmoPityCount = 10;
 
     public SpriteRenderer spriteRenderer;
     public AudioSource audioSource;
@@ -57,6 +58,14 @@ public class EnemyParent : MonoBehaviour
 
     public void dropItem()
     {
+        //Drop Ammo always if player is out of handgun ammo
+        PlayerControls playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
+        if(playerControls != null && playerControls.handgunAmmo <= AmmoPityCount)
+        {
+            Instantiate(ammoPickup, new Vector3(transform.position.x, transform.position.y - verticalOffset, transform.position.z), transform.rotation);
+            return;
+        }
+
         int dropRandomNum = Random.Range(0, 100);
         if (dropRandomNum <= droprate)
         {

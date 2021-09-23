@@ -164,8 +164,8 @@ public class PlayerControls : MonoBehaviour
     public void RecieveAmmo()
     {
         audioSource.PlayOneShot(ammoPickupClip);
-        handgunAmmo += 10;
-        shotgunAmmo += 5;
+        handgunAmmo += 15;
+        shotgunAmmo += 10;
         grapplegunAmmo += 10;
 
         updateGUIAmmo();
