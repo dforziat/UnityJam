@@ -25,7 +25,7 @@ public class SaveManager : MonoBehaviour
     void Update()
     {
         //Press H to reset player prefs to a default
-        //DebugPref();
+        DebugPref();
     }
 
     public void SavePrefs()
