@@ -80,7 +80,8 @@ public class SkullScript : EnemyParent
         childAudioSource.PlayOneShot(fireballClip);
         GameObject shootingBullet = Instantiate(fireball);
         shootingBullet.transform.position = new Vector3(transform.position.x, transform.position.y + yOffset, transform.position.z);
-        shootingBullet.GetComponent<Rigidbody>().velocity = transform.forward.normalized * fireballSpeed;
+        shootingBullet.transform.LookAt(target);
+        shootingBullet.GetComponent<Rigidbody>().velocity = shootingBullet.transform.forward.normalized * fireballSpeed;
     }
     
     public void ShootRecoveryEvent()//have animation call this method

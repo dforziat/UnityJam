@@ -64,9 +64,9 @@ public class SaveManager : MonoBehaviour
     public void LoadPref()
     {
         //Level Start Default Ammo
-        playerControls.handgunAmmo = 20;
-        playerControls.shotgunAmmo = 10;
-        playerControls.curHp = 100;
+        //playerControls.handgunAmmo = 20;
+       // playerControls.shotgunAmmo = 10;
+       // playerControls.curHp = 100;
 
         
         playerControls.curLevel = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL);

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 658897096893322987}
   - component: {fileID: 658897096893322984}
+  - component: {fileID: 9115551400754510912}
   m_Layer: 0
   m_Name: eye
   m_TagString: Untagged
@@ -82,6 +83,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9115551400754510912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658897096893322986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa36158065c54947ab474fb262bd289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &658897097454416179
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,13 +104,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 658897097454416177}
-  - component: {fileID: 658897097454416176}
   - component: {fileID: 658897097454416188}
   - component: {fileID: 3489449522323712671}
   - component: {fileID: 1888440970}
   - component: {fileID: 337707699}
-  - component: {fileID: 4237846491791443191}
-  - component: {fileID: 1554892038}
+  - component: {fileID: 8117355709562539763}
+  - component: {fileID: 9074741380837672632}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -120,18 +132,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &658897097454416176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658897097454416179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa36158065c54947ab474fb262bd289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &658897097454416188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -294,8 +294,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!136 &4237846491791443191
-CapsuleCollider:
+--- !u!65 &8117355709562539763
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -304,11 +304,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 1
-  m_Direction: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1554892038
+--- !u!54 &9074741380837672632
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

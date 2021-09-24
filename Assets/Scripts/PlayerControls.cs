@@ -22,7 +22,7 @@ public class PlayerControls : MonoBehaviour
     public float lookSensitivity;
 
     [Header("Stats")]
-    public int curHp = 90;
+    public int curHp = 100;
     public int maxHp = 100;
     static public bool isDead = false;
 

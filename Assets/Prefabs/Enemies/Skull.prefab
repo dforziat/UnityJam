@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 658897096893322987}
   - component: {fileID: 658897096893322984}
+  - component: {fileID: 383306650856500905}
   m_Layer: 0
   m_Name: SkullSprite
   m_TagString: Untagged
@@ -82,6 +83,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &383306650856500905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658897096893322986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa36158065c54947ab474fb262bd289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &658897097454416179
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,12 +104,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 658897097454416177}
-  - component: {fileID: 658897097454416176}
   - component: {fileID: 3489449522323712671}
   - component: {fileID: 1888440970}
   - component: {fileID: 337707699}
   - component: {fileID: 7896731592871480289}
   - component: {fileID: 8024361752969321283}
+  - component: {fileID: 2984224146374055157}
   m_Layer: 0
   m_Name: Skull
   m_TagString: Enemy
@@ -119,18 +132,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &658897097454416176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658897097454416179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa36158065c54947ab474fb262bd289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &3489449522323712671
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -141,7 +142,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 3.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -279,7 +280,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.3}
+  m_Size: {x: 0.5, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8024361752969321283
 MonoBehaviour:
@@ -307,3 +308,19 @@ MonoBehaviour:
   fireball: {fileID: 8425132720108540564, guid: 363cf020710ddad4981d38226f32a804, type: 3}
   childDamagedClip: {fileID: 8300000, guid: c774c6fed800e8c44ba88d9a51a31b87, type: 3}
   fireballClip: {fileID: 8300000, guid: c548f2a43364d4348b18a91784e4c3f1, type: 3}
+--- !u!54 &2984224146374055157
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658897097454416179}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
