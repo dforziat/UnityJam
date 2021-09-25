@@ -13,6 +13,7 @@ public class MovingPlatform : MonoBehaviour
     public float tolerance;
     public float speed;
     public float delay_time;
+    private float delay_start;
 
 
     public bool isReversable;
@@ -53,6 +54,7 @@ public class MovingPlatform : MonoBehaviour
         if(heading.magnitude < tolerance) 
         {
             this.transform.localPosition = current_target;
+            delay_start = Time.time;
         }
 
     }
@@ -60,7 +62,8 @@ public class MovingPlatform : MonoBehaviour
     void UpdateTarget()
     {
 
-        NextPlatform();
+        if(Time.time - delay_start > delay_time)
+            NextPlatform();
 
     }
 
