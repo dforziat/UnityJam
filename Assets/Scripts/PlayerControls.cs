@@ -31,11 +31,14 @@ public class PlayerControls : MonoBehaviour
     public Text handgunAmmoText;
     public Text shotgunAmmoText;
     public Text grapplegunAmmoText;
+    public Text machinegunAmmoText;
+
 
     [Header("Ammo Count")]
     public int handgunAmmo = 25;
     public int shotgunAmmo = 10;
     public int grapplegunAmmo = 20;
+    public int machinegunAmmo = 30;
 
     public int curLevel;
 
@@ -167,6 +170,7 @@ public class PlayerControls : MonoBehaviour
         handgunAmmo += 15;
         shotgunAmmo += 10;
         grapplegunAmmo += 10;
+        machinegunAmmo += 25;
 
         updateGUIAmmo();
     }
@@ -212,6 +216,10 @@ public class PlayerControls : MonoBehaviour
         if (grapplegunAmmoText.enabled)
         {
             grapplegunAmmoText.text = grapplegunAmmo.ToString("D3");
+        }
+        if (machinegunAmmoText.enabled)
+        {
+            machinegunAmmoText.text = machinegunAmmo.ToString("D3");
         }
     }
 }
