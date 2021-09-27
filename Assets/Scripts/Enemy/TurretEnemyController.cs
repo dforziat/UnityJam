@@ -57,6 +57,7 @@ public class TurretEnemyController : EnemyParent
         audioSource.PlayOneShot(shootClip);
         GameObject shootingBullet = Instantiate(bullet);
         shootingBullet.transform.position = new Vector3(transform.position.x, transform.position.y + yOffset, transform.position.z);
+        shootingBullet.transform.LookAt(target);
         shootingBullet.GetComponent<Rigidbody>().velocity = transform.forward.normalized * bulletSpeed;
     }
 }

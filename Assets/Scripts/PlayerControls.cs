@@ -49,6 +49,7 @@ public class PlayerControls : MonoBehaviour
 
     public GameObject hitEffect;
     public Image damageEffect;
+    public GameObject WeaponHolder;
 
     [Header("Audio")]
     private AudioSource audioSource;
@@ -104,6 +105,18 @@ public class PlayerControls : MonoBehaviour
         float z = Input.GetAxisRaw("Vertical");
         dir = (transform.right * x + transform.forward * z).normalized;
         controller.Move(dir * moveSpeed * Time.deltaTime);
+
+        if(WeaponHolder != null)
+        {
+            if (dir != null && dir != Vector3.zero)
+            {
+                WeaponHolder.GetComponent<Animator>().SetBool("sway", true);
+            }
+            else
+            {
+                WeaponHolder.GetComponent<Animator>().SetBool("sway", false);
+            }
+        }
     }
 
     void CamLook()
