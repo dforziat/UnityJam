@@ -60,7 +60,8 @@ public class EnemyParent : MonoBehaviour
     {
         //Drop Ammo always if player is out of handgun ammo
         PlayerControls playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
-        if(playerControls != null && playerControls.handgunAmmo <= AmmoPityCount)
+        GameObject droppedAmmoPickup = GameObject.FindGameObjectWithTag("AmmoPickup");
+        if (playerControls != null && playerControls.handgunAmmo <= AmmoPityCount && droppedAmmoPickup == null)
         {
             Instantiate(ammoPickup, new Vector3(transform.position.x, transform.position.y - verticalOffset, transform.position.z), transform.rotation);
             return;
