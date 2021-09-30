@@ -25,6 +25,10 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        if (PlayerControls.isDead || LevelManager.levelLoading)
+        {
+            return;
+        }
         TogglePause();
     }
 
