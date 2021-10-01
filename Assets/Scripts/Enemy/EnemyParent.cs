@@ -17,12 +17,14 @@ public class EnemyParent : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public AudioSource audioSource;
     public AudioClip damagedClip;
-
+    SpeedStack speedStack;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        
+
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class EnemyParent : MonoBehaviour
 
     public void takeDamage(int damage)
     {
+
         isProvoked = true;
         health -= damage;
         StartCoroutine(FlashRed());
@@ -41,6 +44,9 @@ public class EnemyParent : MonoBehaviour
         {
             Instantiate(explosion, new Vector3(transform.position.x, transform.position.y - verticalOffset, transform.position.z), transform.rotation);
             dropItem();
+            //Add speedStack
+            SpeedStack speedStack = GameObject.FindGameObjectWithTag("Player").GetComponent<SpeedStack>();
+            speedStack.stackAdd();
             Destroy(gameObject);
         }
         if (audioSource.enabled == true)

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerControls : MonoBehaviour
 {
     [Header("Movement")]
-    float moveSpeed = 5;
+    public static float moveSpeed = 5;
     float grappleSpeed = 100;
 
     [Header("Gravity")]
@@ -72,6 +72,8 @@ public class PlayerControls : MonoBehaviour
         hpText.text = curHp.ToString("D3");
 
         lookSensitivity = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
+
+        moveSpeed = 5;
 
         //failsafe
         if (lookSensitivity <= 0f)

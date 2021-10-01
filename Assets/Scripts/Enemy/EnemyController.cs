@@ -89,6 +89,10 @@ public class EnemyController : EnemyParent
             Instantiate(explosion, new Vector3(transform.position.x, transform.position.y - cVerticalOffset, transform.position.z), transform.rotation);
             dropItem();
             Destroy(gameObject);
+
+            //Add speedStack
+            SpeedStack speedStack = GameObject.FindGameObjectWithTag("Player").GetComponent<SpeedStack>();
+            speedStack.stackAdd();
         }
         if (audioSource.enabled == true)
         {
