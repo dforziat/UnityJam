@@ -15,6 +15,7 @@ public class HandgunScript : MonoBehaviour
 
     public AudioClip shootClip;
     public AudioClip weaponSwitchClip;
+    public AudioClip dryfireClip;
     public Text handgunAmmoText;
     public Image ammoIcon;
     public Camera cam;
@@ -55,9 +56,14 @@ public class HandgunScript : MonoBehaviour
 
     public void shootGun()
     {
+
         if (Input.GetMouseButtonDown(0) && canShoot && playerControls.handgunAmmo > 0 && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("Gun__Idle"))
         {
             StartCoroutine(Shoot());
+        }
+        if(Input.GetMouseButtonDown(0) && playerControls.handgunAmmo <= 0)
+        {
+            audioSource.PlayOneShot(dryfireClip);
         }
 
     }
