@@ -22,7 +22,7 @@ public class HealthPickup : MonoBehaviour
         if (other.tag == "Player")
         {
            PlayerControls playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
-            if (playerControls.curHp != playerControls.maxHp)
+            if (playerControls.curHp < playerControls.maxHp)
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>().Heal(healAmmount);
                 Destroy(gameObject);

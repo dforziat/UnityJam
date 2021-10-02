@@ -24,6 +24,7 @@ public class PlayerControls : MonoBehaviour
     [Header("Stats")]
     public int curHp = 100;
     public int maxHp = 100;
+    public int maxOverHeal = 150;
     static public bool isDead = false;
 
     [Header("GUI Ammo Text")]
@@ -155,6 +156,11 @@ public class PlayerControls : MonoBehaviour
         audioSource.PlayOneShot(injuredAudioClip);
         curHp -= damage;
         hpText.text = curHp.ToString("D3");
+
+        Color darkGrey = new Color32(50, 50, 50, 255);
+        if (curHp <= 100)
+            hpText.color = darkGrey;
+                ;
         if (curHp <= 0)
         {
             damageEffect.enabled = false;
@@ -176,6 +182,16 @@ public class PlayerControls : MonoBehaviour
             curHp += healAmount;
         }
         hpText.text = curHp.ToString("D3");
+        audioSource.PlayOneShot(healthPickupClip);
+    }
+
+    public void OverHeal()
+    {
+        //this is the shield pickup fully healing and more
+        Color steelBlue = new Color32(70, 130, 180, 255);
+        curHp = maxOverHeal;
+        hpText.text = curHp.ToString("D3");
+        hpText.color = steelBlue;
         audioSource.PlayOneShot(healthPickupClip);
     }
 
