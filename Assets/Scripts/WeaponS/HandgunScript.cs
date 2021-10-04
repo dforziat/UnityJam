@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class HandgunScript : MonoBehaviour
 {
     // Start is called before the first frame update
     private bool canShoot = true;
+    private bool onFirstLoad = true;
     int damage = 1;
     float rateOfFire = .2f;
     Animator gunAnimator;
@@ -29,8 +31,8 @@ public class HandgunScript : MonoBehaviour
     private void OnEnable()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.PlayOneShot(weaponSwitchClip);
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
+        checkWeaponSwitchAudio();
         handgunAmmoText.enabled = true;
         handgunAmmoText.text = playerControls.handgunAmmo.ToString("D3");
         ammoIcon.enabled = true;
@@ -94,5 +96,16 @@ public class HandgunScript : MonoBehaviour
         canShoot = true;
     }
 
+    private void checkWeaponSwitchAudio()
+    {
+        if (!onFirstLoad)
+        {
+            audioSource.PlayOneShot(weaponSwitchClip);
+        }
+        else
+        {
+            onFirstLoad = false;
+        }
+    }
 
 }

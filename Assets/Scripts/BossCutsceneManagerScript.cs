@@ -11,12 +11,15 @@ public class BossCutsceneManagerScript : MonoBehaviour
     public DoorProximityScript entranceDoor;
     public AudioSource musicManager;
     public Text bossName;
+    public Text bossSubName;
+
 
     void Start()
     {
         boss.SetActive(false);
         playerCanvas.enabled = false;
         bossName.enabled = false;
+        bossSubName.enabled = false;
     }
 
     // Update is called once per frame
@@ -36,7 +39,9 @@ public class BossCutsceneManagerScript : MonoBehaviour
     {
         boss.SetActive(true);
         bossName.enabled = true;
-        bossName.CrossFadeAlpha(0, 9, false);
+        bossName.CrossFadeAlpha(0, 8, false);
+        bossSubName.enabled = true;
+        bossSubName.CrossFadeAlpha(0, 8, false);
         musicManager.Play();
     }
 }

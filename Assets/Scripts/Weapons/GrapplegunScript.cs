@@ -7,6 +7,7 @@ public class GrapplegunScript : MonoBehaviour
 {
     // Start is called before the first frame update
     private bool canShoot = true;
+    private bool onFirstLoad = true;
     int damage = 2;
     float rateOfFire = .5f;
     float laserYPosOffset = .1f;
@@ -18,6 +19,7 @@ public class GrapplegunScript : MonoBehaviour
 
     public AudioClip shootClip;
     public AudioClip weaponSwitchClip;
+    public AudioClip dryfireClip;
     public Image ammoIcon;
     public Text grapplegunAmmoText;
     public Camera cam;
@@ -35,7 +37,7 @@ public class GrapplegunScript : MonoBehaviour
     {
         lineRenderer = GetComponent<LineRenderer>();
         audioSource = GetComponent<AudioSource>();
-        audioSource.PlayOneShot(weaponSwitchClip);
+        checkWeaponSwitchAudio();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
         grapplegunAmmoText.enabled = true;
         grapplegunAmmoText.text = playerControls.grapplegunAmmo.ToString("D3");
@@ -69,8 +71,11 @@ public class GrapplegunScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && canShoot && playerControls.grapplegunAmmo > 0 && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("GrapplegunIdle"))
         {
-            Debug.Log("Im Shooting");
             StartCoroutine(Shoot());
+        }
+        if (Input.GetMouseButtonDown(0) && playerControls.grapplegunAmmo <= 0)
+        {
+            audioSource.PlayOneShot(dryfireClip);
         }
 
     }
@@ -125,5 +130,17 @@ public class GrapplegunScript : MonoBehaviour
         gunAnimator.SetBool("shooting", false);
         lineRenderer.enabled = false;
         canShoot = true;
+    }
+
+    private void checkWeaponSwitchAudio()
+    {
+        if (!onFirstLoad)
+        {
+            audioSource.PlayOneShot(weaponSwitchClip);
+        }
+        else
+        {
+            onFirstLoad = false;
+        }
     }
 }

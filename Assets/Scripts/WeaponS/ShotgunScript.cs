@@ -7,6 +7,7 @@ public class ShotgunScript : MonoBehaviour
 {
     // Start is called before the first frame update
     private bool canShoot = true;
+    private bool onFirstLoad = true;
     int damage = 1;
     float rateOfFire = .5f;
     Animator gunAnimator;
@@ -17,6 +18,7 @@ public class ShotgunScript : MonoBehaviour
 
     public AudioClip shootClip;
     public AudioClip weaponSwitchClip;
+    public AudioClip dryfireClip;
     public Image ammoIcon;
     public Text shotgunAmmoText;
     public Camera cam;
@@ -31,7 +33,7 @@ public class ShotgunScript : MonoBehaviour
     private void OnEnable()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.PlayOneShot(weaponSwitchClip);
+        checkWeaponSwitchAudio();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
         shotgunAmmoText.enabled = true;
         shotgunAmmoText.text = playerControls.shotgunAmmo.ToString("D3");
@@ -60,8 +62,11 @@ public class ShotgunScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && canShoot && playerControls.shotgunAmmo > 0 && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("ShotgunIdle"))
         {
-            Debug.Log("Im Shooting");
             StartCoroutine(Shoot());
+        }
+        if (Input.GetMouseButtonDown(0) && playerControls.shotgunAmmo <= 0)
+        {
+            audioSource.PlayOneShot(dryfireClip);
         }
 
     }
@@ -96,5 +101,17 @@ public class ShotgunScript : MonoBehaviour
 
         yield return new WaitForSeconds(rateOfFire);
         canShoot = true;
+    }
+
+    private void checkWeaponSwitchAudio()
+    {
+        if (!onFirstLoad)
+        {
+            audioSource.PlayOneShot(weaponSwitchClip);
+        }
+        else
+        {
+            onFirstLoad = false;
+        }
     }
 }

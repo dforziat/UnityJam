@@ -59,6 +59,8 @@ public class PlayerControls : MonoBehaviour
     public AudioClip healthPickupClip;
     public AudioClip ammoPickupClip;
 
+    public bool gunSoundOnFirstLoad = true;
+
     void Awake()
     {
         //disable cursor
