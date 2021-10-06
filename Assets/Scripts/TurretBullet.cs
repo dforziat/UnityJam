@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurretBullet : MonoBehaviour
 {
     // Start is called before the first frame update
-    int damage = 10;
+    public int damage = 10;
 
     void Start()
     {

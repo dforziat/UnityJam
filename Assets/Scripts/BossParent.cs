@@ -19,4 +19,3 @@ public class BossParent : MonoBehaviour
 
 
 }
-}
