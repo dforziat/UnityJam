@@ -90,9 +90,9 @@ public class EnemyController : EnemyParent
             dropItem();
             Destroy(gameObject);
 
-            //Add speedStack
-            SpeedStack speedStack = GameObject.FindGameObjectWithTag("Player").GetComponent<SpeedStack>();
-            speedStack.stackAdd();
+            //Add speedStack - Functionaility
+            //SpeedStack speedStack = GameObject.FindGameObjectWithTag("Player").GetComponent<SpeedStack>();
+            //speedStack.stackAdd();
         }
         if (audioSource.enabled == true)
         {
