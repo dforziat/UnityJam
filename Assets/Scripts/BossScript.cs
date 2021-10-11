@@ -13,13 +13,17 @@ public class BossScript : MonoBehaviour
 
     private Transform target;
     private Animator animator;
-    private AudioSource audioSource;
+
+    //audio
+    public AudioSource secondaryAudioSource;
+    public AudioClip damagedClip;
+    public AudioClip chargeClip;
+    public AudioClip chargeShotClip;
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,8 +36,9 @@ public class BossScript : MonoBehaviour
     public void takeDamage(int damage)
     {
         health -= damage;
+        secondaryAudioSource.PlayOneShot(damagedClip);
         //play damage audio sfx. Maybe have 2 or 3 for diversity
-        if(health <= 0)
+        if (health <= 0)
         {
             //start death sequence, maybe even a cutscene. 
         }
@@ -46,9 +51,20 @@ public class BossScript : MonoBehaviour
         GameObject chargeShotR = Instantiate(chargeShotObject);
         chargeShotL.transform.position = new Vector3(leftCannon.position.x, leftCannon.position.y, leftCannon.position.z + 1);
         chargeShotR.transform.position = new Vector3(rightCannon.position.x, rightCannon.position.y, rightCannon.position.z + 1);
-        chargeShotL.transform.LookAt(new Vector3(target.position.x, target.position.y - 1f, target.position.z));
-        chargeShotR.transform.LookAt(new Vector3(target.position.x, target.position.y - 1f, target.position.z));
-        chargeShotL.GetComponent<Rigidbody>().velocity = transform.forward.normalized * chargeShotSpeed;
-        chargeShotR.GetComponent<Rigidbody>().velocity = transform.forward.normalized * chargeShotSpeed;
+
+        var Ldir = (target.position - chargeShotL.transform.position).normalized;
+        var Rdir = (target.position - chargeShotR.transform.position).normalized;
+
+        chargeShotR.GetComponent<Rigidbody>().velocity = Rdir * chargeShotSpeed;
+        chargeShotL.GetComponent<Rigidbody>().velocity = Ldir * chargeShotSpeed;
+
+        secondaryAudioSource.PlayOneShot(chargeShotClip);
+    }
+
+    public void chargeShotState()
+    {
+        //start animation
+        //beging playing chargeshot sfx
+        //call from idle state
     }
 }
