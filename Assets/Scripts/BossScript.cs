@@ -7,7 +7,7 @@ public class BossScript : MonoBehaviour
     public int health = 50;
     private int chargeShotDamage = 20;
     public GameObject chargeShotObject;
-    private float chargeShotSpeed = 8f;
+    private float chargeShotSpeed = 10f;
     public Transform leftCannon;
     public Transform rightCannon;
 
@@ -46,7 +46,6 @@ public class BossScript : MonoBehaviour
 
     public void shootChargeShot()//this is triggered by an animation
     {
-       // audioSource.PlayOneShot(shootClip);
         GameObject chargeShotL = Instantiate(chargeShotObject);
         GameObject chargeShotR = Instantiate(chargeShotObject);
         chargeShotL.transform.position = new Vector3(leftCannon.position.x, leftCannon.position.y, leftCannon.position.z + 1);
