@@ -8,9 +8,10 @@ public class GrapplegunScript : MonoBehaviour
     // Start is called before the first frame update
     private bool canShoot = true;
     private bool onFirstLoad = true;
-    int damage = 2;
+    int damage = 3;
     float rateOfFire = .5f;
     float laserYPosOffset = .1f;
+    float range = 15f;
     Animator gunAnimator;
     PlayerControls playerControls;
     AudioSource audioSource;
@@ -88,17 +89,13 @@ public class GrapplegunScript : MonoBehaviour
         audioSource.PlayOneShot(shootClip);
         playerControls.grapplegunAmmo--;
         grapplegunAmmoText.text = playerControls.grapplegunAmmo.ToString("D3");
-        RaycastHit hit;
 
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
-        {
-            lineRenderer.enabled = true;
-            lineRenderer.SetPosition(0, new Vector3(cam.transform.position.x, cam.transform.position.y - laserYPosOffset, cam.transform.position.z) + cam.transform.forward/2);
-            lineRenderer.SetPosition(1, hit.point);
+        //do the two ray approach and limit the second rays range to the distance of the first one. Make the first ray only collide on walls and grapplepoints. 
+        RaycastHit[] hits;
 
-            GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impact, .3f);
+        hits = Physics.RaycastAll(cam.transform.position, cam.transform.forward, range);
 
+        foreach(RaycastHit hit in hits){
             if (hit.transform.tag == "Enemy")
             {
                 hit.transform.BroadcastMessage("takeDamage", damage);
@@ -107,21 +104,35 @@ public class GrapplegunScript : MonoBehaviour
             {
                 hit.transform.GetComponent<ButtonController>().Activate();
             }
-            if(hit.transform.tag == "GrapplePoint")
+            if (hit.transform.tag == "GrapplePoint")
             {
-                Debug.Log("Started Grapple");
                 playerControls.isGrappling = true;
             }
-        }
+            if(hit.transform.tag == "GrapplePoint" || hit.transform.tag == "Untagged")
+            {
+                lineRenderer.enabled = true;
+                lineRenderer.SetPosition(0, new Vector3(cam.transform.position.x, cam.transform.position.y - laserYPosOffset, cam.transform.position.z) + cam.transform.forward / 2);
+
+                lineRenderer.SetPosition(1, hit.point);
+
+                GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(impact, .3f);
+            }
+        }          
+
 
         yield return new WaitForSeconds(rateOfFire);
-        if (hit.transform == null || !hit.transform.CompareTag("GrapplePoint"))
+        foreach (RaycastHit hit in hits)
         {
-            weaponSwitching.lockWeaponSwitch = false;
-            gunAnimator.SetBool("shooting", false);
-            lineRenderer.enabled = false;
-            canShoot = true;
+            if (hit.transform == null || !hit.transform.CompareTag("GrapplePoint"))
+            {
+                weaponSwitching.lockWeaponSwitch = false;
+                gunAnimator.SetBool("shooting", false);
+                lineRenderer.enabled = false;
+                canShoot = true;
+            }
         }
+     
     }
 
     public void ShootingRecovery()//CALL FROM GRAPPLE POINT COLLISION TO RESET SHOOTING

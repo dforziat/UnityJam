@@ -15,13 +15,13 @@ public class GrapplePointScript : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
             other.GetComponent<PlayerControls>().isGrappling = false;
-            //GameObject.FindGameObjectWithTag("WeaponsHud").GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
-            if(GameObject.FindGameObjectWithTag("WeaponsHud").GetComponentInChildren<GrapplegunScript>() != null)
+            if (GameObject.FindGameObjectWithTag("WeaponsHud").GetComponentInChildren<GrapplegunScript>() != null)
             {
                 GameObject.FindGameObjectWithTag("WeaponsHud").GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
             }

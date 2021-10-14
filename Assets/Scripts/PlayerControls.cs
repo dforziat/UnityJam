@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerControls : MonoBehaviour
 {
     [Header("Movement")]
-    public static float moveSpeed = 6;
+    public static float moveSpeed = 5;
     float grappleSpeed = 100;
 
     [Header("Gravity")]
