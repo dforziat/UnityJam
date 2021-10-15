@@ -11,7 +11,6 @@ public class GrapplegunScript : MonoBehaviour
     int damage = 3;
     float rateOfFire = .5f;
     float laserYPosOffset = .1f;
-    float range = 15f;
     Animator gunAnimator;
     PlayerControls playerControls;
     AudioSource audioSource;
@@ -90,7 +89,16 @@ public class GrapplegunScript : MonoBehaviour
         playerControls.grapplegunAmmo--;
         grapplegunAmmoText.text = playerControls.grapplegunAmmo.ToString("D3");
 
-        //do the two ray approach and limit the second rays range to the distance of the first one. Make the first ray only collide on walls and grapplepoints. 
+        RaycastHit preHit;
+        LayerMask wallMask = LayerMask.GetMask("Wall");
+        float range = 0;
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out preHit, Mathf.Infinity, wallMask))
+        {
+            Debug.Log("Raycast Range: " + preHit.distance);
+            range = preHit.distance + .5f;
+        }
+
+
         RaycastHit[] hits;
 
         hits = Physics.RaycastAll(cam.transform.position, cam.transform.forward, range);
@@ -122,15 +130,13 @@ public class GrapplegunScript : MonoBehaviour
 
 
         yield return new WaitForSeconds(rateOfFire);
-        foreach (RaycastHit hit in hits)
+
+        if (preHit.transform == null || !preHit.transform.CompareTag("GrapplePoint"))
         {
-            if (hit.transform == null || !hit.transform.CompareTag("GrapplePoint"))
-            {
-                weaponSwitching.lockWeaponSwitch = false;
-                gunAnimator.SetBool("shooting", false);
-                lineRenderer.enabled = false;
-                canShoot = true;
-            }
+            weaponSwitching.lockWeaponSwitch = false;
+            gunAnimator.SetBool("shooting", false);
+            lineRenderer.enabled = false;
+            canShoot = true;
         }
      
     }
