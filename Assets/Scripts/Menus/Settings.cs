@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class Settings : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Settings : MonoBehaviour
     Resolution[] resolutions;
 
     public Slider mouseSensSlider;
+
+    public TextMeshProUGUI volText;
     public Slider volumeSlider;
 
     //in the pause menu
@@ -38,7 +41,8 @@ public class Settings : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("masterVolume", volume);
+        audioMixer.SetFloat("masterVolume", Mathf.Log10(volume)*20);
+        volText.text = "Volume - "+(Mathf.Round(volume * 100))+"%";
         PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, volume);
     }
 
