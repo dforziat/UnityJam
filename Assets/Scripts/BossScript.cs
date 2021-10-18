@@ -8,8 +8,11 @@ public class BossScript : MonoBehaviour
     private int chargeShotDamage = 20;
     public GameObject chargeShotObject;
     private float chargeShotSpeed = 10f;
+    private int attackState = 0;
     public Transform leftCannon;
     public Transform rightCannon;
+    public ParticleSystem LeftCannonParticle;
+    public ParticleSystem RightCannonParticle;
 
     private Transform target;
     private Animator animator;
@@ -24,6 +27,9 @@ public class BossScript : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
+
+        LeftCannonParticle.Stop();
+        RightCannonParticle.Stop();
     }
 
     // Update is called once per frame
@@ -62,8 +68,50 @@ public class BossScript : MonoBehaviour
 
     public void chargeShotState()
     {
-        //start animation
-        //beging playing chargeshot sfx
-        //call from idle state
+        animator.SetTrigger("chargeShot");
+        secondaryAudioSource.PlayOneShot(chargeClip);
+
+    }
+
+    public void chooseNextAttack()//called by idle animation end
+    {
+        switch (attackState)
+        {
+            case 1:
+                chargeShotState();
+                break;
+            case 2:
+                //machinegunstate();
+                break;
+            case 3:
+                //mineshotState();
+            default:
+                chargeShotState();
+                break;
+        }
+
+        //increment attack state
+        if (attackState < 3)
+        {
+            attackState++;
+        }
+        else {
+            attackState = 1;
+        }
+    }
+
+    public void resetToIdleState()
+    {
+        Debug.Log("Set to Idle State");
+        secondaryAudioSource.Stop();
+
+        LeftCannonParticle.Stop();
+        RightCannonParticle.Stop();
+    }
+
+    public void startChargeParticles()
+    {
+        LeftCannonParticle.Play();
+        RightCannonParticle.Play();
     }
 }
