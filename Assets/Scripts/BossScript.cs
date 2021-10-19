@@ -14,6 +14,9 @@ public class BossScript : MonoBehaviour
     public ParticleSystem LeftCannonParticle;
     public ParticleSystem RightCannonParticle;
 
+    public LineRenderer lineRenderer;
+    public Transform machineGunBarrel;
+
     private Transform target;
     private Animator animator;
 
@@ -30,12 +33,18 @@ public class BossScript : MonoBehaviour
 
         LeftCannonParticle.Stop();
         RightCannonParticle.Stop();
+        lineRenderer.enabled = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
+
+        //maching gun barrel end
+        lineRenderer.SetPosition(0, machineGunBarrel.position);
+        lineRenderer.SetPosition(1, new Vector3(target.position.x, target.position.y -.5f, target.position.z));
     }
 
 
@@ -81,12 +90,11 @@ public class BossScript : MonoBehaviour
                 chargeShotState();
                 break;
             case 2:
-                //machinegunstate();
+                machinegunstate();
                 break;
             case 3:
                 //mineshotState();
             default:
-                chargeShotState();
                 break;
         }
 
@@ -113,5 +121,10 @@ public class BossScript : MonoBehaviour
     {
         LeftCannonParticle.Play();
         RightCannonParticle.Play();
+    }
+
+    public void machinegunstate()
+    {
+        animator.SetTrigger("machinegun");
     }
 }

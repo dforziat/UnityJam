@@ -33,6 +33,7 @@ public class BossCutsceneManagerScript : MonoBehaviour
     {
         playerCanvas.enabled = true;
         entranceDoor.isUnlocked = false;
+        boss.GetComponent<Animator>().SetTrigger("enterRoom");
     }
 
     public void ActivateBoss()
