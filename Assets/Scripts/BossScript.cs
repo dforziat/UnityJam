@@ -8,6 +8,7 @@ public class BossScript : MonoBehaviour
     private int chargeShotDamage = 20;
     public GameObject chargeShotObject;
     private float chargeShotSpeed = 10f;
+    private float machinegunBulletSpeed = 20f;
     private int attackState = 0;
     public Transform leftCannon;
     public Transform rightCannon;
@@ -25,6 +26,7 @@ public class BossScript : MonoBehaviour
     public AudioClip damagedClip;
     public AudioClip chargeClip;
     public AudioClip chargeShotClip;
+    public AudioClip machinegunClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -126,5 +128,17 @@ public class BossScript : MonoBehaviour
     public void machinegunstate()
     {
         animator.SetTrigger("machinegun");
+    }
+
+    public void shootMachinegun()//Call through animation event
+    {
+        GameObject machinegunBullet = Instantiate(chargeShotObject);
+        machinegunBullet.transform.position = machineGunBarrel.position;
+
+        var dir = (target.position - machinegunBullet.transform.position).normalized;
+
+        machinegunBullet.GetComponent<Rigidbody>().velocity = dir * machinegunBulletSpeed;
+
+        secondaryAudioSource.PlayOneShot(machinegunClip);
     }
 }
