@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossScript : MonoBehaviour
 {
+    [Header("Stats")]
     public int health = 50;
     private int chargeShotDamage = 20;
     public GameObject chargeShotObject;
@@ -21,12 +22,13 @@ public class BossScript : MonoBehaviour
     private Transform target;
     private Animator animator;
 
-    //audio
+    [Header("Audio")]
     public AudioSource secondaryAudioSource;
     public AudioClip damagedClip;
     public AudioClip chargeClip;
     public AudioClip chargeShotClip;
     public AudioClip machinegunClip;
+    public AudioClip machinegunTrackingClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -128,6 +130,7 @@ public class BossScript : MonoBehaviour
     public void machinegunstate()
     {
         animator.SetTrigger("machinegun");
+        secondaryAudioSource.PlayOneShot(machinegunTrackingClip);
     }
 
     public void shootMachinegun()//Call through animation event
@@ -140,5 +143,10 @@ public class BossScript : MonoBehaviour
         machinegunBullet.GetComponent<Rigidbody>().velocity = dir * machinegunBulletSpeed;
 
         secondaryAudioSource.PlayOneShot(machinegunClip);
+    }
+
+    public void throwBomb(Vector3 target)
+    {
+        //used to throw the bombs at the player
     }
 }
