@@ -6,21 +6,28 @@ public class BossScript : MonoBehaviour
 {
     [Header("Stats")]
     public int health = 50;
+    private Transform target;
+    private Animator animator;
+    private int attackState = 0;
+
+    [Header("Charge Shot")]
+    private float chargeShotSpeed = 10f;
     private int chargeShotDamage = 20;
     public GameObject chargeShotObject;
-    private float chargeShotSpeed = 10f;
-    private float machinegunBulletSpeed = 20f;
-    private int attackState = 0;
     public Transform leftCannon;
+
     public Transform rightCannon;
     public ParticleSystem LeftCannonParticle;
     public ParticleSystem RightCannonParticle;
 
+    [Header("Machinegun")]
+    private float machinegunBulletSpeed = 20f;
     public LineRenderer lineRenderer;
     public Transform machineGunBarrel;
 
-    private Transform target;
-    private Animator animator;
+    [Header("Bomb Launcher")]
+    public GameObject bomb;
+    public Transform bombLaunchLocation;
 
     [Header("Audio")]
     public AudioSource secondaryAudioSource;
@@ -29,6 +36,7 @@ public class BossScript : MonoBehaviour
     public AudioClip chargeShotClip;
     public AudioClip machinegunClip;
     public AudioClip machinegunTrackingClip;
+    public AudioClip bombLaunchClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -147,6 +155,7 @@ public class BossScript : MonoBehaviour
 
     public void throwBomb(Vector3 target)
     {
-        //used to throw the bombs at the player
+        GameObject launchBomb = Instantiate(bomb);
+        launchBomb.transform.position = machineGunBarrel.position;
     }
 }
