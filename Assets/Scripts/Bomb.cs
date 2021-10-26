@@ -7,9 +7,10 @@ public class Bomb : MonoBehaviour
 
     public AudioClip beepClip;
     public GameObject explosion;
+    public GameObject ammoPickup;
 
     private int explosionDamage = 10;
-    private float explosionDistance = 1f;
+    private float explosionDistance = 3f;
     private float verticalOffset = .1f;
     private Transform player;
 
@@ -36,6 +37,14 @@ public class Bomb : MonoBehaviour
         {
             player.gameObject.BroadcastMessage("TakeDamage", explosionDamage);
         }
+
+        //ammo drop
+        int dropRandomNum = Random.Range(0, 100);
+        if (dropRandomNum <= 20)
+        {
+            Instantiate(ammoPickup, new Vector3(transform.position.x, transform.position.y + verticalOffset, transform.position.z), transform.rotation);
+        }
+
         var bomb = Instantiate(explosion, new Vector3(transform.position.x, transform.position.y + verticalOffset, transform.position.z), transform.rotation);
         bomb.transform.localScale += new Vector3(2, 2, 2);
         Destroy(gameObject);

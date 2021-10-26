@@ -26,6 +26,7 @@ public class BossScript : MonoBehaviour
     public Transform machineGunBarrel;
 
     [Header("Bomb Launcher")]
+    public float bombLaunchPower = 20f;
     public GameObject bomb;
     public Transform bombLaunchLocation;
 
@@ -105,7 +106,8 @@ public class BossScript : MonoBehaviour
                 machinegunstate();
                 break;
             case 3:
-                //mineshotState();
+                bombstate();
+                break;
             default:
                 break;
         }
@@ -141,6 +143,11 @@ public class BossScript : MonoBehaviour
         secondaryAudioSource.PlayOneShot(machinegunTrackingClip);
     }
 
+    public void bombstate()
+    {
+        animator.SetTrigger("bomb");
+    }
+
     public void shootMachinegun()//Call through animation event
     {
         GameObject machinegunBullet = Instantiate(chargeShotObject);
@@ -153,9 +160,17 @@ public class BossScript : MonoBehaviour
         secondaryAudioSource.PlayOneShot(machinegunClip);
     }
 
-    public void throwBomb(Vector3 target)
+    public void throwBomb()
     {
         GameObject launchBomb = Instantiate(bomb);
-        launchBomb.transform.position = machineGunBarrel.position;
+        launchBomb.transform.position = bombLaunchLocation.position;
+
+        var dir = (target.position - launchBomb.transform.position).normalized;
+
+        launchBomb.GetComponent<Rigidbody>().velocity = dir * bombLaunchPower;
+
+        //launchBomb.GetComponent<Rigidbody>().AddRelativeForce(target.position * bombLaunchPower);
+
+        secondaryAudioSource.PlayOneShot(bombLaunchClip);
     }
 }
