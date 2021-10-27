@@ -5,10 +5,13 @@ using UnityEngine;
 public class BossScript : MonoBehaviour
 {
     [Header("Stats")]
+    private int maxHealth;
     public int health = 50;
     private Transform target;
     private Animator animator;
     private int attackState = 0;
+    private bool isSecondStage = false;
+    public GameObject jumppads;
 
     [Header("Charge Shot")]
     private float chargeShotSpeed = 10f;
@@ -41,6 +44,7 @@ public class BossScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = health;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
 
@@ -129,6 +133,11 @@ public class BossScript : MonoBehaviour
 
         LeftCannonParticle.Stop();
         RightCannonParticle.Stop();
+
+        if(health <= (maxHealth / 3) && !isSecondStage)
+        {
+            activateSecondStage();
+        }
     }
 
     public void startChargeParticles()
@@ -169,8 +178,14 @@ public class BossScript : MonoBehaviour
 
         launchBomb.GetComponent<Rigidbody>().velocity = dir * bombLaunchPower;
 
-        //launchBomb.GetComponent<Rigidbody>().AddRelativeForce(target.position * bombLaunchPower);
-
         secondaryAudioSource.PlayOneShot(bombLaunchClip);
+    }
+
+    public void activateSecondStage()
+    {
+        animator.SetTrigger("secondstage");
+        isSecondStage = true;
+        jumppads.SetActive(true);
+
     }
 }
