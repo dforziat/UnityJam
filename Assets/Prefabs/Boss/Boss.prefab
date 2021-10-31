@@ -790,7 +790,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 35d6e39598573d545b67a2c2dc16edda, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -809,6 +809,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  jumppads: {fileID: 0}
+  explosion: {fileID: 8579213436375878188, guid: 4bdc1c35b7082374ebbba56e08168e2f, type: 3}
+  bossDoor: {fileID: 0}
   chargeShotObject: {fileID: 8795178875355208974, guid: e3974a77c1564d44cbf84b175990e908, type: 3}
   leftCannon: {fileID: 2370589187434457710}
   rightCannon: {fileID: 4315462508662902313}
@@ -816,6 +819,7 @@ MonoBehaviour:
   RightCannonParticle: {fileID: 4315462508662902295}
   lineRenderer: {fileID: 919132148671806715}
   machineGunBarrel: {fileID: 262714366}
+  bombLaunchPower: 20
   bomb: {fileID: 1398609262272764213, guid: 0409d63f6a1501948a856fd12d92e2f5, type: 3}
   bombLaunchLocation: {fileID: 2702592878705124215}
   secondaryAudioSource: {fileID: 773354538446313624}
@@ -6143,7 +6147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6614533294363821969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0307, z: 0.1029}
+  m_LocalPosition: {x: 0, y: 0.0313, z: 0.1096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2257800616782223727}

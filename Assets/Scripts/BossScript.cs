@@ -5,13 +5,16 @@ using UnityEngine;
 public class BossScript : MonoBehaviour
 {
     [Header("Stats")]
-    private int maxHealth;
-    public int health = 50;
+    private int maxHealth = 50;
+    public int health;
     private Transform target;
     private Animator animator;
-    private int attackState = 0;
+    private int attackState = 1;
     private bool isSecondStage = false;
     public GameObject jumppads;
+    public GameObject explosion;
+    public DoorProximityScript bossDoor;
+    private bool isDead = false;
 
     [Header("Charge Shot")]
     private float chargeShotSpeed = 10f;
@@ -29,7 +32,7 @@ public class BossScript : MonoBehaviour
     public Transform machineGunBarrel;
 
     [Header("Bomb Launcher")]
-    public float bombLaunchPower = 20f;
+    public float bombLaunchPower = 10f;
     public GameObject bomb;
     public Transform bombLaunchLocation;
 
@@ -44,7 +47,7 @@ public class BossScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = health;
+        health = maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
 
@@ -57,23 +60,31 @@ public class BossScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
 
         //maching gun barrel end
         lineRenderer.SetPosition(0, machineGunBarrel.position);
         lineRenderer.SetPosition(1, new Vector3(target.position.x, target.position.y -.5f, target.position.z));
+
     }
 
 
     public void takeDamage(int damage)
     {
+        if (health <= (maxHealth / 2) && !isSecondStage)
+        {
+            activateSecondStage();
+        }
+
+        if (health <= 0)
+        {
+            isDead = true;
+            animator.SetTrigger("death");
+        }
         health -= damage;
         secondaryAudioSource.PlayOneShot(damagedClip);
         //play damage audio sfx. Maybe have 2 or 3 for diversity
-        if (health <= 0)
-        {
-            //start death sequence, maybe even a cutscene. 
-        }
     }
 
     public void shootChargeShot()//this is triggered by an animation
@@ -129,15 +140,11 @@ public class BossScript : MonoBehaviour
     public void resetToIdleState()
     {
         Debug.Log("Set to Idle State");
-        secondaryAudioSource.Stop();
+       // secondaryAudioSource.Stop();
 
         LeftCannonParticle.Stop();
         RightCannonParticle.Stop();
 
-        if(health <= (maxHealth / 3) && !isSecondStage)
-        {
-            activateSecondStage();
-        }
     }
 
     public void startChargeParticles()
@@ -176,7 +183,9 @@ public class BossScript : MonoBehaviour
 
         var dir = (target.position - launchBomb.transform.position).normalized;
 
-        launchBomb.GetComponent<Rigidbody>().velocity = dir * bombLaunchPower;
+        float randPow = Random.Range(-2f, 2f);
+
+        launchBomb.GetComponent<Rigidbody>().velocity = dir * (bombLaunchPower + randPow);
 
         secondaryAudioSource.PlayOneShot(bombLaunchClip);
     }
@@ -187,5 +196,21 @@ public class BossScript : MonoBehaviour
         isSecondStage = true;
         jumppads.SetActive(true);
 
+    }
+
+    public void explode()
+    {
+        float max = 1.5f;
+        float min = -1.5f;
+        float randomX = Random.Range(max, min);
+        float randomY = Random.Range(max, min);
+        float randomZ = Random.Range(max, min);
+        Instantiate(explosion, new Vector3(transform.position.x + randomX, transform.position.y + randomY, transform.position.z + randomZ), transform.rotation);
+    }
+
+    public void die()
+    {
+        bossDoor.isUnlocked = true;
+        Destroy(gameObject);
     }
 }
