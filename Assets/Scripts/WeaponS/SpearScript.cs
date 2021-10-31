@@ -7,13 +7,17 @@ public class SpearScript : MonoBehaviour
 {
     [SerializeField] CharacterController controller;
     public Vector3 dir;
+   
     int dashSpeed = 15;
     float dashTime = .3f;
 
+    public GameObject dashHurtbox;
+    public GameObject Player;
 
     // Start is called before the first frame update
     void Start()
     {
+
         
     }
 
@@ -26,13 +30,15 @@ public class SpearScript : MonoBehaviour
     private IEnumerator DashCoroutine()
     {
         float startTime = Time.time;
+
+        var clonedashHurtbox = Instantiate(dashHurtbox, transform.position, transform.rotation, Player.transform);
         while (Time.time < startTime + dashTime)
         {
             dir = (transform.forward * 1).normalized;
             controller.Move(dir * dashSpeed * Time.deltaTime);
             yield return null;
         }
-
+        Destroy(clonedashHurtbox);
 
     }
 
