@@ -33,7 +33,6 @@ public class EnemyParent : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-
         isProvoked = true;
         health -= damage;
         StartCoroutine(FlashRed());
