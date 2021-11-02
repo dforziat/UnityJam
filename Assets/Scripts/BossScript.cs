@@ -39,6 +39,8 @@ public class BossScript : MonoBehaviour
     [Header("Audio")]
     public AudioSource secondaryAudioSource;
     public AudioClip damagedClip;
+    public AudioClip damagedClip2;
+    public AudioClip damagedClip3;
     public AudioClip chargeClip;
     public AudioClip chargeShotClip;
     public AudioClip machinegunClip;
@@ -83,8 +85,8 @@ public class BossScript : MonoBehaviour
             animator.SetTrigger("death");
         }
         health -= damage;
-        secondaryAudioSource.PlayOneShot(damagedClip);
-        //play damage audio sfx. Maybe have 2 or 3 for diversity
+
+        playDamagedClip();
     }
 
     public void shootChargeShot()//this is triggered by an animation
@@ -205,12 +207,29 @@ public class BossScript : MonoBehaviour
         float randomX = Random.Range(max, min);
         float randomY = Random.Range(max, min);
         float randomZ = Random.Range(max, min);
-        Instantiate(explosion, new Vector3(transform.position.x + randomX, transform.position.y + randomY, transform.position.z + randomZ), transform.rotation);
+        Instantiate(explosion, new Vector3(transform.position.x + randomX, transform.position.y + randomY + 1f, transform.position.z + randomZ + -1f), transform.rotation);
     }
 
     public void die()
     {
         bossDoor.isUnlocked = true;
         Destroy(gameObject);
+    }
+
+    private void playDamagedClip()
+    {
+        int randNum = Random.Range(1, 4);
+        switch (randNum)
+        {
+            case 1:
+                secondaryAudioSource.PlayOneShot(damagedClip);
+                break;
+            case 2:
+                secondaryAudioSource.PlayOneShot(damagedClip2);
+                break;
+            case 3:
+                secondaryAudioSource.PlayOneShot(damagedClip3);
+                break;
+        }
     }
 }

@@ -232,6 +232,7 @@ public class PlayerControls : MonoBehaviour
         {
             controller.Move(controller.transform.forward * Mathf.Sqrt(grappleSpeed) * Time.deltaTime);
         }
+
         
     }
 
@@ -252,6 +253,16 @@ public class PlayerControls : MonoBehaviour
         if (machinegunAmmoText.enabled)
         {
             machinegunAmmoText.text = machinegunAmmo.ToString("D3");
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            isGrappling = false;
+            WeaponHolder.GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
         }
     }
 }

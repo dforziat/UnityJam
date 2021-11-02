@@ -133,10 +133,7 @@ public class GrapplegunScript : MonoBehaviour
 
         if (preHit.transform == null || !preHit.transform.CompareTag("GrapplePoint"))
         {
-            weaponSwitching.lockWeaponSwitch = false;
-            gunAnimator.SetBool("shooting", false);
-            lineRenderer.enabled = false;
-            canShoot = true;
+            ShootingRecovery();
         }
      
     }
