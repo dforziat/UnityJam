@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9FBB98EE-394E-0591-761E-6569147AD45C}</ProjectGuid>
+    <ProjectGuid>{BC5DF9DE-1506-7FF8-1B64-52043C2770A3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,10 +58,10 @@
   <ItemGroup>
     <Compile Include="Assets\Pixelation\Examples\SimpleOscillator.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
-    <Compile Include="Assets\Scripts\Weapons\WeaponSwitching.cs" />
+    <Compile Include="Assets\Scripts\WeaponS\WeaponSwitching.cs" />
     <Compile Include="Assets\Scripts\LaunchPad.cs" />
     <Compile Include="Assets\Scripts\TimerDestroy.cs" />
-    <Compile Include="Assets\Scripts\Weapons\SpearDashHurtbox.cs" />
+    <Compile Include="Assets\Scripts\WeaponS\SpearDashHurtbox.cs" />
     <Compile Include="Assets\Scripts\DoorProximityScript.cs" />
     <Compile Include="Assets\Scripts\ButtonController.cs" />
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
@@ -73,7 +73,7 @@
     <Compile Include="Assets\Scripts\BossScript.cs" />
     <Compile Include="Assets\Pixelation\Core\PixelationPost.cs" />
     <Compile Include="Assets\Scripts\Pickups\AmmoPickup.cs" />
-    <Compile Include="Assets\Scripts\Weapons\GrapplegunScript.cs" />
+    <Compile Include="Assets\Scripts\WeaponS\GrapplegunScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\TurretEnemyController.cs" />
     <Compile Include="Assets\Scripts\Pickups\ShotgunAmmoPickup.cs" />
     <Compile Include="Assets\Scripts\DeathHandler.cs" />
@@ -84,7 +84,7 @@
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\SaveManager.cs" />
     <Compile Include="Assets\Scripts\SpeedStack.cs" />
-    <Compile Include="Assets\Scripts\Weapons\MachinegunScript.cs" />
+    <Compile Include="Assets\Scripts\WeaponS\MachinegunScript.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyParent.cs" />
     <Compile Include="Assets\Scripts\BossCutsceneManagerScript.cs" />
     <Compile Include="Assets\Scripts\Menus\Settings.cs" />
@@ -93,14 +93,14 @@
     <Compile Include="Assets\Scripts\GrapplePointScript.cs" />
     <Compile Include="Assets\Scripts\Pickups\MachinegunPickupScript.cs" />
     <Compile Include="Assets\Scripts\Pickups\OverHealPickup.cs" />
-    <Compile Include="Assets\Scripts\Weapons\ShotgunScript.cs" />
+    <Compile Include="Assets\Scripts\WeaponS\ShotgunScript.cs" />
     <Compile Include="Assets\Pixelation\Core\SnapToMainCam.cs" />
     <Compile Include="Assets\Scripts\Pickups\GrapplegunAmmoScript.cs" />
-    <Compile Include="Assets\Scripts\Weapons\HandgunScript.cs" />
+    <Compile Include="Assets\Scripts\WeaponS\HandgunScript.cs" />
     <Compile Include="Assets\Scripts\Pickups\HealthPickup.cs" />
     <Compile Include="Assets\Scripts\TurretBullet.cs" />
     <Compile Include="Assets\Scripts\PlayerPrefsConstants.cs" />
-    <Compile Include="Assets\Scripts\Weapons\SpearScript.cs" />
+    <Compile Include="Assets\Scripts\WeaponS\SpearScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -702,17 +702,11 @@
     <Reference Include="Unity.Burst">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
@@ -731,12 +725,6 @@
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder">
-      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>

@@ -92,6 +92,10 @@ public class WeaponSwitching : MonoBehaviour
         {
             selectedWeapon = 3;
         }
+        if (Input.GetKeyDown(KeyCode.Alpha4) && transform.childCount >= 5)
+        {
+            selectedWeapon = 4;
+        }
 
         if (previousSelectedWeapon != selectedWeapon && transform.GetChild(selectedWeapon).tag == "unlocked" && !lockWeaponSwitch)
         {

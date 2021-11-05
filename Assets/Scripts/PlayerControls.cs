@@ -33,6 +33,7 @@ public class PlayerControls : MonoBehaviour
     public Text shotgunAmmoText;
     public Text grapplegunAmmoText;
     public Text machinegunAmmoText;
+    //public Text spearAmmoText;
 
 
     [Header("Ammo Count")]
@@ -40,6 +41,7 @@ public class PlayerControls : MonoBehaviour
     public int shotgunAmmo = 10;
     public int grapplegunAmmo = 20;
     public int machinegunAmmo = 30;
+    //public int spearAmmo = 1;
 
     public int curLevel;
 
@@ -203,6 +205,7 @@ public class PlayerControls : MonoBehaviour
         shotgunAmmo += 10;
         grapplegunAmmo += 10;
         machinegunAmmo += 25;
+        //spearAmmo += 1;
 
         updateGUIAmmo();
     }
