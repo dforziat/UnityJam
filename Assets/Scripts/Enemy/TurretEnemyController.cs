@@ -7,7 +7,8 @@ public class TurretEnemyController : EnemyParent
     private Transform target;
     private bool isDetected = false;
     private float distanceToTarget = Mathf.Infinity;
-    private float detectRange = 6f;
+    public float detectRange = 6f;
+    private bool canSeePlayer = false;
     //Rate of fire is due to animation.
     private Animator animator;
     private float bulletSpeed = 7f;
@@ -58,6 +59,6 @@ public class TurretEnemyController : EnemyParent
         GameObject shootingBullet = Instantiate(bullet);
         shootingBullet.transform.position = new Vector3(transform.position.x, transform.position.y + yOffset, transform.position.z);
         shootingBullet.transform.LookAt(target);
-        shootingBullet.GetComponent<Rigidbody>().velocity = transform.forward.normalized * bulletSpeed;
+        shootingBullet.GetComponent<Rigidbody>().velocity = shootingBullet.transform.forward.normalized * bulletSpeed;
     }
 }

@@ -265,7 +265,10 @@ public class PlayerControls : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             isGrappling = false;
-            WeaponHolder.GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
+            if(WeaponHolder.GetComponentInChildren<GrapplegunScript>() != null)
+            {
+                WeaponHolder.GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
+            }
         }
     }
 }

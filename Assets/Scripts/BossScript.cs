@@ -79,7 +79,7 @@ public class BossScript : MonoBehaviour
             activateSecondStage();
         }
 
-        if (health <= 0)
+        if (health <= 0 && !isDead)
         {
             isDead = true;
             animator.SetTrigger("death");
@@ -207,7 +207,7 @@ public class BossScript : MonoBehaviour
         float randomX = Random.Range(max, min);
         float randomY = Random.Range(max, min);
         float randomZ = Random.Range(max, min);
-        Instantiate(explosion, new Vector3(transform.position.x + randomX, transform.position.y + randomY + 1f, transform.position.z + randomZ + -1f), transform.rotation);
+        Instantiate(explosion, new Vector3(transform.position.x + randomX, transform.position.y + randomY + 1f, transform.position.z + randomZ), transform.rotation);
     }
 
     public void die()

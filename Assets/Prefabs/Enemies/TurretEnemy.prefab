@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8892961934145621477}
   - component: {fileID: 7197090645800825030}
+  - component: {fileID: 3911595847345299719}
   m_Layer: 0
   m_Name: turretSprite
   m_TagString: Untagged
@@ -82,6 +83,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3911595847345299719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670737692465992873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa36158065c54947ab474fb262bd289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7114518123416208961
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +105,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5288232147329219321}
   - component: {fileID: 7204703478684551588}
-  - component: {fileID: 1338300716781057405}
   - component: {fileID: 5777995938656443925}
   - component: {fileID: 8600884969396976594}
   - component: {fileID: 1609564650991879412}
@@ -129,21 +141,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
-  m_Height: 1
+  m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1338300716781057405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7114518123416208961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa36158065c54947ab474fb262bd289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &5777995938656443925
 Animator:
   serializedVersion: 3
@@ -185,6 +185,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   audioSource: {fileID: 0}
   damagedClip: {fileID: 8300000, guid: 877ca48f4d1b3734b90a0c7f4e5dcf12, type: 3}
+  detectRange: 6
   bullet: {fileID: 8425132720108540564, guid: d115c36b981a46f459bbf2393eab07c2, type: 3}
   alertClip: {fileID: 8300000, guid: fc02b6397cf66544086bc866c57dcf05, type: 3}
   shootClip: {fileID: 8300000, guid: dbc013a67c9d20c4fb98327fb3b3a3ed, type: 3}

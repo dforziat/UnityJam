@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BossCutsceneManagerScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Canvas playerCanvas;
+    public GameObject GUI;
     public GameObject boss;
     public DoorProximityScript entranceDoor;
     public AudioSource musicManager;
@@ -17,7 +17,7 @@ public class BossCutsceneManagerScript : MonoBehaviour
     void Start()
     {
         boss.SetActive(false);
-        playerCanvas.enabled = false;
+        GUI.SetActive(false);
         bossName.enabled = false;
         bossSubName.enabled = false;
     }
@@ -31,7 +31,7 @@ public class BossCutsceneManagerScript : MonoBehaviour
 
     public void StartFight()
     {
-        playerCanvas.enabled = true;
+        GUI.SetActive(true);
         entranceDoor.isUnlocked = false;
         boss.GetComponent<Animator>().SetTrigger("enterRoom");
     }
