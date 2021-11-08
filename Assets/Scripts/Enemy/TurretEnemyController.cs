@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TurretEnemyController : EnemyParent
 {
@@ -22,7 +23,7 @@ public class TurretEnemyController : EnemyParent
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<CapsuleCollider>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         childAudioSource = GetComponent<AudioSource>();
@@ -35,18 +36,28 @@ public class TurretEnemyController : EnemyParent
     {
         distanceToTarget = Vector3.Distance(target.position, transform.position);
 
-        if (distanceToTarget <= detectRange && !isDetected)
+        NavMeshHit navMeshHit;
+        if (!GetComponent<NavMeshAgent>().Raycast(target.position, out navMeshHit))
+        {
+            canSeePlayer = true;
+        }
+        else
+        {
+            canSeePlayer = false;
+        }
+
+        if (distanceToTarget <= detectRange && !isDetected && canSeePlayer)
         {
             Debug.Log("Is Detected");
             audioSource.PlayOneShot(alertClip);
-            GetComponent<CapsuleCollider>().enabled = true;
+            GetComponent<BoxCollider>().enabled = true;
             animator.SetBool("detected", true);
             isDetected = true;
         }
-        if(distanceToTarget > detectRange && isDetected)
+        if((distanceToTarget > detectRange || !canSeePlayer) && isDetected)
         {
             Debug.Log("Lost Detection");
-            GetComponent<CapsuleCollider>().enabled = false;
+            GetComponent<BoxCollider>().enabled = false;
             animator.SetBool("detected", false);
             isDetected = false;
         }

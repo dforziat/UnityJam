@@ -181,13 +181,24 @@ public class BossScript : MonoBehaviour
     public void throwBomb()
     {
         GameObject launchBomb = Instantiate(bomb);
+        GameObject launchBombL = Instantiate(bomb);
+        GameObject launchBombR = Instantiate(bomb);
+
         launchBomb.transform.position = bombLaunchLocation.position;
+        launchBombL.transform.position = bombLaunchLocation.position;
+        launchBombR.transform.position = bombLaunchLocation.position;
+
+        
 
         var dir = (target.position - launchBomb.transform.position).normalized;
+        var dirL = Quaternion.AngleAxis(30, Vector3.forward) * dir;
+        var dirR = Quaternion.AngleAxis(-30, Vector3.forward) * dir; ;
 
         float randPow = Random.Range(-2f, 2f);
 
         launchBomb.GetComponent<Rigidbody>().velocity = dir * (bombLaunchPower + randPow);
+        launchBombL.GetComponent<Rigidbody>().velocity = dirL * (bombLaunchPower + randPow);
+        launchBombR.GetComponent<Rigidbody>().velocity = dirR * (bombLaunchPower + randPow);
 
         secondaryAudioSource.PlayOneShot(bombLaunchClip);
     }
