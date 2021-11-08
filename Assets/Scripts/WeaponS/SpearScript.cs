@@ -64,7 +64,7 @@ public class SpearScript : MonoBehaviour
         {
             return;
         }
-        //dash();
+        dash();
     }
 
     private IEnumerator DashCoroutine()
@@ -76,10 +76,10 @@ public class SpearScript : MonoBehaviour
         //playerControls.spearAmmo--;
         //spearAmmoText.text = playerControls.shotgunAmmo.ToString("D3");
 
-        var clonedashHurtbox = Instantiate(dashHurtbox, transform.position, transform.rotation, Player.transform);
+        var clonedashHurtbox = Instantiate(dashHurtbox, Player.transform.position, Player.transform.rotation, Player.transform);
         while (Time.time < startTime + dashTime)
         {
-            dir = (transform.forward * 1).normalized;
+            dir = (Player.transform.forward * 1);
             controller.Move(dir * dashSpeed * Time.deltaTime);
             yield return null;
         }
