@@ -8,7 +8,7 @@ public class SpearScript : MonoBehaviour
     // Start is called before the first frame update
     private bool canShoot = true;
     private bool onFirstLoad = true;
-    //float rateOfFire = .5f;
+    float rateOfFire = .5f;
     //Animator gunAnimator;
 
     PlayerControls playerControls;
@@ -32,6 +32,7 @@ public class SpearScript : MonoBehaviour
 
     public GameObject dashHurtbox;
     public GameObject Player;
+    public GameObject dashEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +72,7 @@ public class SpearScript : MonoBehaviour
     {
         float startTime = Time.time;
         canShoot = false;
+        dashEffect.SetActive(true);
         //gunAnimator.SetTrigger("shoot");
         //audioSource.PlayOneShot(shootClip);
         //playerControls.spearAmmo--;
@@ -84,6 +86,7 @@ public class SpearScript : MonoBehaviour
             yield return null;
         }
         Destroy(clonedashHurtbox);
+        dashEffect.SetActive(false);
         canShoot = true;
 
     }
