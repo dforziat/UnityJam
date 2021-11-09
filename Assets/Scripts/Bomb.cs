@@ -40,7 +40,7 @@ public class Bomb : MonoBehaviour
 
         //ammo drop
         int dropRandomNum = Random.Range(0, 100);
-        if (dropRandomNum <= 20)
+        if (dropRandomNum <= 10)
         {
             Instantiate(ammoPickup, new Vector3(transform.position.x, transform.position.y + verticalOffset, transform.position.z), transform.rotation);
         }

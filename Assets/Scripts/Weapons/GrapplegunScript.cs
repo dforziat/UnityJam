@@ -106,7 +106,7 @@ public class GrapplegunScript : MonoBehaviour
         foreach(RaycastHit hit in hits){
             if (hit.transform.tag == "Enemy")
             {
-                hit.transform.BroadcastMessage("takeDamage", damage);
+                hit.transform.BroadcastMessage("takeDamage", damage, SendMessageOptions.DontRequireReceiver);
             }
             if (hit.transform.tag == "Button")
             {
