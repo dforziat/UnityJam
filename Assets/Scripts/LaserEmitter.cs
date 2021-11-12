@@ -9,12 +9,26 @@ public class LaserEmitter : MonoBehaviour
     private LineRenderer lineRenderer;
     public GameObject leftEmitter;
     public GameObject rightEmitter;
+    private BoxCollider boxCollider;
+    private ParticleSystem laserParticleSystem;
+    private AudioSource audioSource;
+    private Animator animator;
 
     private int damage = 10;
     void Start()
     {
         lineRenderer = GetComponentInChildren<LineRenderer>();
-        lineRenderer.enabled = true;
+        lineRenderer.enabled = false;
+
+        boxCollider = GetComponent<BoxCollider>();
+        boxCollider.enabled = false;
+
+        laserParticleSystem = GetComponentInChildren<ParticleSystem>();
+        laserParticleSystem.Stop();
+
+        audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -30,5 +44,14 @@ public class LaserEmitter : MonoBehaviour
         {
             other.BroadcastMessage("TakeDamage", 10);
         }
+    }
+
+    public void activateLaser()
+    {
+        lineRenderer.enabled = true;
+        boxCollider.enabled = true;
+        laserParticleSystem.Play();
+        audioSource.Play();
+        animator.SetTrigger("activate");
     }
 }

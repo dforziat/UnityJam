@@ -14,6 +14,7 @@ public class BossScript : MonoBehaviour
     public GameObject jumppads;
     public GameObject explosion;
     public DoorProximityScript bossDoor;
+    public GameObject laser;
     private bool isDead = false;
 
     [Header("Charge Shot")]
@@ -208,6 +209,7 @@ public class BossScript : MonoBehaviour
         animator.SetTrigger("secondstage");
         isSecondStage = true;
         jumppads.SetActive(true);
+        laser.GetComponent<LaserEmitter>().activateLaser();
 
     }
 

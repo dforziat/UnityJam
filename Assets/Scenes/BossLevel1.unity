@@ -44981,6 +44981,7 @@ GameObject:
   - component: {fileID: 1497342446}
   - component: {fileID: 1497342448}
   - component: {fileID: 1497342449}
+  - component: {fileID: 1497342450}
   m_Layer: 8
   m_Name: Laser
   m_TagString: Untagged
@@ -45042,9 +45043,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: e9b384f7903e9d040a5a5b760d4771af, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -45128,6 +45129,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1497342450
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497342445}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e0584f0a3cf9cc4ab301fe212652fb0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1497595369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62347,6 +62367,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 4315462508700450528, guid: d483b08034e39f34780669e4e4ee2c02, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 1497342445}
     - target: {fileID: 4315462508700450528, guid: d483b08034e39f34780669e4e4ee2c02, type: 3}
       propertyPath: bossDoor
       value: 
