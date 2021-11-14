@@ -23,7 +23,7 @@ public class EnemyController : EnemyParent
         animator = GetComponent<Animator>();
         childAudioSource = GetComponent<AudioSource>();
         navMeshAgent = GetComponent<NavMeshAgent>();
-        target = FindObjectOfType<PlayerControls>().transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         EnemyList = GameObject.FindGameObjectsWithTag("Enemy");
 
         //set parent vars
@@ -109,7 +109,7 @@ public class EnemyController : EnemyParent
 
     public bool canSeePlayer()
     {
-        NavMeshHit navMeshHit;
+        /*NavMeshHit navMeshHit;
         if (!navMeshAgent.Raycast(target.position, out navMeshHit))
         {
             return true;
@@ -117,7 +117,24 @@ public class EnemyController : EnemyParent
         else
         {
             return false;
+        }*/
+        if (Physics.Linecast(transform.position, target.position, out RaycastHit hitInfo))
+        {
+            if (hitInfo.transform.CompareTag("Player"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
+        else
+        {
+            return false;
+        }
+
     }
 
     public void BroadcastAggroMessageToOtherEnemies()
