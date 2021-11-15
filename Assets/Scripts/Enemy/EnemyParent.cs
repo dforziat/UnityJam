@@ -13,6 +13,7 @@ public class EnemyParent : MonoBehaviour
     public GameObject ammoPickup;
     public GameObject healthPickup;
     private int AmmoPityCount = 10;
+    public Transform target;
 
     public SpriteRenderer spriteRenderer;
     public AudioSource audioSource;
@@ -22,13 +23,28 @@ public class EnemyParent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>(); 
+        audioSource = GetComponent<AudioSource>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+
+    public bool canSeePlayer()
+    {
+        Physics.Linecast(transform.position, target.position, out RaycastHit hitInfo);
+        if (hitInfo.transform != null && hitInfo.transform.CompareTag("Player"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void takeDamage(int damage)

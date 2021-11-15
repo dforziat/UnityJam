@@ -107,7 +107,6 @@ GameObject:
   - component: {fileID: 5777995938656443925}
   - component: {fileID: 8600884969396976594}
   - component: {fileID: 1609564650991879412}
-  - component: {fileID: 6960492611061897379}
   - component: {fileID: 4997732214649152423}
   m_Layer: 0
   m_Name: TurretEnemy
@@ -172,7 +171,6 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   audioSource: {fileID: 0}
   damagedClip: {fileID: 8300000, guid: 877ca48f4d1b3734b90a0c7f4e5dcf12, type: 3}
-  target: {fileID: 5028391134535262255, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
   detectRange: 6
   bullet: {fileID: 8425132720108540564, guid: d115c36b981a46f459bbf2393eab07c2, type: 3}
   alertClip: {fileID: 8300000, guid: fc02b6397cf66544086bc866c57dcf05, type: 3}
@@ -273,28 +271,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!195 &6960492611061897379
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7114518123416208961}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.3
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.31
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!65 &4997732214649152423
 BoxCollider:
   m_ObjectHideFlags: 0

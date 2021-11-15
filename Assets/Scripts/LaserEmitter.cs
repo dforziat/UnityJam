@@ -54,4 +54,13 @@ public class LaserEmitter : MonoBehaviour
         audioSource.Play();
         animator.SetTrigger("activate");
     }
+
+    public void deactivateLaser()
+    {
+        lineRenderer.enabled = false;
+        boxCollider.enabled = false;
+        laserParticleSystem.Stop();
+        audioSource.Stop();
+        animator.speed = 0;
+    }
 }

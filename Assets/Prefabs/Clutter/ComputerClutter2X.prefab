@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2188448622909386786}
   - component: {fileID: 7525239952250543678}
   - component: {fileID: -5347399528281328938}
+  - component: {fileID: 833189469437919261}
   m_Layer: 0
   m_Name: ComputerClutter2X
   m_TagString: Untagged
@@ -116,3 +117,16 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.5, y: 0.5, z: -0.5}
   m_TimeToStationary: 0.5
+--- !u!65 &833189469437919261
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826545711549895101}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.5, y: 1, z: -0.5}

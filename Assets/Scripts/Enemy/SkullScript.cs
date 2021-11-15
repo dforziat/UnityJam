@@ -7,7 +7,6 @@ using UnityEngine.AI;
 public class SkullScript : EnemyParent
 {
     public GameObject childExplosion;
-    private Transform target;
     private NavMeshAgent navMeshAgent;
     private float chaseRange = 5;
     private float distanceToTarget = Mathf.Infinity;
@@ -26,7 +25,7 @@ public class SkullScript : EnemyParent
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         childAudioSource = GetComponent<AudioSource>();
-        target = FindObjectOfType<PlayerControls>().transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         //set parent vars
         explosion = childExplosion;
         audioSource = childAudioSource;
@@ -89,16 +88,4 @@ public class SkullScript : EnemyParent
         animator.SetBool("shoot", false);
     }
 
-    public bool canSeePlayer()
-    {
-        NavMeshHit navMeshHit;
-        if (!navMeshAgent.Raycast(target.position, out navMeshHit))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
 }

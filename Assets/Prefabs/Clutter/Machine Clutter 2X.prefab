@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5263571376807661707}
   - component: {fileID: 7402628932019952365}
   - component: {fileID: -1597198128924073162}
+  - component: {fileID: 961624068621196998}
   m_Layer: 0
   m_Name: Machine Clutter 2X
   m_TagString: Untagged
@@ -95,7 +96,7 @@ MeshCollider:
   m_GameObject: {fileID: 7578125331842915294}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -116,3 +117,16 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.5, y: 0.5, z: -0.5}
   m_TimeToStationary: 0.5
+--- !u!65 &961624068621196998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578125331842915294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.5, y: 1, z: -0.5}

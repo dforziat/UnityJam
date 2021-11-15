@@ -5,11 +5,9 @@ using UnityEngine.AI;
 
 public class TurretEnemyController : EnemyParent
 {
-    private Transform target;
     private bool isDetected = false;
     private float distanceToTarget = Mathf.Infinity;
     public float detectRange = 6f;
-    private bool canSeePlayer = false;
     //Rate of fire is due to animation.
     private Animator animator;
     private float bulletSpeed = 7f;
@@ -36,17 +34,7 @@ public class TurretEnemyController : EnemyParent
     {
         distanceToTarget = Vector3.Distance(target.position, transform.position);
 
-        NavMeshHit navMeshHit;
-        if (!GetComponent<NavMeshAgent>().Raycast(target.position, out navMeshHit))
-        {
-            canSeePlayer = true;
-        }
-        else
-        {
-            canSeePlayer = false;
-        }
-
-        if (distanceToTarget <= detectRange && !isDetected && canSeePlayer)
+        if (distanceToTarget <= detectRange && !isDetected && canSeePlayer())
         {
             Debug.Log("Is Detected");
             audioSource.PlayOneShot(alertClip);
@@ -54,7 +42,7 @@ public class TurretEnemyController : EnemyParent
             animator.SetBool("detected", true);
             isDetected = true;
         }
-        if((distanceToTarget > detectRange || !canSeePlayer) && isDetected)
+        if((distanceToTarget > detectRange || !canSeePlayer()) && isDetected)
         {
             Debug.Log("Lost Detection");
             GetComponent<BoxCollider>().enabled = false;

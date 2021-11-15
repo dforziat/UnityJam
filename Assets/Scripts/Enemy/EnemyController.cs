@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class EnemyController : EnemyParent
 {
-    private Transform target;
     private NavMeshAgent navMeshAgent;
     private AudioSource childAudioSource;
     private float chaseRange = 5;
@@ -23,9 +22,8 @@ public class EnemyController : EnemyParent
         animator = GetComponent<Animator>();
         childAudioSource = GetComponent<AudioSource>();
         navMeshAgent = GetComponent<NavMeshAgent>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
         EnemyList = GameObject.FindGameObjectsWithTag("Enemy");
-
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         //set parent vars
         audioSource = childAudioSource;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -40,7 +38,7 @@ public class EnemyController : EnemyParent
         {
             EngageTarget();
         }
-        else if(canSeePlayer())
+        else if (canSeePlayer())
         {
             isProvoked = true;
         }
@@ -71,7 +69,7 @@ public class EnemyController : EnemyParent
 
     public void AttackHitEvent()//have animation call this method
     {
-        if(target == null)
+        if (target == null)
         {
             return;
         }
@@ -107,35 +105,6 @@ public class EnemyController : EnemyParent
         spriteRenderer.sprite = idleSprite;
     }
 
-    public bool canSeePlayer()
-    {
-        /*NavMeshHit navMeshHit;
-        if (!navMeshAgent.Raycast(target.position, out navMeshHit))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }*/
-        if (Physics.Linecast(transform.position, target.position, out RaycastHit hitInfo))
-        {
-            if (hitInfo.transform.CompareTag("Player"))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-        else
-        {
-            return false;
-        }
-
-    }
 
     public void BroadcastAggroMessageToOtherEnemies()
     {
@@ -150,7 +119,7 @@ public class EnemyController : EnemyParent
 
     public void aggroToPlayer(Transform broadcastedEnemy)
     {
-        if(Vector3.Distance(broadcastedEnemy.position, transform.position) <= chaseRange)
+        if (Vector3.Distance(broadcastedEnemy.position, transform.position) <= chaseRange)
         {
             isProvoked = true;
         }

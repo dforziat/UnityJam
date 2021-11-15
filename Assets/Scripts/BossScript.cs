@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossScript : MonoBehaviour
 {
     [Header("Stats")]
-    private int maxHealth = 50;
+    private int maxHealth = 100;
     public int health;
     private Transform target;
     private Animator animator;
@@ -14,7 +14,7 @@ public class BossScript : MonoBehaviour
     public GameObject jumppads;
     public GameObject explosion;
     public DoorProximityScript bossDoor;
-    public GameObject laser;
+    public LaserEmitter laser;
     private bool isDead = false;
 
     [Header("Charge Shot")]
@@ -209,7 +209,7 @@ public class BossScript : MonoBehaviour
         animator.SetTrigger("secondstage");
         isSecondStage = true;
         jumppads.SetActive(true);
-        laser.GetComponent<LaserEmitter>().activateLaser();
+        laser.activateLaser();
 
     }
 
@@ -226,6 +226,7 @@ public class BossScript : MonoBehaviour
     public void die()
     {
         bossDoor.isUnlocked = true;
+        laser.deactivateLaser();
         Destroy(gameObject);
     }
 
