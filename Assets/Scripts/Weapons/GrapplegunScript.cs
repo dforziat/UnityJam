@@ -20,6 +20,8 @@ public class GrapplegunScript : MonoBehaviour
     public AudioClip shootClip;
     public AudioClip weaponSwitchClip;
     public AudioClip dryfireClip;
+    public AudioClip rechargeTickClip;
+    public AudioClip rechargeCompleteClip;
     public Image ammoIcon;
     public Text grapplegunAmmoText;
     public Camera cam;
@@ -40,7 +42,6 @@ public class GrapplegunScript : MonoBehaviour
         checkWeaponSwitchAudio();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
         grapplegunAmmoText.enabled = true;
-        grapplegunAmmoText.text = playerControls.grapplegunAmmo.ToString("D3");
         ammoIcon.enabled = true;
         lineRenderer.enabled = false;
         canShoot = true;
@@ -69,11 +70,11 @@ public class GrapplegunScript : MonoBehaviour
 
     public void shootGun()
     {
-        if (Input.GetMouseButtonDown(0) && canShoot && playerControls.grapplegunAmmo > 0 && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("GrapplegunIdle"))
+        if (Input.GetMouseButtonDown(0) && canShoot && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("GrapplegunIdle"))
         {
             StartCoroutine(Shoot());
         }
-        if (Input.GetMouseButtonDown(0) && playerControls.grapplegunAmmo <= 0)
+        if (Input.GetMouseButtonDown(0) && !canShoot)
         {
             audioSource.PlayOneShot(dryfireClip);
         }
@@ -86,8 +87,6 @@ public class GrapplegunScript : MonoBehaviour
         canShoot = false;
         gunAnimator.SetBool("shooting", true);
         audioSource.PlayOneShot(shootClip);
-        playerControls.grapplegunAmmo--;
-        grapplegunAmmoText.text = playerControls.grapplegunAmmo.ToString("D3");
 
         RaycastHit preHit;
         LayerMask wallMask = LayerMask.GetMask("Wall");
@@ -141,9 +140,20 @@ public class GrapplegunScript : MonoBehaviour
     public void ShootingRecovery()//CALL FROM GRAPPLE POINT COLLISION TO RESET SHOOTING
     {
         weaponSwitching.lockWeaponSwitch = false;
-        gunAnimator.SetBool("shooting", false);
+        gunAnimator.SetTrigger("recharge");
         lineRenderer.enabled = false;
+    }
+
+    public void rechargeComplete()//call from animation event
+    {
+        audioSource.PlayOneShot(rechargeCompleteClip);
+        gunAnimator.SetBool("shooting", false);
         canShoot = true;
+    }
+
+    public void playClickSound()
+    {
+        audioSource.PlayOneShot(rechargeTickClip);
     }
 
     private void checkWeaponSwitchAudio()

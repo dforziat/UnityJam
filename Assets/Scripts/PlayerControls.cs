@@ -39,7 +39,6 @@ public class PlayerControls : MonoBehaviour
     [Header("Ammo Count")]
     public int handgunAmmo = 25;
     public int shotgunAmmo = 10;
-    public int grapplegunAmmo = 20;
     public int machinegunAmmo = 30;
     //public int spearAmmo = 1;
 
@@ -203,7 +202,6 @@ public class PlayerControls : MonoBehaviour
         audioSource.PlayOneShot(ammoPickupClip);
         handgunAmmo += 15;
         shotgunAmmo += 10;
-        grapplegunAmmo += 10;
         machinegunAmmo += 25;
         //spearAmmo += 1;
 
@@ -219,8 +217,6 @@ public class PlayerControls : MonoBehaviour
     public void RecieveGrapplegunAmmo(int ammoAmount)
     {
         audioSource.PlayOneShot(ammoPickupClip);
-        grapplegunAmmo += ammoAmount;
-        grapplegunAmmoText.text = grapplegunAmmo.ToString("D3");
     }
 
 
@@ -251,7 +247,7 @@ public class PlayerControls : MonoBehaviour
         }
         if (grapplegunAmmoText.enabled)
         {
-            grapplegunAmmoText.text = grapplegunAmmo.ToString("D3");
+            //grapplegunAmmoText.text = grapplegunAmmo.ToString("D3");
         }
         if (machinegunAmmoText.enabled)
         {

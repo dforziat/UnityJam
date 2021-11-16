@@ -1326,6 +1326,8 @@ MonoBehaviour:
   shootClip: {fileID: 8300000, guid: 1b74a911e1a4f7a479bc7677c9f5c7d0, type: 3}
   weaponSwitchClip: {fileID: 8300000, guid: 12ccc6e3bae733e49b0a1e97ad964c7c, type: 3}
   dryfireClip: {fileID: 8300000, guid: dd197105deb018540b2bfe48ee85e602, type: 3}
+  rechargeTickClip: {fileID: 8300000, guid: 33e7e61b7dde8e64e8752bdff6cb18f4, type: 3}
+  rechargeCompleteClip: {fileID: 8300000, guid: 91d6f4b3437c9a140838eba494d71e52, type: 3}
   ammoIcon: {fileID: 4664820809876136724}
   grapplegunAmmoText: {fileID: 2025963431795585780}
   cam: {fileID: 0}
@@ -2987,18 +2989,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: a76b239f94a2d3740b72d7edf9dff7ba, type: 3}
-    m_FontSize: 75
-    m_FontStyle: 0
+    m_FontSize: 200
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 120
+    m_MaxSize: 200
     m_Alignment: 6
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0
-  m_Text: 000
+  m_Text: "\u221E"
 --- !u!1 &6216474775019406687
 GameObject:
   m_ObjectHideFlags: 0

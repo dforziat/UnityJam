@@ -23,7 +23,7 @@ public class TurretBullet : MonoBehaviour
         if(other.tag == "Player")
         {
             other.BroadcastMessage("TakeDamage", damage);
-        }else if(other.tag != "Enemy")
+        }else if(other.tag != "Enemy" && other.tag != "Door")
         {
             Destroy(gameObject);
         }
