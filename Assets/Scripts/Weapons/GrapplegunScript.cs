@@ -139,13 +139,13 @@ public class GrapplegunScript : MonoBehaviour
 
     public void ShootingRecovery()//CALL FROM GRAPPLE POINT COLLISION TO RESET SHOOTING
     {
-        weaponSwitching.lockWeaponSwitch = false;
         gunAnimator.SetTrigger("recharge");
         lineRenderer.enabled = false;
     }
 
     public void rechargeComplete()//call from animation event
     {
+        weaponSwitching.lockWeaponSwitch = false;
         audioSource.PlayOneShot(rechargeCompleteClip);
         gunAnimator.SetBool("shooting", false);
         canShoot = true;

@@ -17,6 +17,7 @@ public class PlayerControls : MonoBehaviour
     bool isGrounded;
     private float jumpHeight = 5f;
     public bool isGrappling = false;
+    private float grappleTimer = 5f;
 
     [Header("Camera")]
     public float lookSensitivity;
@@ -43,7 +44,6 @@ public class PlayerControls : MonoBehaviour
     //public int spearAmmo = 1;
 
     public int curLevel;
-
     Vector3 vel;
     [SerializeField] CharacterController controller;
 
@@ -58,8 +58,8 @@ public class PlayerControls : MonoBehaviour
     public AudioClip injuredAudioClip;
     public AudioClip deathAudioClip;
     public AudioClip healthPickupClip;
+    public AudioClip shieldPickupClip;
     public AudioClip ammoPickupClip;
-
     public bool gunSoundOnFirstLoad = true;
 
     void Awake()
@@ -194,7 +194,7 @@ public class PlayerControls : MonoBehaviour
         curHp = maxOverHeal;
         hpText.text = curHp.ToString("D3");
         hpText.color = steelBlue;
-        audioSource.PlayOneShot(healthPickupClip);
+        audioSource.PlayOneShot(shieldPickupClip);
     }
 
     public void RecieveAmmo()
@@ -230,8 +230,16 @@ public class PlayerControls : MonoBehaviour
         if (isGrappling)
         {
             controller.Move(controller.transform.forward * Mathf.Sqrt(grappleSpeed) * Time.deltaTime);
-        }
 
+            if (grappleTimer > 0)
+            {
+                grappleTimer -= Time.deltaTime;
+            }
+            if(grappleTimer <= 0)
+            {
+                stopGrappling();
+            }
+        }
         
     }
 
@@ -260,11 +268,16 @@ public class PlayerControls : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            isGrappling = false;
-            if(WeaponHolder.GetComponentInChildren<GrapplegunScript>() != null)
-            {
-                WeaponHolder.GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
-            }
+            stopGrappling();
+        }
+    }
+
+    private void stopGrappling()
+    {
+        isGrappling = false;
+        if (WeaponHolder.GetComponentInChildren<GrapplegunScript>() != null)
+        {
+            WeaponHolder.GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
         }
     }
 }
