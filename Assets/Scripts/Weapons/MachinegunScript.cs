@@ -87,7 +87,7 @@ public class MachinegunScript : MonoBehaviour
             {
                 if(hit.transform != null)
                 {
-                    hit.transform.BroadcastMessage("takeDamage", damage);
+                    hit.transform.BroadcastMessage("takeDamage", damage, SendMessageOptions.DontRequireReceiver);
                 }
             }
             if (hit.transform.tag == "Button")

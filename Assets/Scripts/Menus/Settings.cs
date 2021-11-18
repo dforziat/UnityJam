@@ -104,7 +104,6 @@ public class Settings : MonoBehaviour
         mouseSensSlider.value = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
 
 
-
     }
 
     public void closeSettings()

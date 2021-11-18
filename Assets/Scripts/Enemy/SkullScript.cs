@@ -19,6 +19,7 @@ public class SkullScript : EnemyParent
     private AudioSource childAudioSource;
     public AudioClip childDamagedClip;
     public AudioClip fireballClip;
+    public AudioClip provokedClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +46,7 @@ public class SkullScript : EnemyParent
         else if (canSeePlayer())
         {
             isProvoked = true;
+            childAudioSource.PlayOneShot(provokedClip);
         }
     }
 

@@ -16,6 +16,8 @@ public class EnemyController : EnemyParent
     public Sprite damagedSprite;
     public Sprite idleSprite;
 
+    public AudioClip provokedClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,7 @@ public class EnemyController : EnemyParent
         else if (canSeePlayer())
         {
             isProvoked = true;
+            childAudioSource.PlayOneShot(provokedClip);
         }
     }
 

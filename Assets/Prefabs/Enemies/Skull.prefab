@@ -230,7 +230,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -302,6 +302,7 @@ MonoBehaviour:
   droprate: 20
   ammoPickup: {fileID: 7419672412132425511, guid: a9f5cf08a171a3f4fb157ed9978dbcd6, type: 3}
   healthPickup: {fileID: 8827575525327108626, guid: 94d84c7b07e780345a7c615a94a919f6, type: 3}
+  target: {fileID: 0}
   spriteRenderer: {fileID: 0}
   audioSource: {fileID: 0}
   damagedClip: {fileID: 8300000, guid: c774c6fed800e8c44ba88d9a51a31b87, type: 3}
@@ -309,6 +310,7 @@ MonoBehaviour:
   fireball: {fileID: 8425132720108540564, guid: 363cf020710ddad4981d38226f32a804, type: 3}
   childDamagedClip: {fileID: 8300000, guid: c774c6fed800e8c44ba88d9a51a31b87, type: 3}
   fireballClip: {fileID: 8300000, guid: c548f2a43364d4348b18a91784e4c3f1, type: 3}
+  provokedClip: {fileID: 8300000, guid: c212d5a3a0896d847b15c184c2acc50e, type: 3}
 --- !u!54 &2984224146374055157
 Rigidbody:
   m_ObjectHideFlags: 0

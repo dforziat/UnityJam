@@ -90,7 +90,7 @@ public class ShotgunScript : MonoBehaviour
 
                 if (hit.transform.tag == "Enemy")
                 {
-                    hit.transform.BroadcastMessage("takeDamage", damage);
+                    hit.transform.BroadcastMessage("takeDamage", damage, SendMessageOptions.DontRequireReceiver);
                 }
                 if (hit.transform.tag == "Button")
                 {
