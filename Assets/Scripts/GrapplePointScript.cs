@@ -25,6 +25,7 @@ public class GrapplePointScript : MonoBehaviour
             {
                 GameObject.FindGameObjectWithTag("WeaponsHud").GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
             }
+            
         }
     }
 }

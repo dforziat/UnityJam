@@ -16,7 +16,7 @@ public class WeaponSwitching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseMenu.GameIsPaused)
+        if (PauseMenu.GameIsPaused || lockWeaponSwitch)
         {
             return;
         }
@@ -75,7 +75,6 @@ public class WeaponSwitching : MonoBehaviour
             }
         }
 
-
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             selectedWeapon = 0;
@@ -97,7 +96,7 @@ public class WeaponSwitching : MonoBehaviour
             selectedWeapon = 4;
         }
 
-        if (previousSelectedWeapon != selectedWeapon && transform.GetChild(selectedWeapon).tag == "unlocked" && !lockWeaponSwitch)
+        if (previousSelectedWeapon != selectedWeapon && transform.GetChild(selectedWeapon).tag == "unlocked")
         {
             SelectWeapon();
         }
