@@ -31,7 +31,6 @@ public class GrapplegunScript : MonoBehaviour
     void Start()
     {
         weaponSwitching = GetComponentInParent<WeaponSwitching>();
-
         gunAnimator = GetComponent<Animator>();
     }
 
@@ -93,10 +92,10 @@ public class GrapplegunScript : MonoBehaviour
         float range = 0;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out preHit, Mathf.Infinity, wallMask))
         {
-            Debug.Log("Raycast Range: " + preHit.distance);
-            range = preHit.distance + .5f;
+            range = preHit.distance;
         }
 
+        RaycastHit finalHit = preHit;
 
         RaycastHit[] hits;
 
@@ -114,6 +113,7 @@ public class GrapplegunScript : MonoBehaviour
             if (hit.transform.tag == "GrapplePoint")
             {
                 playerControls.isGrappling = true;
+                finalHit = hit;
             }
             if(hit.transform.tag == "GrapplePoint" || hit.transform.tag == "Untagged")
             {
@@ -125,12 +125,12 @@ public class GrapplegunScript : MonoBehaviour
                 GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
                 Destroy(impact, .3f);
             }
-        }          
+        }
 
-
+        Debug.Log("Grapple hit tag: " + finalHit.transform.tag);
         yield return new WaitForSeconds(rateOfFire);
 
-        if (preHit.transform == null || !preHit.transform.CompareTag("GrapplePoint"))
+        if (finalHit.transform == null || !finalHit.transform.CompareTag("GrapplePoint"))
         {
             ShootingRecovery();
         }
@@ -145,6 +145,7 @@ public class GrapplegunScript : MonoBehaviour
 
     public void rechargeComplete()//call from animation event
     {
+        gunAnimator.ResetTrigger("recharge");
         weaponSwitching.lockWeaponSwitch = false;
         audioSource.PlayOneShot(rechargeCompleteClip);
         gunAnimator.SetBool("shooting", false);

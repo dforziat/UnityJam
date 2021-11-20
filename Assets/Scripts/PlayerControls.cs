@@ -231,6 +231,7 @@ public class PlayerControls : MonoBehaviour
         {
             controller.Move(controller.transform.forward * Mathf.Sqrt(grappleSpeed) * Time.deltaTime);
 
+            /*
             if (grappleTimer > 0)
             {
                 grappleTimer -= Time.deltaTime;
@@ -238,7 +239,7 @@ public class PlayerControls : MonoBehaviour
             if(grappleTimer <= 0)
             {
                 stopGrappling();
-            }
+            } */
         }
         
     }
@@ -279,5 +280,6 @@ public class PlayerControls : MonoBehaviour
         {
             WeaponHolder.GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
         }
+       // grappleTimer = 5f;
     }
 }
