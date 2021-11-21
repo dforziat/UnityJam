@@ -18,7 +18,7 @@ public class GrapplePointScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+       /* if (other.tag == "Player")
         {
             other.GetComponent<PlayerControls>().isGrappling = false;
             if (GameObject.FindGameObjectWithTag("WeaponsHud").GetComponentInChildren<GrapplegunScript>() != null)
@@ -26,6 +26,6 @@ public class GrapplePointScript : MonoBehaviour
                 GameObject.FindGameObjectWithTag("WeaponsHud").GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
             }
             
-        }
+        } */
     }
 }

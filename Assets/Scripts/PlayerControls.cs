@@ -16,8 +16,11 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] LayerMask groundMask;
     bool isGrounded;
     private float jumpHeight = 5f;
+
+    [Header("GrappleStuff")]
     public bool isGrappling = false;
-    private float grappleTimer = 5f;
+    Vector3 initialPos;
+    float distanceToGrapple;
 
     [Header("Camera")]
     public float lookSensitivity;
@@ -227,21 +230,23 @@ public class PlayerControls : MonoBehaviour
 
     public void Grapple()
     {
-        if (isGrappling)
+        if (isGrappling && distanceToGrapple > Vector3.Distance(initialPos, transform.position) + 1)
         {
+            Debug.Log("DISTANCE: " + Vector3.Distance(initialPos, transform.position));
             controller.Move(controller.transform.forward * Mathf.Sqrt(grappleSpeed) * Time.deltaTime);
-
-            /*
-            if (grappleTimer > 0)
-            {
-                grappleTimer -= Time.deltaTime;
-            }
-            if(grappleTimer <= 0)
+            if(distanceToGrapple <= Vector3.Distance(initialPos, transform.position) + 1)
             {
                 stopGrappling();
-            } */
+            }
         }
         
+    }
+
+    public void GrapplePrep(float distanceToGrapplePoint)
+    {
+        distanceToGrapple = distanceToGrapplePoint;
+        initialPos = transform.position;
+        isGrappling = true;
     }
 
     public void updateGUIAmmo()
@@ -265,14 +270,6 @@ public class PlayerControls : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            stopGrappling();
-        }
-    }
-
     private void stopGrappling()
     {
         isGrappling = false;
@@ -280,6 +277,13 @@ public class PlayerControls : MonoBehaviour
         {
             WeaponHolder.GetComponentInChildren<GrapplegunScript>().ShootingRecovery();
         }
-       // grappleTimer = 5f;
+    }
+
+    public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("Enemy"))
+        {
+            stopGrappling();
+        }
     }
 }

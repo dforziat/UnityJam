@@ -112,7 +112,7 @@ public class GrapplegunScript : MonoBehaviour
             }
             if (hit.transform.tag == "GrapplePoint")
             {
-                playerControls.isGrappling = true;
+                playerControls.GrapplePrep(hit.distance);
                 finalHit = hit;
             }
             if(hit.transform.tag == "GrapplePoint" || hit.transform.tag == "Untagged")
@@ -139,6 +139,7 @@ public class GrapplegunScript : MonoBehaviour
 
     public void ShootingRecovery()//CALL FROM GRAPPLE POINT COLLISION TO RESET SHOOTING
     {
+        weaponSwitching.lockWeaponSwitch = false;
         gunAnimator.SetTrigger("recharge");
         lineRenderer.enabled = false;
     }
@@ -146,7 +147,6 @@ public class GrapplegunScript : MonoBehaviour
     public void rechargeComplete()//call from animation event
     {
         gunAnimator.ResetTrigger("recharge");
-        weaponSwitching.lockWeaponSwitch = false;
         audioSource.PlayOneShot(rechargeCompleteClip);
         gunAnimator.SetBool("shooting", false);
         canShoot = true;
