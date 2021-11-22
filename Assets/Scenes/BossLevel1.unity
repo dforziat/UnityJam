@@ -13940,11 +13940,11 @@ PrefabInstance:
     - target: {fileID: 5028391134535262254, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
       propertyPath: grapplegunAmmoText
       value: 
-      objectReference: {fileID: 1599512383}
+      objectReference: {fileID: 0}
     - target: {fileID: 5028391134535262254, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
       propertyPath: machinegunAmmoText
       value: 
-      objectReference: {fileID: 1599512387}
+      objectReference: {fileID: 0}
     - target: {fileID: 5028391134535262255, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -47971,6 +47971,30 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2025963431795585780, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: a76b239f94a2d3740b72d7edf9dff7ba, type: 3}
+    - target: {fileID: 2025963431795585780, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025963431795585780, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025963431795585780, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025963431795585780, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025963431795585780, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2495816128428023546, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: cam
       value: 
@@ -48103,6 +48127,22 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1904915151}
+    - target: {fileID: 7424349163443550462, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 411.8675
+      objectReference: {fileID: 0}
+    - target: {fileID: 7424349163443550462, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 203.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7424349163443550462, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 305.9292
+      objectReference: {fileID: 0}
+    - target: {fileID: 7424349163443550462, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 101.399994
+      objectReference: {fileID: 0}
     - target: {fileID: 7498298662875697774, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -48157,17 +48197,6 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 38990798, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
   m_PrefabInstance: {fileID: 1599512380}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1599512383 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2025963431795585780, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
-  m_PrefabInstance: {fileID: 1599512380}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1599512384 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7344784734030563782, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
@@ -48193,17 +48222,6 @@ MonoBehaviour:
 --- !u!114 &1599512386 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3812060129056656026, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
-  m_PrefabInstance: {fileID: 1599512380}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1599512387 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4333417149485942890, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
   m_PrefabInstance: {fileID: 1599512380}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

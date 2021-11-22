@@ -23,6 +23,7 @@ public class GrapplegunScript : MonoBehaviour
     public AudioClip rechargeTickClip;
     public AudioClip rechargeCompleteClip;
     public Image ammoIcon;
+    public Image grapplegunAmmoIcon;
     public Text grapplegunAmmoText;
     public Camera cam;
     public GameObject hitEffect;
@@ -40,7 +41,8 @@ public class GrapplegunScript : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         checkWeaponSwitchAudio();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
-        grapplegunAmmoText.enabled = true;
+        //grapplegunAmmoText.enabled = true;
+        grapplegunAmmoIcon.enabled = true;
         ammoIcon.enabled = true;
         lineRenderer.enabled = false;
         canShoot = true;
@@ -52,7 +54,8 @@ public class GrapplegunScript : MonoBehaviour
         {
             weaponSwitching.lockWeaponSwitch = false;
         }  
-        grapplegunAmmoText.enabled = false;
+        //grapplegunAmmoText.enabled = false;
+        grapplegunAmmoIcon.enabled = false;
         ammoIcon.enabled = false;
     }
 
