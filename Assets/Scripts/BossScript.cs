@@ -185,6 +185,10 @@ public class BossScript : MonoBehaviour
         GameObject launchBombL = Instantiate(bomb);
         GameObject launchBombR = Instantiate(bomb);
 
+        //diasble audio on 2/3 bombs
+        launchBombL.GetComponent<AudioSource>().enabled = false;
+        launchBombR.GetComponent<AudioSource>().enabled = false;
+
         launchBomb.transform.position = bombLaunchLocation.position;
         launchBombL.transform.position = bombLaunchLocation.position;
         launchBombR.transform.position = bombLaunchLocation.position;

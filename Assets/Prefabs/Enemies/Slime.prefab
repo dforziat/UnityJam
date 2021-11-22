@@ -104,12 +104,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 658897097454416177}
-  - component: {fileID: 658897097454416188}
   - component: {fileID: 3489449522323712671}
   - component: {fileID: 1888440970}
   - component: {fileID: 337707699}
   - component: {fileID: 8117355709562539763}
   - component: {fileID: 9074741380837672632}
+  - component: {fileID: -7325504409165137782}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -133,32 +133,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &658897097454416188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658897097454416179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9933311426dde934d96e8506ce306f07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  damage: 10
-  isProvoked: 0
-  explosion: {fileID: 8579213436375878188, guid: 5532d3ecca7a0724b8673395b091778c, type: 3}
-  droprate: 20
-  ammoPickup: {fileID: 7419672412132425511, guid: a9f5cf08a171a3f4fb157ed9978dbcd6, type: 3}
-  healthPickup: {fileID: 8827575525327108626, guid: 94d84c7b07e780345a7c615a94a919f6, type: 3}
-  target: {fileID: 0}
-  spriteRenderer: {fileID: 658897096893322984}
-  audioSource: {fileID: 337707699}
-  damagedClip: {fileID: 8300000, guid: c774c6fed800e8c44ba88d9a51a31b87, type: 3}
-  EnemyList: []
-  damagedSprite: {fileID: 3511383456780374621, guid: 4fd7f36a1a82e8d47a489445c375377f, type: 3}
-  idleSprite: {fileID: 6059200738242146588, guid: 4fd7f36a1a82e8d47a489445c375377f, type: 3}
 --- !u!195 &3489449522323712671
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -191,7 +165,7 @@ Animator:
   m_GameObject: {fileID: 658897097454416179}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f7772d0eee63a7b41bbbe4595ba3d281, type: 2}
+  m_Controller: {fileID: 9100000, guid: f8b0c8a18af443f4e956fd0da8f6fdf7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -325,6 +299,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-7325504409165137782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658897097454416179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e87f226012a36f489ca971f8854d71d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  damage: 10
+  isProvoked: 0
+  explosion: {fileID: 8579213436375878188, guid: 5532d3ecca7a0724b8673395b091778c, type: 3}
+  droprate: 25
+  ammoPickup: {fileID: 7419672412132425511, guid: a9f5cf08a171a3f4fb157ed9978dbcd6, type: 3}
+  healthPickup: {fileID: 8827575525327108626, guid: 94d84c7b07e780345a7c615a94a919f6, type: 3}
+  target: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  audioSource: {fileID: 0}
+  damagedClip: {fileID: 0}
+  childExplosion: {fileID: 8579213436375878188, guid: 5532d3ecca7a0724b8673395b091778c, type: 3}
+  fireball: {fileID: 0}
+  childDamagedClip: {fileID: 0}
+  attackClip: {fileID: 0}
+  provokedClip: {fileID: 0}
 --- !u!1 &4562697678411860900
 GameObject:
   m_ObjectHideFlags: 0

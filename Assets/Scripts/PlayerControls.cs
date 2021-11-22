@@ -35,7 +35,6 @@ public class PlayerControls : MonoBehaviour
     public Text hpText;
     public Text handgunAmmoText;
     public Text shotgunAmmoText;
-    public Text grapplegunAmmoText;
     public Text machinegunAmmoText;
     //public Text spearAmmoText;
 
@@ -230,16 +229,19 @@ public class PlayerControls : MonoBehaviour
 
     public void Grapple()
     {
-        if (isGrappling && distanceToGrapple > Vector3.Distance(initialPos, transform.position) + 1)
+        if (isGrappling)
         {
-            Debug.Log("DISTANCE: " + Vector3.Distance(initialPos, transform.position));
-            controller.Move(controller.transform.forward * Mathf.Sqrt(grappleSpeed) * Time.deltaTime);
-            if(distanceToGrapple <= Vector3.Distance(initialPos, transform.position) + 1)
+            if (distanceToGrapple > Vector3.Distance(initialPos, transform.position) + 1)
+            {
+                Debug.Log("DISTANCE: " + Vector3.Distance(initialPos, transform.position));
+                controller.Move(controller.transform.forward * Mathf.Sqrt(grappleSpeed) * Time.deltaTime);
+            }
+            if (distanceToGrapple <= Vector3.Distance(initialPos, transform.position) + 1)
             {
                 stopGrappling();
             }
         }
-        
+
     }
 
     public void GrapplePrep(float distanceToGrapplePoint)
@@ -258,10 +260,6 @@ public class PlayerControls : MonoBehaviour
         if (shotgunAmmoText.enabled)
         {
             shotgunAmmoText.text = shotgunAmmo.ToString("D3");
-        }
-        if (grapplegunAmmoText.enabled)
-        {
-            //grapplegunAmmoText.text = grapplegunAmmo.ToString("D3");
         }
         if (machinegunAmmoText.enabled)
         {
