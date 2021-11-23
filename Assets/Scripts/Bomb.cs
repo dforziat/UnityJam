@@ -28,8 +28,16 @@ public class Bomb : MonoBehaviour
 
     public void beep()
     {
-        GetComponent<AudioSource>().PlayOneShot(beepClip);
+ 
+        if (GetComponent<AudioSource>().enabled == false)
+            return;
+        else
+            GetComponent<AudioSource>().PlayOneShot(beepClip);
+
     }
+        
+       
+    
 
     public void explode()
     {

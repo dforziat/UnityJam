@@ -80,7 +80,6 @@ MonoBehaviour:
   hpText: {fileID: 0}
   handgunAmmoText: {fileID: 0}
   shotgunAmmoText: {fileID: 0}
-  grapplegunAmmoText: {fileID: 0}
   machinegunAmmoText: {fileID: 0}
   handgunAmmo: 25
   shotgunAmmo: 10
@@ -119,7 +118,7 @@ AudioSource:
   m_GameObject: {fileID: 5028391134535262241}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
+  OutputAudioMixerGroup: {fileID: -7452003932176372400, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
   m_audioClip: {fileID: 8300000, guid: 88212d15603516247816dbce7db48707, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -267,8 +266,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1483822812}
+  m_Children: []
   m_Father: {fileID: 5028391134535262255}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -353,77 +351,3 @@ Transform:
   m_Father: {fileID: 5028391134535262255}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1484203440
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 5028391134863407059}
-    m_Modifications:
-    - target: {fileID: 160114, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: m_Name
-      value: PixelCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045880, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: field of view
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045880, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: far clip plane
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045880, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-      propertyPath: near clip plane
-      value: 0.1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
---- !u!4 &1483822812 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
-  m_PrefabInstance: {fileID: 1484203440}
-  m_PrefabAsset: {fileID: 0}
