@@ -70,7 +70,7 @@ public class EnemyParent : MonoBehaviour
         }
     }
 
-    private IEnumerator FlashRed()
+    public IEnumerator FlashRed()
     {
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(.15f);

@@ -58,6 +58,7 @@ public class PlayerControls : MonoBehaviour
     [Header("Audio")]
     private AudioSource audioSource;
     public AudioClip injuredAudioClip;
+    public AudioClip injuredAudioClip2;
     public AudioClip deathAudioClip;
     public AudioClip healthPickupClip;
     public AudioClip shieldPickupClip;
@@ -157,7 +158,16 @@ public class PlayerControls : MonoBehaviour
     public void TakeDamage(int damage)
     {
         GetComponent<DamageEffect>().ShowDamageEffect();
-        audioSource.PlayOneShot(injuredAudioClip);
+
+        if (Random.value < 0.5f)
+        {
+            audioSource.PlayOneShot(injuredAudioClip);
+        }
+        else
+        {
+            audioSource.PlayOneShot(injuredAudioClip2);
+        }
+
         curHp -= damage;
         hpText.text = curHp.ToString("D3");
 

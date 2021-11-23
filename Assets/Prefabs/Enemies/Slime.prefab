@@ -143,7 +143,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 2.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -323,9 +323,10 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   damagedClip: {fileID: 0}
   childExplosion: {fileID: 8579213436375878188, guid: 5532d3ecca7a0724b8673395b091778c, type: 3}
-  childDamagedClip: {fileID: 0}
-  attackClip: {fileID: 0}
-  provokedClip: {fileID: 0}
+  baby: {fileID: 658897097454416179}
+  childDamagedClip: {fileID: 8300000, guid: c774c6fed800e8c44ba88d9a51a31b87, type: 3}
+  attackClip: {fileID: 8300000, guid: 959027d859a171346a387ceb2094c390, type: 3}
+  provokedClip: {fileID: 8300000, guid: eed549114951a2b42953f2e87beab17b, type: 3}
 --- !u!1 &4562697678411860900
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,7 +352,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4562697678411860900}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.4, z: 0}
+  m_LocalPosition: {x: 0, y: -0.37, z: 0}
   m_LocalScale: {x: 2.8, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 658897097454416177}

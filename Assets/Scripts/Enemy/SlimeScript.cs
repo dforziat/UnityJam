@@ -10,7 +10,10 @@ public class SlimeScript : EnemyParent
     private NavMeshAgent navMeshAgent;
     private float chaseRange = 5;
     private float distanceToTarget = Mathf.Infinity;
+    private float verticalOffset = 0;
     private Animator animator;
+    private bool isBaby = false;
+    public GameObject baby; //this is just the slime prefab lol
 
     private AudioSource childAudioSource;
     public AudioClip childDamagedClip;
@@ -28,6 +31,9 @@ public class SlimeScript : EnemyParent
         audioSource = childAudioSource;
         damagedClip = childDamagedClip;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        //slime stats
+        health = 6;
+        damage = 15;
     }
 
     // Update is called once per frame
@@ -44,6 +50,7 @@ public class SlimeScript : EnemyParent
             isProvoked = true;
             childAudioSource.PlayOneShot(provokedClip);
         }
+
     }
 
     private void EngageTarget()
@@ -75,7 +82,52 @@ public class SlimeScript : EnemyParent
         {
             return;
         }
+        audioSource.PlayOneShot(attackClip);
         target.GetComponent<PlayerControls>().TakeDamage(damage);
+    }
+
+    public void makeBabiesOnDeath()
+    { 
+        if (!isBaby)
+        {
+            Debug.Log("Making babies");
+            //make 2 small babies
+            GameObject leftBaby = Instantiate(baby, new Vector3(transform.position.x, transform.position.y, transform.position.z - .5f), transform.rotation);
+            leftBaby.transform.localScale -= new Vector3(.3f, .3f,.3f);
+            leftBaby.GetComponent<NavMeshAgent>().speed = 3;
+            leftBaby.GetComponent<SlimeScript>().health = 2;
+            leftBaby.GetComponent<SlimeScript>().isBaby = true;
+
+            GameObject rightBaby = Instantiate(baby, new Vector3(transform.position.x, transform.position.y, transform.position.z + .5f), transform.rotation);
+            rightBaby.transform.localScale -= new Vector3(.3f, .3f, .3f);
+            rightBaby.GetComponent<NavMeshAgent>().speed = 3;
+            rightBaby.GetComponent<SlimeScript>().health = 2;
+            rightBaby.GetComponent<SlimeScript>().isBaby = true;
+
+            isBaby = true;
+        }
+    }
+
+
+    public new void takeDamage(int damage)
+    {
+        isProvoked = true;
+        health -= damage;
+        StartCoroutine(FlashRed());
+
+        if (health <= 0)
+        {
+            Instantiate(explosion, new Vector3(transform.position.x, transform.position.y - verticalOffset, transform.position.z), transform.rotation);
+            dropItem();
+
+            makeBabiesOnDeath();
+
+            Destroy(gameObject);
+        }
+        if (audioSource.enabled == true)
+        {
+            audioSource.PlayOneShot(damagedClip);
+        }
     }
 
 }
