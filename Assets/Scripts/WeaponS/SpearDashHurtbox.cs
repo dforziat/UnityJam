@@ -23,10 +23,6 @@ public class SpearDashHurtbox : MonoBehaviour
             other.transform.BroadcastMessage("takeDamage", 5);
         }
 
-        if (other.tag == "BreakableWall")
-        {
-            Debug.Log("BREAK");
-            Destroy(other);
-        }
+
     }
 }
