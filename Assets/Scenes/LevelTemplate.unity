@@ -218,6 +218,10 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5028391134535262254, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
+      propertyPath: WeaponHolder
+      value: 
+      objectReference: {fileID: 1289943783}
+    - target: {fileID: 5028391134535262254, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
       propertyPath: damageEffect
       value: 
       objectReference: {fileID: 1599512381}
@@ -598,6 +602,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1289943783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 412639174128173773, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 1599512380}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1554190821
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +744,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7169867674498315482, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1904915151}
     - target: {fileID: 9151208001315596806, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
