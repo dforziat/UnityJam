@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 10}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 464
     height: 356
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 26}
   m_Panes:
   - {fileID: 26}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_MinSize: {x: 333, y: 271}
   m_MaxSize: {x: 14003, y: 10021}
   vertical: 0
-  controlID: 20
+  controlID: 86
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,10 +147,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MinSize: {x: 678, y: 492}
+  m_MaxSize: {x: 18003, y: 14042}
   vertical: 0
-  controlID: 101
+  controlID: 58
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -256,7 +256,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 14003, y: 14042}
   vertical: 1
-  controlID: 189
+  controlID: 59
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 190
+  controlID: 60
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1067,22 +1067,22 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Menus
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/Menus
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Dylan\Documents\GitHub\UnityJam
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0a7e0000
-    m_LastClickedID: 32266
-    m_ExpandedIDs: 00000000d27d0000d47d0000d67d0000d87d0000da7d0000dc7d0000de7d0000e07d0000e27d0000e47d0000e67d0000e87d0000ea7d0000ec7d0000ee7d0000f07d0000f27d00000c7e0000
+    m_SelectedIDs: c2490000
+    m_LastClickedID: 18882
+    m_ExpandedIDs: 000000007445000076450000784500007a4500007c4500007e45000080450000824500008445000086450000884500008a4500008c4500008e450000904500009245000094450000b2450000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1110,7 +1110,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d27d0000d47d0000d67d0000d87d0000da7d0000dc7d0000de7d0000e07d0000e27d0000e47d0000e67d0000e87d0000ea7d0000ec7d0000ee7d0000f07d0000f27d0000
+    m_ExpandedIDs: 000000007445000076450000784500007a4500007c4500007e45000080450000824500008445000086450000884500008a4500008c4500008e450000904500009245000094450000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1233,7 +1233,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: eed08fff10d18fffd07090ffc61591ff9e9b91fff4a392ffa44993ffae4993ffc04a93ffe24a93ffa2ea93ff988f94ff701595ffc61d96ff76c396ff80c396ff7ec496ffa0c496ff606497ff560998ff2e8f98ff849799ff343d9aff3e3d9aff983e9affba3e9aff7ade9aff70839bff48099cff9e119dff4eb79dff58b79dff66b89dff88b89dff48589eff3efd9eff16839fff6c8ba0ff1c31a1ff2631a1ff3032a1ff5232a1ff12d2a1ff0877a2ffe0fca2ff3605a4ffe6aaa4fff0aaa4ffeeaba4ff10aca4ffd04ba5ffc6f0a5ff9e76a6fff47ea7ffa424a8ffae24a8ffa825a8ffca25a8ff8ac5a8ff806aa9ff58f0a9ffaef8aaff5e9eabff689eabff0aa0abff2ca0abffec3facffe2e4acffba6aadff1073aeffc018afffca18afffc419afffe619afffa6b9afff9c5eb0ff74e4b0ffcaecb1ff7a92b2ff8492b2ff8693b2ffa893b2ff6833b3ff5ed8b3ff365eb4ff8c66b5ff3c0cb6ff460cb6ff500db6ff720db6ff32adb6ff2852b7ff00d8b7ff56e0b8ff0686b9ff1086b9ff0a87b9ff2c87b9ffec26baffe2cbbaffba51bbff105abcffc0ffbcffcaffbcffcc00bdffee00bdffaea0bdffa445beff7ccbbeffd2d3bfff8279c0ff8c79c0ff967ac0ffb87ac0ff781ac1ff6ebfc1ff4645c2ff9c4dc3ff4cf3c3ff56f3c3ff54f4c3ff76f4c3ff3694c4ff2c39c5ff04bfc5ff5ac7c6ff0a6dc7ff146dc7ff0e6ec7ff306ec7fff00dc8ffe6b2c8ffbe38c9ff1441caffc4e6caffcee6caffd8e7cafffae7caffba87cbffb02cccff88b2ccffdebacdff8e60ceff9860ceffa261ceffc461ceff8401cfff7aa6cfff522cd0ffa834d1ff58dad1ff62dad1ff68dbd1ff8adbd1ff4a7bd2ff4020d3ff18a6d3ff6eaed4ff1e54d5ff2854d5ff2e55d5ff5055d5ff10f5d5ff069ad6ffde1fd7ff3428d8ffe4cdd8ffeecdd8ff10cfd8ff32cfd8fff86ed9fff213daffce99daff28a2dbffdc47dcffea47dcff6cf0dcffa0f4dcffc0f4dcff8094ddff7639deff4ebfdeffa4c7dfffbec7dfff34c9dfffe2cadfff02cbdfffc26ae0ffb80fe1ff9095e1ffe69de2ff009ee2ff769fe2ff20a1e2ff40a1e2ff0041e3fff6e5e3ffce6be4ff2474e5ff3e74e5ffb475e5ff1077e5ff3077e5fff016e6ffe6bbe6ffbe41e7ff144ae8ff2e4ae8ffa44be8ff744ee8ff944ee8ff54eee8ff4a93e9ff2219eaff7821ebff9221ebff0823ebff4e24ebff6e24ebff2ec4ebff2469ecfffceeecff52f7edff6cf7edffe2f8edff2afcedff4afcedff0a9ceeff0041efffd8c6efff2ecff0ff48cff0ffbed0f0ffecd3f0ff0cd4f0ffcc73f1ffc218f2ff9a9ef2fff0a6f3ff0aa7f3ff80a8f3ff7eabf3ff9eabf3ff944af4ff86eff4ff5a75f5ffa67df6ffc07df6ff347ff6ff1880f6ff3880f6fff81ff7ffeec4f7ffc64af8ff1c53f9ff3653f9ffac54f9ff226bf9ff426bf9ff020bfafff8affaffd035fbff263efcff403efcffb63ffcffd84afcfff84afcffb8eafcffae8ffdff8615feffdc1dfffff81dffff6e1fffff46f0ffffe64a0c00
+      m_ExpandedIDs: 687ffcff887ffcff4e1ffdff48c4fdff244afeff7e52ffff32f8ffff40f8ffff52fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
