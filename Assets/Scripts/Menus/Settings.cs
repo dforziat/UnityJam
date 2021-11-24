@@ -7,6 +7,7 @@ using TMPro;
 using System.Linq;
 
 
+
 public class Settings : MonoBehaviour
 {
 
@@ -72,10 +73,19 @@ public class Settings : MonoBehaviour
 
     void LoadResolutions()
     {
+
+
+        //Case 1 - Only 60 Hz displayed
+        resolutions = Screen.resolutions.Where(resolution => ((resolution.refreshRate == 60) || resolution.refreshRate == 144)).ToArray();
         
 
-        resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray()
-;
+        //Case 2 - All Resolutions and all Hz, list is reversed
+        //resolutions = Screen.resolutions;
+        //System.Array.Reverse(resolutions);
+
+
+
+
 
         resolutionDropdown.ClearOptions();
 
@@ -85,15 +95,22 @@ public class Settings : MonoBehaviour
         for (int i = 0; i < resolutions.Length; i++)
         {
 
-            //float parseWidth = resolutions[i].width;
-            //float parseHeight = resolutions[i].height;
-            //float nativeWidth = Screen.currentResolution.width;
-            //float nativeHeight = Screen.currentResolution.height;
+            float parseWidth = resolutions[i].width;
+            float parseHeight = resolutions[i].height;
+            float nativeWidth = Screen.currentResolution.width;
+            float nativeHeight = Screen.currentResolution.height;
 
-            string option = resolutions[i].width + " x " + resolutions[i].height;
+            string option = resolutions[i].width + " x " + resolutions[i].height +" - " +resolutions[i].refreshRate + " Hz";
+            options.Add(option);
 
-            //if ((parseWidth / parseHeight) != (nativeWidth / nativeHeight))
-                options.Add(option);
+
+            //if ((parseWidth / parseHeight) != (nativeWidth / nativeHeight)
+             //   {
+                //resolutions.Remove(i);
+               // RemoveAt(resolutions, i);
+         //   }
+                
+
 
             if (resolutions[i].width == Screen.currentResolution.width &&
                 resolutions[i].height == Screen.currentResolution.height)
@@ -103,8 +120,9 @@ public class Settings : MonoBehaviour
 
 
         }
-
+        
         resolutionDropdown.AddOptions(options);
+        //resolutionDropdown.options.Reverse();
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
     }
