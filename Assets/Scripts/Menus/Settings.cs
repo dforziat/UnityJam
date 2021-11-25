@@ -17,7 +17,7 @@ public class Settings : MonoBehaviour
     public AudioMixer audioMixer;
     public Dropdown resolutionDropdown;
     Resolution[] resolutions;
-
+    List<Resolution> finalRes = new List<Resolution>();
 
     public Slider mouseSensSlider;
 
@@ -26,6 +26,10 @@ public class Settings : MonoBehaviour
 
     //in the pause menu
     public GameObject settingMenu;
+
+
+
+
 
 
 
@@ -64,7 +68,8 @@ public class Settings : MonoBehaviour
 
     public void SetResolution(int resolutionIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
+        
+        Resolution resolution = finalRes[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
 
         PlayerPrefs.SetInt(PlayerPrefsConstants.RESOLUTION_WIDTH, resolution.width);
@@ -75,15 +80,12 @@ public class Settings : MonoBehaviour
     {
 
 
-        //Case 1 - Only 60 Hz displayed
-        resolutions = Screen.resolutions.Where(resolution => ((resolution.refreshRate == 60) || resolution.refreshRate == 144)).ToArray();
-        
-
-        //Case 2 - All Resolutions and all Hz, list is reversed
-        //resolutions = Screen.resolutions;
-        //System.Array.Reverse(resolutions);
+        //Only 60,120,144 Hz displayed
+        resolutions = Screen.resolutions.Where(resolution => (resolution.refreshRate == 60 || resolution.refreshRate == 144 || resolution.refreshRate == 120)).ToArray();
 
 
+        float nativeWidth = Screen.currentResolution.width;
+        float nativeHeight = Screen.currentResolution.height;
 
 
 
@@ -97,32 +99,31 @@ public class Settings : MonoBehaviour
 
             float parseWidth = resolutions[i].width;
             float parseHeight = resolutions[i].height;
-            float nativeWidth = Screen.currentResolution.width;
-            float nativeHeight = Screen.currentResolution.height;
+
 
             string option = resolutions[i].width + " x " + resolutions[i].height +" - " +resolutions[i].refreshRate + " Hz";
-            options.Add(option);
 
 
-            //if ((parseWidth / parseHeight) != (nativeWidth / nativeHeight)
-             //   {
-                //resolutions.Remove(i);
-               // RemoveAt(resolutions, i);
-         //   }
-                
 
+            if ((parseWidth / parseHeight) == (nativeWidth / nativeHeight))
+            {
+                options.Add(option);
+                finalRes.Add(resolutions[i]);
+                Debug.Log(parseWidth +" x "+ parseHeight);
+            }
 
-            if (resolutions[i].width == Screen.currentResolution.width &&
-                resolutions[i].height == Screen.currentResolution.height)
+        }
+
+        for (int i = 0; i < finalRes.Count; i++)
+        {
+            if (finalRes[i].width == Screen.currentResolution.width &&
+                finalRes[i].height == Screen.currentResolution.height)
             {
                 currentResolutionIndex = i;
             }
-
-
         }
         
         resolutionDropdown.AddOptions(options);
-        //resolutionDropdown.options.Reverse();
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
     }
