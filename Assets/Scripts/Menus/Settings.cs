@@ -83,7 +83,6 @@ public class Settings : MonoBehaviour
         float nativeRefreshRate = Screen.currentResolution.refreshRate;
 
         //Only 60,120,144 Hz displayed
-        // resolutions = Screen.resolutions.Where(resolution => (resolution.refreshRate == 60 || resolution.refreshRate == 144 || resolution.refreshRate == 120)).ToArray();
         resolutions = Screen.resolutions.Where(resolution => (resolution.refreshRate == nativeRefreshRate)).ToArray();
 
         resolutionDropdown.ClearOptions();
