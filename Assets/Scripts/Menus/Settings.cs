@@ -15,7 +15,7 @@ public class Settings : MonoBehaviour
     //This will be present in the main menu as well as the pause menu
 
     public AudioMixer audioMixer;
-    public Dropdown resolutionDropdown;
+    public TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
     List<Resolution> finalRes = new List<Resolution>();
 
@@ -26,6 +26,9 @@ public class Settings : MonoBehaviour
 
     //in the pause menu
     public GameObject settingMenu;
+    public GameObject GameOptions;
+    public GameObject GraphicsOptions;
+    public GameObject AudioOptions;
 
 
 
@@ -148,6 +151,41 @@ public class Settings : MonoBehaviour
 
     public void openSettings()
     {
+        settingMenu.SetActive(true);
+    }
+
+    public void displayButton_Game()
+    {
+        GameOptions.SetActive(true);
+        settingMenu.SetActive(false);
+    }
+
+    public void displayButton_Graphics()
+    {
+        GraphicsOptions.SetActive(true);
+        settingMenu.SetActive(false);
+    }
+
+    public void displayButton_Audio()
+    {
+        AudioOptions.SetActive(true);
+        settingMenu.SetActive(false);
+    }
+    public void backButton_Game()
+    {
+        GameOptions.SetActive(false);
+        settingMenu.SetActive(true);
+    }
+
+    public void backButton_Graphics()
+    {
+        GraphicsOptions.SetActive(false);
+        settingMenu.SetActive(true);
+    }
+
+    public void backButton_Audio()
+    {
+        AudioOptions.SetActive(false);
         settingMenu.SetActive(true);
     }
 

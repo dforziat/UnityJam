@@ -3754,6 +3754,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenuObj: {fileID: 3467555659525841321}
   settingMenu: {fileID: 9151208001554906189}
+  GameOptions: {fileID: 0}
+  GraphicsOptions: {fileID: 0}
+  AudioOptions: {fileID: 0}
 --- !u!114 &1979327005069633382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3767,11 +3770,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
-  resolutionDropdown: {fileID: 9151208001120454416}
+  resolutionDropdown: {fileID: 3410350788966526698}
   mouseSensSlider: {fileID: 9151208002590932304}
   volText: {fileID: 9151208001682800371}
   volumeSlider: {fileID: 9151208002227031364}
   settingMenu: {fileID: 9151208001554906189}
+  GameOptions: {fileID: 0}
+  GraphicsOptions: {fileID: 0}
+  AudioOptions: {fileID: 0}
 --- !u!114 &1895094242159465107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4871,15 +4877,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9151208001120454416 stripped
+--- !u!114 &3410350788966526698 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5888862857161166128, guid: 20c7427dd93e21f4683e31a60b78a627, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5930049395533002, guid: 20c7427dd93e21f4683e31a60b78a627, type: 3}
   m_PrefabInstance: {fileID: 3406672541000534560}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &9151208001682800371 stripped
