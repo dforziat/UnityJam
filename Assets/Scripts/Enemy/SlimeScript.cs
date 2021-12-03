@@ -32,8 +32,10 @@ public class SlimeScript : EnemyParent
         damagedClip = childDamagedClip;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         //slime stats
-        health = 6;
+        //health = 6;
         damage = 15;
+
+        Debug.Log("Slime is born");
     }
 
     // Update is called once per frame
@@ -86,27 +88,7 @@ public class SlimeScript : EnemyParent
         target.GetComponent<PlayerControls>().TakeDamage(damage);
     }
 
-    public void makeBabiesOnDeath()
-    { 
-        if (!isBaby)
-        {
-            Debug.Log("Making babies");
-            //make 2 small babies
-            GameObject leftBaby = Instantiate(baby, new Vector3(transform.position.x, transform.position.y, transform.position.z - .5f), transform.rotation);
-            leftBaby.transform.localScale -= new Vector3(.3f, .3f,.3f);
-            leftBaby.GetComponent<NavMeshAgent>().speed = 3;
-            leftBaby.GetComponent<SlimeScript>().health = 2;
-            leftBaby.GetComponent<SlimeScript>().isBaby = true;
 
-            GameObject rightBaby = Instantiate(baby, new Vector3(transform.position.x, transform.position.y, transform.position.z + .5f), transform.rotation);
-            rightBaby.transform.localScale -= new Vector3(.3f, .3f, .3f);
-            rightBaby.GetComponent<NavMeshAgent>().speed = 3;
-            rightBaby.GetComponent<SlimeScript>().health = 2;
-            rightBaby.GetComponent<SlimeScript>().isBaby = true;
-
-            isBaby = true;
-        }
-    }
 
 
     public new void takeDamage(int damage)
@@ -128,6 +110,33 @@ public class SlimeScript : EnemyParent
         {
             audioSource.PlayOneShot(damagedClip);
         }
+    }
+
+    public void makeBabiesOnDeath()
+    {
+        if (!isBaby)
+        {
+            Debug.Log("Making babies");
+            //make 2 small babies
+            GameObject leftBaby = Instantiate(baby, new Vector3(transform.position.x, transform.position.y, transform.position.z - .75f), transform.rotation);
+            setBabyStats(leftBaby);
+
+
+            GameObject rightBaby = Instantiate(baby, new Vector3(transform.position.x, transform.position.y, transform.position.z + .75f), transform.rotation);
+            setBabyStats(rightBaby);
+
+            isBaby = true;
+        }
+    }
+
+    public void setBabyStats(GameObject baby)
+    {
+        Vector3 babyScaleVector = new Vector3(.2f, .2f, .2f);
+        baby.transform.localScale -= babyScaleVector;
+        baby.GetComponent<NavMeshAgent>().speed = 3;
+        baby.GetComponent<SlimeScript>().health = 2;
+        baby.GetComponent<SlimeScript>().isBaby = true;
+        Debug.Log("Baby Health: " + baby.GetComponent<SlimeScript>().health);
     }
 
 }
