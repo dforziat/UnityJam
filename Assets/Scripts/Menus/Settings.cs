@@ -20,9 +20,17 @@ public class Settings : MonoBehaviour
     List<Resolution> finalRes = new List<Resolution>();
 
     public Slider mouseSensSlider;
+    public TextMeshProUGUI mouseSensText;
 
-    public TextMeshProUGUI volText;
-    public Slider volumeSlider;
+    [Header("Volume Sliders")]
+    public Slider volumeSlider_Main;
+    public Slider volumeSlider_SFX;
+    public Slider volumeSlider_Music;
+    [Header("Volume Slider Text")]
+    public TextMeshProUGUI volText_Main;
+    public TextMeshProUGUI volText_SFX;
+    public TextMeshProUGUI volText_Music;
+
 
     //in the pause menu
     public GameObject settingMenu;
@@ -52,29 +60,30 @@ public class Settings : MonoBehaviour
 
     }
 
-    public void SetVolume(float volume)
+    public void SetVolume_Main(float volume)
     {
         audioMixer.SetFloat("masterVolume", Mathf.Log10(volume)*20);
-        volText.text = "Volume - "+(Mathf.Round(volume * 100))+"%";
+        volText_Main.text = "Volume - "+(Mathf.Round(volume * 100))+"%";
         PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, volume);
     }
 
     public void SetVolume_SFX(float volume)
     {
-        //audioMixer.SetFloat("masterVolume", Mathf.Log10(volume) * 20);
-        //volText.text = "Volume - " + (Mathf.Round(volume * 100)) + "%";
-       // PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, volume);
+        audioMixer.SetFloat("sfxVolume", Mathf.Log10(volume) * 20);
+        volText_SFX.text = "Volume - " + (Mathf.Round(volume * 100)) + "%";
+        PlayerPrefs.SetFloat(PlayerPrefsConstants.SFX_VOLUME, volume);
     }
 
     public void SetVolume_Music(float volume)
     {
-        //audioMixer.SetFloat("masterVolume", Mathf.Log10(volume) * 20);
-        //volText.text = "Volume - " + (Mathf.Round(volume * 100)) + "%";
-        //PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, volume);
+        audioMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
+        volText_Music.text = "Volume - " + (Mathf.Round(volume * 100)) + "%";
+        PlayerPrefs.SetFloat(PlayerPrefsConstants.MUSIC_VOLUME, volume);
     }
 
     public void SetSensitivity(float Sensitivity)
     {
+        mouseSensText.text = "Sensitivity: " + (Mathf.Round(Sensitivity * 100));
         PlayerPrefs.SetFloat(PlayerPrefsConstants.MOUSE_SENS, Sensitivity);
     }
 
@@ -145,9 +154,15 @@ public class Settings : MonoBehaviour
 
     void LoadSettings()
     {
-        //Master Volume
+        //Volume
         audioMixer.SetFloat("masterVolume", PlayerPrefs.GetFloat(PlayerPrefsConstants.MASTER_VOLUME));
-        volumeSlider.value = PlayerPrefs.GetFloat(PlayerPrefsConstants.MASTER_VOLUME);
+        volumeSlider_Main.value = PlayerPrefs.GetFloat(PlayerPrefsConstants.MASTER_VOLUME);
+
+        audioMixer.SetFloat("sfxVolume", PlayerPrefs.GetFloat(PlayerPrefsConstants.SFX_VOLUME));
+        volumeSlider_SFX.value = PlayerPrefs.GetFloat(PlayerPrefsConstants.SFX_VOLUME);
+
+        audioMixer.SetFloat("musicVolume", PlayerPrefs.GetFloat(PlayerPrefsConstants.MUSIC_VOLUME));
+        volumeSlider_Music.value = PlayerPrefs.GetFloat(PlayerPrefsConstants.MUSIC_VOLUME);
 
         //Resolution
         Screen.SetResolution(PlayerPrefs.GetInt(PlayerPrefsConstants.RESOLUTION_WIDTH), PlayerPrefs.GetInt(PlayerPrefsConstants.RESOLUTION_HEIGHT), true);

@@ -40,9 +40,9 @@ public class PauseMenu : MonoBehaviour
     {
         PauseMenuObj.SetActive(false);
         settingMenu.SetActive(false);
-        //GameOptions.SetActive(false);
-        //GraphicsOptions.SetActive(false);
-        //AudioOptions.SetActive(false);
+        GameOptions.SetActive(false);
+        GraphicsOptions.SetActive(false);
+        AudioOptions.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         GameIsPaused = false;
