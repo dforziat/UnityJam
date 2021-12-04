@@ -59,6 +59,20 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, volume);
     }
 
+    public void SetVolume_SFX(float volume)
+    {
+        //audioMixer.SetFloat("masterVolume", Mathf.Log10(volume) * 20);
+        //volText.text = "Volume - " + (Mathf.Round(volume * 100)) + "%";
+       // PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, volume);
+    }
+
+    public void SetVolume_Music(float volume)
+    {
+        //audioMixer.SetFloat("masterVolume", Mathf.Log10(volume) * 20);
+        //volText.text = "Volume - " + (Mathf.Round(volume * 100)) + "%";
+        //PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, volume);
+    }
+
     public void SetSensitivity(float Sensitivity)
     {
         PlayerPrefs.SetFloat(PlayerPrefsConstants.MOUSE_SENS, Sensitivity);
@@ -102,7 +116,7 @@ public class Settings : MonoBehaviour
             float parseHeight = resolutions[i].height;
 
 
-            string option = resolutions[i].width + " x " + resolutions[i].height +" - " +resolutions[i].refreshRate + " Hz";
+            string option = resolutions[i].width + " x " + resolutions[i].height +" (" +resolutions[i].refreshRate + "HZ)";
 
 
 
