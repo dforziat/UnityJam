@@ -15,6 +15,7 @@ public class Settings : MonoBehaviour
     //This will be present in the main menu as well as the pause menu
 
     public AudioMixer audioMixer;
+
     public TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
     List<Resolution> finalRes = new List<Resolution>();
@@ -63,21 +64,21 @@ public class Settings : MonoBehaviour
     public void SetVolume_Main(float volume)
     {
         audioMixer.SetFloat("masterVolume", Mathf.Log10(volume)*20);
-        volText_Main.text = "Volume - "+(Mathf.Round(volume * 100))+"%";
+        volText_Main.text = "Main - "+(Mathf.Round(volume * 100))+"%";
         PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, volume);
     }
 
     public void SetVolume_SFX(float volume)
     {
         audioMixer.SetFloat("sfxVolume", Mathf.Log10(volume) * 20);
-        volText_SFX.text = "Volume - " + (Mathf.Round(volume * 100)) + "%";
+        volText_SFX.text = "SFX - " + (Mathf.Round(volume * 100)) + "%";
         PlayerPrefs.SetFloat(PlayerPrefsConstants.SFX_VOLUME, volume);
     }
 
     public void SetVolume_Music(float volume)
     {
         audioMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
-        volText_Music.text = "Volume - " + (Mathf.Round(volume * 100)) + "%";
+        volText_Music.text = "Music - " + (Mathf.Round(volume * 100)) + "%";
         PlayerPrefs.SetFloat(PlayerPrefsConstants.MUSIC_VOLUME, volume);
     }
 
