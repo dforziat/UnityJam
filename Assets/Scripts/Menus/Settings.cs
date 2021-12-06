@@ -64,6 +64,7 @@ public class Settings : MonoBehaviour
     public void SetVolume_Main(float volume)
     {
         audioMixer.SetFloat("masterVolume", Mathf.Log10(volume)*20);
+        Debug.Log(volume);
         volText_Main.text = "Main - "+(Mathf.Round(volume * 100))+"%";
         PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, volume);
     }
