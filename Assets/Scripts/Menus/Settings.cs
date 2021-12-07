@@ -40,7 +40,7 @@ public class Settings : MonoBehaviour
     public GameObject AudioOptions;
 
 
-
+    private AudioSource audioSource;
 
 
 
@@ -57,7 +57,7 @@ public class Settings : MonoBehaviour
             PlayerPrefs.SetFloat(PlayerPrefsConstants.MOUSE_SENS, 1f);
         }
 
-
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -179,7 +179,6 @@ public class Settings : MonoBehaviour
     public void closeSettings()
     {
         settingMenu.SetActive(false);
-        
     }
 
     public void openSettings()
@@ -191,35 +190,41 @@ public class Settings : MonoBehaviour
     {
         GameOptions.SetActive(true);
         settingMenu.SetActive(false);
+        audioSource.Play();
     }
 
     public void displayButton_Graphics()
     {
         GraphicsOptions.SetActive(true);
         settingMenu.SetActive(false);
+        audioSource.Play();
     }
 
     public void displayButton_Audio()
     {
         AudioOptions.SetActive(true);
         settingMenu.SetActive(false);
+        audioSource.Play();
     }
     public void backButton_Game()
     {
         GameOptions.SetActive(false);
         settingMenu.SetActive(true);
+        audioSource.Play();
     }
 
     public void backButton_Graphics()
     {
         GraphicsOptions.SetActive(false);
         settingMenu.SetActive(true);
+        audioSource.Play();
     }
 
     public void backButton_Audio()
     {
         AudioOptions.SetActive(false);
         settingMenu.SetActive(true);
+        audioSource.Play();
     }
 
 }

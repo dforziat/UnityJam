@@ -56,13 +56,13 @@ public class PlayerControls : MonoBehaviour
     public GameObject WeaponHolder;
 
     [Header("Audio")]
-    private AudioSource audioSource;
     public AudioClip injuredAudioClip;
     public AudioClip injuredAudioClip2;
     public AudioClip deathAudioClip;
     public AudioClip healthPickupClip;
     public AudioClip shieldPickupClip;
     public AudioClip ammoPickupClip;
+    private AudioSource audioSource;
     public bool gunSoundOnFirstLoad = true;
 
     void Awake()
