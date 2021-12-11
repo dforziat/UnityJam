@@ -16,7 +16,8 @@ public static class PlayerPrefsConstants
     public const string SFX_VOLUME = "sfxVolume";
     public const string MUSIC_VOLUME = "musicVolume";
     public const string MOUSE_SENS = "mouseSens";
-    
+
+    public const string FIRST_LOAD = "firstLoad";
 
 
 }

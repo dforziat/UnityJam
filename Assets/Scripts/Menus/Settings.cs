@@ -38,6 +38,7 @@ public class Settings : MonoBehaviour
     public GameObject GameOptions;
     public GameObject GraphicsOptions;
     public GameObject AudioOptions;
+    public GameObject creditsOptions;
 
 
     private AudioSource audioSource;
@@ -47,15 +48,19 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
-
+        firstLoad();
         LoadResolutions();
         LoadSettings();
+
+
 
         //FAILSAFE
         if (PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS) == 0)
         {
             PlayerPrefs.SetFloat(PlayerPrefsConstants.MOUSE_SENS, 1f);
         }
+
+
 
         audioSource = GetComponent<AudioSource>();
 
@@ -174,6 +179,8 @@ public class Settings : MonoBehaviour
         mouseSensSlider.value = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
 
 
+
+
     }
 
     public void closeSettings()
@@ -206,6 +213,13 @@ public class Settings : MonoBehaviour
         settingMenu.SetActive(false);
         audioSource.Play();
     }
+
+    public void displayButton_Credits()
+    {
+        creditsOptions.SetActive(true);
+        GameOptions.SetActive(false);
+        audioSource.Play();
+    }
     public void backButton_Game()
     {
         GameOptions.SetActive(false);
@@ -225,6 +239,26 @@ public class Settings : MonoBehaviour
         AudioOptions.SetActive(false);
         settingMenu.SetActive(true);
         audioSource.Play();
+    }
+
+    public void backButton_Credits()
+    {
+        creditsOptions.SetActive(false);
+        GameOptions.SetActive(true);
+        audioSource.Play();
+    }
+
+    public void firstLoad()
+    {
+        //first time load defaults - sounds only for now
+        if (PlayerPrefs.GetInt(PlayerPrefsConstants.FIRST_LOAD) != 1)
+        {
+            PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, 1f);
+            PlayerPrefs.SetFloat(PlayerPrefsConstants.MUSIC_VOLUME, 1f);
+            PlayerPrefs.SetFloat(PlayerPrefsConstants.SFX_VOLUME, 1f);
+
+            PlayerPrefs.SetInt(PlayerPrefsConstants.FIRST_LOAD, 1);
+        }
     }
 
 }
