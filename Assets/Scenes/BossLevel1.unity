@@ -2227,6 +2227,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d1c2f1c3f3be149b7489b67bef2c4b, type: 3}
+--- !u!1001 &68998402
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 836471332}
+    m_Modifications:
+    - target: {fileID: 160114, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_Name
+      value: PixelCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 422764, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045880, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_HDR
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045880, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045880, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: far clip plane
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045880, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045880, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11455570, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00655ab05886f9341a63e33ffd2001a2, type: 3}
 --- !u!1 &78399782
 GameObject:
   m_ObjectHideFlags: 0
@@ -27379,6 +27460,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4870162724137651307, guid: 8757d613903c26a4ca6b534eba31e9b8, type: 3}
   m_PrefabInstance: {fileID: 835560043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &836471332 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5028391134863407059, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
+  m_PrefabInstance: {fileID: 330909089}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &837171070 stripped
 Transform:

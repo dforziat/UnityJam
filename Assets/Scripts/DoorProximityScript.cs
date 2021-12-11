@@ -53,20 +53,25 @@ public class DoorProximityScript : MonoBehaviour
     //Called by Animation Event
     public void playDoorOpeningSFXEvent()
     {
-        audioSource.pitch = 1f;
-        audioSource.PlayOneShot(doorOpenClip);
+        if(distToPlayer <= activationDistance + 1)
+        {
+            audioSource.pitch = 1f;
+            audioSource.PlayOneShot(doorOpenClip);
+        }
     }
 
     //Called by Animation Event
     public void playDoorClosingSFXEvent()
     {
-        audioSource.pitch = -1f;
-        audioSource.PlayOneShot(doorOpenClip);
+        if (distToPlayer <= activationDistance + 1)
+        {
+            audioSource.pitch = -1f;
+            audioSource.PlayOneShot(doorOpenClip);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag + ": entered door collider");
         if (other.gameObject.CompareTag("Enemy"))
         {
             isNearEnemy = true;
