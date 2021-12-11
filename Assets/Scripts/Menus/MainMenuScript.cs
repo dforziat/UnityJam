@@ -16,6 +16,7 @@ public class MainMenuScript : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         settingMenuCanvas.SetActive(false);
+        Time.timeScale = 1f;
     }
 
 
@@ -37,7 +38,7 @@ public class MainMenuScript : MonoBehaviour
     public void ContinueButton()
     {
         //failsafe for how many levels we have
-        if (PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) < 1 || PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) > 5)
+        if (PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) < 1 || PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) > 6)
         {
             PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, 1);
             SceneManager.LoadScene(PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL));
