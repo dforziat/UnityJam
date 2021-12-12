@@ -39,6 +39,7 @@ public class BossCutsceneManagerScript : MonoBehaviour
     public void ActivateBoss()
     {
         boss.SetActive(true);
+        boss.GetComponent<LineRenderer>().enabled = false;
         bossName.enabled = true;
         bossName.CrossFadeAlpha(0, 8, false);
         bossSubName.enabled = true;

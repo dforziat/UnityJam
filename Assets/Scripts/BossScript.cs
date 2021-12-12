@@ -56,6 +56,7 @@ public class BossScript : MonoBehaviour
 
         LeftCannonParticle.Stop();
         RightCannonParticle.Stop();
+        lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
 
     }
@@ -63,12 +64,16 @@ public class BossScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
 
         //maching gun barrel end
         lineRenderer.SetPosition(0, machineGunBarrel.position);
         lineRenderer.SetPosition(1, new Vector3(target.position.x, target.position.y -.5f, target.position.z));
+
+        if(attackState != 2)
+        {
+            lineRenderer.enabled = false;
+        }
 
     }
 
@@ -148,6 +153,7 @@ public class BossScript : MonoBehaviour
         LeftCannonParticle.Stop();
         RightCannonParticle.Stop();
 
+        lineRenderer.enabled = false;
     }
 
     public void startChargeParticles()
@@ -214,7 +220,6 @@ public class BossScript : MonoBehaviour
         isSecondStage = true;
         jumppads.SetActive(true);
         laser.activateLaser();
-
     }
 
     public void explode()
