@@ -45,6 +45,7 @@ public class PauseMenu : MonoBehaviour
         AudioOptions.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         GameIsPaused = false;
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
         playerControls.lookSensitivity = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
@@ -56,6 +57,7 @@ public class PauseMenu : MonoBehaviour
         settingMenu.SetActive(false);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         GameIsPaused = true;
     }
 
@@ -72,8 +74,9 @@ public class PauseMenu : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Resume();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
 
 

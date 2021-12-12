@@ -33,6 +33,7 @@ public class LevelManager : MonoBehaviour
         levelCompleteCanvas.enabled = true;
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         playerControls.curLevel++;
         SaveManager.SavePrefs();
 
