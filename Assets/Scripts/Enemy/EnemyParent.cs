@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyParent : MonoBehaviour
 {
-    public int health = 3;
-    public int damage = 10;
+    public int health;
+    public int damage;
     public bool isProvoked = false;
     private float verticalOffset = 0;
     public GameObject explosion;
