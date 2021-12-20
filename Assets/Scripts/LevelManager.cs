@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,6 +10,13 @@ public class LevelManager : MonoBehaviour
     PlayerControls playerControls;
     public Canvas levelCompleteCanvas;
     public static bool levelLoading;
+
+    public TextMeshProUGUI finaltimeText;
+    int mins;
+    int secs;
+    int miliSecs;
+    string timeFormat = "{0,2:00}:{1,2:00}:{2,2:00}";
+
 
 
 
@@ -36,6 +44,7 @@ public class LevelManager : MonoBehaviour
         Cursor.visible = true;
         playerControls.curLevel++;
         SaveManager.SavePrefs();
+        timer();
 
     }
 
@@ -49,4 +58,18 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL));
     }
 
+    public void timer()
+    {
+        mins = (int)(Time.timeSinceLevelLoad / 60);
+
+        secs = (int)(Time.timeSinceLevelLoad % 60);
+
+        miliSecs = Mathf.RoundToInt((Time.timeSinceLevelLoad - mins * 60 - secs) * 100);
+
+        //finaltimeText.text = mins + ":" + secs + ":" + miliSecs;
+
+        finaltimeText.text = string.Format(timeFormat, mins, secs, miliSecs);
+    }
 }
+
+
