@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     int mins;
     int secs;
     int miliSecs;
+    int currentTime;
     string timeFormat = "{0,2:00}:{1,2:00}:{2,2:00}";
 
 
@@ -27,6 +28,7 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1;
         SaveManager = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
+        testBest();
     }
 
     // Update is called once per frame
@@ -44,7 +46,7 @@ public class LevelManager : MonoBehaviour
         Cursor.visible = true;
         playerControls.curLevel++;
         SaveManager.SavePrefs();
-        timer();
+
 
     }
 
@@ -68,8 +70,41 @@ public class LevelManager : MonoBehaviour
 
         //finaltimeText.text = mins + ":" + secs + ":" + miliSecs;
 
+        currentTime = mins + secs + miliSecs;
+        
+        //timeCheck()
+      
+
+  
         finaltimeText.text = string.Format(timeFormat, mins, secs, miliSecs);
+        //best-time-text.text = String version of saved best time
     }
+
+    //method to load all best times loadTimes()
+    //method, for loop, if curLvl = i then check time?
+
+    public void testBest()
+    {
+        int curLvl = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL);
+        int curBesttime = PlayerPrefs.GetInt(PlayerPrefsConstants.BEST_TIME + curLvl);
+        Debug.Log(PlayerPrefsConstants.BEST_TIME + curLvl);
+    }
+
+
+
+
+   // public void find_curLvl_bestTime()
+   // {
+       // int curLvl = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL);
+
+       // for (int i=1; i < SceneManager.sceneCount; i++)
+      //  {
+        //    if (curLvl==i)
+     //       {
+               // int curBesttime = PlayerPrefs.GetInt(PlayerPrefsConstants.BEST_TIME_+i);
+      //     }
+      //  }
+    //}
 }
 
 

@@ -19,5 +19,8 @@ public static class PlayerPrefsConstants
 
     public const string FIRST_LOAD = "firstLoad";
 
+    public const string BEST_TIME = "bestTime";
+
+
 
 }
