@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 510667702108460481}
   - component: {fileID: 495263713804992144}
   - component: {fileID: 8526270288362416177}
+  - component: {fileID: 7906692853183635182}
   m_Layer: 0
   m_Name: DirtyCubeClutter
   m_TagString: Untagged
@@ -97,3 +98,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4011c464d7874ef4da3ba4b8067c580d, type: 2}
+--- !u!208 &7906692853183635182
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5362299588545702737}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.5, y: 0.5, z: -0.5}
+  m_TimeToStationary: 0.5
