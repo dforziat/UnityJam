@@ -12,6 +12,7 @@ public class BossCutsceneManagerScript : MonoBehaviour
     public AudioSource musicManager;
     public Text bossName;
     public Text bossSubName;
+    public Image healthBar;
 
 
     void Start()
@@ -20,6 +21,7 @@ public class BossCutsceneManagerScript : MonoBehaviour
         GUI.SetActive(false);
         bossName.enabled = false;
         bossSubName.enabled = false;
+        healthBar.enabled = false;
     }
 
     // Update is called once per frame
@@ -45,5 +47,8 @@ public class BossCutsceneManagerScript : MonoBehaviour
         bossSubName.enabled = true;
         bossSubName.CrossFadeAlpha(0, 8, false);
         musicManager.Play();
+
+        healthBar.enabled = true;
+        healthBar.GetComponent<Animator>().SetTrigger("healthBarFill");
     }
 }
