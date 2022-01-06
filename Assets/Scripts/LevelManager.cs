@@ -12,11 +12,23 @@ public class LevelManager : MonoBehaviour
     public static bool levelLoading;
 
     public TextMeshProUGUI finaltimeText;
+    public TextMeshProUGUI besttimeText;
+
     int mins;
     int secs;
     int miliSecs;
-    int currentTime;
+    float currentTime;
+
+
+
     string timeFormat = "{0,2:00}:{1,2:00}:{2,2:00}";
+
+
+
+    float curBesttime;
+    int bestMins;
+    int bestSecs;
+    int bestMiliSecs;
 
 
 
@@ -28,13 +40,14 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1;
         SaveManager = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
-        testBest();
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,6 +57,9 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        timer();
+        checkBest();
+        displayBest();
         playerControls.curLevel++;
         SaveManager.SavePrefs();
 
@@ -63,48 +79,35 @@ public class LevelManager : MonoBehaviour
     public void timer()
     {
         mins = (int)(Time.timeSinceLevelLoad / 60);
-
         secs = (int)(Time.timeSinceLevelLoad % 60);
-
         miliSecs = Mathf.RoundToInt((Time.timeSinceLevelLoad - mins * 60 - secs) * 100);
+        currentTime = Time.timeSinceLevelLoad;
 
-        //finaltimeText.text = mins + ":" + secs + ":" + miliSecs;
-
-        currentTime = mins + secs + miliSecs;
-        
-        //timeCheck()
-      
-
-  
         finaltimeText.text = string.Format(timeFormat, mins, secs, miliSecs);
-        //best-time-text.text = String version of saved best time
     }
 
-    //method to load all best times loadTimes()
-    //method, for loop, if curLvl = i then check time?
 
-    public void testBest()
+    public void checkBest()
     {
-        int curLvl = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL);
-        int curBesttime = PlayerPrefs.GetInt(PlayerPrefsConstants.BEST_TIME + curLvl);
-        Debug.Log(PlayerPrefsConstants.BEST_TIME + curLvl);
+        curBesttime = PlayerPrefs.GetFloat(PlayerPrefsConstants.BEST_TIME + playerControls.curLevel);
+
+        if (currentTime < curBesttime || curBesttime == 0)
+        {
+            PlayerPrefs.SetFloat(PlayerPrefsConstants.BEST_TIME + playerControls.curLevel, currentTime);
+        }
     }
 
+    public void displayBest()
+    {
+        curBesttime = PlayerPrefs.GetFloat(PlayerPrefsConstants.BEST_TIME + playerControls.curLevel);
 
+        bestMins = (int)(curBesttime / 60);
+        bestSecs = (int)(curBesttime % 60);
+        bestMiliSecs = Mathf.RoundToInt((curBesttime - bestMins * 60 - bestSecs) * 100);
 
+        besttimeText.text = string.Format(timeFormat, bestMins, bestSecs, bestMiliSecs);
+    }
 
-   // public void find_curLvl_bestTime()
-   // {
-       // int curLvl = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL);
-
-       // for (int i=1; i < SceneManager.sceneCount; i++)
-      //  {
-        //    if (curLvl==i)
-     //       {
-               // int curBesttime = PlayerPrefs.GetInt(PlayerPrefsConstants.BEST_TIME_+i);
-      //     }
-      //  }
-    //}
 }
 
 
