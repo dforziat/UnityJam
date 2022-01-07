@@ -16,6 +16,9 @@ public class BossScript : MonoBehaviour
     public DoorProximityScript bossDoor;
     public LaserEmitter laser;
     private bool isDead = false;
+    private MeshRenderer[] meshRendererList;
+    private List<Color> originalColorList;
+    private float flashTime = .2f;
 
     [Header("Charge Shot")]
     private float chargeShotSpeed = 10f;
@@ -58,6 +61,13 @@ public class BossScript : MonoBehaviour
         RightCannonParticle.Stop();
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
+        meshRendererList = GetComponentsInChildren<MeshRenderer>();
+        originalColorList = new List<Color>();
+        foreach (MeshRenderer mesh in meshRendererList)
+        {
+            originalColorList.Add(mesh.material.color);
+            Debug.Log("Mesh: " + mesh.name);
+        }
 
     }
 
@@ -92,7 +102,25 @@ public class BossScript : MonoBehaviour
         }
         health -= damage;
 
+        foreach (MeshRenderer mesh in meshRendererList)
+        {
+            mesh.material.color = Color.red;
+
+        }
+        Invoke("ResetColor", flashTime);
+
         playDamagedClip();
+    }
+
+    private void ResetColor()
+    {
+        int colorListPlace = 0;
+        foreach (MeshRenderer mesh in meshRendererList)
+        {
+            mesh.material.color = originalColorList[colorListPlace];
+            colorListPlace++;
+        }
+        colorListPlace = 0;
     }
 
     public void shootChargeShot()//this is triggered by an animation

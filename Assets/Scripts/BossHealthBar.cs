@@ -16,7 +16,6 @@ public class BossHealthBar : MonoBehaviour
     public BossScript bossScript;
 
     private int bossMaxHealth;
-    private bool canBreak = true;
 
     private AudioSource audioSource;
     void Start()
@@ -48,7 +47,6 @@ public class BossHealthBar : MonoBehaviour
             hpBarAnimator.SetBool("0", true);
             breakChunk();
         }
-        Debug.Log("Boss Hp Percentage: " + ((float)bossScript.health / (float)bossMaxHealth));
     }
 
     public void playHealthFillClip()//Called By Animation Event

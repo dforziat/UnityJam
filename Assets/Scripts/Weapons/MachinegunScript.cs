@@ -72,7 +72,11 @@ public class MachinegunScript : MonoBehaviour
     IEnumerator Shoot() 
     {
         canShoot = false;
-        PickRandomMuzzleFlash(); 
+        PickRandomMuzzleFlash();
+        if (audioSource.isPlaying)
+        {
+           // audioSource.Stop();
+        }
         audioSource.PlayOneShot(shootClip);
         playerControls.machinegunAmmo--;
         machinegunAmmoText.text = playerControls.machinegunAmmo.ToString("D3");
