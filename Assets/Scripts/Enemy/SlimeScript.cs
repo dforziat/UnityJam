@@ -34,6 +34,7 @@ public class SlimeScript : EnemyParent
         //slime stats
         //health = 6;
         damage = 15;
+        spriteRenderer.color = Color.white;
 
         Debug.Log("Slime is born");
     }
