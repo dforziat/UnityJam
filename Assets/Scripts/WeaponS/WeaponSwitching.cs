@@ -26,17 +26,17 @@ public class WeaponSwitching : MonoBehaviour
     public void SelectWeapon()
     {
         int i = 0;
-        foreach(Transform weapon in transform)
+        foreach (Transform weapon in transform)
         {
-                if (i == selectedWeapon)
-                {
-                    weapon.gameObject.SetActive(true);
-                }
-                else
-                {
-                    weapon.gameObject.SetActive(false);
-                }
-                i++;
+            if (i == selectedWeapon)
+            {
+                weapon.gameObject.SetActive(true);
+            }
+            else
+            {
+                weapon.gameObject.SetActive(false);
+            }
+            i++;
         }
     }
 
@@ -45,19 +45,19 @@ public class WeaponSwitching : MonoBehaviour
         int previousSelectedWeapon = selectedWeapon;
         if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
         {
+
             selectedWeapon++;
-            if (selectedWeapon >= transform.childCount - 1)
+            while (transform.GetChild(selectedWeapon).tag != "unlocked")
             {
-                selectedWeapon = 0;
-            }
-            else
-            {              
-                while (transform.GetChild(selectedWeapon).tag != "unlocked")
+                selectedWeapon++;
+                //new
+                if (selectedWeapon >= transform.childCount - 1)
                 {
-                    selectedWeapon++;
+                    selectedWeapon = 0;
+                    break;
                 }
-             
             }
+
         }
         if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
         {
@@ -65,17 +65,10 @@ public class WeaponSwitching : MonoBehaviour
             if (selectedWeapon < 0)
             {
                 selectedWeapon = transform.childCount - 1;
-                if(transform.GetChild(selectedWeapon).tag != "unlocked")
-                {
-                    selectedWeapon--;
-                }
             }
-            else
+            while (transform.GetChild(selectedWeapon).tag != "unlocked")
             {
-                while (transform.GetChild(selectedWeapon).tag != "unlocked")
-                {
-                    selectedWeapon--;
-                }
+                selectedWeapon--;
             }
         }
 
@@ -99,10 +92,10 @@ public class WeaponSwitching : MonoBehaviour
         {
             selectedWeapon = 4;
         }
-       // if (Input.GetKeyDown(KeyCode.Alpha6) && transform.childCount >= 6)
-       // {
-       //     selectedWeapon = 5;
-       // }
+        // if (Input.GetKeyDown(KeyCode.Alpha6) && transform.childCount >= 6)
+        // {
+        //     selectedWeapon = 5;
+        // }
 
         if (previousSelectedWeapon != selectedWeapon && transform.GetChild(selectedWeapon).tag == "unlocked")
         {
