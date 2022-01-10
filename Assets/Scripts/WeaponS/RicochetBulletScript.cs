@@ -5,8 +5,13 @@ using UnityEngine;
 public class RicochetBulletScript : MonoBehaviour
 {
     float speed = 15;
-    public LayerMask collisionMask1;
-    public LayerMask collisionMask2;
+    public LayerMask wallMask;
+    public LayerMask groundMask;
+    public LayerMask clutterMask;
+    public LayerMask enemyMask;
+    public LayerMask bossMask;
+
+
     int bounces = 0;
     int bounceLimit = 3;
 
@@ -20,12 +25,24 @@ public class RicochetBulletScript : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        bounceDetect();
+        limitBounces();
+        
 
 
+
+
+
+    }
+
+    void bounceDetect()
+    {
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, Time.deltaTime * speed +.1f, collisionMask1))
+        if (Physics.Raycast(ray, out hit, Time.deltaTime * speed + .1f, wallMask) ||
+            Physics.Raycast(ray, out hit, Time.deltaTime * speed + .1f, groundMask) ||
+            Physics.Raycast(ray, out hit, Time.deltaTime * speed + .1f, clutterMask) )
         {
             Vector3 reflectDir = Vector3.Reflect(ray.direction, hit.normal);
             float rot = 90 - Mathf.Atan2(reflectDir.z, reflectDir.x) * Mathf.Rad2Deg;
@@ -34,23 +51,25 @@ public class RicochetBulletScript : MonoBehaviour
             Debug.Log(bounces + "Wall hit");
         }
 
-        if (Physics.Raycast(ray, out hit, Time.deltaTime * speed + .1f, collisionMask2))
+        if (Physics.Raycast(ray, out hit, Time.deltaTime * speed + .1f, enemyMask) ||
+            Physics.Raycast(ray, out hit, Time.deltaTime * speed + .1f, bossMask))
         {
             Vector3 reflectDir = Vector3.Reflect(ray.direction, hit.normal);
             float rot = 90 - Mathf.Atan2(reflectDir.z, reflectDir.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new Vector3(0, rot, 0);
             bounces++;
-            Debug.Log(bounces +"Enemy hit");
+            hit.transform.BroadcastMessage("takeDamage", 5);
+            Debug.Log(bounces + "Enemy hit");
 
         }
+    }
 
+    void limitBounces()
+    {
         if (bounces > bounceLimit)
         {
             Destroy(gameObject);
         }
-
     }
-
-
 
 }
