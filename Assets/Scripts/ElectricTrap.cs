@@ -17,7 +17,6 @@ public class ElectricTrap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         timeRemaining = intervalTime;
         audioSource = GetComponent<AudioSource>();
         turnOffElectricity();
@@ -45,12 +44,14 @@ public class ElectricTrap : MonoBehaviour
             timeRemaining = intervalTime;
         }
 
-
     }
 
     public void turnOnElectricity()
     {
-        audioSource.Play();
+        if(audioSource.enabled == true)
+        {
+            audioSource.Play();
+        }
         electricParticle.SetActive(true);
         hitBox.SetActive(true);
         isOn = true;
@@ -58,7 +59,10 @@ public class ElectricTrap : MonoBehaviour
 
     public void turnOffElectricity()
     {
-        audioSource.Stop();
+        if (audioSource.enabled == true)
+        {
+            audioSource.Stop();
+        }
         electricParticle.SetActive(false);
         hitBox.SetActive(false);
         isOn = false;
