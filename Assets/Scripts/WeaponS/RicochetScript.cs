@@ -9,8 +9,7 @@ public class RicochetScript : MonoBehaviour
     // Start is called before the first frame update
     private bool canShoot = true;
     private bool onFirstLoad = true;
-    int damage = 1;
-    float rateOfFire = .2f;
+    float rateOfFire = 1f;
     PlayerControls playerControls;
 
     public Camera cam;
@@ -48,12 +47,20 @@ public class RicochetScript : MonoBehaviour
     public void shootGun()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canShoot)
         {
-            Instantiate(ricochetBall, player.transform.position, player.transform.rotation);
+            StartCoroutine(Shoot());
         }
 
 
     }
 
+    IEnumerator Shoot()
+    {
+        canShoot = false;
+        Instantiate(ricochetBall, player.transform.position, player.transform.rotation);
+        yield return new WaitForSeconds(rateOfFire);
+        canShoot = true;
+    }
 }
+

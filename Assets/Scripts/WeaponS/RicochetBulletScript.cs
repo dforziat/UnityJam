@@ -13,7 +13,7 @@ public class RicochetBulletScript : MonoBehaviour
 
 
     int bounces = 0;
-    int bounceLimit = 3;
+    int bounceLimit = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +58,7 @@ public class RicochetBulletScript : MonoBehaviour
             float rot = 90 - Mathf.Atan2(reflectDir.z, reflectDir.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new Vector3(0, rot, 0);
             bounces++;
-            hit.transform.BroadcastMessage("takeDamage", 5);
+            hit.transform.BroadcastMessage("takeDamage", 2);
             Debug.Log(bounces + "Enemy hit");
 
         }
