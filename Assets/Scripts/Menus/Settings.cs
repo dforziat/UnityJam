@@ -70,21 +70,21 @@ public class Settings : MonoBehaviour
     {
         audioMixer.SetFloat("masterVolume", Mathf.Log10(volume)*20);
         Debug.Log(volume);
-        volText_Main.text = "Main - "+(Mathf.Round(volume * 100))+"%";
+        volText_Main.text =(Mathf.Round(volume * 100)).ToString();
         PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, volume);
     }
 
     public void SetVolume_SFX(float volume)
     {
         audioMixer.SetFloat("sfxVolume", Mathf.Log10(volume) * 20);
-        volText_SFX.text = "SFX - " + (Mathf.Round(volume * 100)) + "%";
+        volText_SFX.text = (Mathf.Round(volume * 100)) + "%";
         PlayerPrefs.SetFloat(PlayerPrefsConstants.SFX_VOLUME, volume);
     }
 
     public void SetVolume_Music(float volume)
     {
         audioMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
-        volText_Music.text = "Music - " + (Mathf.Round(volume * 100)) + "%";
+        volText_Music.text = (Mathf.Round(volume * 100)) + "%";
         PlayerPrefs.SetFloat(PlayerPrefsConstants.MUSIC_VOLUME, volume);
     }
 
