@@ -77,20 +77,20 @@ public class Settings : MonoBehaviour
     public void SetVolume_SFX(float volume)
     {
         audioMixer.SetFloat("sfxVolume", Mathf.Log10(volume) * 20);
-        volText_SFX.text = (Mathf.Round(volume * 100)) + "%";
+        volText_SFX.text = (Mathf.Round(volume * 100)).ToString();
         PlayerPrefs.SetFloat(PlayerPrefsConstants.SFX_VOLUME, volume);
     }
 
     public void SetVolume_Music(float volume)
     {
         audioMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
-        volText_Music.text = (Mathf.Round(volume * 100)) + "%";
+        volText_Music.text = (Mathf.Round(volume * 100)).ToString();
         PlayerPrefs.SetFloat(PlayerPrefsConstants.MUSIC_VOLUME, volume);
     }
 
     public void SetSensitivity(float Sensitivity)
     {
-        mouseSensText.text = "Sensitivity: " + (Mathf.Round(Sensitivity * 100));
+        mouseSensText.text = (Mathf.Round(Sensitivity * 100)).ToString();
         PlayerPrefs.SetFloat(PlayerPrefsConstants.MOUSE_SENS, Sensitivity);
     }
 
