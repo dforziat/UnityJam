@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MachinegunScript : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class MachinegunScript : MonoBehaviour
     public AudioClip shootClip;
     public AudioClip weaponSwitchClip;
     public AudioClip dryfireClip;
-    public Text machinegunAmmoText;
+    public TextMeshProUGUI machinegunAmmoText;
     public Image ammoIcon;
     public Camera cam;
     public GameObject hitEffect;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -32,10 +33,10 @@ public class PlayerControls : MonoBehaviour
     static public bool isDead = false;
 
     [Header("GUI Ammo Text")]
-    public Text hpText;
-    public Text handgunAmmoText;
-    public Text shotgunAmmoText;
-    public Text machinegunAmmoText;
+    public TextMeshProUGUI hpText;
+    public TextMeshProUGUI handgunAmmoText;
+    public TextMeshProUGUI shotgunAmmoText;
+    public TextMeshProUGUI machinegunAmmoText;
     //public Text spearAmmoText;
 
 
@@ -171,9 +172,9 @@ public class PlayerControls : MonoBehaviour
         curHp -= damage;
         hpText.text = curHp.ToString("D3");
 
-        Color darkGrey = new Color32(50, 50, 50, 255);
+        
         if (curHp <= 100)
-            hpText.color = darkGrey;
+            hpText.color = Color.white;
                 ;
         if (curHp <= 0)
         {
