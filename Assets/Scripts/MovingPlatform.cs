@@ -27,6 +27,8 @@ public class MovingPlatform : MonoBehaviour
             current_target = points[0];
         }
         tolerance = .08f;
+        Player = GameObject.Find("Player");
+
     }
 
     void FixedUpdate()
