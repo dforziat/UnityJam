@@ -11,7 +11,8 @@ public class RicochetScript : MonoBehaviour
     private bool onFirstLoad = true;
     float rateOfFire = 1f;
     PlayerControls playerControls;
-
+    Animator gunAnimator;
+    private WeaponSwitching weaponSwitching;
     public Camera cam;
 
 
@@ -20,7 +21,8 @@ public class RicochetScript : MonoBehaviour
 
     void Start()
     {
-
+        weaponSwitching = GetComponentInParent<WeaponSwitching>();
+        gunAnimator = GetComponent<Animator>();
     }
 
     private void OnEnable()
