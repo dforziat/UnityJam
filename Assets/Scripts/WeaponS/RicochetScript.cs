@@ -12,10 +12,17 @@ public class RicochetScript : MonoBehaviour
     float rateOfFire = 1f;
     PlayerControls playerControls;
     Animator gunAnimator;
+    AudioSource audioSource;
     private WeaponSwitching weaponSwitching;
     public Camera cam;
 
 
+    public Image batteryIcon;
+    public Image infinityAmmoIcon;
+    public AudioClip weaponSwitchClip;
+    public AudioClip dryfireClip;
+    public AudioClip shootClip;
+    public AudioClip rechargeCompleteClip;
     public GameObject ricochetBall;
     public GameObject player;
 
@@ -23,16 +30,27 @@ public class RicochetScript : MonoBehaviour
     {
         weaponSwitching = GetComponentInParent<WeaponSwitching>();
         gunAnimator = GetComponent<Animator>();
+
     }
 
     private void OnEnable()
     {
+        audioSource = GetComponent<AudioSource>();
+        checkWeaponSwitchAudio();
+        batteryIcon.enabled = true;
+        infinityAmmoIcon.enabled = true;
+        canShoot = true;
 
     }
 
     private void OnDisable()
     {
-
+        if (weaponSwitching != null)
+        {
+            weaponSwitching.lockWeaponSwitch = false;
+        }
+        infinityAmmoIcon.enabled = false;
+        batteryIcon.enabled = false;
     }
 
     // Update is called once per frame
@@ -49,20 +67,46 @@ public class RicochetScript : MonoBehaviour
     public void shootGun()
     {
 
-        if (Input.GetMouseButtonDown(0) && canShoot)
+        if (Input.GetMouseButtonDown(0) && canShoot && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("RichochetGun_Idle"))
         {
             StartCoroutine(Shoot());
         }
-
+        if (Input.GetMouseButtonDown(0) && !canShoot)
+        {
+            audioSource.PlayOneShot(dryfireClip);
+        }
 
     }
 
     IEnumerator Shoot()
     {
         canShoot = false;
+        gunAnimator.SetTrigger("shoot");
+        audioSource.PlayOneShot(shootClip);
+
         Instantiate(ricochetBall, player.transform.position, player.transform.rotation);
         yield return new WaitForSeconds(rateOfFire);
         canShoot = true;
+    }
+
+    public void rechargeComplete()//call from animation event
+    {
+        gunAnimator.ResetTrigger("shoot");
+        audioSource.PlayOneShot(rechargeCompleteClip);
+        gunAnimator.SetBool("shooting", false);
+        canShoot = true;
+    }
+
+    private void checkWeaponSwitchAudio()
+    {
+        if (!onFirstLoad)
+        {
+            audioSource.PlayOneShot(weaponSwitchClip);
+        }
+        else
+        {
+            onFirstLoad = false;
+        }
     }
 }
 

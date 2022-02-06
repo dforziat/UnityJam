@@ -2438,6 +2438,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1524874581}
+  batteryIcon: {fileID: 1730759871}
+  infinityAmmoIcon: {fileID: 996949214}
+  weaponSwitchClip: {fileID: 0}
   ricochetBall: {fileID: 97326332}
   player: {fileID: 1524874582}
 --- !u!82 &679474133
@@ -3634,6 +3637,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5188078946274966914, guid: 56d1c2f1c3f3be149b7489b67bef2c4b, type: 3}
   m_PrefabInstance: {fileID: 992680782}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &996949214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5422122979733561477, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 1388598562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1018579767 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2982542347350736137, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
@@ -5952,6 +5966,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1730759871 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4011940797628144624, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 1388598562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1744098856
