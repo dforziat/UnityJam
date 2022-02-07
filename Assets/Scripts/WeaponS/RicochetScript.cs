@@ -23,6 +23,7 @@ public class RicochetScript : MonoBehaviour
     public AudioClip dryfireClip;
     public AudioClip shootClip;
     public AudioClip rechargeCompleteClip;
+    public AudioClip rechargeTickClip;
     public GameObject ricochetBall;
     public GameObject player;
 
@@ -107,6 +108,11 @@ public class RicochetScript : MonoBehaviour
         {
             onFirstLoad = false;
         }
+    }
+
+    private void playRechargeTickSFX()
+    {
+        audioSource.PlayOneShot(rechargeTickClip);
     }
 }
 
