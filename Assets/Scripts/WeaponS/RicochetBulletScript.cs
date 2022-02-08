@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RicochetBulletScript : MonoBehaviour
 {
-    float speed = 5;
+    float speed = 10;
     public LayerMask wallMask;
     public LayerMask groundMask;
     public LayerMask clutterMask;
@@ -14,7 +14,7 @@ public class RicochetBulletScript : MonoBehaviour
 
 
     int bounces = 0;
-    int bounceLimit = 2;
+    int bounceLimit = 4;
 
     // Start is called before the first frame update
     void Start()
