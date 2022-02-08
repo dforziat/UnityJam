@@ -114,5 +114,10 @@ public class RicochetScript : MonoBehaviour
     {
         audioSource.PlayOneShot(rechargeTickClip);
     }
+
+    private void playRechargeCompleteSFX()
+    {
+        audioSource.PlayOneShot(rechargeCompleteClip);
+    }
 }
 

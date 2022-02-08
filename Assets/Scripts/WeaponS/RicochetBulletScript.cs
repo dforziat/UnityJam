@@ -11,7 +11,8 @@ public class RicochetBulletScript : MonoBehaviour
     public LayerMask enemyMask;
     public LayerMask bossMask;
     public LayerMask defaultMask;
-
+    public AudioClip impactClip;
+    private AudioSource audioSource;
 
     int bounces = 0;
     int bounceLimit = 4;
@@ -19,7 +20,7 @@ public class RicochetBulletScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -56,6 +57,7 @@ public class RicochetBulletScript : MonoBehaviour
             transform.eulerAngles = new Vector3(0, rot, 0);
             bounces++;
             Debug.Log(bounces + "Wall hit");
+            audioSource.PlayOneShot(impactClip);
         }
 
         if (Physics.Raycast(ray, out hit, Time.deltaTime * speed + .1f, enemyMask) ||
