@@ -30876,6 +30876,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2024543698652618490, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024543698652618490, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024543698652618490, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024543698652618490, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024543698652618490, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2427561613376219047, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
       propertyPath: m_Name
       value: SpiderBoss
@@ -30970,3 +30990,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+--- !u!1 &4824548750186313097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2427561613376219047, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+  m_PrefabInstance: {fileID: 4824548750186313096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4824548750186313098
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824548750186313097}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c1114ed9ac46d34e9d12f8a03185766, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
