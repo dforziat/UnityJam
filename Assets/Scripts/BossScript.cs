@@ -66,7 +66,6 @@ public class BossScript : MonoBehaviour
         foreach (MeshRenderer mesh in meshRendererList)
         {
             originalColorList.Add(mesh.material.color);
-            Debug.Log("Mesh: " + mesh.name);
         }
 
     }
