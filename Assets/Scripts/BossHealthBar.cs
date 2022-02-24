@@ -22,11 +22,13 @@ public class BossHealthBar : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         bossMaxHealth = bossScript.health;
+        Debug.Log("Boss health: " + bossScript.health);
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if(((float)bossScript.health / (float)bossMaxHealth <= .75) && !hpBarAnimator.GetBool("34"))
         {
             hpBarAnimator.SetBool("34", true);

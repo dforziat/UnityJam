@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SpiderBoss : MonoBehaviour
+public class SpiderBoss : BossScript
 {
 
     private float walkSpeed = 1f;
     private int maxHealth = 100;
-    private int health = 100;
     private bool isDead = false;
  
 
@@ -20,6 +19,7 @@ public class SpiderBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = 99;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -32,7 +32,7 @@ public class SpiderBoss : MonoBehaviour
         navMeshAgent.SetDestination(playerTransform.position);
     }
 
-    public void takeDamage(int damage)
+    public new void takeDamage(int damage)
     {
 
         if (health <= 0 && !isDead)
