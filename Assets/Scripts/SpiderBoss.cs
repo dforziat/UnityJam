@@ -17,6 +17,7 @@ public class SpiderBoss : BossScript
     public Transform missileLauncher;
     public GameObject missile;
 
+    public AudioClip spinClip;
     public AudioClip missileLaunchClip;
 
     private Animator animator;
@@ -91,4 +92,12 @@ public class SpiderBoss : BossScript
                 break;
         }
     }
+
+    public void startSpinning()
+    {
+        audioSource.PlayOneShot(spinClip);
+        navMeshAgent.speed = spinSpeed;
+
+    }
+
 }
