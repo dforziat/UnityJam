@@ -20,7 +20,7 @@ public class SpearDashHurtbox : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            other.transform.BroadcastMessage("takeDamage", 5);
+            other.transform.SendMessageUpwards("takeDamage", 5);
         }
 
 

@@ -9,6 +9,8 @@ public class SpiderBoss : BossScript
     private float walkSpeed = 1f;
     private float spinSpeed = 3f;
     private int maxHealth = 100;
+    private int spinDamage = 20;
+    private bool isSpinning = false;
     private bool isDead = false;
     private bool fireLeftMissile = true;
  
@@ -19,11 +21,13 @@ public class SpiderBoss : BossScript
 
     public AudioClip spinClip;
     public AudioClip missileLaunchClip;
+    public AudioClip transformClip;
 
     private Animator animator;
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
     private Transform playerTransform;
+    private BoxCollider boxCollider;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,8 @@ public class SpiderBoss : BossScript
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         secondaryAudioSource = GetComponent<AudioSource>();
+        boxCollider = GetComponent<BoxCollider>();
+        boxCollider.enabled = false;
         animator.SetTrigger("missile");
     }
 
@@ -52,6 +58,7 @@ public class SpiderBoss : BossScript
             animator.SetTrigger("death");
         }
         health -= damage;
+        Debug.Log("Boss Health: " + health);
 
         playDamagedClip();
     }
@@ -69,7 +76,9 @@ public class SpiderBoss : BossScript
 
     public void stopWalking()
     {
+        audioSource.PlayOneShot(transformClip);
         navMeshAgent.speed = 0;
+        boxCollider.enabled = false;
     }
 
     public void resumeWalking()
@@ -97,7 +106,16 @@ public class SpiderBoss : BossScript
     {
         audioSource.PlayOneShot(spinClip);
         navMeshAgent.speed = spinSpeed;
+        isSpinning = true;
+        boxCollider.enabled = true;
+    }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player" && isSpinning)
+        {
+            playerTransform.GetComponent<PlayerControls>().TakeDamage(spinDamage);
+        }
     }
 
 }

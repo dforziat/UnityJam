@@ -67,7 +67,7 @@ public class RicochetBulletScript : MonoBehaviour
             float rot = 90 - Mathf.Atan2(reflectDir.z, reflectDir.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new Vector3(0, rot, 0);
             bounces++;
-            hit.transform.BroadcastMessage("takeDamage", 2);
+            hit.transform.SendMessageUpwards("takeDamage", 2);
             Debug.Log(bounces + "Enemy hit");
 
 

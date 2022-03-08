@@ -91,7 +91,7 @@ public class ShotgunScript : MonoBehaviour
 
                 if (hit.transform.tag == "Enemy")
                 {
-                    hit.transform.BroadcastMessage("takeDamage", damage, SendMessageOptions.DontRequireReceiver);
+                    hit.transform.SendMessageUpwards("takeDamage", damage, SendMessageOptions.DontRequireReceiver);
                 }
                 if (hit.transform.tag == "Button")
                 {
