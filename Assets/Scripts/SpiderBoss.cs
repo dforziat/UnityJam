@@ -18,6 +18,8 @@ public class SpiderBoss : BossScript
     public Transform head;
     public Transform missileLauncher;
     public GameObject missile;
+    public SpriteRenderer stompOutline;
+    public ParticleSystem stompParticle;
 
     public AudioClip spinClip;
     public AudioClip missileLaunchClip;
@@ -39,6 +41,8 @@ public class SpiderBoss : BossScript
         secondaryAudioSource = GetComponent<AudioSource>();
         boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
+        stompOutline.enabled = false;
+        stompParticle.enableEmission = false;
         animator.SetTrigger("missile");
     }
 
@@ -76,7 +80,7 @@ public class SpiderBoss : BossScript
 
     public void stopWalking()
     {
-        audioSource.PlayOneShot(transformClip);
+       // audioSource.PlayOneShot(transformClip);
         navMeshAgent.speed = 0;
         boxCollider.enabled = false;
     }
