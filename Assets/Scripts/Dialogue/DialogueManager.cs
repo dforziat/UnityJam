@@ -22,7 +22,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        NextLine();
+
     }
 
     public void StartDialogue (Dialogue dialogue)
@@ -59,9 +59,11 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(.04f);
-            //yield return null;
+            yield return new WaitForSeconds(.03f);
         }
+        yield return new WaitForSeconds(2f);
+
+        DisplayNextSentences();
     }
 
     public void EndDialogue()
@@ -69,12 +71,5 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
     }
 
-    public void NextLine()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            DisplayNextSentences();
-        }
 
-    }
 }
