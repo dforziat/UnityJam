@@ -10,7 +10,10 @@ public class SpiderBoss : BossScript
     private float spinSpeed = 3f;
     private int maxHealth = 100;
     private int spinDamage = 20;
+    private int stompDamage = 40;
+    private float stompRange = 4.5f;
     private bool isSpinning = false;
+    private bool isStomping = false;
     private bool isDead = false;
     private bool fireLeftMissile = true;
  
@@ -18,16 +21,19 @@ public class SpiderBoss : BossScript
     public Transform head;
     public Transform missileLauncher;
     public GameObject missile;
-    public SpriteRenderer stompOutline;
+    public GameObject stompSpriteHolder;
     public ParticleSystem stompParticle;
+    public Transform stompLocation;
 
     public AudioClip spinClip;
     public AudioClip missileLaunchClip;
     public AudioClip transformClip;
+    public AudioClip stompExplosionClip;
 
     private Animator animator;
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
+    public AudioSource walkAudioSource;
     private Transform playerTransform;
     private BoxCollider boxCollider;
     // Start is called before the first frame update
@@ -41,9 +47,8 @@ public class SpiderBoss : BossScript
         secondaryAudioSource = GetComponent<AudioSource>();
         boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
-        stompOutline.enabled = false;
-        stompParticle.enableEmission = false;
-        animator.SetTrigger("missile");
+        animator.SetTrigger("stomp");
+        walkAudioSource.Play();
     }
 
     // Update is called once per frame
@@ -83,11 +88,15 @@ public class SpiderBoss : BossScript
        // audioSource.PlayOneShot(transformClip);
         navMeshAgent.speed = 0;
         boxCollider.enabled = false;
+        walkAudioSource.Stop();
     }
 
     public void resumeWalking()
     {
+        isSpinning = false;
+        isStomping = false;
         navMeshAgent.speed = walkSpeed;
+        walkAudioSource.Play();
     }
     private void playDamagedClip()
     {
@@ -116,10 +125,26 @@ public class SpiderBoss : BossScript
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player" && isSpinning)
+        if(other.gameObject.tag == "Player")
         {
-            playerTransform.GetComponent<PlayerControls>().TakeDamage(spinDamage);
+            if (isSpinning)
+            {
+                playerTransform.GetComponent<PlayerControls>().TakeDamage(spinDamage);
+            }
         }
+    }
+    
+    public void checkStompDamage()
+    {
+        if(Vector3.Distance(playerTransform.position, stompLocation.position) <= stompRange)
+        {
+            playerTransform.GetComponent<PlayerControls>().TakeDamage(stompDamage);
+        }
+    }
+
+    public void playStompClip()
+    {
+        audioSource.PlayOneShot(stompExplosionClip);
     }
 
 }

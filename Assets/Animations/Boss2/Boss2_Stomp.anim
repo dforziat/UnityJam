@@ -116,6 +116,15 @@ AnimationClip:
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.4166667
+        value: {x: -4.3199897, y: 0, z: 4.3199897}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -223,6 +232,15 @@ AnimationClip:
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 3.4166667
+        value: {x: 0, y: 0.43199894, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -242,16 +260,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 1.8333334
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 2
+        time: 3.3333333
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -260,8 +269,8 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 3.3333333
-        value: 1
+        time: 3.4166667
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -271,9 +280,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_Enabled
+    attribute: m_IsActive
     path: SpiderBoss4Legs/StompEffect/SpriteHolder
-    classID: 212
+    classID: 1
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
@@ -305,12 +314,21 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
+      - serializedVersion: 3
+        time: 3.4166667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: EmissionModule.enabled
+    attribute: m_IsActive
     path: SpiderBoss4Legs/StompEffect/ParticleHolder
-    classID: 198
+    classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -336,17 +354,17 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 2936245123
-      attribute: 3305885265
+      attribute: 2086281974
       script: {fileID: 0}
-      typeID: 212
+      typeID: 1
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 189191727
-      attribute: 1087013301
+      attribute: 2086281974
       script: {fileID: 0}
-      typeID: 198
-      customType: 27
+      typeID: 1
+      customType: 0
       isPPtrCurve: 0
     pptrCurveMapping: []
   m_AnimationClipSettings:
@@ -354,7 +372,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 3.3333333
+    m_StopTime: 3.4166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -472,6 +490,15 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.4166667
+        value: -4.3199897
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -529,6 +556,15 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 3.3333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.4166667
         value: 0
         inSlope: 0
         outSlope: 0
@@ -645,6 +681,15 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.4166667
+        value: 4.3199897
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -702,6 +747,15 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 3.3333333
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.4166667
         value: 0
         inSlope: 0
         outSlope: 0
@@ -818,6 +872,15 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.4166667
+        value: 0.43199894
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -882,6 +945,15 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.4166667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -902,16 +974,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 1.8333334
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 2
+        time: 3.3333333
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -920,8 +983,8 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 3.3333333
-        value: 1
+        time: 3.4166667
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -931,9 +994,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_Enabled
+    attribute: m_IsActive
     path: SpiderBoss4Legs/StompEffect/SpriteHolder
-    classID: 212
+    classID: 1
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
@@ -965,12 +1028,21 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
+      - serializedVersion: 3
+        time: 3.4166667
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: EmissionModule.enabled
+    attribute: m_IsActive
     path: SpiderBoss4Legs/StompEffect/ParticleHolder
-    classID: 198
+    classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
@@ -1013,8 +1085,64 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 2
+    functionName: playStompClip
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.0166667
+    functionName: checkStompDamage
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.3333333
+    functionName: playStompClip
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.65
+    functionName: checkStompDamage
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.6666667
+    functionName: playStompClip
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3
+    functionName: playStompClip
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3.1666667
+    functionName: checkStompDamage
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3.3166666
+    functionName: stopStomping
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 3.3333333
-    functionName: resumeWalking
+    functionName: playStompClip
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
