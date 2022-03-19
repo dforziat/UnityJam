@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3931274598305058251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3931274598305058292}
+  - component: {fileID: 3931274598305058293}
+  m_Layer: 0
+  m_Name: _DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3931274598305058292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931274598305058251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1201.927, y: 684.43365, z: -233.05006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3931274598810507081}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3931274598305058293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931274598305058251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f80af47448b80142bafc9f964b1a52c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 0}
+  dialogueText: {fileID: 0}
+  dialogueBox: {fileID: 0}
+--- !u!1 &3931274598810507086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3931274598810507081}
+  - component: {fileID: 3931274598810507080}
+  - component: {fileID: 3931274598810507087}
+  m_Layer: 0
+  m_Name: DialogueTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3931274598810507081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931274598810507086}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1206.724, y: -683.3517, z: 234.04007}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3931274598305058292}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3931274598810507080
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931274598810507086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.34379017, z: 4.306003}
+  m_Center: {x: 0, y: -0.3281049, z: -0.22107482}
+--- !u!114 &3931274598810507087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931274598810507086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5b243312769f3468a573632bbf55bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: ???
+    sentences:
+    - ...Hello?
+    - ...Come on man you gotta wake up!
+    - "Oh there you are! Thank the maker.\r"
+    - 'Time to get you up to speed. Mission Bravo Alpha 214 has been compromised.
+      We have a Code Cherry Blue with the Chief Research Officer and his team. '
+    - You need to enact protocol B-254 ASAP!
+    - ...
+    - "Maybe too much at once. Do you remember the mission?\r"
+    - ...
+    - Alright well how about your name?
+    - ...
+    - 'Do you remember ANYTHING at all? '
+    - ...
+    - "I\u2019ll take that as a no.\r"
+    - "Alright, you\u2019re a frozen security guard, the scientists went mad, experiments
+      are tearing the place apart, and I need you to blow this place to hell before
+      it gets worse. Got it?\r\n"
+    - "The facility\u2019s self destruct is located in High Sec\u2026conveniently
+      where I am.\r"
+    - "Problem is that they have me locked up.\r"
+    - To get in here you are gonna have to disable the locks. They are contained
+      within three AI Security Machines.
+    - " You\u2019ll need to destroy them to get into my room, where we can arm the
+      bomb and get out of here. \r"
+    - "Don\u2019t worry, I still have my laptop with me. I\u2019ll guide you every
+      step of the way. \r"
+    - "You can call me Art by the way. Now get going!\r"
