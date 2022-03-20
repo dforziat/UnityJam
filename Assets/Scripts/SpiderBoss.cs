@@ -6,16 +6,20 @@ using UnityEngine.AI;
 public class SpiderBoss : BossScript
 {
 
-    private float walkSpeed = 1f;
-    private float spinSpeed = 3f;
-    private int maxHealth = 100;
+    private float walkSpeed = 1.75f;
+    private float runSpeed = 2.25f;
+    private float spinSpeed = 4f;
+    private const int maxHealth = 100;
     private int spinDamage = 20;
     private int stompDamage = 40;
     private float stompRange = 4.5f;
+    private float stompProximity = 2f;
+    private int attackIndex = 0;
+    private const float idleTimerMax = 5f;
+    private float idleTimer = 5f;
     private bool isSpinning = false;
-    private bool isStomping = false;
     private bool isDead = false;
-    private bool fireLeftMissile = true;
+    private bool isAttacking = false;
  
 
     public Transform head;
@@ -47,7 +51,6 @@ public class SpiderBoss : BossScript
         secondaryAudioSource = GetComponent<AudioSource>();
         boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
-        animator.SetTrigger("stomp");
         walkAudioSource.Play();
     }
 
@@ -56,6 +59,41 @@ public class SpiderBoss : BossScript
     {
         lookAtPlayer();
         navMeshAgent.SetDestination(playerTransform.position);
+
+        //stomp when the player gets too close
+        if (Vector3.Distance(playerTransform.position, transform.position) <= stompProximity && animator.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Walking"))
+        {
+            animator.SetTrigger("stomp");
+        }
+
+        idleTimer -= Time.deltaTime;
+        Debug.Log("IdleTimer: " + idleTimer);
+        if (idleTimer <= 0 && animator.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Walking") && !isAttacking)
+        {
+            isAttacking = true;
+            //increment the attack index
+            attackIndex += 1;
+            if (attackIndex == 3)
+            {
+                attackIndex = 1;
+            }
+
+            //carry out the attack
+            Debug.Log("Attack Index: " + attackIndex);
+            switch (attackIndex)
+            {
+                case 1:
+                    animator.SetTrigger("missile");
+                    break;
+                case 2:
+                    animator.SetTrigger("spin");
+                    break;
+                default:
+                    animator.SetTrigger("stomp");
+                    break;
+            }
+        }
+        isAttacking = false;
     }
 
     public new void takeDamage(int damage)
@@ -93,10 +131,18 @@ public class SpiderBoss : BossScript
 
     public void resumeWalking()
     {
+        audioSource.Stop();
         isSpinning = false;
-        isStomping = false;
         navMeshAgent.speed = walkSpeed;
+        if(health <= maxHealth / 2)
+        {
+            navMeshAgent.speed = runSpeed;
+        }
         walkAudioSource.Play();
+        animator.ResetTrigger("stomp");
+        animator.ResetTrigger("missile");
+        animator.ResetTrigger("spin");
+
     }
     private void playDamagedClip()
     {
@@ -145,6 +191,11 @@ public class SpiderBoss : BossScript
     public void playStompClip()
     {
         audioSource.PlayOneShot(stompExplosionClip);
+    }
+
+    public void resetTimer()
+    {
+        idleTimer = idleTimerMax;
     }
 
 }
