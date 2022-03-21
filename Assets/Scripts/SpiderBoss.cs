@@ -51,14 +51,17 @@ public class SpiderBoss : BossScript
         secondaryAudioSource = GetComponent<AudioSource>();
         boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
-        walkAudioSource.Play();
+        navMeshAgent.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         lookAtPlayer();
-        navMeshAgent.SetDestination(playerTransform.position);
+        if (navMeshAgent.enabled)
+        {
+            navMeshAgent.SetDestination(playerTransform.position);
+        }
 
         //stomp when the player gets too close
         if (Vector3.Distance(playerTransform.position, transform.position) <= stompProximity && animator.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Walking"))
@@ -198,4 +201,10 @@ public class SpiderBoss : BossScript
         idleTimer = idleTimerMax;
     }
 
+
+    public void beginFight()
+    {
+        navMeshAgent.enabled = true;
+        animator.SetTrigger("begin");
+    }
 }
