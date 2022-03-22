@@ -8,7 +8,7 @@ public class SpiderBoss : BossScript
 
     private float walkSpeed = 1.75f;
     private float runSpeed = 2.25f;
-    private float spinSpeed = 4f;
+    private float spinSpeed = 4.5f;
     private const int maxHealth = 100;
     private int spinDamage = 20;
     private int stompDamage = 40;
@@ -134,6 +134,10 @@ public class SpiderBoss : BossScript
 
     public void resumeWalking()
     {
+        if (!navMeshAgent.enabled)
+        {
+            navMeshAgent.enabled = true;
+        }
         audioSource.Stop();
         isSpinning = false;
         navMeshAgent.speed = walkSpeed;
