@@ -11,6 +11,8 @@ public class Level1CutsceneManager : MonoBehaviour
     public GameObject Dialogue;
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,4 +34,6 @@ public class Level1CutsceneManager : MonoBehaviour
         GUI.SetActive(true);
 
     }
+
+
 }

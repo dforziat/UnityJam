@@ -108,6 +108,20 @@ public class LevelManager : MonoBehaviour
         besttimeText.text = string.Format(timeFormat, bestMins, bestSecs, bestMiliSecs);
     }
 
+    public void Level_0_Complete()
+    {
+
+        //Uncomment these once level is solid
+        //playerControls.curLevel = 1;
+        //SaveManager.SavePrefs();
+
+
+        //Loads Level 1 Everytime
+
+        Debug.Log("Level Advanced");
+        SceneManager.LoadScene("Level1");
+    }
+
 }
 
 
