@@ -20,7 +20,7 @@ public class SpiderBoss : BossScript
     private bool isSpinning = false;
     private bool isDead = false;
     private bool isAttacking = false;
- 
+
 
     public Transform head;
     public Transform missileLauncher;
@@ -43,7 +43,6 @@ public class SpiderBoss : BossScript
     // Start is called before the first frame update
     void Start()
     {
-        health = 99;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -70,7 +69,7 @@ public class SpiderBoss : BossScript
         }
 
         idleTimer -= Time.deltaTime;
-        Debug.Log("IdleTimer: " + idleTimer);
+        // Debug.Log("IdleTimer: " + idleTimer);
         if (idleTimer <= 0 && animator.GetCurrentAnimatorStateInfo(0).IsName("Boss2_Walking") && !isAttacking)
         {
             isAttacking = true;
@@ -105,6 +104,7 @@ public class SpiderBoss : BossScript
         if (health <= 0 && !isDead)
         {
             isDead = true;
+            navMeshAgent.speed = 0;
             animator.SetTrigger("death");
         }
         health -= damage;
@@ -126,7 +126,7 @@ public class SpiderBoss : BossScript
 
     public void stopWalking()
     {
-       // audioSource.PlayOneShot(transformClip);
+        // audioSource.PlayOneShot(transformClip);
         navMeshAgent.speed = 0;
         boxCollider.enabled = false;
         walkAudioSource.Stop();
@@ -141,7 +141,7 @@ public class SpiderBoss : BossScript
         audioSource.Stop();
         isSpinning = false;
         navMeshAgent.speed = walkSpeed;
-        if(health <= maxHealth / 2)
+        if (health <= maxHealth / 2)
         {
             navMeshAgent.speed = runSpeed;
         }
@@ -178,7 +178,7 @@ public class SpiderBoss : BossScript
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             if (isSpinning)
             {
@@ -186,10 +186,10 @@ public class SpiderBoss : BossScript
             }
         }
     }
-    
+
     public void checkStompDamage()
     {
-        if(Vector3.Distance(playerTransform.position, stompLocation.position) <= stompRange)
+        if (Vector3.Distance(playerTransform.position, stompLocation.position) <= stompRange)
         {
             playerTransform.GetComponent<PlayerControls>().TakeDamage(stompDamage);
         }
@@ -210,5 +210,11 @@ public class SpiderBoss : BossScript
     {
         navMeshAgent.enabled = true;
         animator.SetTrigger("begin");
+    }
+
+    public new void die()
+    {
+        bossDoor.isUnlocked = true;
+        Destroy(gameObject);
     }
 }

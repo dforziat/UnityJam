@@ -68439,6 +68439,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5188078946274966914, guid: 56d1c2f1c3f3be149b7489b67bef2c4b, type: 3}
   m_PrefabInstance: {fileID: 1585712523}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1587154477 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 105602355, guid: 11a4af0f680245949a053500bf689dca, type: 3}
+  m_PrefabInstance: {fileID: 1077894497}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26ff928f44f23349915b43f6cf87960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1587272087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93606,9 +93617,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4824548750186313100, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4824548750186313100, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+      propertyPath: bossDoor
+      value: 
+      objectReference: {fileID: 1587154477}
+    - target: {fileID: 4824548750186313100, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
       propertyPath: walkClip
       value: 
       objectReference: {fileID: 8300000, guid: 7105dd564163a82449737c303c67fc7e, type: 3}
+    - target: {fileID: 4824548750186313100, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 8579213436375878188, guid: 4bdc1c35b7082374ebbba56e08168e2f, type: 3}
     - target: {fileID: 4824548750186313100, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
       propertyPath: stompLocation
       value: 
@@ -93625,6 +93648,10 @@ PrefabInstance:
       propertyPath: Loop
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4975998147825299976, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+      propertyPath: MaxDistance
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5156627286143462993, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -93640,6 +93667,10 @@ PrefabInstance:
     - target: {fileID: 6691072656591728776, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145921071202829773, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+      propertyPath: MaxDistance
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7450371538779281178, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
       propertyPath: m_LocalPosition.x
