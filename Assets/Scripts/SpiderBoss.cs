@@ -20,6 +20,9 @@ public class SpiderBoss : BossScript
     private bool isSpinning = false;
     private bool isDead = false;
     private bool isAttacking = false;
+    private MeshRenderer[] meshRendererList;
+    private List<Color> originalColorList;
+    private float flashTime = .2f;
 
 
     public Transform head;
@@ -51,6 +54,13 @@ public class SpiderBoss : BossScript
         boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
         navMeshAgent.enabled = false;
+
+        meshRendererList = GetComponentsInChildren<MeshRenderer>();
+        originalColorList = new List<Color>();
+        foreach (MeshRenderer mesh in meshRendererList)
+        {
+            originalColorList.Add(mesh.material.color);
+        }
     }
 
     // Update is called once per frame
@@ -109,6 +119,13 @@ public class SpiderBoss : BossScript
         }
         health -= damage;
         Debug.Log("Boss Health: " + health);
+
+        foreach (MeshRenderer mesh in meshRendererList)
+        {
+            mesh.material.color = Color.red;
+
+        }
+        Invoke("ResetColor", flashTime);
 
         playDamagedClip();
     }
@@ -216,5 +233,16 @@ public class SpiderBoss : BossScript
     {
         bossDoor.isUnlocked = true;
         Destroy(gameObject);
+    }
+
+    private void ResetColor()
+    {
+        int colorListPlace = 0;
+        foreach (MeshRenderer mesh in meshRendererList)
+        {
+            mesh.material.color = originalColorList[colorListPlace];
+            colorListPlace++;
+        }
+        colorListPlace = 0;
     }
 }

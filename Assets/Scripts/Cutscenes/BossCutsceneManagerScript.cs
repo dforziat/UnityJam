@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +11,8 @@ public class BossCutsceneManagerScript : MonoBehaviour
     public GameObject boss;
     public DoorProximityScript entranceDoor;
     public AudioSource musicManager;
-    public Text bossName;
-    public Text bossSubName;
+    public TextMeshProUGUI bossName;
+    public TextMeshProUGUI bossSubName;
     public Image healthBar;
 
 

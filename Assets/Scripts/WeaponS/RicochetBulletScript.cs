@@ -70,8 +70,6 @@ public class RicochetBulletScript : MonoBehaviour
             hit.transform.SendMessageUpwards("takeDamage", 2);
             Debug.Log(bounces + "Enemy hit");
 
-
-
         }
 
 
