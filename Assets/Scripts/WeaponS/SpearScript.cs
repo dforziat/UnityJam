@@ -12,6 +12,7 @@ public class SpearScript : MonoBehaviour
     //Animator gunAnimator;
 
     PlayerControls playerControls;
+    WeaponSwitching weaponSwitching;
 
     //AudioSource audioSource;
     //public AudioClip shootClip;
@@ -19,7 +20,7 @@ public class SpearScript : MonoBehaviour
     //public AudioClip dryfireClip;
 
     //public Image ammoIcon;
-   // public Text spearAmmoText;
+    // public Text spearAmmoText;
     public Camera cam;
     //public GameObject hitEffect;
 
@@ -38,6 +39,8 @@ public class SpearScript : MonoBehaviour
     void Start()
     {
         //gunAnimator = GetComponent<Animator>();
+        weaponSwitching = GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<WeaponSwitching>();
+
 
     }
 
@@ -71,7 +74,7 @@ public class SpearScript : MonoBehaviour
     private IEnumerator DashCoroutine()
     {
         float startTime = Time.time;
-        canShoot = false;
+        //spearTimer.canShoot = false; <- this script needs to be made still
         dashEffect.SetActive(true);
         //gunAnimator.SetTrigger("shoot");
         //audioSource.PlayOneShot(shootClip);
@@ -83,19 +86,23 @@ public class SpearScript : MonoBehaviour
         {
             dir = (Player.transform.forward * 1);
             controller.Move(dir * dashSpeed * Time.deltaTime);
+            weaponSwitching.lockWeaponSwitch = true;
             yield return null;
         }
         Destroy(clonedashHurtbox);
         dashEffect.SetActive(false);
-        canShoot = true;
+        canShoot = true; // <- remove this when timer script is added
+        weaponSwitching.lockWeaponSwitch = false;
 
     }
 
     void dash()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) //&& spearTimer.canShoot==true; <- this script needs to be made still
         {
             StartCoroutine(DashCoroutine());
+            //spearTimer.startTimer(); <- this script needs to be made still
+
         }
     }
 

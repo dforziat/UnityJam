@@ -72,30 +72,41 @@ public class WeaponSwitching : MonoBehaviour
             }
         }
 
+        //Hand Gun 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             selectedWeapon = 0;
         }
+
+        //Shotgun 
         if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
         {
             selectedWeapon = 1;
         }
+
+        //Grapple Gun 
         if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
         {
             selectedWeapon = 2;
         }
+
+        //Machine Gun 
         if (Input.GetKeyDown(KeyCode.Alpha4) && transform.childCount >= 4)
         {
             selectedWeapon = 3;
         }
+        
+        //Ricochet Gun       
         if (Input.GetKeyDown(KeyCode.Alpha5) && transform.childCount >= 5)
         {
             selectedWeapon = 4;
         }
-        // if (Input.GetKeyDown(KeyCode.Alpha6) && transform.childCount >= 6)
-        // {
-        //     selectedWeapon = 5;
-        // }
+        
+        //Spear
+        if (Input.GetKeyDown(KeyCode.Alpha6) && transform.childCount >= 6)
+         {
+             selectedWeapon = 5;
+         }
 
         if (previousSelectedWeapon != selectedWeapon && transform.GetChild(selectedWeapon).tag == "unlocked")
         {
