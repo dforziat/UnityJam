@@ -13,6 +13,7 @@ public class SpearScript : MonoBehaviour
 
     PlayerControls playerControls;
     WeaponSwitching weaponSwitching;
+    SpearTimer spearTimer;
 
     //AudioSource audioSource;
     //public AudioClip shootClip;
@@ -40,6 +41,7 @@ public class SpearScript : MonoBehaviour
     {
         //gunAnimator = GetComponent<Animator>();
         weaponSwitching = GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<WeaponSwitching>();
+        spearTimer = GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<SpearTimer>();
 
 
     }
@@ -52,7 +54,7 @@ public class SpearScript : MonoBehaviour
         //spearAmmoText.enabled = true;
         //spearAmmoText.text = playerControls.shotgunAmmo.ToString("D3");
         //ammoIcon.enabled = true;
-        canShoot = true;
+        
     }
 
     private void OnDisable()
@@ -74,12 +76,11 @@ public class SpearScript : MonoBehaviour
     private IEnumerator DashCoroutine()
     {
         float startTime = Time.time;
-        //spearTimer.canShoot = false; <- this script needs to be made still
+        spearTimer.canShoot = false; 
         dashEffect.SetActive(true);
         //gunAnimator.SetTrigger("shoot");
         //audioSource.PlayOneShot(shootClip);
         //playerControls.spearAmmo--;
-        //spearAmmoText.text = playerControls.shotgunAmmo.ToString("D3");
 
         var clonedashHurtbox = Instantiate(dashHurtbox, Player.transform.position, Player.transform.rotation, Player.transform);
         while (Time.time < startTime + dashTime)
@@ -91,17 +92,16 @@ public class SpearScript : MonoBehaviour
         }
         Destroy(clonedashHurtbox);
         dashEffect.SetActive(false);
-        canShoot = true; // <- remove this when timer script is added
         weaponSwitching.lockWeaponSwitch = false;
 
     }
 
     void dash()
     {
-        if (Input.GetMouseButtonDown(0)) //&& spearTimer.canShoot==true; <- this script needs to be made still
+        if (Input.GetMouseButtonDown(0) && spearTimer.canShoot == true)
         {
             StartCoroutine(DashCoroutine());
-            //spearTimer.startTimer(); <- this script needs to be made still
+            spearTimer.startTimer();
 
         }
     }

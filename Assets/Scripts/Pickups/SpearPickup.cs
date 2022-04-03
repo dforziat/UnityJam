@@ -23,7 +23,7 @@ public class SpearPickup : MonoBehaviour
         if (other.tag == "Player")
         {
             weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
-            weaponsHud.GetComponent<WeaponSwitching>().selectedWeapon = 4;
+            weaponsHud.GetComponent<WeaponSwitching>().selectedWeapon = 5;
             weaponsHud.GetComponent<WeaponSwitching>().SelectWeapon();
             spear.tag = "unlocked";
             Destroy(gameObject);
