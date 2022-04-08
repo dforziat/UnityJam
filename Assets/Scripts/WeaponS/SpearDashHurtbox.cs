@@ -23,6 +23,14 @@ public class SpearDashHurtbox : MonoBehaviour
             other.transform.SendMessageUpwards("takeDamage", 5);
         }
 
+        if (other.tag == "Spear")
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Destroy Wall");
+        }
+
+
+
 
     }
 }
