@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class SpearScript : MonoBehaviour
 
@@ -20,8 +22,8 @@ public class SpearScript : MonoBehaviour
     //public AudioClip weaponSwitchClip;
     //public AudioClip dryfireClip;
 
-    //public Image ammoIcon;
-    // public Text spearAmmoText;
+    public Image ammoIcon;
+    public Image infinityAmmoIcon;
     public Camera cam;
     //public GameObject hitEffect;
 
@@ -51,16 +53,15 @@ public class SpearScript : MonoBehaviour
         //audioSource = GetComponent<AudioSource>();
        // checkWeaponSwitchAudio();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
-        //spearAmmoText.enabled = true;
-        //spearAmmoText.text = playerControls.shotgunAmmo.ToString("D3");
-        //ammoIcon.enabled = true;
+        infinityAmmoIcon.enabled = true;
+        ammoIcon.enabled = true;
         
     }
 
     private void OnDisable()
     {
-        //spearAmmoText.enabled = false;
-        //ammoIcon.enabled = false;
+        infinityAmmoIcon.enabled = false;
+        ammoIcon.enabled = false;
     }
 
     // Update is called once per frame
@@ -80,7 +81,6 @@ public class SpearScript : MonoBehaviour
         dashEffect.SetActive(true);
         //gunAnimator.SetTrigger("shoot");
         //audioSource.PlayOneShot(shootClip);
-        //playerControls.spearAmmo--;
 
         var clonedashHurtbox = Instantiate(dashHurtbox, Player.transform.position, Player.transform.rotation, Player.transform);
         while (Time.time < startTime + dashTime)
