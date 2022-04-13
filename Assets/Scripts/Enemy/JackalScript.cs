@@ -9,6 +9,8 @@ public class JackalScript : EnemyParent
     public GameObject childExplosion;
     private NavMeshAgent navMeshAgent;
     private float chaseRange = 5;
+    private float stoppingDistanceToPlayer = 6;
+    private float fleeDistance = 3f;
     private float distanceToTarget = Mathf.Infinity;
     public GameObject fireball;
     private float fireballSpeed = 5f;
@@ -53,13 +55,25 @@ public class JackalScript : EnemyParent
 
     private void EngageTarget()
     {
-        if (distanceToTarget >= navMeshAgent.stoppingDistance)
+       if (distanceToTarget >= stoppingDistanceToPlayer)
         {
+            navMeshAgent.isStopped = false;
+            animator.SetBool("forward", true);
             ChaseTarget();
         }
-        if (distanceToTarget <= navMeshAgent.stoppingDistance)
+        if (distanceToTarget <= stoppingDistanceToPlayer && distanceToTarget > fleeDistance)//5f
         {
+            navMeshAgent.isStopped = true;
+            animator.SetBool("backward", false);
+            animator.SetBool("forward", false);
             AttackTarget();
+        } 
+        if(distanceToTarget <= fleeDistance)//2.5f
+        {
+            navMeshAgent.isStopped = false;
+            Vector3 runTo = transform.position + ((transform.position - target.position) * 2);
+            navMeshAgent.SetDestination(runTo);
+            animator.SetBool("backward", true);
         }
     }
 
