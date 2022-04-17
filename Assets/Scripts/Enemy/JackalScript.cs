@@ -55,8 +55,9 @@ public class JackalScript : EnemyParent
 
     private void EngageTarget()
     {
-       if (distanceToTarget >= stoppingDistanceToPlayer)
+       if (distanceToTarget >= stoppingDistanceToPlayer && !animator.GetBool("shoot"))
         {
+            shield.SetActive(true);
             navMeshAgent.isStopped = false;
             animator.SetBool("forward", true);
             ChaseTarget();
@@ -68,8 +69,9 @@ public class JackalScript : EnemyParent
             animator.SetBool("forward", false);
             AttackTarget();
         } 
-        if(distanceToTarget <= fleeDistance)//2.5f
+        if(distanceToTarget <= fleeDistance && !animator.GetBool("shoot"))//2.5f
         {
+            shield.SetActive(true);
             navMeshAgent.isStopped = false;
             Vector3 runTo = transform.position + ((transform.position - target.position) * 2);
             navMeshAgent.SetDestination(runTo);
@@ -86,6 +88,7 @@ public class JackalScript : EnemyParent
     {
         if (!animator.GetBool("shoot"))
         {
+            shield.SetActive(false);
             animator.SetBool("shoot", true);
         }
     }
