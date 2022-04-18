@@ -9,7 +9,7 @@ public class JackalScript : EnemyParent
     public GameObject childExplosion;
     private NavMeshAgent navMeshAgent;
     private float chaseRange = 5;
-    private float stoppingDistanceToPlayer = 6;
+    private float stoppingDistanceToPlayer = 4;
     private float fleeDistance = 3f;
     private float distanceToTarget = Mathf.Infinity;
     public GameObject fireball;
