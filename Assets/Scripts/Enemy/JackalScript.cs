@@ -67,6 +67,7 @@ public class JackalScript : EnemyParent
             navMeshAgent.isStopped = true;
             animator.SetBool("backward", false);
             animator.SetBool("forward", false);
+            //attackOrBlock();
             AttackTarget();
         } 
         if(distanceToTarget <= fleeDistance && !animator.GetBool("shoot"))//2.5f
@@ -131,5 +132,24 @@ public class JackalScript : EnemyParent
         {
             audioSource.PlayOneShot(damagedClip);
         }
+    }
+
+    public void attackOrBlock() //call at the end of animation too
+    {
+        float randomNum = Random.value;
+        if(randomNum > .5)
+        {
+            AttackTarget();
+        }
+        else
+        {
+            shieldBlock();
+        }
+        
+    }
+
+    public void shieldBlock() // go back to idle state
+    {
+
     }
 }

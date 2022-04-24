@@ -39,5 +39,12 @@ public class WallCannon : MonoBehaviour
         cannonShot.GetComponent<Rigidbody>().velocity = transform.forward * projectileSpeed;
     }
 
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Vector3 direction = transform.TransformDirection(Vector3.forward) * 2;
+        Gizmos.DrawRay(transform.position, direction);
+    }
+
 
 }
