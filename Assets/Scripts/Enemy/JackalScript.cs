@@ -60,15 +60,17 @@ public class JackalScript : EnemyParent
             shield.SetActive(true);
             navMeshAgent.isStopped = false;
             animator.SetBool("forward", true);
+            animator.SetBool("shoot", false);
+            animator.SetBool("shield", false);
             ChaseTarget();
         }
-        if (distanceToTarget <= stoppingDistanceToPlayer && distanceToTarget > fleeDistance)//5f
+        if (distanceToTarget <= stoppingDistanceToPlayer && distanceToTarget > fleeDistance && !animator.GetBool("shield") && !animator.GetBool("shoot"))//5f
         {
             navMeshAgent.isStopped = true;
             animator.SetBool("backward", false);
             animator.SetBool("forward", false);
-            //attackOrBlock();
-            AttackTarget();
+            attackOrBlock();
+            //AttackTarget();
         } 
         if(distanceToTarget <= fleeDistance && !animator.GetBool("shoot"))//2.5f
         {
@@ -77,6 +79,8 @@ public class JackalScript : EnemyParent
             Vector3 runTo = transform.position + ((transform.position - target.position) * 2);
             navMeshAgent.SetDestination(runTo);
             animator.SetBool("backward", true);
+            animator.SetBool("shoot", false);
+            animator.SetBool("shield", false);
         }
     }
 
@@ -89,7 +93,6 @@ public class JackalScript : EnemyParent
     {
         if (!animator.GetBool("shoot"))
         {
-            shield.SetActive(false);
             animator.SetBool("shoot", true);
         }
     }
@@ -136,20 +139,27 @@ public class JackalScript : EnemyParent
 
     public void attackOrBlock() //call at the end of animation too
     {
+        
         float randomNum = Random.value;
+        Debug.Log("Random Num: " + randomNum);
         if(randomNum > .5)
         {
             AttackTarget();
+            shield.SetActive(false);
+            animator.SetBool("shield", false);
         }
         else
         {
-            shieldBlock();
+            shield.SetActive(true);
+            animator.SetBool("shield", true);
         }
         
     }
 
-    public void shieldBlock() // go back to idle state
+    public void shieldRecoveryEvent()
     {
-
+        animator.SetBool("shield", false);
     }
+
+
 }
