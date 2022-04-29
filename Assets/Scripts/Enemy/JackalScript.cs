@@ -55,7 +55,7 @@ public class JackalScript : EnemyParent
 
     private void EngageTarget()
     {
-       if (distanceToTarget >= stoppingDistanceToPlayer && !animator.GetBool("shoot"))
+        if (distanceToTarget >= stoppingDistanceToPlayer && !animator.GetBool("shoot"))
         {
             shield.SetActive(true);
             navMeshAgent.isStopped = false;
@@ -67,20 +67,23 @@ public class JackalScript : EnemyParent
         if (distanceToTarget <= stoppingDistanceToPlayer && distanceToTarget > fleeDistance && !animator.GetBool("shield") && !animator.GetBool("shoot"))//5f
         {
             navMeshAgent.isStopped = true;
-            animator.SetBool("backward", false);
-            animator.SetBool("forward", false);
             attackOrBlock();
-            //AttackTarget();
-        } 
-        if(distanceToTarget <= fleeDistance && !animator.GetBool("shoot"))//2.5f
+        }
+        if (distanceToTarget <= fleeDistance && !animator.GetBool("shoot"))//2.5f
         {
             shield.SetActive(true);
             navMeshAgent.isStopped = false;
-            Vector3 runTo = transform.position + ((transform.position - target.position) * 2);
+            Vector3 runTo = transform.position + (transform.position - target.position);
             navMeshAgent.SetDestination(runTo);
             animator.SetBool("backward", true);
             animator.SetBool("shoot", false);
             animator.SetBool("shield", false);
+
+            //if the boy gets stuck in a corner, he will just start blasting. 
+            if (navMeshAgent.velocity == Vector3.zero)
+            {
+                attackOrBlock();
+            }
         }
     }
 
@@ -139,10 +142,11 @@ public class JackalScript : EnemyParent
 
     public void attackOrBlock() //call at the end of animation too
     {
-        
+        animator.SetBool("backward", false);
+        animator.SetBool("forward", false);
         float randomNum = Random.value;
         Debug.Log("Random Num: " + randomNum);
-        if(randomNum > .5)
+        if (randomNum > .5)
         {
             AttackTarget();
             shield.SetActive(false);
@@ -153,7 +157,7 @@ public class JackalScript : EnemyParent
             shield.SetActive(true);
             animator.SetBool("shield", true);
         }
-        
+
     }
 
     public void shieldRecoveryEvent()
