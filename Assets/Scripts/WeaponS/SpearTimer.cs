@@ -23,7 +23,7 @@ public class SpearTimer : MonoBehaviour
         StartCoroutine(timer());
         IEnumerator timer()
         {
-            yield return new WaitForSeconds(30);
+            yield return new WaitForSeconds(2);
             canShoot = true;
 
         }
