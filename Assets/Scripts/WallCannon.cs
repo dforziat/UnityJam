@@ -34,8 +34,12 @@ public class WallCannon : MonoBehaviour
 
     public void shootCannon()
     {
+        Vector3 myVector;
+        myVector = new Vector3(transform.position.x, transform.position.y, transform.position.z) + (transform.forward * .5f);
+
         audioSource.PlayOneShot(cannonShotClip);
-        GameObject cannonShot = Instantiate(projectile, transform.position, transform.rotation);
+        GameObject cannonShot = Instantiate(projectile, myVector, transform.rotation);
+
         cannonShot.GetComponent<Rigidbody>().velocity = transform.forward * projectileSpeed;
     }
 
