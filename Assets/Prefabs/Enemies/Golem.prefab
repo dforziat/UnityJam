@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658897096893322986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: -0.015000105, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 658897097454416177}
   m_RootOrder: 0
@@ -108,8 +108,9 @@ GameObject:
   - component: {fileID: 1888440970}
   - component: {fileID: 337707699}
   - component: {fileID: 7896731592871480289}
-  - component: {fileID: 8024361752969321283}
   - component: {fileID: 2984224146374055157}
+  - component: {fileID: 2063123277}
+  - component: {fileID: 2063123276}
   m_Layer: 7
   m_Name: Golem
   m_TagString: Enemy
@@ -151,8 +152,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.8
-  m_BaseOffset: 0.5
+  m_Height: 1.5
+  m_BaseOffset: 0.8
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!95 &1888440970
@@ -165,7 +166,7 @@ Animator:
   m_GameObject: {fileID: 658897097454416179}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 768a11352a06d1e48855a1b61a3d3129, type: 2}
+  m_Controller: {fileID: 9100000, guid: be61aa9d4e15ab442a9ee1490b806c11, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -281,36 +282,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1, z: 0.5}
+  m_Size: {x: 0.8, y: 1, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8024361752969321283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658897097454416179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2912246a13d5d1943b660e644ebcb742, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  damage: 10
-  isProvoked: 0
-  explosion: {fileID: 8579213436375878188, guid: 5532d3ecca7a0724b8673395b091778c, type: 3}
-  droprate: 20
-  ammoPickup: {fileID: 7419672412132425511, guid: a9f5cf08a171a3f4fb157ed9978dbcd6, type: 3}
-  healthPickup: {fileID: 8827575525327108626, guid: 94d84c7b07e780345a7c615a94a919f6, type: 3}
-  target: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  audioSource: {fileID: 0}
-  damagedClip: {fileID: 8300000, guid: c774c6fed800e8c44ba88d9a51a31b87, type: 3}
-  childExplosion: {fileID: 8579213436375878188, guid: 5532d3ecca7a0724b8673395b091778c, type: 3}
-  fireball: {fileID: 8425132720108540564, guid: 363cf020710ddad4981d38226f32a804, type: 3}
-  childDamagedClip: {fileID: 8300000, guid: c774c6fed800e8c44ba88d9a51a31b87, type: 3}
-  fireballClip: {fileID: 8300000, guid: c548f2a43364d4348b18a91784e4c3f1, type: 3}
-  provokedClip: {fileID: 8300000, guid: c212d5a3a0896d847b15c184c2acc50e, type: 3}
 --- !u!54 &2984224146374055157
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -327,6 +300,85 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!212 &2063123277
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658897097454416179}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.4, y: 0.56}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &2063123276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658897097454416179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e441470ebbf15bb468822d4fbf932c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  damage: 15
+  isProvoked: 0
+  explosion: {fileID: 0}
+  droprate: 25
+  ammoPickup: {fileID: 0}
+  healthPickup: {fileID: 0}
+  target: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  audioSource: {fileID: 0}
+  damagedClip: {fileID: 0}
+  childExplosion: {fileID: 0}
+  fireball: {fileID: 0}
+  childDamagedClip: {fileID: 0}
+  fireballClip: {fileID: 0}
+  provokedClip: {fileID: 0}
 --- !u!1 &2307603649256763565
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2307603649256763565}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.49, z: 0}
+  m_LocalPosition: {x: 0, y: -0.8, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 658897097454416177}

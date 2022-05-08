@@ -12,6 +12,7 @@ public class GolemScript : EnemyParent
     private float distanceToTarget = Mathf.Infinity;
     public GameObject fireball;
     private float fireballSpeed = 5f;
+    float spread = .1f;
     private float yOffset = -0.1f;
     private Animator animator;
 
@@ -77,14 +78,25 @@ public class GolemScript : EnemyParent
 
     public void ShootFireEvent()//have animation call this method
     {
-        Debug.Log("Shoot Event");
+        Vector3 startPos = new Vector3(transform.position.x, transform.position.y + yOffset, transform.position.z);
         childAudioSource.PlayOneShot(fireballClip);
         GameObject shootingBullet = Instantiate(fireball);
-        shootingBullet.transform.position = new Vector3(transform.position.x, transform.position.y + yOffset, transform.position.z);
+        GameObject leftShootingBullet = Instantiate(fireball);
+        GameObject rightShootingBullet = Instantiate(fireball);
+
+        leftShootingBullet.transform.position = startPos;
+        rightShootingBullet.transform.position = startPos;
+        leftShootingBullet.transform.LookAt(target);
+        rightShootingBullet.transform.LookAt(target);
+
+        leftShootingBullet.GetComponent<Rigidbody>().velocity = (shootingBullet.transform.forward + shootingBullet.transform.right * Random.Range(-spread, spread)) * fireballSpeed;
+        rightShootingBullet.GetComponent<Rigidbody>().velocity = (shootingBullet.transform.forward + shootingBullet.transform.right * Random.Range(-spread, spread)) * fireballSpeed;
+        shootingBullet.transform.position = startPos;
         shootingBullet.transform.LookAt(target);
         shootingBullet.GetComponent<Rigidbody>().velocity = shootingBullet.transform.forward.normalized * fireballSpeed;
+        Debug.Log("Shoot Event");
     }
-    
+
     public void ShootRecoveryEvent()//have animation call this method
     {
         animator.SetBool("shoot", false);

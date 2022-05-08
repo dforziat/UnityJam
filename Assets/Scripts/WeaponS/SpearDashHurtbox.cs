@@ -29,8 +29,5 @@ public class SpearDashHurtbox : MonoBehaviour
             Debug.Log("Destroy Wall");
         }
 
-
-
-
     }
 }

@@ -146,7 +146,7 @@ public class JackalScript : EnemyParent
         animator.SetBool("forward", false);
         float randomNum = Random.value;
         Debug.Log("Random Num: " + randomNum);
-        if (randomNum > .5)
+        if (randomNum > .4)
         {
             AttackTarget();
             shield.SetActive(false);
