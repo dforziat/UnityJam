@@ -12,7 +12,6 @@ public class GolemScript : EnemyParent
     private float distanceToTarget = Mathf.Infinity;
     public GameObject fireball;
     private float fireballSpeed = 5f;
-    float spread = .1f;
     private float yOffset = -0.1f;
     private Animator animator;
 
@@ -86,11 +85,12 @@ public class GolemScript : EnemyParent
 
         leftShootingBullet.transform.position = startPos;
         rightShootingBullet.transform.position = startPos;
-        leftShootingBullet.transform.LookAt(target);
-        rightShootingBullet.transform.LookAt(target);
+        leftShootingBullet.transform.LookAt(new Vector3(target.position.x - 1f, target.position.y, target.position.z));
+        rightShootingBullet.transform.LookAt(new Vector3(target.position.x + 1f, target.position.y, target.position.z));
 
-        leftShootingBullet.GetComponent<Rigidbody>().velocity = (shootingBullet.transform.forward + shootingBullet.transform.right * Random.Range(-spread, spread)) * fireballSpeed;
-        rightShootingBullet.GetComponent<Rigidbody>().velocity = (shootingBullet.transform.forward + shootingBullet.transform.right * Random.Range(-spread, spread)) * fireballSpeed;
+
+        leftShootingBullet.GetComponent<Rigidbody>().velocity = leftShootingBullet.transform.forward.normalized * fireballSpeed;
+        rightShootingBullet.GetComponent<Rigidbody>().velocity = rightShootingBullet.transform.forward.normalized * fireballSpeed;
         shootingBullet.transform.position = startPos;
         shootingBullet.transform.LookAt(target);
         shootingBullet.GetComponent<Rigidbody>().velocity = shootingBullet.transform.forward.normalized * fireballSpeed;
