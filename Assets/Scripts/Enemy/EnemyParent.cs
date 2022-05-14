@@ -7,7 +7,7 @@ public class EnemyParent : MonoBehaviour
     public int health;
     public int damage;
     public bool isProvoked = false;
-    private float verticalOffset = 0;
+    public float verticalOffset = 0;
     public GameObject explosion;
     public int droprate = 25; //20% drop rate of pickup
     public GameObject ammoPickup;

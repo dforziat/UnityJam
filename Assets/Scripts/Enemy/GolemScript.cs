@@ -32,6 +32,7 @@ public class GolemScript : EnemyParent
         audioSource = childAudioSource;
         damagedClip = childDamagedClip;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        verticalOffset = .3f;
     }
 
     // Update is called once per frame
