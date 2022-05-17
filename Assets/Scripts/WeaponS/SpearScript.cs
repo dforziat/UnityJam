@@ -11,14 +11,14 @@ public class SpearScript : MonoBehaviour
     private bool canShoot = true;
     private bool onFirstLoad = true;
     float rateOfFire = .5f;
-    //Animator gunAnimator;
+    Animator animator;
 
     PlayerControls playerControls;
     WeaponSwitching weaponSwitching;
     SpearTimer spearTimer;
 
-    //AudioSource audioSource;
-    //public AudioClip shootClip;
+    AudioSource audioSource;
+    public AudioClip attackClip;
     //public AudioClip weaponSwitchClip;
     //public AudioClip dryfireClip;
 
@@ -41,7 +41,7 @@ public class SpearScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gunAnimator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         weaponSwitching = GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<WeaponSwitching>();
         spearTimer = GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<SpearTimer>();
 
@@ -50,7 +50,7 @@ public class SpearScript : MonoBehaviour
 
     private void OnEnable()
     {
-        //audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
        // checkWeaponSwitchAudio();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
         infinityAmmoIcon.enabled = true;
@@ -79,8 +79,8 @@ public class SpearScript : MonoBehaviour
         float startTime = Time.time;
         spearTimer.canShoot = false; 
         dashEffect.SetActive(true);
-        //gunAnimator.SetTrigger("shoot");
-        //audioSource.PlayOneShot(shootClip);
+        animator.SetTrigger("attack");
+        audioSource.PlayOneShot(attackClip);
 
         var clonedashHurtbox = Instantiate(dashHurtbox, Player.transform.position, Player.transform.rotation, Player.transform);
         while (Time.time < startTime + dashTime)
