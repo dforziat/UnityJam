@@ -18,8 +18,9 @@ public class SpearScript : MonoBehaviour
     SpearTimer spearTimer;
 
     AudioSource audioSource;
+    AudioSource attackAudioSource;
     public AudioClip attackClip;
-    //public AudioClip weaponSwitchClip;
+    public AudioClip electricClip;
     //public AudioClip dryfireClip;
 
     public Image ammoIcon;
@@ -51,6 +52,7 @@ public class SpearScript : MonoBehaviour
     private void OnEnable()
     {
         audioSource = GetComponent<AudioSource>();
+        attackAudioSource = GetComponent<AudioSource>();
        // checkWeaponSwitchAudio();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
         infinityAmmoIcon.enabled = true;
@@ -81,6 +83,7 @@ public class SpearScript : MonoBehaviour
         dashEffect.SetActive(true);
         animator.SetTrigger("attack");
         audioSource.PlayOneShot(attackClip);
+        attackAudioSource.PlayOneShot(electricClip);
 
         var clonedashHurtbox = Instantiate(dashHurtbox, Player.transform.position, Player.transform.rotation, Player.transform);
         while (Time.time < startTime + dashTime)
