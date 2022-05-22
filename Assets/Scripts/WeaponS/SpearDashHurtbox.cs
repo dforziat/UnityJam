@@ -5,6 +5,8 @@ using UnityEngine;
 public class SpearDashHurtbox : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public GameObject brokenWall;
     void Start()
     {
         
@@ -26,8 +28,15 @@ public class SpearDashHurtbox : MonoBehaviour
         if (other.tag == "Spear")
         {
             Destroy(other.gameObject);
+            Instantiate(brokenWall, other.transform.position, other.transform.rotation);
+
             Debug.Log("Destroy Wall");
         }
-
+        if(other.tag == "BrokenWall")
+        {
+            other.transform.DetachChildren();
+            Debug.Log("Applying FORCE!");
+            other.GetComponentInChildren<Rigidbody>().AddExplosionForce(200, transform.position, 2);
+        }
     }
 }
