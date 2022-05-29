@@ -36,7 +36,7 @@ public class SpearDashHurtbox : MonoBehaviour
         {
             other.transform.DetachChildren();
             Debug.Log("Applying FORCE!");
-            other.GetComponentInChildren<Rigidbody>().AddExplosionForce(200, transform.position, 2);
+            other.GetComponentInChildren<Rigidbody>().AddExplosionForce(300, transform.position, 2);
         }
     }
 }
