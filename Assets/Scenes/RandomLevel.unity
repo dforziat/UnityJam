@@ -2212,6 +2212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 609972466}
+  - component: {fileID: 609972467}
   m_Layer: 0
   m_Name: RogueManager
   m_TagString: Untagged
@@ -2227,12 +2228,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609972465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1479383, y: -1.2347729, z: 0.09123942}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &609972467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609972465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ca78ea90228bb4e8253cc35fe81862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponList:
+  - {fileID: 7419672412132425511, guid: 078d326547ab7574581204ae836707ec, type: 3}
+  - {fileID: 7419672412132425511, guid: bff41c69620628f459d5075821c6ab91, type: 3}
+  - {fileID: 7419672412132425511, guid: f8f789f6d805f0e499f15723f372fc73, type: 3}
+  - {fileID: 7419672412132425511, guid: 684ced1b09d9a244bb93f4a6683a05ce, type: 3}
+  weaponSpawner: {fileID: 1817675667}
 --- !u!1001 &624971787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3620,7 +3639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545df3cbf057ddf4e9e3eb6d54aba24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numOfRoomsMax: 5
+  numOfRoomsMax: 4
   initialRoomBoundBox: {fileID: 237432723}
   testRoom: {fileID: 8313346037767887863, guid: d1e7725a7cac1a74eb2afde0f303278e, type: 3}
   wall: {fileID: 5010528888828678957, guid: df09f38ea66698b45b3ba276a9073c1e, type: 3}
@@ -6550,6 +6569,49 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6333409251669139148, guid: 7868d06b12a28524db820bbe7ce748d9, type: 3}
   m_PrefabInstance: {fileID: 1795155914}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1817675665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1817675667}
+  - component: {fileID: 1817675666}
+  m_Layer: 0
+  m_Name: WeaponSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1817675666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817675665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f5be23742568a4aae7d011398648d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1817675667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817675665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1822574440
 PrefabInstance:
   m_ObjectHideFlags: 0
