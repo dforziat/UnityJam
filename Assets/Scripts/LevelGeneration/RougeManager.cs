@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RougeManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    int levelsCompleted = 0;
+    public int numLevelsCompleted = 0;
     int totalTime = 0;
-    //ArrayList weaponList = new ArrayList() {PlayerPrefsConstants.SHOTGUN, PlayerPrefsConstants.GRAPPLEGUN, PlayerPrefsConstants.RICHOCHETGUN, PlayerPrefsConstants.MACHINEGUN, PlayerPrefsConstants.SPEAR};
     public List<GameObject> weaponList;
-    public Transform weaponSpawner;
+
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -28,9 +28,17 @@ public class RougeManager : MonoBehaviour
 
     public void spawnWeapon()
     {
+        Transform weaponSpawner = GameObject.FindObjectOfType<WeaponSpawner>().gameObject.transform;
         int randNum = Random.Range(0, weaponList.Capacity);
         GameObject randomWeapon = (GameObject) weaponList[randNum];
         weaponList.RemoveAt(randNum);
         Instantiate(randomWeapon, weaponSpawner.position, weaponSpawner.rotation);
+    }
+
+  
+
+    public void nextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
