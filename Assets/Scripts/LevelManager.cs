@@ -41,7 +41,6 @@ public class LevelManager : MonoBehaviour
         SaveManager = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
 
-
     }
 
     // Update is called once per frame

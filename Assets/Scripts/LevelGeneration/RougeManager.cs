@@ -7,7 +7,7 @@ public class RougeManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public int numLevelsCompleted = 0;
-    int totalTime = 0;
+    public float totalTime = 0;
     public List<GameObject> weaponList;
 
     private void Awake()
