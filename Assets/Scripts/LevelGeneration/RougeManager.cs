@@ -9,6 +9,7 @@ public class RougeManager : MonoBehaviour
     public int numLevelsCompleted = 0;
     public float totalTime = 0;
     public List<GameObject> weaponList;
+    public List<string> unlockedWeaponList;
 
     private void Awake()
     {
@@ -26,16 +27,6 @@ public class RougeManager : MonoBehaviour
         
     }
 
-    public void spawnWeapon()
-    {
-        Transform weaponSpawner = GameObject.FindObjectOfType<WeaponSpawner>().gameObject.transform;
-        int randNum = Random.Range(0, weaponList.Capacity);
-        GameObject randomWeapon = (GameObject) weaponList[randNum];
-        weaponList.RemoveAt(randNum);
-        Instantiate(randomWeapon, weaponSpawner.position, weaponSpawner.rotation);
-    }
-
-  
 
     public void nextLevel()
     {

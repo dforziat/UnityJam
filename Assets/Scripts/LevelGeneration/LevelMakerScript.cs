@@ -22,7 +22,6 @@ public class LevelMakerScript : MonoBehaviour
     void Start()
     {
         navMeshBuilder = new NavMeshBuilder();
-        Debug.Log("Level Maker started");
         initialExitPoint = GameObject.FindGameObjectWithTag("ExitPoint");
         GenerateLevel(initialExitPoint);
         runFinalPass();
@@ -41,9 +40,7 @@ public class LevelMakerScript : MonoBehaviour
             return;
         }
  
-      //  Debug.Log("Exit Point Location: " + exitPoint.transform.position);
         checkForRoomCollision(exitPoint);
-        //Debug.Log("Room Num: " + currentNumOfRooms + " Created!");
         if(currentNumOfRooms < numOfRoomsMax)
         {
             GenerateLevel(getRandomExitPoint());
@@ -64,7 +61,6 @@ public class LevelMakerScript : MonoBehaviour
         {
             if (collRoom.GetComponent<BoxCollider>().bounds.Intersects(room.GetComponent<BoxCollider>().bounds))
             {
-                Debug.Log("Room Collision! " + collRoom.name);
                 collRoom.SetActive(false);
                 Destroy(collRoom);
                 Instantiate(wall, exitPoint.transform.position, exitPoint.transform.rotation);
@@ -104,7 +100,6 @@ public class LevelMakerScript : MonoBehaviour
     {
         GameObject[] exitPoints = GameObject.FindGameObjectsWithTag("ExitPoint");
         int randomNum = Random.Range(0, exitPoints.Length);
-        Debug.Log("Random Num: " + randomNum + " Size = " + exitPoints.Length);
         return exitPoints[randomNum];
     }
 
@@ -112,7 +107,6 @@ public class LevelMakerScript : MonoBehaviour
     {
         if(currentNumOfRooms + 1 >= numOfRoomsMax)
         {
-            Debug.Log("EXIT ROOM HAS BEEN CHOSEN");
             return exitRoom;
         }
         else

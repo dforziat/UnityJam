@@ -68,7 +68,11 @@ public class SaveManager : MonoBehaviour
        // playerControls.shotgunAmmo = 10;
        // playerControls.curHp = 100;
 
-        
+        if(SceneManager.GetActiveScene().name == "RandomLevel")
+        {
+            return;
+        }
+
         playerControls.curLevel = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL);
 
         if (PlayerPrefs.GetInt(PlayerPrefsConstants.SHOTGUN) == 1)

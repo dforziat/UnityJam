@@ -5,8 +5,8 @@ using UnityEngine;
 public class RicochetGunPickup : MonoBehaviour
 {
 
-    public Transform ricochetGun;
-    private GameObject weaponsHud;
+     Transform ricochetGun;
+     GameObject weaponsHud;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class RicochetGunPickup : MonoBehaviour
             weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
             weaponsHud.GetComponent<WeaponSwitching>().selectedWeapon = 4;
             weaponsHud.GetComponent<WeaponSwitching>().SelectWeapon();
-            ricochetGun.tag = "unlocked";
+            weaponsHud.transform.Find("RicochetGun").tag = "unlocked";
             Destroy(gameObject);
         }
     }

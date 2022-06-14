@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpearPickup : MonoBehaviour
 {
-    public Transform spear;
-    private GameObject weaponsHud;
+     Transform spear;
+     GameObject weaponsHud;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class SpearPickup : MonoBehaviour
             weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
             weaponsHud.GetComponent<WeaponSwitching>().selectedWeapon = 5;
             weaponsHud.GetComponent<WeaponSwitching>().SelectWeapon();
-            spear.tag = "unlocked";
+            weaponsHud.transform.Find("SpearOfBealial").tag = "unlocked";
             Destroy(gameObject);
         }
     }

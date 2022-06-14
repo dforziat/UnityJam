@@ -10,14 +10,20 @@ public class ChallengeLevelManager : MonoBehaviour
     GameObject levelCompleteCanvas;
     TextMeshProUGUI levelTimeText;
     TextMeshProUGUI totalTimeText;
+    RougeManager rm;
 
     string timeFormat = "{0,2:00}:{1,2:00}:{2,2:00}";
     float levelTime = 0;
 
     void Start()
     {
+        rm = GameObject.FindObjectOfType<RougeManager>();
         levelCompleteCanvas = GameObject.Find("ChallengeLevelCompleteCanvas");
         levelCompleteCanvas.SetActive(false);
+
+        //setup player guns
+        loadUnlockedWeapons();
+
     }
 
     // Update is called once per frame
@@ -28,7 +34,6 @@ public class ChallengeLevelManager : MonoBehaviour
 
     public void levelComplete()
     {
-        RougeManager rm = GameObject.FindObjectOfType<RougeManager>();
         rm.numLevelsCompleted++;
         //display the GUI
         levelCompleteCanvas.SetActive(true);
@@ -66,6 +71,32 @@ public class ChallengeLevelManager : MonoBehaviour
 
             GameObject levelCompleteText = levelCompleteCanvas.transform.Find("LevelComplete").gameObject;
             levelCompleteText.SetActive(false);
+        }
+
+        saveUnlockedWeapons();
+    }
+
+    public void loadUnlockedWeapons()
+    {
+        GameObject weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
+     
+        foreach (string weaponName in rm.unlockedWeaponList)
+        {
+            weaponsHud.transform.Find(weaponName).tag = "unlocked";
+        }
+
+    }
+
+    public void saveUnlockedWeapons()
+    {
+        GameObject weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
+        rm.unlockedWeaponList.Clear();
+        foreach(Transform weapon in weaponsHud.transform)
+        {
+            if(weapon.tag == "unlocked")
+            {
+                rm.unlockedWeaponList.Add(weapon.name);
+            }
         }
     }
 }

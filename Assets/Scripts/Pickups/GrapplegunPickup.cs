@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GrapplegunPickup : MonoBehaviour
 {
-    public Transform grapplegun;
-    private GameObject weaponsHud;
+     Transform grapplegun;
+     GameObject weaponsHud;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class GrapplegunPickup : MonoBehaviour
             weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
             weaponsHud.GetComponent<WeaponSwitching>().selectedWeapon = 2;
             weaponsHud.GetComponent<WeaponSwitching>().SelectWeapon();
-            grapplegun.tag = "unlocked";
+            weaponsHud.transform.Find("Grapplegun").tag = "unlocked";
             Destroy(gameObject);
         }
     }

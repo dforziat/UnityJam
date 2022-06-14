@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ShotgunPickup : MonoBehaviour
 {
-    public Transform shotgun;
-    private GameObject weaponsHud;
+     Transform shotgun;
+     GameObject weaponsHud;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class ShotgunPickup : MonoBehaviour
             weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
             weaponsHud.GetComponent<WeaponSwitching>().selectedWeapon = 1;
             weaponsHud.GetComponent<WeaponSwitching>().SelectWeapon();
-            shotgun.tag = "unlocked";
+            weaponsHud.transform.Find("Shotgun").tag = "unlocked";
             Destroy(gameObject);
         }
     }
