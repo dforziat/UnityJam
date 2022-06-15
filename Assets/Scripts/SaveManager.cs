@@ -55,6 +55,15 @@ public class SaveManager : MonoBehaviour
         if (grapplegun.tag == "unlocked")
             PlayerPrefs.SetInt(PlayerPrefsConstants.GRAPPLEGUN, 1);
 
+        if (grapplegun.tag == "unlocked")
+            PlayerPrefs.SetInt(PlayerPrefsConstants.RICHOCHETGUN, 1);
+
+        if (grapplegun.tag == "unlocked")
+            PlayerPrefs.SetInt(PlayerPrefsConstants.MACHINEGUN, 1);
+
+        if (grapplegun.tag == "unlocked")
+            PlayerPrefs.SetInt(PlayerPrefsConstants.SPEAR, 1);
+
         //Save
         PlayerPrefs.Save();
         
@@ -85,8 +94,24 @@ public class SaveManager : MonoBehaviour
         else
             grapplegun.tag = "Untagged";
 
+        if (PlayerPrefs.GetInt(PlayerPrefsConstants.RICHOCHETGUN) == 1)
+             grapplegun.tag = "unlocked";
+          else
+             grapplegun.tag = "Untagged";
 
-        Debug.Log("Loaded PREFS");
+          if (PlayerPrefs.GetInt(PlayerPrefsConstants.MACHINEGUN) == 1)
+              grapplegun.tag = "unlocked";
+          else
+              grapplegun.tag = "Untagged";
+
+          if (PlayerPrefs.GetInt(PlayerPrefsConstants.SPEAR) == 1)
+              grapplegun.tag = "unlocked";
+          else
+             grapplegun.tag = "Untagged";
+
+
+
+    Debug.Log("Loaded PREFS");
 
     }
 
