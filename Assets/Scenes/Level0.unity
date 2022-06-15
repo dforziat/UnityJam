@@ -329,6 +329,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5626183233001529232, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
+      propertyPath: spear
+      value: 
+      objectReference: {fileID: 530471861}
+    - target: {fileID: 5626183233001529232, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
       propertyPath: shotgun
       value: 
       objectReference: {fileID: 530471859}
@@ -336,6 +340,14 @@ PrefabInstance:
       propertyPath: grapplegun
       value: 
       objectReference: {fileID: 530471858}
+    - target: {fileID: 5626183233001529232, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
+      propertyPath: machinegun
+      value: 
+      objectReference: {fileID: 530471863}
+    - target: {fileID: 5626183233001529232, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
+      propertyPath: richochetgun
+      value: 
+      objectReference: {fileID: 530471862}
     - target: {fileID: 5626183233001529233, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1051,6 +1063,21 @@ RectTransform:
 --- !u!1 &530471860 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 412639174128173773, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 530471851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &530471861 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2007177263493338617, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 530471851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &530471862 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 679474131, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 530471851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &530471863 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4140718628564769931, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
   m_PrefabInstance: {fileID: 530471851}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &538876544

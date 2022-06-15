@@ -25350,6 +25350,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5626183233001529232, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
+      propertyPath: spear
+      value: 
+      objectReference: {fileID: 1599512388}
+    - target: {fileID: 5626183233001529232, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
       propertyPath: shotgun
       value: 
       objectReference: {fileID: 142135423}
@@ -25357,6 +25361,14 @@ PrefabInstance:
       propertyPath: grapplegun
       value: 
       objectReference: {fileID: 234385943}
+    - target: {fileID: 5626183233001529232, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
+      propertyPath: machinegun
+      value: 
+      objectReference: {fileID: 1599512390}
+    - target: {fileID: 5626183233001529232, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
+      propertyPath: richochetgun
+      value: 
+      objectReference: {fileID: 1599512389}
     - target: {fileID: 5626183233001529233, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -33364,69 +33376,69 @@ Transform:
   - {fileID: 1976003434}
   - {fileID: 1969967104}
   - {fileID: 1364626083}
+  - {fileID: 958283477}
   - {fileID: 1512275752}
   - {fileID: 1508305073}
   - {fileID: 1348901702}
   - {fileID: 1152042863}
   - {fileID: 1756521693}
+  - {fileID: 363068357}
   - {fileID: 70462877}
   - {fileID: 1145876326}
   - {fileID: 1801467464}
   - {fileID: 1243842137}
   - {fileID: 181546589}
   - {fileID: 358089800}
+  - {fileID: 1224338351}
   - {fileID: 1041078821}
   - {fileID: 1399476339}
+  - {fileID: 1349308563}
   - {fileID: 1339020140}
+  - {fileID: 984610393}
   - {fileID: 1523206869}
   - {fileID: 1825969038}
   - {fileID: 2013568014}
   - {fileID: 1489617389}
   - {fileID: 1635190391}
+  - {fileID: 1345461544}
   - {fileID: 948667430}
-  - {fileID: 2071587820}
+  - {fileID: 641288252}
+  - {fileID: 1042326894}
   - {fileID: 532184851}
   - {fileID: 978284459}
-  - {fileID: 1349308563}
+  - {fileID: 1538811723}
+  - {fileID: 652399055}
   - {fileID: 513123744}
+  - {fileID: 1154212767}
   - {fileID: 160674353}
+  - {fileID: 1807718646}
   - {fileID: 649067037}
+  - {fileID: 1550516730}
   - {fileID: 573740900}
-  - {fileID: 1655147035}
+  - {fileID: 1285406961}
+  - {fileID: 1372755503}
   - {fileID: 1712652479}
   - {fileID: 1891589075}
+  - {fileID: 1655147035}
   - {fileID: 1207906966}
-  - {fileID: 984610393}
-  - {fileID: 1586591111}
-  - {fileID: 363068357}
-  - {fileID: 1154212767}
-  - {fileID: 1285406961}
-  - {fileID: 641288252}
-  - {fileID: 1514415940}
-  - {fileID: 1639703153}
-  - {fileID: 1574534171}
-  - {fileID: 1042326894}
-  - {fileID: 1968879085}
-  - {fileID: 1807718646}
-  - {fileID: 652399055}
-  - {fileID: 958283477}
-  - {fileID: 1224338351}
-  - {fileID: 1538811723}
-  - {fileID: 1345461544}
-  - {fileID: 1372755503}
-  - {fileID: 1816093465}
-  - {fileID: 1905846078}
-  - {fileID: 1550516730}
+  - {fileID: 2071587820}
   - {fileID: 394430175}
-  - {fileID: 1744331127}
+  - {fileID: 1586591111}
+  - {fileID: 1968879085}
   - {fileID: 162736782}
+  - {fileID: 1816093465}
   - {fileID: 995061191}
+  - {fileID: 1744331127}
   - {fileID: 308832162}
+  - {fileID: 1905846078}
   - {fileID: 314853859}
+  - {fileID: 1514415940}
   - {fileID: 91356044}
   - {fileID: 315880769}
+  - {fileID: 1574534171}
   - {fileID: 1496297455}
   - {fileID: 1893196900}
+  - {fileID: 1639703153}
   - {fileID: 17765744}
   - {fileID: 1387959463}
   - {fileID: 1036246581}
@@ -44880,9 +44892,11 @@ Transform:
   - {fileID: 1782603940}
   - {fileID: 1820287448}
   - {fileID: 552313684}
+  - {fileID: 263186956}
   - {fileID: 194931304}
   - {fileID: 1408119066}
   - {fileID: 1074362184}
+  - {fileID: 829092249}
   - {fileID: 911024036}
   - {fileID: 1318143694}
   - {fileID: 621303841}
@@ -44892,19 +44906,28 @@ Transform:
   - {fileID: 1183822884}
   - {fileID: 86342434}
   - {fileID: 1943357765}
-  - {fileID: 1158174872}
-  - {fileID: 1114652494}
-  - {fileID: 134193323}
-  - {fileID: 936999215}
-  - {fileID: 1773761799}
-  - {fileID: 807448929}
-  - {fileID: 1776278121}
   - {fileID: 1699383576}
-  - {fileID: 149255801}
+  - {fileID: 1158174872}
+  - {fileID: 1776278121}
+  - {fileID: 1114652494}
+  - {fileID: 1482086146}
+  - {fileID: 134193323}
   - {fileID: 1432926436}
+  - {fileID: 936999215}
+  - {fileID: 1192218913}
+  - {fileID: 1773761799}
+  - {fileID: 1985380740}
+  - {fileID: 807448929}
+  - {fileID: 451143824}
+  - {fileID: 1170435597}
+  - {fileID: 1680102504}
+  - {fileID: 149255801}
+  - {fileID: 1137410155}
+  - {fileID: 351281312}
+  - {fileID: 1862123378}
   - {fileID: 648212115}
   - {fileID: 300477558}
-  - {fileID: 1862123378}
+  - {fileID: 32138793}
   - {fileID: 620768947}
   - {fileID: 229774223}
   - {fileID: 17242306}
@@ -44919,17 +44942,6 @@ Transform:
   - {fileID: 1329853175}
   - {fileID: 1853732180}
   - {fileID: 1915875365}
-  - {fileID: 1985380740}
-  - {fileID: 451143824}
-  - {fileID: 1680102504}
-  - {fileID: 1482086146}
-  - {fileID: 351281312}
-  - {fileID: 829092249}
-  - {fileID: 1192218913}
-  - {fileID: 32138793}
-  - {fileID: 1170435597}
-  - {fileID: 263186956}
-  - {fileID: 1137410155}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -66414,6 +66426,21 @@ MonoBehaviour:
 --- !u!224 &1599512387 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6216474776588816485, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 1599512380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1599512388 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2007177263493338617, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 1599512380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1599512389 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 679474131, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 1599512380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1599512390 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4140718628564769931, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
   m_PrefabInstance: {fileID: 1599512380}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1599826845

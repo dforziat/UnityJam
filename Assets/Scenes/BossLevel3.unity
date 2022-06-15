@@ -5145,6 +5145,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5626183233001529232, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
+      propertyPath: spear
+      value: 
+      objectReference: {fileID: 1599512387}
+    - target: {fileID: 5626183233001529232, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
       propertyPath: shotgun
       value: 
       objectReference: {fileID: 142135423}
@@ -5152,6 +5156,14 @@ PrefabInstance:
       propertyPath: grapplegun
       value: 
       objectReference: {fileID: 234385943}
+    - target: {fileID: 5626183233001529232, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
+      propertyPath: machinegun
+      value: 
+      objectReference: {fileID: 1599512389}
+    - target: {fileID: 5626183233001529232, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
+      propertyPath: richochetgun
+      value: 
+      objectReference: {fileID: 1599512388}
     - target: {fileID: 5626183233001529233, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -14648,6 +14660,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1599512387 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2007177263493338617, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 1599512380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1599512388 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 679474131, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 1599512380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1599512389 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4140718628564769931, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 1599512380}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1600602396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 259396b2f7ddba14c9607e5259f8218a, type: 3}

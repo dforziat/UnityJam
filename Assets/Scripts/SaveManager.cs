@@ -11,6 +11,9 @@ public class SaveManager : MonoBehaviour
     //How to unlock weapon
     public Transform shotgun;
     public Transform grapplegun;
+    public Transform machinegun;
+    public Transform richochetgun;
+    public Transform spear;
     private GameObject weaponsHud;
 
     // Start is called before the first frame update
@@ -55,13 +58,13 @@ public class SaveManager : MonoBehaviour
         if (grapplegun.tag == "unlocked")
             PlayerPrefs.SetInt(PlayerPrefsConstants.GRAPPLEGUN, 1);
 
-        if (grapplegun.tag == "unlocked")
+        if (richochetgun.tag == "unlocked")
             PlayerPrefs.SetInt(PlayerPrefsConstants.RICHOCHETGUN, 1);
 
-        if (grapplegun.tag == "unlocked")
+        if (machinegun.tag == "unlocked")
             PlayerPrefs.SetInt(PlayerPrefsConstants.MACHINEGUN, 1);
 
-        if (grapplegun.tag == "unlocked")
+        if (spear.tag == "unlocked")
             PlayerPrefs.SetInt(PlayerPrefsConstants.SPEAR, 1);
 
         //Save
@@ -95,19 +98,19 @@ public class SaveManager : MonoBehaviour
             grapplegun.tag = "Untagged";
 
         if (PlayerPrefs.GetInt(PlayerPrefsConstants.RICHOCHETGUN) == 1)
-             grapplegun.tag = "unlocked";
+            richochetgun.tag = "unlocked";
           else
-             grapplegun.tag = "Untagged";
+            richochetgun.tag = "Untagged";
 
           if (PlayerPrefs.GetInt(PlayerPrefsConstants.MACHINEGUN) == 1)
-              grapplegun.tag = "unlocked";
+            machinegun.tag = "unlocked";
           else
-              grapplegun.tag = "Untagged";
+            machinegun.tag = "Untagged";
 
           if (PlayerPrefs.GetInt(PlayerPrefsConstants.SPEAR) == 1)
-              grapplegun.tag = "unlocked";
+            spear.tag = "unlocked";
           else
-             grapplegun.tag = "Untagged";
+            spear.tag = "Untagged";
 
 
 
