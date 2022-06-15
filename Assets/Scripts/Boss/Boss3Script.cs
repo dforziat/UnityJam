@@ -17,6 +17,8 @@ public class Boss3Script : BossScript
     public AudioSource walkAudioSource;
     private Transform playerTransform;
     private BoxCollider boxCollider;
+
+
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -35,11 +37,6 @@ public class Boss3Script : BossScript
             originalColorList.Add(mesh.material.color);
         }
 
-        //Rifle stats
-        Vector3 rifleRunPosition = new Vector3(1.2f, 0.56f, 0.67f);
-        Vector3 rifleRunRotation = new Vector3(285, 90, 0);
-
-
     }
 
     // Update is called once per frame
@@ -47,4 +44,5 @@ public class Boss3Script : BossScript
     {
         
     }
+
 }
