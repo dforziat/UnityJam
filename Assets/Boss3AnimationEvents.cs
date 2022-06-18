@@ -12,9 +12,14 @@ public class Boss3AnimationEvents : MonoBehaviour
 
     Vector3 rifleShootPosition = new Vector3(0.589999974f, 0.637000024f, 1.528f);
     Vector3 rifleShootRotation = new Vector3(293.405579f, 58.6852112f, 343.351044f);
+
+
+    public GameObject saber;
+
+
     void Start()
     {
-        
+        saber.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,5 +33,25 @@ public class Boss3AnimationEvents : MonoBehaviour
     {
         rifle.transform.localPosition = rifleShootPosition;
         rifle.transform.localEulerAngles = rifleShootRotation;
+    }
+
+    public void disableRifle()
+    {
+        rifle.SetActive(false);
+    }
+
+    private void enableRifle()
+    {
+        rifle.SetActive(true);
+    }
+
+    private void enableSaber()
+    {
+        saber.SetActive(true);
+    }
+
+    private void disableSaber()
+    {
+        saber.SetActive(false);
     }
 }
