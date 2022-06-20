@@ -14,6 +14,8 @@ public class Bomb : MonoBehaviour
     private float verticalOffset = .1f;
     private Transform player;
 
+    public bool isGrenade = false;
+
 
     void Start()
     {
@@ -49,6 +51,33 @@ public class Bomb : MonoBehaviour
         if (dropRandomNum <= 10)
         {
             Instantiate(ammoPickup, new Vector3(transform.position.x, transform.position.y + verticalOffset, transform.position.z), transform.rotation);
+        }
+
+        if (isGrenade)
+        {
+            GameObject launchBomb = Instantiate(gameObject);
+            GameObject launchBombL = Instantiate(gameObject);
+            GameObject launchBombR = Instantiate(gameObject);
+
+            launchBomb.transform.localScale -= new Vector3(.5f, .5f, .5f);
+            launchBombL.transform.localScale -= new Vector3(.5f, .5f, .5f);
+            launchBombR.transform.localScale -= new Vector3(.5f, .5f, .5f);
+
+            launchBomb.GetComponent<Bomb>().isGrenade = false;
+            launchBombL.GetComponent<Bomb>().isGrenade = false;
+            launchBombR.GetComponent<Bomb>().isGrenade = false;
+
+
+            //diasble audio on 2/3 bombs
+            launchBombL.GetComponent<AudioSource>().enabled = false;
+            launchBombR.GetComponent<AudioSource>().enabled = false;
+
+            launchBomb.transform.position = transform.position;
+            launchBombL.transform.position = transform.position;
+            launchBombR.transform.position = transform.position;
+
+            launchBomb.GetComponent<Rigidbody>().AddExplosionForce(10, launchBomb.transform.position, 5);
+
         }
 
         var bomb = Instantiate(explosion, new Vector3(transform.position.x, transform.position.y + verticalOffset, transform.position.z), transform.rotation);

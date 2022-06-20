@@ -24,9 +24,14 @@ public class Boss3AnimationEvents : MonoBehaviour
 
     public GameObject saber;
 
+    public GameObject grenade;
+    public Transform grenadeLaunchLocation;
+    private float grenadeLaunchPower = 10f;
+
     private AudioSource audioSource;
     [Header("Audio")]
     public AudioClip rifleShootClip;
+    public AudioClip runClip;
 
     private Transform target;
 
@@ -73,6 +78,7 @@ public class Boss3AnimationEvents : MonoBehaviour
 
     public void rifleShoot()
     {
+        enableRifle();
         muzzleFlash.Play();
         audioSource.PlayOneShot(rifleShootClip);
         shootRifleBullet();
@@ -84,5 +90,19 @@ public class Boss3AnimationEvents : MonoBehaviour
         rifleBullet.transform.position = muzzle.position;
         var dir = (target.position - rifleBullet.transform.position).normalized;
         rifleBullet.GetComponent<Rigidbody>().velocity = dir * rifleBulletSpeed;
+    }
+
+    private void throwGrenade()
+    {
+        disableRifle();
+        disableSaber();
+
+        GameObject grenade = Instantiate(this.grenade);
+        grenade.GetComponent<Bomb>().isGrenade = true;
+        grenade.transform.position = grenadeLaunchLocation.position;
+        var dir = (target.position - grenade.transform.position).normalized;
+        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+        grenade.GetComponent<Rigidbody>().velocity = dir * distanceToTarget;
+
     }
 }
