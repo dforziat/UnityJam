@@ -18,6 +18,8 @@ public class Boss3Script : BossScript
     private Transform playerTransform;
     private BoxCollider boxCollider;
 
+    public int saberDamage = 15;
+
 
     void Start()
     {
@@ -45,4 +47,8 @@ public class Boss3Script : BossScript
         
     }
 
+    public void saberCollisionTrigger()
+    {
+
+    }
 }
