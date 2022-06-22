@@ -108,7 +108,24 @@ public class Boss3AnimationEvents : MonoBehaviour
 
     }
 
+    public void playRandomSaberSound()
+    {
+        int randomNum = Random.Range(0, saberAttacks.Length);
+        audioSource.PlayOneShot(saberAttacks[randomNum]);
+    }
 
+
+    public void drawSword()
+    {
+        disableRifle();
+        enableSaber();
+    }
+
+    public void drawRifle()
+    {
+        enableRifle();
+        disableSaber();
+    }
 
 
 }
