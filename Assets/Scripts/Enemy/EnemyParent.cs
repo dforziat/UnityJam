@@ -52,6 +52,7 @@ public class EnemyParent : MonoBehaviour
         isProvoked = true;
         health -= damage;
         StartCoroutine(FlashRed());
+        
 
         if (health <= 0)
         {

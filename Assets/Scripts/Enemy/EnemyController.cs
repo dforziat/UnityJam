@@ -26,6 +26,9 @@ public class EnemyController : EnemyParent
         navMeshAgent = GetComponent<NavMeshAgent>();
         EnemyList = GameObject.FindGameObjectsWithTag("Enemy");
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        
+
+
         //set parent vars
         audioSource = childAudioSource;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -84,6 +87,9 @@ public class EnemyController : EnemyParent
         isProvoked = true;
         health -= damage;
         StartCoroutine(FlashRed());
+
+        target.GetComponent<CameraEffects>().Shake();
+        Debug.Log("TESTTTTTTTTTT");
 
         if (health <= 0)
         {
