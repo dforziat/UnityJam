@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Boss3Script : BossScript
+public class Boss3Script : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public int health;
 
     private MeshRenderer[] meshRendererList;
     private List<Color> originalColorList;
     private float flashTime = .2f;
+    private bool isDead = false;
 
-    private Animator animator;
+    public Animator animator;
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
     public AudioSource walkAudioSource;
@@ -25,19 +28,10 @@ public class Boss3Script : BossScript
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        secondaryAudioSource = GetComponent<AudioSource>();
         boxCollider = GetComponent<BoxCollider>();
-        boxCollider.enabled = false;
+        boxCollider.enabled = true;
         navMeshAgent.enabled = false;
-
-        meshRendererList = GetComponentsInChildren<MeshRenderer>();
-        originalColorList = new List<Color>();
-        foreach (MeshRenderer mesh in meshRendererList)
-        {
-            originalColorList.Add(mesh.material.color);
-        }
 
     }
 
@@ -47,8 +41,18 @@ public class Boss3Script : BossScript
         
     }
 
-    public void saberCollisionTrigger()
+    public void takeDamage(int damage)
     {
 
+        if (health <= 0 && !isDead)
+        {
+            isDead = true;
+            navMeshAgent.speed = 0;
+            animator.SetTrigger("death");
+        }
+        health -= damage;
+        Debug.Log("Boss Health: " + health);
+
+       // playDamagedClip();
     }
 }

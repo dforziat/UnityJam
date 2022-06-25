@@ -23,7 +23,8 @@ public class Boss3AnimationEvents : MonoBehaviour
 
 
     public GameObject saber;
-    public BoxCollider saberHitBox;
+    public GameObject saberSlashIndicator;
+    public GameObject sabeJumpIndictor;
 
     public GameObject grenade;
     public Transform grenadeLaunchLocation;
