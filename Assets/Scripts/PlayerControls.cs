@@ -138,11 +138,6 @@ public class PlayerControls : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-       // if (Input.GetButtonDown("Jump") && isGrounded)
-       // {
-       //     Jump();
-       // }
-
         vel.y += grav * Time.deltaTime;
         controller.Move(vel * Time.deltaTime);
         if (isGrounded && vel.y < 0)
@@ -160,6 +155,8 @@ public class PlayerControls : MonoBehaviour
     {
         GetComponent<DamageEffect>().ShowDamageEffect();
 
+        GetComponent<CameraEffects>().damageShake();
+
         if (Random.value < 0.5f)
         {
             audioSource.PlayOneShot(injuredAudioClip);
@@ -173,9 +170,10 @@ public class PlayerControls : MonoBehaviour
         hpText.text = curHp.ToString("D3");
 
         
-        if (curHp <= 100)
+        if (curHp <= 100) {
             hpText.color = Color.white;
-                ;
+        }
+            
         if (curHp <= 0)
         {
             damageEffect.enabled = false;

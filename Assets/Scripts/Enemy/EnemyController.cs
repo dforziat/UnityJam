@@ -88,8 +88,7 @@ public class EnemyController : EnemyParent
         health -= damage;
         StartCoroutine(FlashRed());
 
-        target.GetComponent<CameraEffects>().Shake();
-        Debug.Log("TESTTTTTTTTTT");
+        //target.GetComponent<CameraEffects>().Shake();
 
         if (health <= 0)
         {
