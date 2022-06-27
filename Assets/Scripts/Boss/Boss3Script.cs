@@ -8,20 +8,29 @@ public class Boss3Script : MonoBehaviour
     // Start is called before the first frame update
 
     public int health;
+    private const float speed = 3.5f;
 
-    private MeshRenderer[] meshRendererList;
-    private List<Color> originalColorList;
-    private float flashTime = .2f;
     private bool isDead = false;
 
     public Animator animator;
     private NavMeshAgent navMeshAgent;
-    private AudioSource audioSource;
-    public AudioSource walkAudioSource;
     private Transform playerTransform;
-    private BoxCollider boxCollider;
+
+    private string state = "";
+    private const string RUN_TO_POINT = "runToPoint";
+    private const string SHOOT = "shoot";
+    private const string WAIT = "wait";
+    private const string PROCESSING = "processing";
+
+
+    public Transform[] firstRoomPoints;
+    private int firstRoomCounter = 0;
 
     public int saberDamage = 15;
+
+    [Header("Audio")]
+    private AudioSource audioSource;
+    public AudioClip[] damagedClips;
 
 
     void Start()
@@ -29,16 +38,14 @@ public class Boss3Script : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
-        boxCollider = GetComponent<BoxCollider>();
-        boxCollider.enabled = true;
-        navMeshAgent.enabled = false;
-
+        state = RUN_TO_POINT;
+        processLogic();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        checkWalkAnimation();
     }
 
     public void takeDamage(int damage)
@@ -52,7 +59,70 @@ public class Boss3Script : MonoBehaviour
         }
         health -= damage;
         Debug.Log("Boss Health: " + health);
+        playDamagedClip();
 
-       // playDamagedClip();
+    }
+
+
+    private void playDamagedClip()
+    {
+        int randNum = Random.Range(0, damagedClips.Length);
+        audioSource.PlayOneShot(damagedClips[randNum]);
+    }
+
+    private void checkWalkAnimation()
+    {
+        if (navMeshAgent.velocity.magnitude > 0)
+        {
+            animator.SetBool("run", true);
+        }
+        else
+        {
+            animator.SetBool("run", false);
+        }
+    }
+
+    public void runToPoint()
+    {
+        if(firstRoomCounter > firstRoomPoints.Length)
+        {
+            firstRoomCounter = 0;
+        }
+        navMeshAgent.speed = speed;
+        navMeshAgent.SetDestination(firstRoomPoints[firstRoomCounter].position);
+        firstRoomCounter++;
+
+    }
+
+    public void shoot()
+    {
+        animator.SetBool("shoot", true);
+    }
+
+    public void wait()
+    {
+        navMeshAgent.speed = 0;
+        navMeshAgent.SetDestination(playerTransform.position);
+    }
+
+    public void processLogic()
+    {
+        //first room logic
+        Debug.Log("Process Logic State: " + state);
+        switch (state)
+        {
+            case RUN_TO_POINT:
+                runToPoint();
+                break;
+            case SHOOT:
+                shoot();
+                break;
+            case WAIT:
+                wait();
+                break;
+            default:
+                wait();
+                break;
+        }
     }
 }
