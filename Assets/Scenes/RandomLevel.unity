@@ -4187,14 +4187,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545df3cbf057ddf4e9e3eb6d54aba24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numOfRoomsMax: 10
+  numOfRoomsMax: 5
   initialRoomBoundBox: {fileID: 237432723}
   testRoom: {fileID: 8313346037767887863, guid: 06ce914e23255c749804511b7d6d89d3, type: 3}
   wall: {fileID: 5010528888828678957, guid: df09f38ea66698b45b3ba276a9073c1e, type: 3}
   exitRoom: {fileID: 6568989627164037684, guid: b26d3c0f1afb2994e9431316a71c1a11, type: 3}
   roomList:
   - {fileID: 8313346037767887863, guid: 89930fd6a6fe29b40bb5078531b6b9bf, type: 3}
-  - {fileID: 8313346037767887863, guid: 1f1767c093f6ce14d950b2979076f46b, type: 3}
 --- !u!4 &1048761135
 Transform:
   m_ObjectHideFlags: 0
@@ -4280,6 +4279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1080306813}
+  - component: {fileID: 1080306814}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -4341,6 +4341,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1080306814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080306812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.033333335
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 0}
 --- !u!1 &1087266138
 GameObject:
   m_ObjectHideFlags: 0
@@ -6660,7 +6689,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7692313513126530802, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

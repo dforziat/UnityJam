@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.AI;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class LevelMakerScript : MonoBehaviour
 {
@@ -16,12 +16,10 @@ public class LevelMakerScript : MonoBehaviour
     public GameObject wall;
     public GameObject exitRoom;
     public GameObject[] roomList;
-
-    NavMeshBuilder navMeshBuilder;
-
+    
     void Start()
     {
-        navMeshBuilder = new NavMeshBuilder();
+        //navMeshBuilder = new NavMeshBuilder();
         initialExitPoint = GameObject.FindGameObjectWithTag("ExitPoint");
         GenerateLevel(initialExitPoint);
         runFinalPass();
@@ -91,8 +89,8 @@ public class LevelMakerScript : MonoBehaviour
             exitPoint.SetActive(false);
         }
 
-        NavMeshBuilder.BuildNavMesh();
-
+        NavMeshSurface surface = GameObject.FindObjectOfType<NavMeshSurface>();
+        surface.BuildNavMesh();
         spawnEnemies();
     }
 

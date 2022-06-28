@@ -14,6 +14,8 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI finaltimeText;
     public TextMeshProUGUI besttimeText;
 
+    public GameObject loadScreen;
+
     int mins;
     int secs;
     int miliSecs;
@@ -72,7 +74,8 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL));
+        SceneManager.LoadSceneAsync(PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL));
+        loadScreen.SetActive(true);
     }
 
     public void timer()

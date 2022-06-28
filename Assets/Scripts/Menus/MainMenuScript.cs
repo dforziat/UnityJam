@@ -8,6 +8,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public Canvas mainMenuCanvas;
     public GameObject settingMenuCanvas;
+    public GameObject loadScreen;
 
     [Header("Audio")]
     private AudioSource audioSource;
@@ -16,6 +17,7 @@ public class MainMenuScript : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         settingMenuCanvas.SetActive(false);
+        loadScreen.SetActive(false);
         Time.timeScale = 1f;
     }
 
@@ -67,6 +69,13 @@ public class MainMenuScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void challengeMode()
+    {
+        SceneManager.LoadSceneAsync(7);
+        loadScreen.SetActive(true);
+
     }
 
 
