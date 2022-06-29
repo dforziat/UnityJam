@@ -8,6 +8,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public Canvas mainMenuCanvas;
     public GameObject settingMenuCanvas;
+    public GameObject storyCanvas;
     public GameObject loadScreen;
 
     [Header("Audio")]
@@ -62,6 +63,7 @@ public class MainMenuScript : MonoBehaviour
     public void DisplayMainMenu()
     {
         mainMenuCanvas.enabled = true;
+        storyCanvas.SetActive(false);
         settingMenuCanvas.SetActive(false);
         audioSource.Play();
     }
@@ -75,7 +77,13 @@ public class MainMenuScript : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(7);
         loadScreen.SetActive(true);
+    }
 
+    public void DisplayStory()
+    {
+        storyCanvas.SetActive(true);
+        audioSource.Play();
+        mainMenuCanvas.enabled = false;
     }
 
 

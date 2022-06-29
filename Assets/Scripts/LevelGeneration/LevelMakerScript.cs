@@ -91,6 +91,8 @@ public class LevelMakerScript : MonoBehaviour
 
         NavMeshSurface surface = GameObject.FindObjectOfType<NavMeshSurface>();
         surface.BuildNavMesh();
+        NavMeshLink link = GameObject.FindObjectOfType<NavMeshLink>();
+        //link.
         spawnEnemies();
     }
 
