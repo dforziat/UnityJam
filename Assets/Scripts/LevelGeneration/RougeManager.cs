@@ -10,6 +10,7 @@ public class RougeManager : MonoBehaviour
     public float totalTime = 0;
     public List<GameObject> weaponList;
     public List<string> unlockedWeaponList;
+    public GameObject loadScreen;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class RougeManager : MonoBehaviour
 
     public void nextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        loadScreen.SetActive(true);
     }
 }

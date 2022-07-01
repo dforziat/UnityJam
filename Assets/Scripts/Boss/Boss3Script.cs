@@ -15,6 +15,7 @@ public class Boss3Script : MonoBehaviour
     public Animator animator;
     private NavMeshAgent navMeshAgent;
     private Transform playerTransform;
+    private Transform destinationTarget;
 
     private string state = "";
     private const string RUN_TO_POINT = "runToPoint";
@@ -46,6 +47,24 @@ public class Boss3Script : MonoBehaviour
     void Update()
     {
         checkWalkAnimation();
+
+        if(state == RUN_TO_POINT)
+        {
+            if (gameObject.transform.position.x == destinationTarget.position.x && gameObject.transform.position.z == destinationTarget.position.z)
+            {
+                Debug.Log("Agent Veloc: " + navMeshAgent.velocity.magnitude);
+                state = WAIT;
+                processLogic();
+            }
+        }
+
+        if(state == WAIT)
+        {
+            rotateTowardsPlayer();
+
+            //look for player to shoot
+  
+        }
     }
 
     public void takeDamage(int damage)
@@ -89,9 +108,9 @@ public class Boss3Script : MonoBehaviour
             firstRoomCounter = 0;
         }
         navMeshAgent.speed = speed;
-        navMeshAgent.SetDestination(firstRoomPoints[firstRoomCounter].position);
+        destinationTarget = firstRoomPoints[firstRoomCounter];
+        navMeshAgent.SetDestination(destinationTarget.position);
         firstRoomCounter++;
-
     }
 
     public void shoot()
@@ -124,5 +143,12 @@ public class Boss3Script : MonoBehaviour
                 wait();
                 break;
         }
+    }
+
+    public void rotateTowardsPlayer()
+    {
+        Vector3 direction = (playerTransform.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 2);
     }
 }
