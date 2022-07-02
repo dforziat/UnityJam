@@ -21,13 +21,18 @@ public class Boss3Script : MonoBehaviour
     private const string RUN_TO_POINT = "runToPoint";
     private const string SHOOT = "shoot";
     private const string WAIT = "wait";
-    private const string PROCESSING = "processing";
 
 
     public Transform[] firstRoomPoints;
     private int firstRoomCounter = 0;
 
     public int saberDamage = 15;
+    private int burstCount = 0;
+    private const float rifleCooldown = 2f;
+    private float rifleCooldowntimer = rifleCooldown;
+
+    private int damageThreshold = 10;
+    private int currentThreshold = 0;
 
     [Header("Audio")]
     private AudioSource audioSource;
@@ -36,6 +41,7 @@ public class Boss3Script : MonoBehaviour
 
     void Start()
     {
+        health = 100;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
@@ -52,7 +58,6 @@ public class Boss3Script : MonoBehaviour
         {
             if (gameObject.transform.position.x == destinationTarget.position.x && gameObject.transform.position.z == destinationTarget.position.z)
             {
-                Debug.Log("Agent Veloc: " + navMeshAgent.velocity.magnitude);
                 state = WAIT;
                 processLogic();
             }
@@ -63,7 +68,10 @@ public class Boss3Script : MonoBehaviour
             rotateTowardsPlayer();
 
             //look for player to shoot
-  
+            if (canSeePlayer())
+            {
+                shoot();
+            }
         }
     }
 
@@ -79,6 +87,14 @@ public class Boss3Script : MonoBehaviour
         health -= damage;
         Debug.Log("Boss Health: " + health);
         playDamagedClip();
+
+        currentThreshold += damage;
+        if(currentThreshold > damageThreshold)
+        {
+            state = RUN_TO_POINT;
+            processLogic();
+            currentThreshold = 0;
+        }
 
     }
 
@@ -115,8 +131,27 @@ public class Boss3Script : MonoBehaviour
 
     public void shoot()
     {
-        animator.SetBool("shoot", true);
+        if(burstCount < 1)
+        {
+            animator.SetTrigger("shoot");
+            burstCount++;
+        }
+        else
+        {
+            //start cool down timer
+            if (rifleCooldowntimer > 0)
+            {
+                rifleCooldowntimer -= Time.deltaTime;
+            }
+            else
+            {
+                burstCount = 0;
+                rifleCooldowntimer = rifleCooldown;
+            }
+
+        }
     }
+
 
     public void wait()
     {
@@ -150,5 +185,18 @@ public class Boss3Script : MonoBehaviour
         Vector3 direction = (playerTransform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 2);
+    }
+
+    public bool canSeePlayer()
+    {
+        Physics.Linecast(transform.position, playerTransform.position, out RaycastHit hitInfo);
+        if (hitInfo.transform != null && hitInfo.transform.CompareTag("Player"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

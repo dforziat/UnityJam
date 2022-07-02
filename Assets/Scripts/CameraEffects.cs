@@ -127,7 +127,6 @@ public class CameraEffects : MonoBehaviour
         {
             Amount = new Vector3(.1f, .1f, 0);
             Duration = .3f;
-            Debug.Log("TESTTTTTTTTTT");
             Shake();
         }
     }
