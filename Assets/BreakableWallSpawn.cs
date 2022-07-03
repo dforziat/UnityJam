@@ -11,6 +11,7 @@ public class BreakableWallSpawn : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        breakableWallTransform.gameObject.SetActive(false);
 
     }
 
@@ -20,12 +21,13 @@ public class BreakableWallSpawn : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Wall Spawner Trigger");
-            animator.SetTrigger("dropwall");
+            Instantiate(breakableWall, breakableWallTransform.position, breakableWallTransform.rotation);
         }
     }
+
 }

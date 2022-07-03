@@ -8,7 +8,10 @@ public class Boss3Script : MonoBehaviour
     // Start is called before the first frame update
 
     public int health;
+    private const int  maxHealth = 300;
     private const float speed = 3.5f;
+
+    private int bossStage = 1;
 
     private bool isDead = false;
 
@@ -28,7 +31,7 @@ public class Boss3Script : MonoBehaviour
 
     public int saberDamage = 15;
     private int burstCount = 0;
-    private const float rifleCooldown = 2f;
+    private const float rifleCooldown = 1f;
     private float rifleCooldowntimer = rifleCooldown;
 
     private int damageThreshold = 10;
@@ -41,7 +44,7 @@ public class Boss3Script : MonoBehaviour
 
     void Start()
     {
-        health = 100;
+        health = maxHealth;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
@@ -54,25 +57,31 @@ public class Boss3Script : MonoBehaviour
     {
         checkWalkAnimation();
 
-        if(state == RUN_TO_POINT)
+        if(bossStage == 1)
         {
-            if (gameObject.transform.position.x == destinationTarget.position.x && gameObject.transform.position.z == destinationTarget.position.z)
+            if (state == RUN_TO_POINT)
             {
-                state = WAIT;
-                processLogic();
+                if (gameObject.transform.position.x == destinationTarget.position.x && gameObject.transform.position.z == destinationTarget.position.z)
+                {
+                    state = WAIT;
+                    processLogic();
+                }
+            }
+
+            if (state == WAIT)
+            {
+                rotateTowardsPlayer();
+
+                //look for player to shoot
+                if (canSeePlayer())
+                {
+                    shoot();
+                }
             }
         }
 
-        if(state == WAIT)
-        {
-            rotateTowardsPlayer();
 
-            //look for player to shoot
-            if (canSeePlayer())
-            {
-                shoot();
-            }
-        }
+
     }
 
     public void takeDamage(int damage)
@@ -94,6 +103,12 @@ public class Boss3Script : MonoBehaviour
             state = RUN_TO_POINT;
             processLogic();
             currentThreshold = 0;
+        }
+
+        //go to stage 2 once the boss is at 2/3 health. 
+        if(health <= maxHealth * (2/3) || bossStage == 1)
+        {
+            bossStage = 2;
         }
 
     }
@@ -199,4 +214,5 @@ public class Boss3Script : MonoBehaviour
             return false;
         }
     }
+
 }
