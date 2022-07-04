@@ -14,6 +14,7 @@ public class HandgunScript : MonoBehaviour
     float rateOfFire = .2f;
     Animator gunAnimator;
     PlayerControls playerControls;
+    CameraEffects cameraEffects;
     AudioSource audioSource;
 
     public AudioClip shootClip;
@@ -33,6 +34,7 @@ public class HandgunScript : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
+        cameraEffects = GameObject.FindGameObjectWithTag("Player").GetComponent<CameraEffects>();
         checkWeaponSwitchAudio();
         handgunAmmoText.enabled = true;
         handgunAmmoText.text = playerControls.handgunAmmo.ToString("D3");
@@ -78,6 +80,7 @@ public class HandgunScript : MonoBehaviour
         audioSource.PlayOneShot(shootClip);
         playerControls.handgunAmmo--;
         handgunAmmoText.text = playerControls.handgunAmmo.ToString("D3");
+        cameraEffects.gunShake();
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit))
         {

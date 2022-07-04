@@ -5,11 +5,16 @@ using UnityEngine;
 public class WeaponSwitching : MonoBehaviour
 {
     public int selectedWeapon = 0;
+    public int curWeapon;
     public bool lockWeaponSwitch = false;
     public Transform nextWeapon;
     // Start is called before the first frame update
     void Start()
     {
+        //this should load in the save manager, but that version doesn't seem to work -Dylan
+        curWeapon = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_WEP);
+
+        selectedWeapon = curWeapon;
         SelectWeapon();
     }
 
@@ -82,6 +87,7 @@ public class WeaponSwitching : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
         {
             selectedWeapon = 1;
+
         }
 
         //Grapple Gun 
@@ -95,23 +101,24 @@ public class WeaponSwitching : MonoBehaviour
         {
             selectedWeapon = 3;
         }
-        
+
         //Ricochet Gun       
         if (Input.GetKeyDown(KeyCode.Alpha5) && transform.childCount >= 5)
         {
             selectedWeapon = 4;
         }
-        
+
         //Spear
         if (Input.GetKeyDown(KeyCode.Alpha6) && transform.childCount >= 6)
          {
-             selectedWeapon = 5;
-         }
+            selectedWeapon = 5;
+        }
 
         if (previousSelectedWeapon != selectedWeapon && transform.GetChild(selectedWeapon).tag == "unlocked")
         {
             SelectWeapon();
         }
+        curWeapon = selectedWeapon;
     }
 
 }

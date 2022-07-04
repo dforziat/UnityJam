@@ -15,6 +15,7 @@ public class ShotgunScript : MonoBehaviour
     int buckshot = 4;
     float spread = .1f;
     PlayerControls playerControls;
+    CameraEffects cameraEffects;
     AudioSource audioSource;
 
     public AudioClip shootClip;
@@ -36,6 +37,7 @@ public class ShotgunScript : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         checkWeaponSwitchAudio();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
+        cameraEffects = GameObject.FindGameObjectWithTag("Player").GetComponent<CameraEffects>();
         shotgunAmmoText.enabled = true;
         shotgunAmmoText.text = playerControls.shotgunAmmo.ToString("D3");
         ammoIcon.enabled = true;
@@ -79,6 +81,7 @@ public class ShotgunScript : MonoBehaviour
         audioSource.PlayOneShot(shootClip);
         playerControls.shotgunAmmo--;
         shotgunAmmoText.text = playerControls.shotgunAmmo.ToString("D3");
+        cameraEffects.gunShake();
         RaycastHit hit;
 
         for(int i = 0; i < buckshot; i++)

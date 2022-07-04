@@ -7,6 +7,7 @@ public class SaveManager : MonoBehaviour
 {
 
     PlayerControls playerControls;
+    WeaponSwitching weaponSwitching;
 
     //How to unlock weapon
     public Transform shotgun;
@@ -16,11 +17,13 @@ public class SaveManager : MonoBehaviour
     public Transform spear;
     private GameObject weaponsHud;
 
+
     // Start is called before the first frame update
     void Start()
     {
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
         weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
+        weaponSwitching = GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<WeaponSwitching>();
         LoadPref();
     }
 
@@ -37,19 +40,24 @@ public class SaveManager : MonoBehaviour
 
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
         weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
+        weaponSwitching = GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<WeaponSwitching>();
 
         //HandgunAmmo
         //PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, playerControls.handgunAmmo);
 
         //ShotgunAmmo;
-       // PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN_AMMO, playerControls.shotgunAmmo);
-        
+        // PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN_AMMO, playerControls.shotgunAmmo);
+
 
         //Current HP
         //PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_HP, playerControls.curHp);
 
         //Set curLevel
         PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, playerControls.curLevel);
+
+        //Set Last Weapon
+        PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_WEP, weaponSwitching.curWeapon);
+
 
         //Set Weapons
         if (shotgun.tag == "unlocked")
@@ -86,6 +94,7 @@ public class SaveManager : MonoBehaviour
         }
 
         playerControls.curLevel = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL);
+        weaponSwitching.curWeapon = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_WEP);
 
         if (PlayerPrefs.GetInt(PlayerPrefsConstants.SHOTGUN) == 1)
             shotgun.tag = "unlocked";

@@ -49,7 +49,7 @@ public class CameraEffects : MonoBehaviour
 
     private void Update()
     {
-        testShake();
+        
     }
 
     /// <summary>
@@ -121,14 +121,14 @@ public class CameraEffects : MonoBehaviour
         lastFoV = nextFoV = 0f;
     }
 
-    public void testShake()
+    public void gunShake()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
+       // if (Input.GetKeyDown(KeyCode.Mouse0))
+      //  {
             Amount = new Vector3(.1f, .1f, 0);
             Duration = .3f;
             Shake();
-        }
+       // }
     }
 
     public void damageShake()

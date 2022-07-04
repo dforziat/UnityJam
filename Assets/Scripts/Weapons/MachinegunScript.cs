@@ -14,6 +14,7 @@ public class MachinegunScript : MonoBehaviour
     float spread = .05f;
     Animator gunAnimator;
     PlayerControls playerControls;
+    CameraEffects cameraEffects;
     AudioSource audioSource;
 
     public AudioClip shootClip;
@@ -34,6 +35,7 @@ public class MachinegunScript : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         checkWeaponSwitchAudio();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
+        cameraEffects = GameObject.FindGameObjectWithTag("Player").GetComponent<CameraEffects>();
         machinegunAmmoText.enabled = true;
         machinegunAmmoText.text = playerControls.machinegunAmmo.ToString("D3");
         ammoIcon.enabled = true;
@@ -81,6 +83,7 @@ public class MachinegunScript : MonoBehaviour
         audioSource.PlayOneShot(shootClip);
         playerControls.machinegunAmmo--;
         machinegunAmmoText.text = playerControls.machinegunAmmo.ToString("D3");
+        cameraEffects.gunShake();
         Vector3 randomSpread = cam.transform.forward + cam.transform.right * Random.Range(-spread, spread);
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, randomSpread, out hit))

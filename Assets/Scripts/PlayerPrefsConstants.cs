@@ -7,6 +7,7 @@ public static class PlayerPrefsConstants
     public const string SHOTGUN_AMMO = "shotgunAmmo";
     public const string CUR_HP = "curHp";
     public const string CUR_LVL = "curLevel";
+    public const string CUR_WEP = "curWeapon";
     public const string SHOTGUN = "shotgun";
     public const string GRAPPLEGUN = "grapplegun";
     public const string RICHOCHETGUN = "richochetgun";
@@ -24,6 +25,8 @@ public static class PlayerPrefsConstants
     public const string FIRST_LOAD = "firstLoad";
 
     public const string BEST_TIME = "bestTime";
+
+
 
 
 }
