@@ -18,16 +18,21 @@ public class Boss3Script : MonoBehaviour
     public Animator animator;
     private NavMeshAgent navMeshAgent;
     private Transform playerTransform;
-    private Transform destinationTarget;
+    public Transform destinationTarget;
 
     private string state = "";
     private const string RUN_TO_POINT = "runToPoint";
     private const string SHOOT = "shoot";
     private const string WAIT = "wait";
+    private const string GRENADE = "grenade";
+    private const string SWORD_SWING = "swordswing";
+    private const string SWORD_JUMP = "swordjump";
 
 
     public Transform[] firstRoomPoints;
     private int firstRoomCounter = 0;
+
+    public Transform grenadePoint;
 
     public int saberDamage = 15;
     private int burstCount = 0;
@@ -56,31 +61,8 @@ public class Boss3Script : MonoBehaviour
     void Update()
     {
         checkWalkAnimation();
-
-        if(bossStage == 1)
-        {
-            if (state == RUN_TO_POINT)
-            {
-                if (gameObject.transform.position.x == destinationTarget.position.x && gameObject.transform.position.z == destinationTarget.position.z)
-                {
-                    state = WAIT;
-                    processLogic();
-                }
-            }
-
-            if (state == WAIT)
-            {
-                rotateTowardsPlayer();
-
-                //look for player to shoot
-                if (canSeePlayer())
-                {
-                    shoot();
-                }
-            }
-        }
-
-
+        processStageOne();
+        processStageTwo();
 
     }
 
@@ -97,18 +79,24 @@ public class Boss3Script : MonoBehaviour
         Debug.Log("Boss Health: " + health);
         playDamagedClip();
 
-        currentThreshold += damage;
-        if(currentThreshold > damageThreshold)
-        {
-            state = RUN_TO_POINT;
-            processLogic();
-            currentThreshold = 0;
-        }
 
         //go to stage 2 once the boss is at 2/3 health. 
-        if(health <= maxHealth * (2/3) || bossStage == 1)
+        if (health <= 290 && bossStage == 1)
         {
+            Debug.Log("Boss Stage 2");
             bossStage = 2;
+            moveToSecondRoom();
+        }
+
+        currentThreshold += damage;
+        if(bossStage == 1)
+        {
+            if (currentThreshold > damageThreshold)
+            {
+                state = RUN_TO_POINT;
+                processLogic();
+                currentThreshold = 0;
+            }
         }
 
     }
@@ -134,7 +122,7 @@ public class Boss3Script : MonoBehaviour
 
     public void runToPoint()
     {
-        if(firstRoomCounter > firstRoomPoints.Length)
+        if(firstRoomCounter > firstRoomPoints.Length - 1)
         {
             firstRoomCounter = 0;
         }
@@ -213,6 +201,113 @@ public class Boss3Script : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private void processStageOne()
+    {
+        if (bossStage == 1)
+        {
+            if (state == RUN_TO_POINT)
+            {
+                if (gameObject.transform.position.x == destinationTarget.position.x && gameObject.transform.position.z == destinationTarget.position.z)
+                {
+                    state = WAIT;
+                    processLogic();
+                }
+            }
+
+            if (state == WAIT)
+            {
+                rotateTowardsPlayer();
+                //look for player to shoot
+                if (canSeePlayer())
+                {
+                    shoot();
+                }
+            }
+        }
+    }
+
+
+
+    private void processStageTwo()
+    {
+        if(bossStage == 2)
+        {
+            if (state == GRENADE)
+            {
+                if (gameObject.transform.position.x == grenadePoint.position.x && gameObject.transform.position.z == grenadePoint.position.z)
+                {
+                    animator.SetTrigger("grenade");
+                }
+            }
+
+            if (state == SWORD_SWING)
+            {
+                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= 1)
+                {
+                    animator.SetTrigger("saber");
+                }
+            }
+
+            if (state == SWORD_JUMP)
+            {
+                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= 2)
+                {
+                    animator.SetTrigger("saberjump");
+                }
+            }
+
+            if (state == SHOOT)
+            {
+                if (gameObject.transform.position.x == grenadePoint.position.x && gameObject.transform.position.z == grenadePoint.position.z)
+                {
+                    shoot();
+                }
+            }
+
+            if(state == WAIT)
+            {
+                rotateTowardsPlayer();
+            }
+        }
+    }
+
+    private void chooseRandomAttack()
+    {
+
+    }
+
+    public void swordSwingAttack()
+    {
+        animator.SetTrigger("draw");
+        navMeshAgent.SetDestination(playerTransform.position);
+        state = SWORD_SWING;
+    }
+
+    public void swordJumpAttack()
+    {
+        animator.SetTrigger("draw");
+        navMeshAgent.SetDestination(playerTransform.position);
+        state = SWORD_JUMP;
+    }
+
+    public void moveToGrenadePoint()
+    {
+        navMeshAgent.SetDestination(grenadePoint.position);
+        state = GRENADE;
+    }
+
+    public void moveToShootPoint()
+    {
+        navMeshAgent.SetDestination(grenadePoint.position);
+        state = SHOOT;
+    }
+
+    public void moveToSecondRoom()
+    {
+        navMeshAgent.speed = speed;
+        navMeshAgent.SetDestination(grenadePoint.position);
     }
 
 }

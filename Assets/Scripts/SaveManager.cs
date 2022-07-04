@@ -32,6 +32,7 @@ public class SaveManager : MonoBehaviour
     {
         //Press H to reset player prefs to a default
         //DebugPref();
+        unlockAllWeapons();
     }
 
     public void SavePrefs()
@@ -155,6 +156,17 @@ public class SaveManager : MonoBehaviour
 
             LoadPref();
         }
+    }
 
+    private void unlockAllWeapons()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            shotgun.tag = "unlocked";
+            machinegun.tag = "unlocked";
+            grapplegun.tag = "unlocked";
+            spear.tag = "unlocked"; 
+            richochetgun.tag = "unlocked";
+        }
     }
 }
