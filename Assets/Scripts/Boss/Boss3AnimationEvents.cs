@@ -37,6 +37,7 @@ public class Boss3AnimationEvents : MonoBehaviour
     public AudioClip[] saberAttacks;
 
     private Transform target;
+    public Boss3Script boss3Script;
 
 
     void Start()
@@ -128,5 +129,16 @@ public class Boss3AnimationEvents : MonoBehaviour
         disableSaber();
     }
 
+
+    public void chooseRandomAttackStageTwo()
+    {
+        Debug.Log("STAGE 2 Choose random attack from animation event");
+        boss3Script.chooseRandomAttack();
+    }
+
+    private void testEvent()
+    {
+        Debug.Log("TEST EVENT ANIMATION TRIGGER");
+    }
 
 }

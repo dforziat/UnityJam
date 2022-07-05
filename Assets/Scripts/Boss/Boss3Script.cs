@@ -27,6 +27,7 @@ public class Boss3Script : MonoBehaviour
     private const string GRENADE = "grenade";
     private const string SWORD_SWING = "swordswing";
     private const string SWORD_JUMP = "swordjump";
+    private const string ANIMATION = "animation";
 
 
     public Transform[] firstRoomPoints;
@@ -150,6 +151,10 @@ public class Boss3Script : MonoBehaviour
             {
                 burstCount = 0;
                 rifleCooldowntimer = rifleCooldown;
+                if(bossStage == 2)
+                {
+                    chooseRandomAttack();
+                }
             }
 
         }
@@ -239,6 +244,7 @@ public class Boss3Script : MonoBehaviour
                 if (gameObject.transform.position.x == grenadePoint.position.x && gameObject.transform.position.z == grenadePoint.position.z)
                 {
                     animator.SetTrigger("grenade");
+                    state = ANIMATION;
                 }
             }
 
@@ -247,6 +253,7 @@ public class Boss3Script : MonoBehaviour
                 if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= 1)
                 {
                     animator.SetTrigger("saber");
+                    state = ANIMATION;
                 }
             }
 
@@ -255,6 +262,7 @@ public class Boss3Script : MonoBehaviour
                 if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= 2)
                 {
                     animator.SetTrigger("saberjump");
+                    state = ANIMATION;
                 }
             }
 
@@ -262,7 +270,10 @@ public class Boss3Script : MonoBehaviour
             {
                 if (gameObject.transform.position.x == grenadePoint.position.x && gameObject.transform.position.z == grenadePoint.position.z)
                 {
+                    animator.SetTrigger("drawrifle");
                     shoot();
+                    rotateTowardsPlayer();
+                    state = ANIMATION;
                 }
             }
 
@@ -273,13 +284,33 @@ public class Boss3Script : MonoBehaviour
         }
     }
 
-    private void chooseRandomAttack()
+    public void chooseRandomAttack()//call from animation events
     {
+        if(bossStage == 2)
+        {
+            int randomNum = Random.Range(0, 1);
 
+            switch (randomNum)
+            {
+                case 0:
+                    moveToGrenadePoint();
+                    break;
+                case 1:
+                    moveToShootPoint();
+                    break;
+                case 2:
+                    swordSwingAttack();
+                    break;
+                case 3:
+                    swordJumpAttack();
+                    break;
+            }
+        }
     }
 
     public void swordSwingAttack()
     {
+        navMeshAgent.speed = speed;
         animator.SetTrigger("draw");
         navMeshAgent.SetDestination(playerTransform.position);
         state = SWORD_SWING;
@@ -287,6 +318,7 @@ public class Boss3Script : MonoBehaviour
 
     public void swordJumpAttack()
     {
+        navMeshAgent.speed = speed;
         animator.SetTrigger("draw");
         navMeshAgent.SetDestination(playerTransform.position);
         state = SWORD_JUMP;
@@ -294,12 +326,14 @@ public class Boss3Script : MonoBehaviour
 
     public void moveToGrenadePoint()
     {
+        navMeshAgent.speed = speed;
         navMeshAgent.SetDestination(grenadePoint.position);
         state = GRENADE;
     }
 
     public void moveToShootPoint()
     {
+        navMeshAgent.speed = speed;
         navMeshAgent.SetDestination(grenadePoint.position);
         state = SHOOT;
     }
