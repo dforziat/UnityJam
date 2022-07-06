@@ -25,6 +25,7 @@ public class SecondRoomDoorLock : MonoBehaviour
         {
             secondRoomDoor.isUnlocked = false;
             boss3Script.chooseRandomAttack();
+            Destroy(gameObject);
         }
     }
 }

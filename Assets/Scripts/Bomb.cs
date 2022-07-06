@@ -76,7 +76,7 @@ public class Bomb : MonoBehaviour
             launchBombL.transform.position = transform.position;
             launchBombR.transform.position = transform.position;
 
-            launchBomb.GetComponent<Rigidbody>().AddExplosionForce(10, launchBomb.transform.position, 5);
+            launchBomb.GetComponent<Rigidbody>().AddExplosionForce(15, launchBomb.transform.position, 10);
 
         }
 

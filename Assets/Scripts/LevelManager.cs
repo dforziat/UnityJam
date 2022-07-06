@@ -42,7 +42,6 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1;
         SaveManager = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
-
     }
 
     // Update is called once per frame
@@ -61,9 +60,8 @@ public class LevelManager : MonoBehaviour
         timer();
         checkBest();
         displayBest();
-        playerControls.curLevel++;
+        playerControls.curLevel++;//This is a bug
         SaveManager.SavePrefs();
-
 
     }
 
@@ -75,7 +73,7 @@ public class LevelManager : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadSceneAsync(PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL));
-        loadScreen.SetActive(true);
+        Instantiate(loadScreen, Vector3.zero, new Quaternion(0,0,0,0));
     }
 
     public void timer()

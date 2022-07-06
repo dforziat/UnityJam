@@ -106,7 +106,7 @@ public class Boss3AnimationEvents : MonoBehaviour
         grenade.transform.position = grenadeLaunchLocation.position;
         var dir = (target.position - grenade.transform.position).normalized;
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
-        grenade.GetComponent<Rigidbody>().velocity = dir * distanceToTarget;
+        grenade.GetComponent<Rigidbody>().velocity = dir * distanceToTarget * 1.5f;
 
     }
 
@@ -136,9 +136,10 @@ public class Boss3AnimationEvents : MonoBehaviour
         boss3Script.chooseRandomAttack();
     }
 
-    private void testEvent()
+    public void swordIsDrawnTrigger()
     {
-        Debug.Log("TEST EVENT ANIMATION TRIGGER");
+        boss3Script.swordIsDrawn = true;
     }
+
 
 }

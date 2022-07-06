@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject GameOptions;
     public GameObject GraphicsOptions;
     public GameObject AudioOptions;
+    public GameObject loadScreen;
 
 
 
@@ -75,8 +76,8 @@ public class PauseMenu : MonoBehaviour
     public void RestartLevel()
     {
         Resume();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
     }
 
 
