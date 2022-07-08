@@ -8,8 +8,8 @@ public class Boss3Script : MonoBehaviour
     // Start is called before the first frame update
 
     public int health;
-    private const int  maxHealth = 300;
-   // private const float speed = 3.5f;
+    private const int maxHealth = 300;
+     private const float speed = 3.5f;
 
     private int bossStage = 1;
 
@@ -30,10 +30,14 @@ public class Boss3Script : MonoBehaviour
     private const string SWORD_SWING = "swordswing";
     private const string SWORD_JUMP = "swordjump";
     private const string ANIMATION = "animation";
+    private const string MOVING = "moving";
+
+
 
 
     public Transform[] firstRoomPoints;
     private int firstRoomCounter = 0;
+    public DoorProximityScript secondRoomDoor;
 
     public Transform grenadePoint;
 
@@ -83,20 +87,23 @@ public class Boss3Script : MonoBehaviour
             animator.SetTrigger("death");
         }
         health -= damage;
-       // Debug.Log("Boss Health: " + health);
+        // Debug.Log("Boss Health: " + health);
         playDamagedClip();
 
 
         //go to stage 2 once the boss is at 2/3 health. 
         if (health <= 290 && bossStage == 1)
         {
+            animator.ResetTrigger("shoot");
             Debug.Log("Boss Stage 2");
             bossStage = 2;
             moveToSecondRoom();
+            secondRoomDoor.isUnlocked = true;
         }
 
+
         currentThreshold += damage;
-        if(bossStage == 1)
+        if (bossStage == 1)
         {
             if (currentThreshold > damageThreshold)
             {
@@ -129,7 +136,7 @@ public class Boss3Script : MonoBehaviour
 
     public void runToPoint()
     {
-        if(firstRoomCounter > firstRoomPoints.Length - 1)
+        if (firstRoomCounter > firstRoomPoints.Length - 1)
         {
             firstRoomCounter = 0;
         }
@@ -140,7 +147,7 @@ public class Boss3Script : MonoBehaviour
 
     public void shoot()
     {
-         animator.SetTrigger("shoot");
+        animator.SetTrigger("shoot");
     }
 
 
@@ -213,7 +220,7 @@ public class Boss3Script : MonoBehaviour
 
     private void processStageTwo()
     {
-        if(bossStage == 2)
+        if (bossStage == 2 && state != MOVING)
         {
             if (state == GRENADE)
             {
@@ -229,7 +236,7 @@ public class Boss3Script : MonoBehaviour
             if (state == SWORD_SWING)
             {
                 navMeshAgent.SetDestination(playerTransform.position);
-                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= 3)
+                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= 2)
                 {
                     animator.SetTrigger("saber");
                     state = ANIMATION;
@@ -239,7 +246,7 @@ public class Boss3Script : MonoBehaviour
             if (state == SWORD_JUMP)
             {
                 navMeshAgent.SetDestination(playerTransform.position);
-                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= 3)
+                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= 2)
                 {
                     animator.SetTrigger("saberjump");
                     state = ANIMATION;
@@ -253,68 +260,93 @@ public class Boss3Script : MonoBehaviour
                 {
                     rotateTowardsPlayerBool = true;
                     animator.SetTrigger("drawrifle");
+                    StartCoroutine(pauseMovement());
                     shoot();
                     state = ANIMATION;
                 }
             }
 
-            if(state == WAIT)
+            if (state == WAIT)
             {
                 rotateTowardsPlayer();
             }
         }
-    }
 
-    public void chooseRandomAttack()//call from animation events
-    {
-        if(bossStage == 2)
+        if (state == MOVING)
         {
-            rotateTowardsPlayerBool = false;
-            int randomNum = Random.Range(0, 3);
-
-            switch (randomNum)
+            if (gameObject.transform.position.x == grenadePoint.position.x && gameObject.transform.position.z == grenadePoint.position.z)
             {
-                case 0:
-                    moveToGrenadePoint();
-                    break;
-                case 1:
-                    moveToShootPoint();
-                    break;
-                case 2:
-                    swordSwingAttack();
-                    break;
-                case 3:
-                    swordJumpAttack();
-                    break;
+                state = WAIT;
             }
         }
     }
 
-    public void swordSwingAttack()
-    {
+        public void chooseRandomAttack()//call from animation events
+        {
+            if (bossStage == 2 && state != MOVING)
+            {
+                rotateTowardsPlayerBool = false;
+                int randomNum = Random.Range(0, 3);
+   
+                switch (randomNum)
+                {
+                    case 0:
+                        moveToGrenadePoint();
+                        break;
+                    case 1:
+                        moveToShootPoint();
+                        break;
+                    case 2:
+                        swordSwingAttack();
+                        break;
+                    case 3:
+                        swordJumpAttack();
+                        break;
+                }
+            }
+        }
+
+        public void swordSwingAttack()
+        {
+        animator.ResetTrigger("drawrifle");
         animator.SetTrigger("draw");
+        StartCoroutine(pauseMovement());
         state = SWORD_SWING;
-    }
+        }
 
-    public void swordJumpAttack()
-    {
+        public void swordJumpAttack()
+        {
+        animator.ResetTrigger("drawrifle");
         animator.SetTrigger("draw");
+        StartCoroutine(pauseMovement());
         state = SWORD_JUMP;
-    }
+        }
 
-    public void moveToGrenadePoint()
-    {
+        public void moveToGrenadePoint()
+        {
+        animator.ResetTrigger("draw");
+        animator.SetTrigger("drawrifle");
+        StartCoroutine(pauseMovement());
         state = GRENADE;
+        }
+
+        public void moveToShootPoint()
+        {
+            state = SHOOT;
+        }
+
+        public void moveToSecondRoom()
+        {
+            navMeshAgent.SetDestination(grenadePoint.position);
+            state = MOVING;
+        }
+
+
+        private IEnumerator pauseMovement()
+        {
+        navMeshAgent.speed = 0;
+        yield return new WaitForSeconds(1.5f);
+        navMeshAgent.speed = speed;
     }
 
-    public void moveToShootPoint()
-    {
-        state = SHOOT;
     }
-
-    public void moveToSecondRoom()
-    {
-        navMeshAgent.SetDestination(grenadePoint.position);
-    }
-
-}

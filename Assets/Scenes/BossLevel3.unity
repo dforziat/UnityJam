@@ -5043,7 +5043,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 105602355, guid: 11a4af0f680245949a053500bf689dca, type: 3}
       propertyPath: isUnlocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5297401196873136233, guid: 11a4af0f680245949a053500bf689dca, type: 3}
       propertyPath: m_Name
@@ -48062,7 +48062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentScript: {fileID: 48785536517528499}
   audioSource: {fileID: 48785536517528498}
-  saberHitClip: {fileID: 0}
+  saberHitClip: {fileID: 8300000, guid: 98c432187eef9ad4a96bb7d00c74748f, type: 3}
 --- !u!1001 &1487040449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52649,7 +52649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629557316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 21.390621}
+  m_LocalPosition: {x: 0, y: 1, z: 23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69496,6 +69496,10 @@ PrefabInstance:
       propertyPath: grenadePoint
       value: 
       objectReference: {fileID: 1634996349}
+    - target: {fileID: 48785535368146703, guid: 01939e8fdc3031845af5d8f1ce640954, type: 3}
+      propertyPath: secondRoomDoor
+      value: 
+      objectReference: {fileID: 1596801124}
     - target: {fileID: 48785535368146703, guid: 01939e8fdc3031845af5d8f1ce640954, type: 3}
       propertyPath: damagedClips.Array.size
       value: 3
