@@ -9,7 +9,7 @@ public class Boss3Script : MonoBehaviour
 
     public int health;
     private const int maxHealth = 300;
-     private const float speed = 3.5f;
+    private const float speed = 3.5f;
 
     private int bossStage = 1;
 
@@ -40,6 +40,7 @@ public class Boss3Script : MonoBehaviour
     public DoorProximityScript secondRoomDoor;
 
     public Transform grenadePoint;
+    public Transform sniperPoint;
 
     public int saberDamage = 15;
     private int burstCount = 0;
@@ -99,6 +100,15 @@ public class Boss3Script : MonoBehaviour
             bossStage = 2;
             moveToSecondRoom();
             secondRoomDoor.isUnlocked = true;
+        }
+
+        if (health <= 20 && bossStage == 2)
+        {
+            animator.ResetTrigger("shoot");
+            animator.SetTrigger("drawrifle");
+            Debug.Log("Boss Stage 3");
+            bossStage = 3;
+            moveToSniperPoint();
         }
 
 
@@ -272,7 +282,7 @@ public class Boss3Script : MonoBehaviour
             }
         }
 
-        if (state == MOVING)
+        if (bossStage == 2 && state == MOVING)
         {
             if (gameObject.transform.position.x == grenadePoint.position.x && gameObject.transform.position.z == grenadePoint.position.z)
             {
@@ -281,72 +291,93 @@ public class Boss3Script : MonoBehaviour
         }
     }
 
-        public void chooseRandomAttack()//call from animation events
+    public void chooseRandomAttack()//call from animation events
+    {
+        if (bossStage == 2 && state != MOVING)
         {
-            if (bossStage == 2 && state != MOVING)
+            rotateTowardsPlayerBool = false;
+            int randomNum = Random.Range(0, 3);
+
+            switch (randomNum)
             {
-                rotateTowardsPlayerBool = false;
-                int randomNum = Random.Range(0, 3);
-   
-                switch (randomNum)
-                {
-                    case 0:
-                        moveToGrenadePoint();
-                        break;
-                    case 1:
-                        moveToShootPoint();
-                        break;
-                    case 2:
-                        swordSwingAttack();
-                        break;
-                    case 3:
-                        swordJumpAttack();
-                        break;
-                }
+                case 0:
+                    moveToGrenadePoint();
+                    break;
+                case 1:
+                    moveToShootPoint();
+                    break;
+                case 2:
+                    swordSwingAttack();
+                    break;
+                case 3:
+                    swordJumpAttack();
+                    break;
             }
         }
+    }
 
-        public void swordSwingAttack()
-        {
+    public void swordSwingAttack()
+    {
         animator.ResetTrigger("drawrifle");
         animator.SetTrigger("draw");
         StartCoroutine(pauseMovement());
         state = SWORD_SWING;
-        }
+    }
 
-        public void swordJumpAttack()
-        {
+    public void swordJumpAttack()
+    {
         animator.ResetTrigger("drawrifle");
         animator.SetTrigger("draw");
         StartCoroutine(pauseMovement());
         state = SWORD_JUMP;
-        }
+    }
 
-        public void moveToGrenadePoint()
-        {
+    public void moveToGrenadePoint()
+    {
         animator.ResetTrigger("draw");
         animator.SetTrigger("drawrifle");
         StartCoroutine(pauseMovement());
         state = GRENADE;
-        }
+    }
 
-        public void moveToShootPoint()
-        {
-            state = SHOOT;
-        }
+    public void moveToShootPoint()
+    {
+        state = SHOOT;
+    }
 
-        public void moveToSecondRoom()
-        {
-            navMeshAgent.SetDestination(grenadePoint.position);
-            state = MOVING;
-        }
+    public void moveToSecondRoom()
+    {
+        navMeshAgent.SetDestination(grenadePoint.position);
+        state = MOVING;
+    }
 
 
-        private IEnumerator pauseMovement()
-        {
+    private IEnumerator pauseMovement()
+    {
         navMeshAgent.speed = 0;
         yield return new WaitForSeconds(1.5f);
         navMeshAgent.speed = speed;
     }
 
+    private void moveToSniperPoint()
+    {
+        navMeshAgent.SetDestination(sniperPoint.position);
+        state = MOVING;
     }
+
+    private void processStageThree()
+    {
+        if (bossStage == 3 && state != MOVING)
+        {
+
+        }
+
+        if (bossStage == 3 && state == MOVING)
+        {
+            if (gameObject.transform.position.x == sniperPoint.position.x && gameObject.transform.position.z == sniperPoint.position.z)
+            {
+                state = WAIT;
+            }
+        }
+    }
+}
