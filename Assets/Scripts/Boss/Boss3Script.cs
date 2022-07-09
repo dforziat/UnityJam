@@ -31,21 +31,34 @@ public class Boss3Script : MonoBehaviour
     private const string SWORD_JUMP = "swordjump";
     private const string ANIMATION = "animation";
     private const string MOVING = "moving";
+    private const string SNIPE = "snipe";
 
 
 
 
     public Transform[] firstRoomPoints;
     private int firstRoomCounter = 0;
+
     public DoorProximityScript secondRoomDoor;
+    public DoorProximityScript sniperRoomDoor;
+
+
 
     public Transform grenadePoint;
     public Transform sniperPoint;
 
     public int saberDamage = 15;
+    public int sniperDamage = 40;
+    private const float sniperAimTime = 5f;
+    private float sniperAimTimer = sniperAimTime;
+    private const float sniperCoolDownTimer = 5f;
+    private float sniperCoolDownTime = sniperCoolDownTimer;
+
     private int burstCount = 0;
     private const float rifleCooldown = 1f;
     private float rifleCooldowntimer = rifleCooldown;
+    public LineRenderer sniperLaser;
+    public Transform muzzleTransform;
 
     private int damageThreshold = 10;
     private int currentThreshold = 0;
@@ -53,6 +66,7 @@ public class Boss3Script : MonoBehaviour
     [Header("Audio")]
     private AudioSource audioSource;
     public AudioClip[] damagedClips;
+    public AudioClip sniperShotClip;
 
 
     void Start()
@@ -63,6 +77,7 @@ public class Boss3Script : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         state = RUN_TO_POINT;
         processLogic();
+        sniperLaser.enabled = false;
     }
 
     // Update is called once per frame
@@ -75,6 +90,10 @@ public class Boss3Script : MonoBehaviour
         {
             rotateTowardsPlayer();
         }
+
+   
+        sniperLaser.SetPosition(0, muzzleTransform.position);
+        sniperLaser.SetPosition(1, new Vector3(playerTransform.position.x, playerTransform.position.y - .5f, playerTransform.position.z));
 
     }
 
@@ -102,13 +121,14 @@ public class Boss3Script : MonoBehaviour
             secondRoomDoor.isUnlocked = true;
         }
 
-        if (health <= 20 && bossStage == 2)
+        if (health <= 280 && bossStage == 2)
         {
             animator.ResetTrigger("shoot");
             animator.SetTrigger("drawrifle");
             Debug.Log("Boss Stage 3");
             bossStage = 3;
             moveToSniperPoint();
+            sniperRoomDoor.isUnlocked = true;
         }
 
 
@@ -369,6 +389,11 @@ public class Boss3Script : MonoBehaviour
     {
         if (bossStage == 3 && state != MOVING)
         {
+            if(state == SNIPE)
+            {
+                aimSniper();
+                sniperShoot();
+            }
 
         }
 
@@ -379,5 +404,55 @@ public class Boss3Script : MonoBehaviour
                 state = WAIT;
             }
         }
+    }
+
+    public void aimSniper()
+    {
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(muzzleTransform.position, new Vector3(playerTransform.position.x, playerTransform.position.y - .5f, playerTransform.position.z), out hit))
+        {
+            sniperLaser.enabled = true;
+        }
+        else
+        {
+            sniperLaser.enabled = false;
+        }
+    }
+
+    public void sniperShoot()
+    {
+        if(sniperAimTimer <= 0)
+        {
+            shootSniper();
+            StartCoroutine(sniperCooldown());
+        }
+        else
+        {
+            sniperAimTimer -= Time.deltaTime;
+        }
+    }
+
+    public void shootSniper()
+    {
+        audioSource.PlayOneShot(sniperShotClip);
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(muzzleTransform.position, playerTransform.position, out hit))
+        {
+            if(hit.collider.tag == "Player")
+            {
+                hit.transform.GetComponent<PlayerControls>().TakeDamage(sniperDamage);
+            }
+        }
+
+    }
+
+    public IEnumerator sniperCooldown()
+    {
+        state = WAIT;
+        yield return new WaitForSeconds(sniperCoolDownTime);
+        state = SNIPE;
+        sniperAimTimer = sniperAimTime;
     }
 }
