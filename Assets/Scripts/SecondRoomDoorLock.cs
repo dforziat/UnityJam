@@ -28,4 +28,11 @@ public class SecondRoomDoorLock : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        // Draw a yellow cube at the transform position
+        Gizmos.color = Color.blue;
+        Gizmos.DrawCube(transform.position, new Vector3(1, 1, 1));
+    }
 }

@@ -10,6 +10,7 @@ public class Boss3Script : MonoBehaviour
     public int health;
     private const int maxHealth = 300;
     private const float speed = 3.5f;
+    private const float runSpeed = 6f;
 
     private int bossStage = 1;
 
@@ -31,7 +32,7 @@ public class Boss3Script : MonoBehaviour
     private const string SWORD_JUMP = "swordjump";
     private const string ANIMATION = "animation";
     private const string MOVING = "moving";
-    private const string SNIPE = "snipe";
+    public const string SNIPE = "snipe";
 
 
 
@@ -86,6 +87,7 @@ public class Boss3Script : MonoBehaviour
         checkWalkAnimation();
         processStageOne();
         processStageTwo();
+        processStageThree();
         if (rotateTowardsPlayerBool)
         {
             rotateTowardsPlayer();
@@ -125,6 +127,7 @@ public class Boss3Script : MonoBehaviour
         {
             animator.ResetTrigger("shoot");
             animator.SetTrigger("drawrifle");
+            StartCoroutine(pauseMovement());
             Debug.Log("Boss Stage 3");
             bossStage = 3;
             moveToSniperPoint();
@@ -401,6 +404,7 @@ public class Boss3Script : MonoBehaviour
         {
             if (gameObject.transform.position.x == sniperPoint.position.x && gameObject.transform.position.z == sniperPoint.position.z)
             {
+                rotateTowardsPlayerBool = true;
                 state = WAIT;
             }
         }
@@ -410,14 +414,22 @@ public class Boss3Script : MonoBehaviour
     {
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(muzzleTransform.position, new Vector3(playerTransform.position.x, playerTransform.position.y - .5f, playerTransform.position.z), out hit))
-        {
-            sniperLaser.enabled = true;
-        }
-        else
-        {
-            sniperLaser.enabled = false;
-        }
+        LayerMask enemyLayerMask = LayerMask.GetMask("Wall");
+        sniperLaser.enabled = true;
+        /*  if (Physics.Raycast(muzzleTransform.position, new Vector3(playerTransform.position.x, playerTransform.position.y - .5f, playerTransform.position.z), out hit, Mathf.Infinity, enemyLayerMask))
+          {
+              if(hit.collider.tag == "Player")
+              {
+                  sniperLaser.enabled = true;
+              }
+
+          }
+          else
+          {
+
+              sniperLaser.enabled = false;
+          }
+          */
     }
 
     public void sniperShoot()
@@ -435,14 +447,21 @@ public class Boss3Script : MonoBehaviour
 
     public void shootSniper()
     {
+        sniperLaser.enabled = false ;
+
         audioSource.PlayOneShot(sniperShotClip);
         RaycastHit hit;
+        LayerMask enemyLayerMask = LayerMask.GetMask("Wall");
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(muzzleTransform.position, playerTransform.position, out hit))
+        if (Physics.Raycast(muzzleTransform.position, playerTransform.position, out hit, Mathf.Infinity, enemyLayerMask))
         {
             if(hit.collider.tag == "Player")
             {
                 hit.transform.GetComponent<PlayerControls>().TakeDamage(sniperDamage);
+            }
+            else
+            {
+                Debug.Log("Sniper is hitting: " + hit.collider.name);
             }
         }
 
