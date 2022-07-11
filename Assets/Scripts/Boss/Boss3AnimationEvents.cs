@@ -39,6 +39,8 @@ public class Boss3AnimationEvents : MonoBehaviour
     private Transform target;
     public Boss3Script boss3Script;
 
+    public GameObject explosion;
+
 
     void Start()
     {
@@ -141,5 +143,20 @@ public class Boss3AnimationEvents : MonoBehaviour
         boss3Script.swordIsDrawn = true;
     }
 
+
+    public void explode()
+    {
+        float max = 1.5f;
+        float min = -1.5f;
+        float randomX = Random.Range(max, min);
+        float randomY = Random.Range(max, min);
+        float randomZ = Random.Range(max, min);
+        Instantiate(explosion, new Vector3(transform.position.x + randomX, transform.position.y + randomY + 1f, transform.position.z + randomZ), transform.rotation);
+    }
+
+    public void die()
+    {
+        Destroy(gameObject);
+    }
 
 }

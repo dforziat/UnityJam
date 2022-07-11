@@ -42,8 +42,7 @@ public class Boss3Script : MonoBehaviour
 
     public DoorProximityScript secondRoomDoor;
     public DoorProximityScript sniperRoomDoor;
-
-
+    public DoorProximityScript finalDoor;
 
     public Transform grenadePoint;
     public Transform sniperPoint;
@@ -84,6 +83,10 @@ public class Boss3Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDead)
+        {
+            return;
+        }
         checkWalkAnimation();
         processStageOne();
         processStageTwo();
@@ -106,7 +109,8 @@ public class Boss3Script : MonoBehaviour
         {
             isDead = true;
             navMeshAgent.speed = 0;
-            animator.SetTrigger("death");
+            animator.CrossFade("Boss3_Death", .5f);
+            finalDoor.isUnlocked = true;
         }
         health -= damage;
         // Debug.Log("Boss Health: " + health);
@@ -157,13 +161,16 @@ public class Boss3Script : MonoBehaviour
 
     private void checkWalkAnimation()
     {
-        if (navMeshAgent.velocity.magnitude > 0)
+        if(animator != null)
         {
-            animator.SetBool("run", true);
-        }
-        else
-        {
-            animator.SetBool("run", false);
+            if (navMeshAgent.velocity.magnitude > 0)
+            {
+                animator.SetBool("run", true);
+            }
+            else
+            {
+                animator.SetBool("run", false);
+            }
         }
     }
 
@@ -404,6 +411,8 @@ public class Boss3Script : MonoBehaviour
         {
             if (gameObject.transform.position.x == sniperPoint.position.x && gameObject.transform.position.z == sniperPoint.position.z)
             {
+                animator.SetTrigger("drawrifle");
+                StartCoroutine(pauseMovement());
                 rotateTowardsPlayerBool = true;
                 state = WAIT;
             }
@@ -412,24 +421,19 @@ public class Boss3Script : MonoBehaviour
 
     public void aimSniper()
     {
-        RaycastHit hit;
+        LayerMask enemyLayerMask = LayerMask.GetMask("Enemy");
         // Does the ray intersect any objects excluding the player layer
-        LayerMask enemyLayerMask = LayerMask.GetMask("Wall");
-        sniperLaser.enabled = true;
-        /*  if (Physics.Raycast(muzzleTransform.position, new Vector3(playerTransform.position.x, playerTransform.position.y - .5f, playerTransform.position.z), out hit, Mathf.Infinity, enemyLayerMask))
-          {
-              if(hit.collider.tag == "Player")
-              {
-                  sniperLaser.enabled = true;
-              }
-
-          }
-          else
-          {
-
-              sniperLaser.enabled = false;
-          }
-          */
+        if (Physics.Linecast(muzzleTransform.position, playerTransform.position, out RaycastHit hitInfo, ~enemyLayerMask))
+        {
+            if (hitInfo.collider.tag == "Player")
+            {
+                sniperLaser.enabled = true;
+            }
+            else
+            {
+                sniperLaser.enabled = false;
+            }
+        }
     }
 
     public void sniperShoot()
@@ -447,23 +451,20 @@ public class Boss3Script : MonoBehaviour
 
     public void shootSniper()
     {
-        sniperLaser.enabled = false ;
+        sniperLaser.enabled = false;
 
         audioSource.PlayOneShot(sniperShotClip);
-        RaycastHit hit;
-        LayerMask enemyLayerMask = LayerMask.GetMask("Wall");
+        LayerMask enemyLayerMask = LayerMask.GetMask("Enemy");
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(muzzleTransform.position, playerTransform.position, out hit, Mathf.Infinity, enemyLayerMask))
+        if (Physics.Linecast(muzzleTransform.position, playerTransform.position, out RaycastHit hitInfo, ~enemyLayerMask))
         {
-            if(hit.collider.tag == "Player")
+            Debug.Log("Linecast hit: " + hitInfo.collider.name);
+            if(hitInfo.collider.tag == "Player")
             {
-                hit.transform.GetComponent<PlayerControls>().TakeDamage(sniperDamage);
-            }
-            else
-            {
-                Debug.Log("Sniper is hitting: " + hit.collider.name);
+                playerTransform.GetComponent<PlayerControls>().TakeDamage(sniperDamage);
             }
         }
+ 
 
     }
 
@@ -474,4 +475,6 @@ public class Boss3Script : MonoBehaviour
         state = SNIPE;
         sniperAimTimer = sniperAimTime;
     }
+
+
 }
