@@ -10,7 +10,7 @@ public class Boss3Script : MonoBehaviour
     public int health;
     private const int maxHealth = 300;
     private const float speed = 3.5f;
-    private const float runSpeed = 6f;
+    private const float runSpeed = 5f;
 
     private int bossStage = 1;
 
@@ -54,17 +54,21 @@ public class Boss3Script : MonoBehaviour
     private const float sniperCoolDownTimer = 5f;
     private float sniperCoolDownTime = sniperCoolDownTimer;
 
-    private int burstCount = 0;
     private const float rifleCooldown = 1f;
-    private float rifleCooldowntimer = rifleCooldown;
     public LineRenderer sniperLaser;
     public Transform muzzleTransform;
 
     private int damageThreshold = 10;
     private int currentThreshold = 0;
 
+    private SkinnedMeshRenderer meshRenderer;
+    private List<Color> originalColorList;
+    private float flashTime = .2f;
+
+
     [Header("Audio")]
     private AudioSource audioSource;
+    public AudioSource runningAudioSource;
     public AudioClip[] damagedClips;
     public AudioClip sniperShotClip;
 
@@ -75,9 +79,15 @@ public class Boss3Script : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
+        meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         state = RUN_TO_POINT;
         processLogic();
         sniperLaser.enabled = false;
+        originalColorList = new List<Color>();
+        foreach (Material material in meshRenderer.materials)
+        {
+            originalColorList.Add(material.color);
+        }
     }
 
     // Update is called once per frame
@@ -121,6 +131,7 @@ public class Boss3Script : MonoBehaviour
         if (health <= 290 && bossStage == 1)
         {
             animator.ResetTrigger("shoot");
+            StartCoroutine(pauseMovement());
             Debug.Log("Boss Stage 2");
             bossStage = 2;
             moveToSecondRoom();
@@ -150,6 +161,13 @@ public class Boss3Script : MonoBehaviour
             }
         }
 
+        foreach (Material material in meshRenderer.materials)
+        {
+            material.color = Color.red;
+
+        }
+        Invoke("ResetColor", flashTime);
+
     }
 
 
@@ -166,10 +184,16 @@ public class Boss3Script : MonoBehaviour
             if (navMeshAgent.velocity.magnitude > 0)
             {
                 animator.SetBool("run", true);
+                if (!runningAudioSource.isPlaying)
+                {
+                  runningAudioSource.Play();
+                }
+                
             }
             else
             {
                 animator.SetBool("run", false);
+                runningAudioSource.Stop();
             }
         }
     }
@@ -314,6 +338,8 @@ public class Boss3Script : MonoBehaviour
 
         if (bossStage == 2 && state == MOVING)
         {
+            navMeshAgent.SetDestination(grenadePoint.position);
+            navMeshAgent.speed = runSpeed;
             if (gameObject.transform.position.x == grenadePoint.position.x && gameObject.transform.position.z == grenadePoint.position.z)
             {
                 state = WAIT;
@@ -409,6 +435,9 @@ public class Boss3Script : MonoBehaviour
 
         if (bossStage == 3 && state == MOVING)
         {
+            navMeshAgent.speed = runSpeed;
+            navMeshAgent.SetDestination(sniperPoint.position);
+            rotateTowardsPlayerBool = false;
             if (gameObject.transform.position.x == sniperPoint.position.x && gameObject.transform.position.z == sniperPoint.position.z)
             {
                 animator.SetTrigger("drawrifle");
@@ -464,7 +493,6 @@ public class Boss3Script : MonoBehaviour
                 playerTransform.GetComponent<PlayerControls>().TakeDamage(sniperDamage);
             }
         }
- 
 
     }
 
@@ -476,5 +504,14 @@ public class Boss3Script : MonoBehaviour
         sniperAimTimer = sniperAimTime;
     }
 
-
+    private void ResetColor()
+    {
+        int colorListPlace = 0;
+        foreach (Material material in meshRenderer.materials)
+        {
+            material.color = originalColorList[colorListPlace];
+            colorListPlace++;
+        }
+        colorListPlace = 0;
+    }
 }
