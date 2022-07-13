@@ -15,6 +15,7 @@ public class Boss3Script : MonoBehaviour
     private int bossStage = 1;
 
     private bool isDead = false;
+    private bool isCutscene = true;
     private bool rotateTowardsPlayerBool = false;
     public bool swordIsDrawn = false;
 
@@ -81,7 +82,7 @@ public class Boss3Script : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         meshRenderer = GetComponentInChildren<SkinnedMeshRenderer>();
         state = RUN_TO_POINT;
-        processLogic();
+       // processLogic();
         sniperLaser.enabled = false;
         originalColorList = new List<Color>();
         foreach (Material material in meshRenderer.materials)
@@ -93,7 +94,7 @@ public class Boss3Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDead)
+        if (isDead || isCutscene)
         {
             return;
         }
@@ -109,7 +110,7 @@ public class Boss3Script : MonoBehaviour
    
         sniperLaser.SetPosition(0, muzzleTransform.position);
         sniperLaser.SetPosition(1, new Vector3(playerTransform.position.x, playerTransform.position.y - .5f, playerTransform.position.z));
-
+       
     }
 
     public void takeDamage(int damage)
@@ -513,5 +514,11 @@ public class Boss3Script : MonoBehaviour
             colorListPlace++;
         }
         colorListPlace = 0;
+    }
+
+    public void startFight()
+    {
+        isCutscene = false;
+        processLogic();
     }
 }
