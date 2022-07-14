@@ -24,6 +24,7 @@ public class SecondRoomDoorLock : MonoBehaviour
         if(other.tag == "Player")
         {
             secondRoomDoor.isUnlocked = false;
+            boss3Script.state = "ANIMATION";
             boss3Script.chooseRandomAttack();
             Destroy(gameObject);
         }

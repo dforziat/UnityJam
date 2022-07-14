@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1239703134108287154}
   - component: {fileID: 1239703134108287153}
-  - component: {fileID: 2713458507595896083}
+  - component: {fileID: 1108209114}
   m_Layer: 0
   m_Name: WinBox
   m_TagString: Untagged
@@ -45,7 +45,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2713458507595896083
+--- !u!114 &1108209114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,3 +58,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelCompleteCanvas: {fileID: 0}
+  finaltimeText: {fileID: 0}
+  besttimeText: {fileID: 0}
+  loadScreen: {fileID: 8875192550856222381, guid: 28fe281318170204eb3bd08f2e459c2a, type: 3}

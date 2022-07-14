@@ -22,7 +22,7 @@ public class Boss3HealthScript : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         bossMaxHealth = bossScript.health;
-        Debug.Log("Boss health: " + bossScript.health);
+        Debug.Log("Boss UI health: " + bossScript.health);
     }
 
     // Update is called once per frame

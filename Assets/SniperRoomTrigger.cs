@@ -7,6 +7,7 @@ public class SniperRoomTrigger : MonoBehaviour
 
     public DoorProximityScript sniperRoomDoor;
     public Boss3Script boss3Script;
+    public Transform sniperPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,11 @@ public class SniperRoomTrigger : MonoBehaviour
             sniperRoomDoor.isUnlocked = false;
             boss3Script.state = "snipe";
             Destroy(gameObject);
+        }
+
+        if(other.tag == "Enemy" && other.name == "Boss3")
+        {
+            other.transform.position = new Vector3(sniperPoint.position.x, 0.5f, sniperPoint.position.z);
         }
     }
 

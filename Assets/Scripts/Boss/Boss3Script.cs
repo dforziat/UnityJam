@@ -8,9 +8,10 @@ public class Boss3Script : MonoBehaviour
     // Start is called before the first frame update
 
     public int health;
-    private const int maxHealth = 300;
+    private const int maxHealth = 170;
     private const float speed = 3.5f;
     private const float runSpeed = 5f;
+    private const float meleeRange = 2.5f;
 
     private int bossStage = 1;
 
@@ -129,7 +130,7 @@ public class Boss3Script : MonoBehaviour
 
 
         //go to stage 2 once the boss is at 2/3 health. 
-        if (health <= 290 && bossStage == 1)
+        if (health <= 120 && bossStage == 1)
         {
             animator.ResetTrigger("shoot");
             StartCoroutine(pauseMovement());
@@ -139,7 +140,7 @@ public class Boss3Script : MonoBehaviour
             secondRoomDoor.isUnlocked = true;
         }
 
-        if (health <= 280 && bossStage == 2)
+        if (health <= 20 && bossStage == 2)
         {
             animator.ResetTrigger("shoot");
             animator.SetTrigger("drawrifle");
@@ -301,7 +302,7 @@ public class Boss3Script : MonoBehaviour
             if (state == SWORD_SWING)
             {
                 navMeshAgent.SetDestination(playerTransform.position);
-                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= 2)
+                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= meleeRange)
                 {
                     animator.SetTrigger("saber");
                     state = ANIMATION;
@@ -311,7 +312,7 @@ public class Boss3Script : MonoBehaviour
             if (state == SWORD_JUMP)
             {
                 navMeshAgent.SetDestination(playerTransform.position);
-                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= 2)
+                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= meleeRange)
                 {
                     animator.SetTrigger("saberjump");
                     state = ANIMATION;
@@ -353,7 +354,7 @@ public class Boss3Script : MonoBehaviour
         if (bossStage == 2 && state != MOVING)
         {
             rotateTowardsPlayerBool = false;
-            int randomNum = Random.Range(0, 3);
+            int randomNum = Random.Range(0, 4);
 
             switch (randomNum)
             {
@@ -441,7 +442,9 @@ public class Boss3Script : MonoBehaviour
             rotateTowardsPlayerBool = false;
             if (gameObject.transform.position.x == sniperPoint.position.x && gameObject.transform.position.z == sniperPoint.position.z)
             {
+                animator.ResetTrigger("draw");
                 animator.SetTrigger("drawrifle");
+                animator.CrossFade("Boss3_Idle", .3f);
                 StartCoroutine(pauseMovement());
                 rotateTowardsPlayerBool = true;
                 state = WAIT;
@@ -519,6 +522,7 @@ public class Boss3Script : MonoBehaviour
     public void startFight()
     {
         isCutscene = false;
+        animator.SetTrigger("activate");
         processLogic();
     }
 }
