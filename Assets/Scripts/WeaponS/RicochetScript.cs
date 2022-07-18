@@ -68,7 +68,7 @@ public class RicochetScript : MonoBehaviour
     public void shootGun()
     {
 
-        if (Input.GetMouseButtonDown(0) && canShoot && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("RichochetGun_Idle"))
+        if (Input.GetButtonDown("Fire1") && canShoot && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("RichochetGun_Idle"))
         {
             StartCoroutine(Shoot());
         }

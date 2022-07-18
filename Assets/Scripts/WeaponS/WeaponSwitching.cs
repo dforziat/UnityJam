@@ -48,23 +48,21 @@ public class WeaponSwitching : MonoBehaviour
     public void ChangeWeapon()
     {
         int previousSelectedWeapon = selectedWeapon;
-        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
+        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f || Input.GetButtonDown("WeaponRight"))
         {
 
             selectedWeapon++;
+            if (selectedWeapon >= transform.childCount)
+            {
+                selectedWeapon = 0;
+            }
             while (transform.GetChild(selectedWeapon).tag != "unlocked")
             {
                 selectedWeapon++;
-                //new
-                if (selectedWeapon >= transform.childCount - 1)
-                {
-                    selectedWeapon = 0;
-                    break;
-                }
             }
 
         }
-        if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
+        if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f || Input.GetButtonDown("WeaponLeft"))
         {
             selectedWeapon--;
             if (selectedWeapon < 0)
@@ -119,6 +117,6 @@ public class WeaponSwitching : MonoBehaviour
             SelectWeapon();
         }
         curWeapon = selectedWeapon;
-    }
 
+    }
 }

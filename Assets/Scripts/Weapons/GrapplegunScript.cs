@@ -72,7 +72,7 @@ public class GrapplegunScript : MonoBehaviour
 
     public void shootGun()
     {
-        if (Input.GetMouseButtonDown(0) && canShoot && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("GrapplegunIdle"))
+        if (Input.GetButtonDown("Fire1") && canShoot && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("GrapplegunIdle"))
         {
             StartCoroutine(Shoot());
         }

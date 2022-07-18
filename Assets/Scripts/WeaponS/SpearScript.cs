@@ -101,7 +101,7 @@ public class SpearScript : MonoBehaviour
 
     void dash()
     {
-        if (Input.GetMouseButtonDown(0) && spearTimer.canShoot == true)
+        if (Input.GetButtonDown("Fire1") && spearTimer.canShoot == true)
         {
             StartCoroutine(DashCoroutine());
             spearTimer.startTimer();

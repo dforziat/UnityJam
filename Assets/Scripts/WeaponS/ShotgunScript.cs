@@ -63,7 +63,7 @@ public class ShotgunScript : MonoBehaviour
 
     public void shootGun()
     {
-        if (Input.GetMouseButtonDown(0) && canShoot && playerControls.shotgunAmmo > 0 && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("ShotgunIdle"))
+        if (Input.GetButtonDown("Fire1") && canShoot && playerControls.shotgunAmmo > 0 && gunAnimator.GetCurrentAnimatorStateInfo(0).IsName("ShotgunIdle"))
         {
             StartCoroutine(Shoot());
         }
