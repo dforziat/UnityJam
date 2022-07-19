@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WeaponSwitching : MonoBehaviour
 {
@@ -12,7 +13,10 @@ public class WeaponSwitching : MonoBehaviour
     void Start()
     {
         //this should load in the save manager, but that version doesn't seem to work -Dylan
-        curWeapon = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_WEP);
+        if(SceneManager.GetActiveScene().name != "RandomLevel")
+        {
+            curWeapon = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_WEP);
+        }
 
         selectedWeapon = curWeapon;
         SelectWeapon();
@@ -52,7 +56,15 @@ public class WeaponSwitching : MonoBehaviour
         {
 
             selectedWeapon++;
-            if (selectedWeapon >= transform.childCount)
+            int unlockedWeaponNum = 0;
+            foreach (Transform weapon in transform.GetComponentInChildren<Transform>())
+            {
+                if(weapon.tag == "unlocked")
+                {
+                    unlockedWeaponNum++;
+                }
+            }
+            if (selectedWeapon > unlockedWeaponNum - 1)
             {
                 selectedWeapon = 0;
             }

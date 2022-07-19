@@ -3682,7 +3682,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 3036980740157241068, guid: 7904cd2542100ab4d89caf4b107de6af, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 3036980740157241068, guid: 7904cd2542100ab4d89caf4b107de6af, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -4287,7 +4287,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 7146887162579565995, guid: 00ca249af1d12234493a3f1574970178, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 7146887162579565995, guid: 00ca249af1d12234493a3f1574970178, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -5051,7 +5051,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: -6293622541105764011, guid: 5d836c4a240fe8c44b425773ffa4e3c8, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -6293622541105764011, guid: 5d836c4a240fe8c44b425773ffa4e3c8, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -5765,7 +5765,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 6561720049353550811, guid: 515a5b7c8a9c38d43bf972ecf5da2093, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 6561720049353550811, guid: 515a5b7c8a9c38d43bf972ecf5da2093, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -5835,6 +5835,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 65188395}
     m_Modifications:
+    - target: {fileID: 3297772795655108349, guid: b18e6ca44efe895469a26e547a71020c, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: -5655189348490220323, guid: 0424f46659809ce4bac2d28050dfe2d2, type: 3}
     - target: {fileID: 3297772795655108349, guid: b18e6ca44efe895469a26e547a71020c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6019,7 +6023,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 7011718676255595091, guid: 2ac500a6209a8ef42b748ab83fd7940c, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 7011718676255595091, guid: 2ac500a6209a8ef42b748ab83fd7940c, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -6907,7 +6911,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: -1288578801163329711, guid: 3345fa76f9819b74ea511787b4eabeeb, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -1288578801163329711, guid: 3345fa76f9819b74ea511787b4eabeeb, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -8969,7 +8973,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: -3764395315462958469, guid: 8b3a5cc140687bf4182bbcc8449e14e0, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -3764395315462958469, guid: 8b3a5cc140687bf4182bbcc8449e14e0, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -9716,10 +9720,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba95d44fb03aa734f937a81bbedaceb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuCanvas: {fileID: 1864746306}
+  mainMenuCanvas: {fileID: 1864746305}
   settingMenuCanvas: {fileID: 1883686356}
   storyCanvas: {fileID: 65188394}
   loadScreen: {fileID: 790681518}
+  challengeModePanel: {fileID: 1048394259}
+  storyButton: {fileID: 820895225}
+  newGameButton: {fileID: 1684260017}
 --- !u!114 &1821992354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11297,6 +11304,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5188078946274966914, guid: 56d1c2f1c3f3be149b7489b67bef2c4b, type: 3}
   m_PrefabInstance: {fileID: 1402583380}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2085900792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2085900793}
+  - component: {fileID: 2085900794}
+  m_Layer: 0
+  m_Name: ControllerSelector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2085900793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085900792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2085900794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085900792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c7054372d178c47b0a3ea674b4d297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonList: []
 --- !u!4 &2101684828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5188078946274966914, guid: 56d1c2f1c3f3be149b7489b67bef2c4b, type: 3}

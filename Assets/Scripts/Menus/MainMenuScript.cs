@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour
 {
-    public Canvas mainMenuCanvas;
+    public GameObject mainMenuCanvas;
     public GameObject settingMenuCanvas;
     public GameObject storyCanvas;
     public GameObject loadScreen;
+
+    public GameObject challengeModePanel;
+
+    public GameObject storyButton;
+    public GameObject newGameButton;
 
     [Header("Audio")]
     private AudioSource audioSource;
@@ -20,6 +26,7 @@ public class MainMenuScript : MonoBehaviour
         settingMenuCanvas.SetActive(false);
         loadScreen.SetActive(false);
         Time.timeScale = 1f;
+        EventSystem.current.SetSelectedGameObject(storyButton);
     }
 
 
@@ -55,17 +62,18 @@ public class MainMenuScript : MonoBehaviour
 
     public void DisplaySettings()
     {
-        mainMenuCanvas.enabled = false;
+        mainMenuCanvas.SetActive(false);
         settingMenuCanvas.SetActive(true);
         audioSource.Play();
     }
 
     public void DisplayMainMenu()
     {
-        mainMenuCanvas.enabled = true;
+        mainMenuCanvas.SetActive(true);
         storyCanvas.SetActive(false);
         settingMenuCanvas.SetActive(false);
         audioSource.Play();
+        EventSystem.current.SetSelectedGameObject(storyButton);
     }
 
     public void QuitGame()
@@ -83,8 +91,19 @@ public class MainMenuScript : MonoBehaviour
     {
         storyCanvas.SetActive(true);
         audioSource.Play();
-        mainMenuCanvas.enabled = false;
+        mainMenuCanvas.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(newGameButton);
     }
 
-
+    public void checkForChallengeModeController()
+    {
+        if (EventSystem.current.currentSelectedGameObject.name == "ChallengeMode_Button")
+        {
+            challengeModePanel.SetActive(true);
+        }
+        else
+        {
+            challengeModePanel.SetActive(false);
+        }
+    }
 }
