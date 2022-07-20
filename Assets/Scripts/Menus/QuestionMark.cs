@@ -27,6 +27,5 @@ public class QuestionMark : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OnPointerExit(PointerEventData eventData)
     {
         panel.SetActive(false);
-        throw new System.NotImplementedException();
     }
 }

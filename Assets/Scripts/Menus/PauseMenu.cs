@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject GraphicsOptions;
     public GameObject AudioOptions;
     public GameObject loadScreen;
+
+    [Header("Controller Navigation")]
+    public GameObject resumeButton;
 
 
 
@@ -56,10 +60,14 @@ public class PauseMenu : MonoBehaviour
     {
         PauseMenuObj.SetActive(true);
         settingMenu.SetActive(false);
+        GameOptions.SetActive(false);
+        GraphicsOptions.SetActive(false);
+        AudioOptions.SetActive(false);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         GameIsPaused = true;
+        EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 
     void TogglePause()

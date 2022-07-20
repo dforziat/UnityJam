@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     SaveManager SaveManager;
     PlayerControls playerControls;
-    public Canvas levelCompleteCanvas;
+    public GameObject levelCompleteScreen;
     public static bool levelLoading;
 
     public TextMeshProUGUI finaltimeText;
@@ -31,14 +31,14 @@ public class LevelManager : MonoBehaviour
     int bestMins;
     int bestSecs;
     int bestMiliSecs;
-
+    public bool poop;
 
 
 
     void Start()
     {
         levelLoading = false;
-        levelCompleteCanvas.enabled = false;
+        levelCompleteScreen.SetActive(false);
         Time.timeScale = 1;
         SaveManager = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         levelLoading = true;
-        levelCompleteCanvas.enabled = true;
+        levelCompleteScreen.SetActive(true);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

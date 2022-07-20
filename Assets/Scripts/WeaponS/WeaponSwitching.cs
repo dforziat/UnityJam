@@ -56,21 +56,17 @@ public class WeaponSwitching : MonoBehaviour
         {
 
             selectedWeapon++;
-            int unlockedWeaponNum = 0;
-            foreach (Transform weapon in transform.GetComponentInChildren<Transform>())
-            {
-                if(weapon.tag == "unlocked")
-                {
-                    unlockedWeaponNum++;
-                }
-            }
-            if (selectedWeapon > unlockedWeaponNum - 1)
-            {
+            if(selectedWeapon >= transform.childCount){
                 selectedWeapon = 0;
             }
             while (transform.GetChild(selectedWeapon).tag != "unlocked")
             {
                 selectedWeapon++;
+                if(selectedWeapon >= transform.childCount)
+                {
+                 selectedWeapon = 0;
+                break;
+                 }
             }
 
         }

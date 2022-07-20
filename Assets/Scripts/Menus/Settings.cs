@@ -5,8 +5,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
-
-
+using UnityEngine.EventSystems;
 
 public class Settings : MonoBehaviour
 {
@@ -42,6 +41,12 @@ public class Settings : MonoBehaviour
 
 
     private AudioSource audioSource;
+
+    [Header("Controller Navigation")]
+    public GameObject graphicsButton;
+    public GameObject resolutionDropdownObject;
+    public GameObject mainVolumeSlider;
+
 
 
 
@@ -205,6 +210,7 @@ public class Settings : MonoBehaviour
         GraphicsOptions.SetActive(true);
         settingMenu.SetActive(false);
         audioSource.Play();
+        EventSystem.current.SetSelectedGameObject(resolutionDropdownObject);
     }
 
     public void displayButton_Audio()
@@ -212,6 +218,8 @@ public class Settings : MonoBehaviour
         AudioOptions.SetActive(true);
         settingMenu.SetActive(false);
         audioSource.Play();
+        EventSystem.current.SetSelectedGameObject(mainVolumeSlider);
+
     }
 
     public void displayButton_Credits()
@@ -225,6 +233,7 @@ public class Settings : MonoBehaviour
         GameOptions.SetActive(false);
         settingMenu.SetActive(true);
         audioSource.Play();
+        EventSystem.current.SetSelectedGameObject(graphicsButton);
     }
 
     public void backButton_Graphics()
@@ -232,6 +241,7 @@ public class Settings : MonoBehaviour
         GraphicsOptions.SetActive(false);
         settingMenu.SetActive(true);
         audioSource.Play();
+        EventSystem.current.SetSelectedGameObject(graphicsButton);
     }
 
     public void backButton_Audio()
@@ -239,6 +249,7 @@ public class Settings : MonoBehaviour
         AudioOptions.SetActive(false);
         settingMenu.SetActive(true);
         audioSource.Play();
+        EventSystem.current.SetSelectedGameObject(graphicsButton);
     }
 
     public void backButton_Credits()

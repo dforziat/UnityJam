@@ -14,8 +14,10 @@ public class MainMenuScript : MonoBehaviour
 
     public GameObject challengeModePanel;
 
+    [Header("Controller Navigation")]
     public GameObject storyButton;
     public GameObject newGameButton;
+    public GameObject graphicsButton;
 
     [Header("Audio")]
     private AudioSource audioSource;
@@ -32,7 +34,8 @@ public class MainMenuScript : MonoBehaviour
 
     void Update()
     {
-
+        checkForChallengeModeController();
+        GameObject currentSelected = EventSystem.current.currentSelectedGameObject;
     }
 
     public void NewGame()
@@ -65,6 +68,8 @@ public class MainMenuScript : MonoBehaviour
         mainMenuCanvas.SetActive(false);
         settingMenuCanvas.SetActive(true);
         audioSource.Play();
+        EventSystem.current.SetSelectedGameObject(graphicsButton);
+
     }
 
     public void DisplayMainMenu()

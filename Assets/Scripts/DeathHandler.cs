@@ -6,15 +6,15 @@ public class DeathHandler : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public Canvas gameOverCanvas;
+    public GameObject gameOverCanvas;
     void Start()
     {
-        gameOverCanvas.enabled = false;
+        gameOverCanvas.SetActive(false);
     }
 
     public void HandleDeath()
     {
-        gameOverCanvas.enabled = true;
+        gameOverCanvas.SetActive(true);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
