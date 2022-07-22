@@ -101,11 +101,23 @@ public class PlayerControls : MonoBehaviour
         if (!isGrappling)
         {
             Gravity();
-            CamLook();
+            MouseCamLook();
             Movement();
         }
             Grapple();
 
+    }
+
+    private void FixedUpdate()
+    {
+        if (isDead || PauseMenu.GameIsPaused || LevelManager.levelLoading)
+        {
+            return;
+        }
+        if (!isGrappling)
+        {
+            ControllerCamLook();
+        }
     }
 
     void Movement()
@@ -128,10 +140,24 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
-    void CamLook()
+    void MouseCamLook()
     {
-        float y = Input.GetAxis("Mouse X") * lookSensitivity;
-        transform.eulerAngles += Vector3.up * y;
+        float mousey = Input.GetAxis("Mouse X") * lookSensitivity;
+        
+        if(mousey != 0)
+        {
+            transform.eulerAngles += Vector3.up * mousey;
+        }
+        
+    }
+
+    void ControllerCamLook()
+    {
+        float controllery = Input.GetAxis("RightStick") * lookSensitivity;
+        if(controllery != 0)
+        {
+            transform.eulerAngles += Vector3.up * controllery * 5;
+        }
     }
 
     void Gravity()

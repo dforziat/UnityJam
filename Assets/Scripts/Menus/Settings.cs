@@ -46,6 +46,8 @@ public class Settings : MonoBehaviour
     public GameObject graphicsButton;
     public GameObject resolutionDropdownObject;
     public GameObject mainVolumeSlider;
+    public GameObject sensSlider;
+    public GameObject creditsBackButton;
 
 
 
@@ -203,6 +205,7 @@ public class Settings : MonoBehaviour
         GameOptions.SetActive(true);
         settingMenu.SetActive(false);
         audioSource.Play();
+        EventSystem.current.SetSelectedGameObject(sensSlider);
     }
 
     public void displayButton_Graphics()
@@ -227,6 +230,7 @@ public class Settings : MonoBehaviour
         creditsOptions.SetActive(true);
         GameOptions.SetActive(false);
         audioSource.Play();
+        EventSystem.current.SetSelectedGameObject(creditsBackButton);
     }
     public void backButton_Game()
     {
@@ -257,6 +261,7 @@ public class Settings : MonoBehaviour
         creditsOptions.SetActive(false);
         GameOptions.SetActive(true);
         audioSource.Play();
+        EventSystem.current.SetSelectedGameObject(sensSlider);
     }
 
     public void firstLoad()

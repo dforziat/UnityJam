@@ -1291,6 +1291,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6333409251669139148, guid: 7868d06b12a28524db820bbe7ce748d9, type: 3}
   m_PrefabInstance: {fileID: 256609138}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &269945384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 788403836203678760, guid: 07875d12ad793394086c2314797d9605, type: 3}
+  m_PrefabInstance: {fileID: 788403837412893448}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &270070873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1536,7 +1541,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: -5655189348490220323, guid: 0424f46659809ce4bac2d28050dfe2d2, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -5655189348490220323, guid: 0424f46659809ce4bac2d28050dfe2d2, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1993,10 +1998,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnDown: {fileID: 1929775079}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 0
@@ -3835,7 +3840,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8885258234666118135, guid: a35370b39ec35ff429be3c9cb1974d93, type: 3}
   m_PrefabInstance: {fileID: 8885258235039136374}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1421723363}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
@@ -4469,11 +4474,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d1c2f1c3f3be149b7489b67bef2c4b, type: 3}
---- !u!1 &845755703 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8885258233575601128, guid: a35370b39ec35ff429be3c9cb1974d93, type: 3}
-  m_PrefabInstance: {fileID: 8885258235039136374}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &848219793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5188078946274966914, guid: 56d1c2f1c3f3be149b7489b67bef2c4b, type: 3}
@@ -4548,7 +4548,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: -5655189348490220323, guid: 0424f46659809ce4bac2d28050dfe2d2, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -5655189348490220323, guid: 0424f46659809ce4bac2d28050dfe2d2, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -6248,7 +6248,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 788403836203678762, guid: 07875d12ad793394086c2314797d9605, type: 3}
   m_PrefabInstance: {fileID: 788403837412893448}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 269945384}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
@@ -7132,6 +7132,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d1c2f1c3f3be149b7489b67bef2c4b, type: 3}
+--- !u!1 &1421723363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8885258234666117897, guid: a35370b39ec35ff429be3c9cb1974d93, type: 3}
+  m_PrefabInstance: {fileID: 8885258235039136374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1428160470
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9851,9 +9856,11 @@ MonoBehaviour:
   GraphicsOptions: {fileID: 646440657}
   AudioOptions: {fileID: 815194649}
   creditsOptions: {fileID: 1688406377}
-  graphicsButton: {fileID: 0}
+  graphicsButton: {fileID: 51477755}
   resolutionDropdownObject: {fileID: 404997029}
-  mainVolumeSlider: {fileID: 845755703}
+  mainVolumeSlider: {fileID: 1421723363}
+  sensSlider: {fileID: 269945384}
+  creditsBackButton: {fileID: 862582803}
 --- !u!82 &1821992359
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10512,7 +10519,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 5038842178623144084, guid: 368ee9ebbc5a2834d93e48645d450033, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 5038842178623144084, guid: 368ee9ebbc5a2834d93e48645d450033, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -10619,9 +10626,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 404997031}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -11231,7 +11238,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: -4204372502979471937, guid: fccc693c306c5014f94d7e1be1d54f98, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -4204372502979471937, guid: fccc693c306c5014f94d7e1be1d54f98, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal

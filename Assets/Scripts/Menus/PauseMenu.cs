@@ -20,6 +20,7 @@ public class PauseMenu : MonoBehaviour
 
     [Header("Controller Navigation")]
     public GameObject resumeButton;
+    public GameObject graphicsButton;
 
 
 
@@ -93,13 +94,14 @@ public class PauseMenu : MonoBehaviour
     {
         settingMenu.SetActive(false);
         PauseMenuObj.SetActive(true);
-
+        EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 
     public void openSettings()
     {
         settingMenu.SetActive(true);
         PauseMenuObj.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(graphicsButton);
     }
 
 
