@@ -17,6 +17,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject GraphicsOptions;
     public GameObject AudioOptions;
     public GameObject loadScreen;
+    private AudioSource audioSource;
+
 
     [Header("Controller Navigation")]
     public GameObject resumeButton;
@@ -28,9 +30,12 @@ public class PauseMenu : MonoBehaviour
     {
         Resume();
         Cursor.lockState = CursorLockMode.Locked;
-
     }
 
+    public void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -56,6 +61,10 @@ public class PauseMenu : MonoBehaviour
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
         playerControls.lookSensitivity = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
 
+        if(audioSource != null)
+        {
+            audioSource.Play();
+        }
     }
     void Pause()
     {
@@ -87,6 +96,7 @@ public class PauseMenu : MonoBehaviour
         Resume();
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
+        audioSource.Play();
     }
 
 
@@ -95,6 +105,7 @@ public class PauseMenu : MonoBehaviour
         settingMenu.SetActive(false);
         PauseMenuObj.SetActive(true);
         EventSystem.current.SetSelectedGameObject(resumeButton);
+        audioSource.Play();
     }
 
     public void openSettings()
@@ -102,6 +113,7 @@ public class PauseMenu : MonoBehaviour
         settingMenu.SetActive(true);
         PauseMenuObj.SetActive(false);
         EventSystem.current.SetSelectedGameObject(graphicsButton);
+        audioSource.Play();
     }
 
 

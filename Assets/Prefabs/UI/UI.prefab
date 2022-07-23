@@ -480,6 +480,7 @@ GameObject:
   - component: {fileID: 1424115775707551855}
   - component: {fileID: 7683631210256480396}
   - component: {fileID: 4644413236818606650}
+  - component: {fileID: 1299172041}
   m_Layer: 0
   m_Name: Resolution_Dropdown
   m_TagString: Untagged
@@ -619,6 +620,35 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_AlphaFadeSpeed: 0.15
+--- !u!114 &1299172041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317159559503807938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &403383510326860504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1080,7 @@ GameObject:
   - component: {fileID: 6926999109586744906}
   - component: {fileID: 312030298012613976}
   - component: {fileID: 5609290439100916536}
+  - component: {fileID: 6216474775089520129}
   m_Layer: 0
   m_Name: Settings
   m_TagString: Untagged
@@ -1170,6 +1201,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6216474775089520129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654757019873389735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!120 &1450799135
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -3146,6 +3206,7 @@ GameObject:
   - component: {fileID: 8392767249101336878}
   - component: {fileID: 4923303864864416808}
   - component: {fileID: 9079915425753741015}
+  - component: {fileID: 396061486}
   m_Layer: 5
   m_Name: Back_Button
   m_TagString: Untagged
@@ -3266,6 +3327,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &396061486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959773516730542416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2992850373337551113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3949,6 +4039,7 @@ GameObject:
   - component: {fileID: 1235636443775423926}
   - component: {fileID: 49084371536256561}
   - component: {fileID: 7930130239818202237}
+  - component: {fileID: 1940811221}
   m_Layer: 5
   m_Name: Exit_Button
   m_TagString: Untagged
@@ -4069,6 +4160,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1940811221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3976109450043671477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4072307006265007205
 GameObject:
   m_ObjectHideFlags: 0
@@ -4081,6 +4201,7 @@ GameObject:
   - component: {fileID: 1765153104101540795}
   - component: {fileID: 626183462303378846}
   - component: {fileID: 8279259456140392480}
+  - component: {fileID: 1440717317}
   m_Layer: 0
   m_Name: Restart
   m_TagString: Untagged
@@ -4176,7 +4297,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: -6987349969777580252, guid: 37f774352c8a4e146b07a84c4ecf6ae3, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -6987349969777580252, guid: 37f774352c8a4e146b07a84c4ecf6ae3, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -4201,6 +4322,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1440717317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4072307006265007205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4150529767904470341
 GameObject:
   m_ObjectHideFlags: 0
@@ -4429,6 +4579,7 @@ GameObject:
   - component: {fileID: 4349383366737063428}
   - component: {fileID: 8037496843266937214}
   - component: {fileID: 4527935136212030996}
+  - component: {fileID: 6216474775089520130}
   m_Layer: 0
   m_Name: Restart
   m_TagString: Untagged
@@ -4549,6 +4700,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6216474775089520130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4644555427092963383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4778642934325773147
 GameObject:
   m_ObjectHideFlags: 0
@@ -5028,6 +5208,7 @@ GameObject:
   - component: {fileID: 3350578842237017333}
   - component: {fileID: 6564639929407860146}
   - component: {fileID: 5598600877767924002}
+  - component: {fileID: 746480724}
   m_Layer: 5
   m_Name: Back_Button
   m_TagString: Untagged
@@ -5148,6 +5329,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &746480724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5814956166773449978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5862736716935210222
 GameObject:
   m_ObjectHideFlags: 0
@@ -5684,6 +5894,7 @@ GameObject:
   - component: {fileID: 4137912553012107018}
   - component: {fileID: 5483979138350149845}
   - component: {fileID: 5673422788273342445}
+  - component: {fileID: 1609054305}
   m_Layer: 5
   m_Name: Game_Button
   m_TagString: Untagged
@@ -5804,6 +6015,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1609054305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6421735989330100043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6464573500877556986
 GameObject:
   m_ObjectHideFlags: 0
@@ -5925,6 +6165,7 @@ GameObject:
   - component: {fileID: 4687686280598728825}
   - component: {fileID: 839397693472792187}
   - component: {fileID: 8145884797320500656}
+  - component: {fileID: 1370186839}
   m_Layer: 5
   m_Name: Exit_Button
   m_TagString: Untagged
@@ -6045,6 +6286,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1370186839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6589399395770635281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6627838299957599687
 GameObject:
   m_ObjectHideFlags: 0
@@ -6357,6 +6627,7 @@ GameObject:
   - component: {fileID: 1700081917606151063}
   - component: {fileID: 1513764189032102206}
   - component: {fileID: 5797123658054898338}
+  - component: {fileID: 6216474775089520132}
   m_Layer: 0
   m_Name: Quit
   m_TagString: Untagged
@@ -6477,6 +6748,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6216474775089520132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7133267178507618293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7176499933305479971
 GameObject:
   m_ObjectHideFlags: 0
@@ -6525,6 +6825,7 @@ GameObject:
   - component: {fileID: 9055882885583587399}
   - component: {fileID: 8741299552184766647}
   - component: {fileID: 97934204612043583}
+  - component: {fileID: 600335924}
   m_Layer: 5
   m_Name: Graphics_Button
   m_TagString: Untagged
@@ -6645,6 +6946,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &600335924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7229266379487440437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7255722233070952177
 GameObject:
   m_ObjectHideFlags: 0
@@ -6657,6 +6987,7 @@ GameObject:
   - component: {fileID: 7237974882420987687}
   - component: {fileID: 896414608939788234}
   - component: {fileID: 1641637027213555708}
+  - component: {fileID: 476953874}
   m_Layer: 5
   m_Name: Audio_Button
   m_TagString: Untagged
@@ -6777,6 +7108,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &476953874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255722233070952177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7612947623275431929
 GameObject:
   m_ObjectHideFlags: 0
@@ -6789,6 +7149,7 @@ GameObject:
   - component: {fileID: 804608382}
   - component: {fileID: 1979327005069633382}
   - component: {fileID: 2175633835683644639}
+  - component: {fileID: 1206880267925630900}
   m_Layer: 0
   m_Name: Menus
   m_TagString: Untagged
@@ -6865,6 +7226,7 @@ MonoBehaviour:
   resolutionDropdownObject: {fileID: 317159559503807938}
   mainVolumeSlider: {fileID: 8152528223845294019}
   sensSlider: {fileID: 5268190342838967243}
+  creditsBackButton: {fileID: 0}
 --- !u!82 &2175633835683644639
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6880,7 +7242,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -6961,6 +7323,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1206880267925630900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7612947623275431929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00d422512eea1c44939a49bf2c3ed5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonChangeClip: {fileID: 8300000, guid: 588f80d970be2e348b022b60fd6f0b06, type: 3}
 --- !u!1 &7786589305217706774
 GameObject:
   m_ObjectHideFlags: 0
@@ -6973,6 +7348,7 @@ GameObject:
   - component: {fileID: 6606859862442089393}
   - component: {fileID: 6311468554973279850}
   - component: {fileID: 6274393614110584575}
+  - component: {fileID: 6216474775089520128}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -7093,6 +7469,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6216474775089520128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786589305217706774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7920188646352482381
 GameObject:
   m_ObjectHideFlags: 0
@@ -7105,6 +7510,7 @@ GameObject:
   - component: {fileID: 5756804400474599216}
   - component: {fileID: 1055082291554486168}
   - component: {fileID: 7050479309171895991}
+  - component: {fileID: 7665432519214049689}
   m_Layer: 0
   m_Name: Resume
   m_TagString: Untagged
@@ -7225,6 +7631,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7665432519214049689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7920188646352482381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8084070766910035301
 GameObject:
   m_ObjectHideFlags: 0
@@ -8455,6 +8890,7 @@ GameObject:
   - component: {fileID: 8913783344048113793}
   - component: {fileID: 6634100609634431135}
   - component: {fileID: 6515837703593025554}
+  - component: {fileID: 1412570740}
   m_Layer: 0
   m_Name: Quit
   m_TagString: Untagged
@@ -8550,7 +8986,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 7011718676255595091, guid: 2ac500a6209a8ef42b748ab83fd7940c, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 7011718676255595091, guid: 2ac500a6209a8ef42b748ab83fd7940c, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -8575,6 +9011,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1412570740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9161783106129165474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1206880267925630900}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &9187158038916967309
 GameObject:
   m_ObjectHideFlags: 0
@@ -8791,6 +9256,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2995693826518465066}
     m_Modifications:
+    - target: {fileID: 1421723364, guid: a35370b39ec35ff429be3c9cb1974d93, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1206880267925630900}
     - target: {fileID: 8885258233575601128, guid: a35370b39ec35ff429be3c9cb1974d93, type: 3}
       propertyPath: m_Name
       value: Main_Volume
@@ -8899,24 +9368,9 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetVolume_Main
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1421723367, guid: a35370b39ec35ff429be3c9cb1974d93, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a35370b39ec35ff429be3c9cb1974d93, type: 3}
---- !u!114 &8152528223845293885 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8885258234666118135, guid: a35370b39ec35ff429be3c9cb1974d93, type: 3}
-  m_PrefabInstance: {fileID: 751360548192810186}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8152528223845294019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &8152528223845294019 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8885258234666117897, guid: a35370b39ec35ff429be3c9cb1974d93, type: 3}
-  m_PrefabInstance: {fileID: 751360548192810186}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8152528224123629887 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8885258234843776501, guid: a35370b39ec35ff429be3c9cb1974d93, type: 3}
@@ -8926,6 +9380,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8152528223845294019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8885258234666117897, guid: a35370b39ec35ff429be3c9cb1974d93, type: 3}
+  m_PrefabInstance: {fileID: 751360548192810186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8152528223845293885 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8885258234666118135, guid: a35370b39ec35ff429be3c9cb1974d93, type: 3}
+  m_PrefabInstance: {fileID: 751360548192810186}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8152528223845294019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &8152528222721214243 stripped
@@ -9048,19 +9518,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2883471588793093631, guid: 907fe7a58a7fba04c96cf60ab93c2401, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1206880267925630900}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 907fe7a58a7fba04c96cf60ab93c2401, type: 3}
---- !u!114 &2847422296773884705 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2883471588375327931, guid: 907fe7a58a7fba04c96cf60ab93c2401, type: 3}
+--- !u!224 &2847422296530586113 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2883471588685677979, guid: 907fe7a58a7fba04c96cf60ab93c2401, type: 3}
   m_PrefabInstance: {fileID: 1116951393982287770}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2847422296870766951 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2883471588344415997, guid: 907fe7a58a7fba04c96cf60ab93c2401, type: 3}
@@ -9072,11 +9540,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &2847422296530586113 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2883471588685677979, guid: 907fe7a58a7fba04c96cf60ab93c2401, type: 3}
+--- !u!114 &2847422296773884705 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2883471588375327931, guid: 907fe7a58a7fba04c96cf60ab93c2401, type: 3}
   m_PrefabInstance: {fileID: 1116951393982287770}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2110206624910961761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9176,6 +9650,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6697689404820554716, guid: 6943ca3e8ad664342bcdd31ccb748dcb, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1206880267925630900}
     - target: {fileID: 6697689405516672042, guid: 6943ca3e8ad664342bcdd31ccb748dcb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -9232,6 +9710,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8250562385238105250}
     m_Modifications:
+    - target: {fileID: 269945385, guid: 07875d12ad793394086c2314797d9605, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1206880267925630900}
     - target: {fileID: 788403836041910097, guid: 07875d12ad793394086c2314797d9605, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
