@@ -10,7 +10,11 @@ public class MainMenuScript : MonoBehaviour
     public GameObject mainMenuCanvas;
     public GameObject settingMenuCanvas;
     public GameObject storyCanvas;
+    public GameObject levelSelectCanvas;
     public GameObject loadScreen;
+
+    public GameObject title;
+    public GameObject titleDropShadow;
 
     public GameObject challengeModePanel;
 
@@ -18,6 +22,7 @@ public class MainMenuScript : MonoBehaviour
     public GameObject storyButton;
     public GameObject newGameButton;
     public GameObject graphicsButton;
+    public GameObject levelSelectRightButton;
 
     [Header("Audio")]
     private AudioSource audioSource;
@@ -98,6 +103,16 @@ public class MainMenuScript : MonoBehaviour
         audioSource.Play();
         mainMenuCanvas.SetActive(false);
         EventSystem.current.SetSelectedGameObject(newGameButton);
+    }
+
+    public void DisplayLevelSelect()
+    {
+        storyCanvas.SetActive(false);
+        audioSource.Play();
+        levelSelectCanvas.SetActive(true);
+        title.SetActive(false);
+        titleDropShadow.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(levelSelectRightButton);
     }
 
     public void checkForChallengeModeController()
