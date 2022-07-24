@@ -31,7 +31,6 @@ public class LevelManager : MonoBehaviour
     int bestMins;
     int bestSecs;
     int bestMiliSecs;
-    public bool poop;
 
 
 
@@ -50,20 +49,7 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        levelLoading = true;
-        levelCompleteScreen.SetActive(true);
-        Time.timeScale = 0;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        timer();
-        checkBest();
-        displayBest();
-        playerControls.curLevel++;//This is a bug
-        SaveManager.SavePrefs();
 
-    }
 
     public void MainMenu()
     {

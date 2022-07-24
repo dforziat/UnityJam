@@ -9,6 +9,7 @@ public class DeathHandler : MonoBehaviour
     public GameObject gameOverCanvas;
     void Start()
     {
+        gameOverCanvas = GameObject.Find("GameOver Canvas");
         gameOverCanvas.SetActive(false);
     }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelSelectButton : MonoBehaviour
 {
@@ -16,10 +17,16 @@ public class LevelSelectButton : MonoBehaviour
 
     public GameObject loadScreen;
 
+    private Button button;
     void Start()
     {
         levelTitle.text = levelTitle.text + levelNum;
         displayBest();
+        button = GetComponent<Button>();
+
+        if(levelNum > PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL)){
+            button.interactable = false;
+        }
     }
 
     // Update is called once per frame
