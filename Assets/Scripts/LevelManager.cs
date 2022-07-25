@@ -8,24 +8,18 @@ public class LevelManager : MonoBehaviour
 {
     SaveManager SaveManager;
     PlayerControls playerControls;
-    public GameObject levelCompleteScreen;
+    private GameObject levelCompleteScreen;
     public static bool levelLoading;
 
-    public TextMeshProUGUI finaltimeText;
-    public TextMeshProUGUI besttimeText;
-
-    public GameObject loadScreen;
+    private TextMeshProUGUI finaltimeText;
+    private TextMeshProUGUI besttimeText;
 
     int mins;
     int secs;
     int miliSecs;
     float currentTime;
 
-
-
     string timeFormat = "{0,2:00}:{1,2:00}:{2,2:00}";
-
-
 
     float curBesttime;
     int bestMins;
@@ -36,6 +30,9 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        levelCompleteScreen = GameObject.Find("LevelCompleteCanvas");
+        finaltimeText = levelCompleteScreen.gameObject.transform.Find("playerTime").GetComponent<TextMeshProUGUI>();
+        besttimeText = levelCompleteScreen.gameObject.transform.Find("bestTime").GetComponent<TextMeshProUGUI>();
         levelLoading = false;
         levelCompleteScreen.SetActive(false);
         Time.timeScale = 1;
@@ -50,17 +47,21 @@ public class LevelManager : MonoBehaviour
     }
 
 
-
-    public void MainMenu()
+    private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(0);
+        levelLoading = true;
+        levelCompleteScreen.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        timer();
+        checkBest();
+        displayBest();
+        playerControls.curLevel++;//This is a bug
+        SaveManager.SavePrefs();
     }
 
-    public void NextLevel()
-    {
-        SceneManager.LoadSceneAsync(PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL));
-        Instantiate(loadScreen, Vector3.zero, new Quaternion(0,0,0,0));
-    }
+
 
     public void timer()
     {

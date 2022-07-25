@@ -8,6 +8,7 @@ public class ChallengeLevelManager : MonoBehaviour
     // Start is called before the first frame update
 
     GameObject levelCompleteCanvas;
+    GameObject storyLevelCompleteCanvas;
     TextMeshProUGUI levelTimeText;
     TextMeshProUGUI totalTimeText;
     RougeManager rm;
@@ -19,6 +20,8 @@ public class ChallengeLevelManager : MonoBehaviour
     {
         rm = GameObject.FindObjectOfType<RougeManager>();
         levelCompleteCanvas = GameObject.Find("ChallengeLevelCompleteCanvas");
+        storyLevelCompleteCanvas = GameObject.Find("LevelCompleteCanvas");
+        storyLevelCompleteCanvas.SetActive(false);
         levelCompleteCanvas.SetActive(false);
 
         //setup player guns
@@ -62,6 +65,12 @@ public class ChallengeLevelManager : MonoBehaviour
         {
             GameObject runCompleteText = levelCompleteCanvas.transform.Find("RunCompleteText").gameObject;
             runCompleteText.SetActive(false);
+
+            float challengeBestTime = PlayerPrefs.GetFloat(PlayerPrefsConstants.CHALLENGE_BEST_TIME);
+            if(rm.totalTime > challengeBestTime)
+            {
+                PlayerPrefs.SetFloat(PlayerPrefsConstants.CHALLENGE_BEST_TIME, rm.totalTime);
+            }
 
         }
         else

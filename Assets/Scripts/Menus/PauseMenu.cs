@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
     [Header("Controller Navigation")]
     public GameObject resumeButton;
     public GameObject graphicsButton;
+    public Button restartButton;
 
 
 
@@ -35,6 +36,10 @@ public class PauseMenu : MonoBehaviour
     public void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        if(SceneManager.GetActiveScene().name == "RandomLevel")
+        {
+            restartButton.interactable = false;
+        }
     }
 
     void Update()
@@ -114,6 +119,12 @@ public class PauseMenu : MonoBehaviour
         PauseMenuObj.SetActive(false);
         EventSystem.current.SetSelectedGameObject(graphicsButton);
         audioSource.Play();
+    }
+
+    public void mainMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
+        Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
     }
 
 

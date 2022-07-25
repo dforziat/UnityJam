@@ -2599,6 +2599,17 @@ MonoBehaviour:
   - {fileID: 7419672412132425511, guid: 3e0355224112ba047aad11df77eb3097, type: 3}
   unlockedWeaponList: []
   loadScreen: {fileID: 17617269}
+--- !u!114 &619832879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4527935136212030996, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 1599512380}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &624971787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4456,6 +4467,7 @@ GameObject:
   - component: {fileID: 1087266142}
   - component: {fileID: 1087266141}
   - component: {fileID: 1087266140}
+  - component: {fileID: 1087266143}
   m_Layer: 5
   m_Name: Next Level Button
   m_TagString: Untagged
@@ -4513,7 +4525,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: -1971449352297718831, guid: acc31179706ae754ca3de1a4c901485d, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: -1971449352297718831, guid: acc31179706ae754ca3de1a4c901485d, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -4576,6 +4588,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087266138}
   m_CullTransparentMesh: 1
+--- !u!114 &1087266143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087266138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1810486893}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1089216079
 GameObject:
   m_ObjectHideFlags: 0
@@ -6316,6 +6357,10 @@ PrefabInstance:
       propertyPath: resumeButton
       value: 
       objectReference: {fileID: 1599512392}
+    - target: {fileID: 804608382, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: restartButton
+      value: 
+      objectReference: {fileID: 619832879}
     - target: {fileID: 1727830517, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: cam
       value: 
@@ -6372,10 +6417,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1904915151}
-    - target: {fileID: 4527935136212030996, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
-      propertyPath: m_SpriteState.m_SelectedSprite
-      value: 
-      objectReference: {fileID: -6987349969777580252, guid: 37f774352c8a4e146b07a84c4ecf6ae3, type: 3}
     - target: {fileID: 4644555427092963383, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6500,10 +6541,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6274393614110584575, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
-      propertyPath: m_SpriteState.m_SelectedSprite
-      value: 
-      objectReference: {fileID: 3608817826265355225, guid: 003d4b39ced59f347ab2c38a10091580, type: 3}
     - target: {fileID: 6329683975242372969, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -6522,7 +6559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7133267178507618293, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7169867674498315482, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: cam
@@ -6651,17 +6688,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 926311274628762865, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
   m_PrefabInstance: {fileID: 1599512380}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1599512388 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1895094242159465107, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
-  m_PrefabInstance: {fileID: 1599512380}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c82cd691025fc8d4a8ceec3852df3953, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1599512389 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2007177263493338617, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
@@ -7854,6 +7880,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6333409251669139148, guid: 7868d06b12a28524db820bbe7ce748d9, type: 3}
   m_PrefabInstance: {fileID: 1795155914}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1810486893 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1206880267925630900, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 1599512380}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00d422512eea1c44939a49bf2c3ed5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1810486894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 804608382, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+  m_PrefabInstance: {fileID: 1599512380}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7331487b473974893e109686bdd584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1817675665
 GameObject:
   m_ObjectHideFlags: 0
@@ -9337,6 +9385,7 @@ GameObject:
   - component: {fileID: 2105965151}
   - component: {fileID: 2105965150}
   - component: {fileID: 2105965149}
+  - component: {fileID: 2105965152}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -9394,7 +9443,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 3608817826265355225, guid: 003d4b39ced59f347ab2c38a10091580, type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 3608817826265355225, guid: 003d4b39ced59f347ab2c38a10091580, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -9407,9 +9456,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1599512388}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: MainMenu
+      - m_Target: {fileID: 1810486894}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: mainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9457,6 +9506,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105965147}
   m_CullTransparentMesh: 1
+--- !u!114 &2105965152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105965147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1810486893}
+          m_TargetAssemblyTypeName: EventSystemScript, Assembly-CSharp
+          m_MethodName: playButtonChangeClip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &2118944271
 PrefabInstance:
   m_ObjectHideFlags: 0
