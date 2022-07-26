@@ -66,20 +66,27 @@ public class ChallengeLevelManager : MonoBehaviour
             GameObject runCompleteText = levelCompleteCanvas.transform.Find("RunCompleteText").gameObject;
             runCompleteText.SetActive(false);
 
-            float challengeBestTime = PlayerPrefs.GetFloat(PlayerPrefsConstants.CHALLENGE_BEST_TIME);
-            if(rm.totalTime > challengeBestTime)
-            {
-                PlayerPrefs.SetFloat(PlayerPrefsConstants.CHALLENGE_BEST_TIME, rm.totalTime);
-            }
+            GameObject bestTimeText = levelCompleteCanvas.transform.Find("BestTimeText").gameObject;
+            bestTimeText.SetActive(false);
+
+            GameObject bestTimeNum = levelCompleteCanvas.transform.Find("bestTime").gameObject;
+            bestTimeNum.SetActive(false);
 
         }
         else
         {
+            float challengeBestTime = PlayerPrefs.GetFloat(PlayerPrefsConstants.CHALLENGE_BEST_TIME, 0);
+            if (rm.totalTime < challengeBestTime || challengeBestTime == 0)
+            {
+                PlayerPrefs.SetFloat(PlayerPrefsConstants.CHALLENGE_BEST_TIME, rm.totalTime);
+            }
+
             GameObject nextLevelButton = levelCompleteCanvas.transform.Find("Next Level Button").gameObject;
             nextLevelButton.SetActive(false);
 
             GameObject levelCompleteText = levelCompleteCanvas.transform.Find("LevelComplete").gameObject;
             levelCompleteText.SetActive(false);
+
         }
 
         saveUnlockedWeapons();
