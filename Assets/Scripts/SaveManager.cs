@@ -56,6 +56,14 @@ public class SaveManager : MonoBehaviour
         //Set curLevel
         PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, playerControls.curLevel);
 
+        //Set Max Level
+        int highestLevel = PlayerPrefs.GetInt(PlayerPrefsConstants.HIGHEST_LVL, 0);
+        int curLevel = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL);
+        if (highestLevel < curLevel)
+        {
+            PlayerPrefs.SetInt(PlayerPrefsConstants.HIGHEST_LVL, curLevel);
+        }
+
         //Set Last Weapon
         PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_WEP, weaponSwitching.curWeapon);
 

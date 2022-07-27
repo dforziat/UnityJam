@@ -24,6 +24,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject resumeButton;
     public GameObject graphicsButton;
     public Button restartButton;
+    private GameObject lastSelectedButton;
 
 
 
@@ -49,6 +50,7 @@ public class PauseMenu : MonoBehaviour
             return;
         }
         TogglePause();
+        checkForControllerReconnect();
     }
 
 
@@ -131,5 +133,21 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void checkForControllerReconnect()
+    {
+        if (EventSystem.current.currentSelectedGameObject != null)
+        {
+            lastSelectedButton = EventSystem.current.currentSelectedGameObject;
+        }
+
+        if (EventSystem.current.currentSelectedGameObject == null)
+        {
+            if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+            {
+                EventSystem.current.SetSelectedGameObject(lastSelectedButton);
+            }
+        }
     }
 }

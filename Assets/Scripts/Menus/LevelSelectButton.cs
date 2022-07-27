@@ -24,7 +24,7 @@ public class LevelSelectButton : MonoBehaviour
         displayBest();
         button = GetComponent<Button>();
 
-        if(levelNum > PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL)){
+        if(levelNum > PlayerPrefs.GetInt(PlayerPrefsConstants.HIGHEST_LVL)){
             button.interactable = false;
         }
     }
@@ -48,6 +48,7 @@ public class LevelSelectButton : MonoBehaviour
 
     public void loadLevel()
     {
+        PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, levelNum);
         SceneManager.LoadSceneAsync(levelNum);
         Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
     }

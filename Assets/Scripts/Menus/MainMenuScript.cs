@@ -17,6 +17,9 @@ public class MainMenuScript : MonoBehaviour
     public GameObject titleDropShadow;
 
     public GameObject challengeModePanel;
+    public QuestionMark questionMark;
+
+    GameObject lastSelectedButton;
 
     [Header("Controller Navigation")]
     public GameObject storyButton;
@@ -34,13 +37,19 @@ public class MainMenuScript : MonoBehaviour
         loadScreen.SetActive(false);
         Time.timeScale = 1f;
         EventSystem.current.SetSelectedGameObject(storyButton);
+        lastSelectedButton = storyButton;
+        if (Input.GetJoystickNames().Length <= 0)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
     }
 
 
     void Update()
     {
         checkForChallengeModeController();
-        GameObject currentSelected = EventSystem.current.currentSelectedGameObject;
+
+        checkForControllerReconnect();
     }
 
     public void NewGame()
@@ -82,6 +91,9 @@ public class MainMenuScript : MonoBehaviour
         mainMenuCanvas.SetActive(true);
         storyCanvas.SetActive(false);
         settingMenuCanvas.SetActive(false);
+        levelSelectCanvas.SetActive(false);
+        title.SetActive(true);
+        titleDropShadow.SetActive(true);
         audioSource.Play();
         EventSystem.current.SetSelectedGameObject(storyButton);
     }
@@ -117,13 +129,29 @@ public class MainMenuScript : MonoBehaviour
 
     public void checkForChallengeModeController()
     {
-        if (EventSystem.current.currentSelectedGameObject.name == "ChallengeMode_Button")
+        if ((EventSystem.current.currentSelectedGameObject != null && EventSystem.current.currentSelectedGameObject.name == "ChallengeMode_Button") || questionMark.pointerEntered)
         {
             challengeModePanel.SetActive(true);
         }
         else
         {
             challengeModePanel.SetActive(false);
+        }
+    }
+
+    public void checkForControllerReconnect()
+    {
+        if (EventSystem.current.currentSelectedGameObject != null)
+        {
+            lastSelectedButton = EventSystem.current.currentSelectedGameObject;
+        }
+
+        if (EventSystem.current.currentSelectedGameObject == null)
+        {
+            if(Input.GetAxisRaw("Horizontal") !=  0 || Input.GetAxisRaw("Vertical") != 0)
+            {
+                EventSystem.current.SetSelectedGameObject(lastSelectedButton);
+            }
         }
     }
 }

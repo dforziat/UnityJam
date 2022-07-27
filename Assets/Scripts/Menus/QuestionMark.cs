@@ -8,6 +8,7 @@ public class QuestionMark : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     // Start is called before the first frame update
 
     public GameObject panel;
+    public bool pointerEntered = false;
     void Start()
     {
         panel.SetActive(false);
@@ -21,11 +22,13 @@ public class QuestionMark : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        panel.SetActive(true);
+        //panel.SetActive(true);
+        pointerEntered = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        panel.SetActive(false);
+        //panel.SetActive(false);
+        pointerEntered = false;
     }
 }
