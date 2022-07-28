@@ -23,6 +23,7 @@ public class ChallengeLevelManager : MonoBehaviour
         storyLevelCompleteCanvas = GameObject.Find("LevelCompleteCanvas");
         storyLevelCompleteCanvas.SetActive(false);
         levelCompleteCanvas.SetActive(false);
+        PauseMenu.GameIsPaused = false;
 
         //setup player guns
         loadUnlockedWeapons();
@@ -43,6 +44,7 @@ public class ChallengeLevelManager : MonoBehaviour
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        PauseMenu.GameIsPaused = true;
 
         //Set Level time on GUI
         int mins = (int)(Time.timeSinceLevelLoad / 60);

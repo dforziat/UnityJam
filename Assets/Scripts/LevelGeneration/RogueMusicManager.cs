@@ -11,7 +11,8 @@ public class RogueMusicManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         int randomNum = Random.Range(0, musicList.Count);
-        audioSource.PlayOneShot(musicList[randomNum]);
+        audioSource.clip = musicList[randomNum];
+        audioSource.Play();
     }
 
     // Update is called once per frame
