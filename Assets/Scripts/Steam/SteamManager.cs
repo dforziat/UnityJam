@@ -25,6 +25,8 @@ public class SteamManager : MonoBehaviour {
 	protected static bool s_EverInitialized = false;
 
 	protected static SteamManager s_instance;
+
+	private bool canCheckForUpdate = true;
 	protected static SteamManager Instance {
 		get {
 			if (s_instance == null) {
@@ -118,7 +120,6 @@ public class SteamManager : MonoBehaviour {
 		m_bInitialized = SteamAPI.Init();
 		if (!m_bInitialized) {
 			Debug.LogError("[Steamworks.NET] SteamAPI_Init() failed. Refer to Valve's documentation or the comment above this line for more information.", this);
-
 			return;
 		}
 
@@ -164,9 +165,20 @@ public class SteamManager : MonoBehaviour {
 		if (!m_bInitialized) {
 			return;
 		}
+        if (canCheckForUpdate)
+        {
+			canCheckForUpdate = false;
+			Invoke("steamCheckCoroutine", 5f);
+        }
 
+	}
+
+	private void steamCheckCoroutine()
+    {
+		//Debug.Log("Checking for steam callbacks");
 		// Run Steam client callbacks
 		SteamAPI.RunCallbacks();
+		canCheckForUpdate = true;
 	}
 #else
 	public static bool Initialized {
