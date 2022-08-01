@@ -11,7 +11,7 @@ public class Boss3Script : MonoBehaviour
     private const int maxHealth = 170;
     private const float speed = 3.5f;
     private const float runSpeed = 5f;
-    private const float meleeRange = 2.5f;
+    private const float meleeRange = 4f;
 
     private int bossStage = 1;
 
@@ -301,21 +301,32 @@ public class Boss3Script : MonoBehaviour
 
             if (state == SWORD_SWING)
             {
-                navMeshAgent.SetDestination(playerTransform.position);
-                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= meleeRange)
+                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= meleeRange) //&& meleeCollsionCheck())
                 {
+                    Debug.Log("Melee Distance");
+                    rotateTowardsPlayer();
                     animator.SetTrigger("saber");
                     state = ANIMATION;
+                }
+                else
+                {
+                    navMeshAgent.SetDestination(playerTransform.position);
                 }
             }
 
             if (state == SWORD_JUMP)
             {
-                navMeshAgent.SetDestination(playerTransform.position);
-                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= meleeRange)
+                
+                if (Vector3.Distance(gameObject.transform.position, playerTransform.position) <= meleeRange)// && meleeCollsionCheck())
                 {
+                    Debug.Log("Melee Distance");
+                    rotateTowardsPlayer();
                     animator.SetTrigger("saberjump");
                     state = ANIMATION;
+                }
+                else
+                {
+                    navMeshAgent.SetDestination(playerTransform.position);
                 }
             }
 
@@ -414,6 +425,13 @@ public class Boss3Script : MonoBehaviour
     {
         navMeshAgent.speed = 0;
         yield return new WaitForSeconds(1.5f);
+        navMeshAgent.speed = speed;
+    }
+
+    private IEnumerator microPause()
+    {
+        navMeshAgent.speed = 0;
+        yield return new WaitForSeconds(.3f);
         navMeshAgent.speed = speed;
     }
 
@@ -525,4 +543,5 @@ public class Boss3Script : MonoBehaviour
         animator.SetTrigger("activate");
         processLogic();
     }
+
 }

@@ -12,10 +12,14 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueBox;
 
     private Queue<string> sentences;
-    
+
+    private AudioSource audioSource;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         dialogueBox.SetActive(false);
         sentences = new Queue<string>();
     }
@@ -58,11 +62,14 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
+            audioSource.pitch += Random.Range(-.6f, .6f);
+            audioSource.Play();
+            audioSource.pitch = 1f;
             dialogueText.text += letter;
-            yield return new WaitForSeconds(.02f);
+            yield return new WaitForSeconds(.05f);
         }
         yield return new WaitForSeconds(2f);
-
+       // Debug.Log("Text: " + dialogueText.text);
         DisplayNextSentences();
     }
 

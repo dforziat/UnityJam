@@ -24,14 +24,14 @@ public class DynamicMainMenu : MonoBehaviour
             Act3.SetActive(false);
             return;
         }
-        if (PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) > 6 && PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) <= 12)
+        else if (PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) > 6 && PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) <= 12)
         {
             Act1.SetActive(false);
             Act2.SetActive(true);
             Act3.SetActive(false);
             return;
         }
-        if (PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) > 12)
+        else if (PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) > 12)
         {
             Act1.SetActive(false);
             Act2.SetActive(false);
