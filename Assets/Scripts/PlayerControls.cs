@@ -79,14 +79,14 @@ public class PlayerControls : MonoBehaviour
 
         hpText.text = curHp.ToString("D3");
 
-        lookSensitivity = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
+        lookSensitivity = SaveData.Instance.mouseSens;
 
 
         //failsafe
         if (lookSensitivity <= 0f)
         {
             lookSensitivity = 1f;
-            PlayerPrefs.SetFloat(PlayerPrefsConstants.MOUSE_SENS, 1);
+            SaveData.Instance.mouseSens = 1f;
         }
 
     }
@@ -174,7 +174,7 @@ public class PlayerControls : MonoBehaviour
 
     public void UpdateLookSens()
     {
-        lookSensitivity = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
+        lookSensitivity = SaveData.Instance.mouseSens;
     }
     
     public void TakeDamage(int damage)

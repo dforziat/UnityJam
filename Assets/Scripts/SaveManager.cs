@@ -143,14 +143,14 @@ public class SaveManager : MonoBehaviour
             playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
 
             //HandgunAmmo
-            PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, 20);
+           // PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, 20);
 
             //ShotgunAmmo;
-            PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN_AMMO, 20);
+            //PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN_AMMO, 20);
 
 
             //Current HP
-            PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_HP, 100);
+            //PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_HP, 100);
 
             //Set curLevel
             PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, SceneManager.GetActiveScene().buildIndex);

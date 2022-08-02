@@ -16,22 +16,22 @@ public class DynamicMainMenu : MonoBehaviour
     private void Awake()
     {
 
-        Debug.Log("CUR LEVEL= "+PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL));
-        if(PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) <=6)
+        Debug.Log("CUR LEVEL= "+ SaveData.Instance.currentLevel);
+        if(SaveData.Instance.currentLevel <= 6)
         {
             Act1.SetActive(true);
             Act2.SetActive(false);
             Act3.SetActive(false);
             return;
         }
-        else if (PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) > 6 && PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) <= 12)
+        else if (SaveData.Instance.currentLevel > 6 && SaveData.Instance.currentLevel <= 12)
         {
             Act1.SetActive(false);
             Act2.SetActive(true);
             Act3.SetActive(false);
             return;
         }
-        else if (PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) > 12)
+        else if (SaveData.Instance.currentLevel > 12)
         {
             Act1.SetActive(false);
             Act2.SetActive(false);

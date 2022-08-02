@@ -55,16 +55,16 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
-        firstLoad();
+     //   firstLoad();
         LoadResolutions();
         LoadSettings();
 
 
 
         //FAILSAFE
-        if (PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS) == 0)
+        if (SaveData.Instance.mouseSens <= 0)
         {
-            PlayerPrefs.SetFloat(PlayerPrefsConstants.MOUSE_SENS, 1f);
+            SaveData.Instance.mouseSens = 1f;
         }
 
 
@@ -78,27 +78,27 @@ public class Settings : MonoBehaviour
         audioMixer.SetFloat("masterVolume", Mathf.Log10(volume)*20);
         Debug.Log(volume);
         volText_Main.text =(Mathf.Round(volume * 100)).ToString();
-        PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, volume);
+        SaveData.Instance.masterVolume = volume;
     }
 
     public void SetVolume_SFX(float volume)
     {
         audioMixer.SetFloat("sfxVolume", Mathf.Log10(volume) * 20);
         volText_SFX.text = (Mathf.Round(volume * 100)).ToString();
-        PlayerPrefs.SetFloat(PlayerPrefsConstants.SFX_VOLUME, volume);
+        SaveData.Instance.sfxVolume = volume;
     }
 
     public void SetVolume_Music(float volume)
     {
         audioMixer.SetFloat("musicVolume", Mathf.Log10(volume) * 20);
         volText_Music.text = (Mathf.Round(volume * 100)).ToString();
-        PlayerPrefs.SetFloat(PlayerPrefsConstants.MUSIC_VOLUME, volume);
+        SaveData.Instance.musicVolume = volume;
     }
 
     public void SetSensitivity(float Sensitivity)
     {
         mouseSensText.text = (Mathf.Round(Sensitivity * 100)).ToString();
-        PlayerPrefs.SetFloat(PlayerPrefsConstants.MOUSE_SENS, Sensitivity);
+        SaveData.Instance.mouseSens = Sensitivity;
     }
 
     public void SetFullscreen(bool isFullscreen)
@@ -112,8 +112,10 @@ public class Settings : MonoBehaviour
         Resolution resolution = finalRes[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
 
-        PlayerPrefs.SetInt(PlayerPrefsConstants.RESOLUTION_WIDTH, resolution.width);
-        PlayerPrefs.SetInt(PlayerPrefsConstants.RESOLUTION_HEIGHT, resolution.height);
+       // PlayerPrefs.SetInt(PlayerPrefsConstants.RESOLUTION_WIDTH, resolution.width);
+        SaveData.Instance.resolutionWidth = resolution.width;
+       // PlayerPrefs.SetInt(PlayerPrefsConstants.RESOLUTION_HEIGHT, resolution.height);
+        SaveData.Instance.resolutionHeight = resolution.height;
     }
 
     void LoadResolutions()
@@ -169,24 +171,21 @@ public class Settings : MonoBehaviour
     void LoadSettings()
     {
         //Volume
-        audioMixer.SetFloat("masterVolume", PlayerPrefs.GetFloat(PlayerPrefsConstants.MASTER_VOLUME));
-        volumeSlider_Main.value = PlayerPrefs.GetFloat(PlayerPrefsConstants.MASTER_VOLUME);
+        audioMixer.SetFloat("masterVolume", SaveData.Instance.masterVolume);
+        volumeSlider_Main.value = SaveData.Instance.masterVolume;
 
-        audioMixer.SetFloat("sfxVolume", PlayerPrefs.GetFloat(PlayerPrefsConstants.SFX_VOLUME));
-        volumeSlider_SFX.value = PlayerPrefs.GetFloat(PlayerPrefsConstants.SFX_VOLUME);
+        audioMixer.SetFloat("sfxVolume", SaveData.Instance.sfxVolume);
+        volumeSlider_SFX.value = SaveData.Instance.sfxVolume;
 
-        audioMixer.SetFloat("musicVolume", PlayerPrefs.GetFloat(PlayerPrefsConstants.MUSIC_VOLUME));
-        volumeSlider_Music.value = PlayerPrefs.GetFloat(PlayerPrefsConstants.MUSIC_VOLUME);
+        audioMixer.SetFloat("musicVolume", SaveData.Instance.musicVolume);
+        volumeSlider_Music.value = SaveData.Instance.musicVolume;
 
         //Resolution
-        Screen.SetResolution(PlayerPrefs.GetInt(PlayerPrefsConstants.RESOLUTION_WIDTH), PlayerPrefs.GetInt(PlayerPrefsConstants.RESOLUTION_HEIGHT), true);
+        Screen.SetResolution(SaveData.Instance.resolutionWidth, SaveData.Instance.resolutionHeight, true);
        
 
         //Mouse Sensitivity
-        mouseSensSlider.value = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
-
-
-
+        mouseSensSlider.value = SaveData.Instance.mouseSens;
 
     }
 
@@ -264,17 +263,5 @@ public class Settings : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(sensSlider);
     }
 
-    public void firstLoad()
-    {
-        //first time load defaults - sounds only for now
-        if (PlayerPrefs.GetInt(PlayerPrefsConstants.FIRST_LOAD) != 1)
-        {
-            PlayerPrefs.SetFloat(PlayerPrefsConstants.MASTER_VOLUME, 1f);
-            PlayerPrefs.SetFloat(PlayerPrefsConstants.MUSIC_VOLUME, 1f);
-            PlayerPrefs.SetFloat(PlayerPrefsConstants.SFX_VOLUME, 1f);
-
-            PlayerPrefs.SetInt(PlayerPrefsConstants.FIRST_LOAD, 1);
-        }
-    }
 
 }

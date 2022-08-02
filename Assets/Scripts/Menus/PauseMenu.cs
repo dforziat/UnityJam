@@ -66,7 +66,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = false;
         GameIsPaused = false;
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
-        playerControls.lookSensitivity = PlayerPrefs.GetFloat(PlayerPrefsConstants.MOUSE_SENS);
+        playerControls.lookSensitivity = SaveData.Instance.mouseSens;
 
         if(audioSource != null)
         {
