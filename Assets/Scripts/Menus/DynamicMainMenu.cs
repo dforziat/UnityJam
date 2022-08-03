@@ -16,8 +16,14 @@ public class DynamicMainMenu : MonoBehaviour
     private void Awake()
     {
 
-        Debug.Log("CUR LEVEL= "+ SaveData.Instance.currentLevel);
-        if(SaveData.Instance.currentLevel <= 6)
+
+
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        if (SaveData.Instance.currentLevel <= 6)
         {
             Act1.SetActive(true);
             Act2.SetActive(false);
@@ -44,14 +50,6 @@ public class DynamicMainMenu : MonoBehaviour
             Act2.SetActive(false);
             Act3.SetActive(false);
         }
-
-
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //test
     }
 
     // Update is called once per frame

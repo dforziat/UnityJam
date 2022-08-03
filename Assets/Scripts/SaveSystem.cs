@@ -42,7 +42,7 @@ public static class SaveSystem
             SaveData.Instance.bestTime = new float[18];
 
             string json = JsonUtility.ToJson(SaveData.Instance);
-            Debug.Log("JSON: " + json);
+            Debug.Log("Create NEW JSON: " + json);
 
             using (StreamWriter sw = new StreamWriter(path))
             {

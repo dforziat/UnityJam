@@ -24,7 +24,7 @@ public class LevelSelectButton : MonoBehaviour
         displayBest();
         button = GetComponent<Button>();
 
-        if(levelNum > PlayerPrefs.GetInt(PlayerPrefsConstants.HIGHEST_LVL)){
+        if(levelNum > SaveData.Instance.highestLevel){
             button.interactable = false;
         }
     }
@@ -37,7 +37,8 @@ public class LevelSelectButton : MonoBehaviour
 
     public void displayBest()
     {
-        float curBesttime = PlayerPrefs.GetFloat(PlayerPrefsConstants.BEST_TIME + levelNum);
+        float curBesttime = SaveData.Instance.bestTime[levelNum];
+
 
         float bestMins = (int)(curBesttime / 60);
         float bestSecs = (int)(curBesttime % 60);
@@ -48,7 +49,7 @@ public class LevelSelectButton : MonoBehaviour
 
     public void loadLevel()
     {
-        PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, levelNum);
+        SaveData.Instance.currentLevel = levelNum;
         SceneManager.LoadSceneAsync(levelNum);
         Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
     }

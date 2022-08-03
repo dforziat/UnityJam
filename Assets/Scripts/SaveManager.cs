@@ -43,46 +43,36 @@ public class SaveManager : MonoBehaviour
         weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
         weaponSwitching = GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<WeaponSwitching>();
 
-        //HandgunAmmo
-        //PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, playerControls.handgunAmmo);
-
-        //ShotgunAmmo;
-        // PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN_AMMO, playerControls.shotgunAmmo);
-
-
-        //Current HP
-        //PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_HP, playerControls.curHp);
-
         //Set curLevel
-        PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, playerControls.curLevel);
+        SaveData.Instance.currentLevel = playerControls.curLevel;
 
         //Set Max Level
-        int highestLevel = PlayerPrefs.GetInt(PlayerPrefsConstants.HIGHEST_LVL, 0);
-        int curLevel = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL);
+        int highestLevel = SaveData.Instance.highestLevel;
+        int curLevel = SaveData.Instance.currentLevel;
         if (highestLevel < curLevel)
         {
-            PlayerPrefs.SetInt(PlayerPrefsConstants.HIGHEST_LVL, curLevel);
+            SaveData.Instance.highestLevel = curLevel;
         }
 
         //Set Last Weapon
-        PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_WEP, weaponSwitching.curWeapon);
+        SaveData.Instance.curWeapon = weaponSwitching.curWeapon;
 
 
         //Set Weapons
         if (shotgun.tag == "unlocked")
-            PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN, 1);
+            SaveData.Instance.shotgun = true;
 
         if (grapplegun.tag == "unlocked")
-            PlayerPrefs.SetInt(PlayerPrefsConstants.GRAPPLEGUN, 1);
+            SaveData.Instance.grapplegun = true;
 
         if (richochetgun.tag == "unlocked")
-            PlayerPrefs.SetInt(PlayerPrefsConstants.RICHOCHETGUN, 1);
+            SaveData.Instance.richochetgun = true;
 
         if (machinegun.tag == "unlocked")
-            PlayerPrefs.SetInt(PlayerPrefsConstants.MACHINEGUN, 1);
+            SaveData.Instance.machinegun = true;
 
         if (spear.tag == "unlocked")
-            PlayerPrefs.SetInt(PlayerPrefsConstants.SPEAR, 1);
+            SaveData.Instance.spear = true;
 
         //Save
         PlayerPrefs.Save();
@@ -92,40 +82,36 @@ public class SaveManager : MonoBehaviour
 
     public void LoadPref()
     {
-        //Level Start Default Ammo
-        //playerControls.handgunAmmo = 20;
-       // playerControls.shotgunAmmo = 10;
-       // playerControls.curHp = 100;
 
         if(SceneManager.GetActiveScene().name == "RandomLevel")
         {
             return;
         }
 
-        playerControls.curLevel = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL);
-        weaponSwitching.curWeapon = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_WEP);
+        playerControls.curLevel = SaveData.Instance.currentLevel;
+        weaponSwitching.curWeapon = SaveData.Instance.curWeapon;
 
-        if (PlayerPrefs.GetInt(PlayerPrefsConstants.SHOTGUN) == 1)
+        if (SaveData.Instance.shotgun)
             shotgun.tag = "unlocked";
         else
             shotgun.tag = "Untagged";
 
-        if (PlayerPrefs.GetInt(PlayerPrefsConstants.GRAPPLEGUN) == 1)
+        if (SaveData.Instance.grapplegun)
             grapplegun.tag = "unlocked";
         else
             grapplegun.tag = "Untagged";
 
-        if (PlayerPrefs.GetInt(PlayerPrefsConstants.RICHOCHETGUN) == 1)
+        if (SaveData.Instance.richochetgun)
             richochetgun.tag = "unlocked";
           else
             richochetgun.tag = "Untagged";
 
-          if (PlayerPrefs.GetInt(PlayerPrefsConstants.MACHINEGUN) == 1)
+          if (SaveData.Instance.machinegun)
             machinegun.tag = "unlocked";
           else
             machinegun.tag = "Untagged";
 
-          if (PlayerPrefs.GetInt(PlayerPrefsConstants.SPEAR) == 1)
+          if (SaveData.Instance.spear)
             spear.tag = "unlocked";
           else
             spear.tag = "Untagged";
@@ -142,22 +128,12 @@ public class SaveManager : MonoBehaviour
         {
             playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
 
-            //HandgunAmmo
-           // PlayerPrefs.SetInt(PlayerPrefsConstants.HANDGUN_AMMO, 20);
-
-            //ShotgunAmmo;
-            //PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN_AMMO, 20);
-
-
-            //Current HP
-            //PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_HP, 100);
-
             //Set curLevel
-            PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, SceneManager.GetActiveScene().buildIndex);
+            SaveData.Instance.currentLevel = SceneManager.GetActiveScene().buildIndex;
 
             //Delete Weapons
-            PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN, 0);
-            PlayerPrefs.SetInt(PlayerPrefsConstants.GRAPPLEGUN, 0);
+            //PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN, 0);
+            //PlayerPrefs.SetInt(PlayerPrefsConstants.GRAPPLEGUN, 0);
 
             //Save
             PlayerPrefs.Save();

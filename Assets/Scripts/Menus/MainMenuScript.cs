@@ -55,24 +55,28 @@ public class MainMenuScript : MonoBehaviour
     public void NewGame()
     {
         SceneManager.LoadScene("Level1");
-        PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, 1);
+        SaveData.Instance.currentLevel = 1;
         //Add in "Default Values" for player prefs, to esstentially delete saved data and start fresh
-        PlayerPrefs.SetInt(PlayerPrefsConstants.GRAPPLEGUN, 0);
-        PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN, 0);
+        SaveData.Instance.grapplegun = false;
+        SaveData.Instance.shotgun = false;
+        SaveData.Instance.richochetgun = false;
+        SaveData.Instance.machinegun = false;
+        SaveData.Instance.spear = false;
+
         audioSource.Play();
     }
 
     public void ContinueButton()
     {
         //failsafe for how many levels we have
-        if (PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) < 1 || PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL) > 19)
+        if (SaveData.Instance.currentLevel < 1 || SaveData.Instance.currentLevel > 19)
         {
-            PlayerPrefs.SetInt(PlayerPrefsConstants.CUR_LVL, 1);
-            SceneManager.LoadScene(PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL));
+            SaveData.Instance.currentLevel = 1;
+            SceneManager.LoadScene(SaveData.Instance.currentLevel);
         }
         else
         {
-            SceneManager.LoadScene(PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_LVL));
+            SceneManager.LoadScene(SaveData.Instance.currentLevel);
         }
         audioSource.Play();
     }

@@ -77,10 +77,10 @@ public class ChallengeLevelManager : MonoBehaviour
         }
         else
         {
-            float challengeBestTime = PlayerPrefs.GetFloat(PlayerPrefsConstants.CHALLENGE_BEST_TIME, 0);
+            float challengeBestTime = SaveData.Instance.challengeBestTime;
             if (rm.totalTime < challengeBestTime || challengeBestTime == 0)
             {
-                PlayerPrefs.SetFloat(PlayerPrefsConstants.CHALLENGE_BEST_TIME, rm.totalTime);
+                SaveData.Instance.challengeBestTime = rm.totalTime;
             }
 
             GameObject nextLevelButton = levelCompleteCanvas.transform.Find("Next Level Button").gameObject;

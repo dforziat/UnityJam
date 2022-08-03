@@ -15,7 +15,7 @@ public class WeaponSwitching : MonoBehaviour
         //this should load in the save manager, but that version doesn't seem to work -Dylan
         if(SceneManager.GetActiveScene().name != "RandomLevel")
         {
-            curWeapon = PlayerPrefs.GetInt(PlayerPrefsConstants.CUR_WEP);
+            curWeapon = SaveData.Instance.curWeapon;
         }
 
         selectedWeapon = curWeapon;

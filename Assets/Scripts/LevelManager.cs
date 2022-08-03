@@ -76,17 +76,17 @@ public class LevelManager : MonoBehaviour
 
     public void checkBest()
     {
-        curBesttime = PlayerPrefs.GetFloat(PlayerPrefsConstants.BEST_TIME + playerControls.curLevel);
+        curBesttime = SaveData.Instance.bestTime[playerControls.curLevel];
 
         if (currentTime < curBesttime || curBesttime == 0)
         {
-            PlayerPrefs.SetFloat(PlayerPrefsConstants.BEST_TIME + playerControls.curLevel, currentTime);
+            SaveData.Instance.bestTime[playerControls.curLevel] = currentTime;
         }
     }
 
     public void displayBest()
     {
-        curBesttime = PlayerPrefs.GetFloat(PlayerPrefsConstants.BEST_TIME + playerControls.curLevel);
+        curBesttime = SaveData.Instance.bestTime[playerControls.curLevel];
 
         bestMins = (int)(curBesttime / 60);
         bestSecs = (int)(curBesttime % 60);

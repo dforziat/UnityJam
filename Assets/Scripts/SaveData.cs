@@ -24,8 +24,6 @@ public class SaveData
 
     public float mouseSens;
 
-    public bool firstLoad;
-
     public float[] bestTime;
     public float challengeBestTime;
 
