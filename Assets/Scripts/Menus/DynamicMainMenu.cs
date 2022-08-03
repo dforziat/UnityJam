@@ -13,31 +13,29 @@ public class DynamicMainMenu : MonoBehaviour
     // if cur level >12 = act 3
     //else act 1
 
-    private void Awake()
-    {
-
-
-
-    }
-
     // Start is called before the first frame update
     void Start()
     {
-        if (SaveData.Instance.currentLevel <= 6)
+         int currentLevel = 1;
+        if(SaveData.Instance != null)
+        {
+            currentLevel = SaveData.Instance.currentLevel;
+        }
+        if (currentLevel <= 6)
         {
             Act1.SetActive(true);
             Act2.SetActive(false);
             Act3.SetActive(false);
             return;
         }
-        else if (SaveData.Instance.currentLevel > 6 && SaveData.Instance.currentLevel <= 12)
+        else if (currentLevel > 6 && currentLevel <= 12)
         {
             Act1.SetActive(false);
             Act2.SetActive(true);
             Act3.SetActive(false);
             return;
         }
-        else if (SaveData.Instance.currentLevel > 12)
+        else if (currentLevel > 12)
         {
             Act1.SetActive(false);
             Act2.SetActive(false);

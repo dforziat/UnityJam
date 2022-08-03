@@ -109,7 +109,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void challengeMode()
     {
-        SceneManager.LoadSceneAsync(7);
+        SceneManager.LoadSceneAsync(20);
         loadScreen.SetActive(true);
     }
 

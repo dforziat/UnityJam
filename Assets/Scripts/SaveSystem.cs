@@ -25,29 +25,45 @@ public static class SaveSystem
         {
             StreamReader sr = new StreamReader(path);
             string json = sr.ReadToEnd();
-            SaveData.Instance = JsonUtility.FromJson<SaveData>(json);
             Debug.Log("LOAD JSON: " + json);
-            sr.Close();
-
+            if (json == null || json == string.Empty)
+            {
+                Debug.Log("Corrupt Save file Detected.");
+                sr.Close();
+                createEmptySave();
+            }
+            else
+            {
+                SaveData.Instance = JsonUtility.FromJson<SaveData>(json);
+                sr.Close();
+            }
         }
         else
         {
-            SaveData.Instance = new SaveData();
-            SaveData.Instance.resolutionWidth = 1280;
-            SaveData.Instance.resolutionHeight = 720;
-            SaveData.Instance.masterVolume = 1f;
-            SaveData.Instance.sfxVolume = 1f;
-            SaveData.Instance.musicVolume = 1f;
-            SaveData.Instance.mouseSens = 1f;
-            SaveData.Instance.bestTime = new float[18];
+            createEmptySave();
+        }
 
-            string json = JsonUtility.ToJson(SaveData.Instance);
-            Debug.Log("Create NEW JSON: " + json);
+    }
 
-            using (StreamWriter sw = new StreamWriter(path))
-            {
-                sw.Write(json);
-            }
+
+    private static void createEmptySave()
+    {
+        string path = Application.persistentDataPath + fileLocation;
+        SaveData.Instance = new SaveData();
+        SaveData.Instance.resolutionWidth = 1280;
+        SaveData.Instance.resolutionHeight = 720;
+        SaveData.Instance.masterVolume = 1f;
+        SaveData.Instance.sfxVolume = 1f;
+        SaveData.Instance.musicVolume = 1f;
+        SaveData.Instance.mouseSens = 1f;
+        SaveData.Instance.bestTime = new float[18];
+
+        string json = JsonUtility.ToJson(SaveData.Instance);
+        Debug.Log("Create NEW JSON: " + json);
+
+        using (StreamWriter sw = new StreamWriter(path))
+        {
+            sw.Write(json);
         }
 
     }

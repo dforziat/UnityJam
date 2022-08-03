@@ -12,7 +12,10 @@ public class SaveDataInitializer : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-        }else if (instance != this)
+            GameObject go = new GameObject("SaveDataInitializer");
+            go.AddComponent<SaveDataInitializer>();
+        }
+        else if (instance != this)
         {
             Destroy(gameObject);
         }

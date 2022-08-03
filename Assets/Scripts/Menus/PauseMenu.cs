@@ -37,7 +37,7 @@ public class PauseMenu : MonoBehaviour
     public void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        if(SceneManager.GetActiveScene().name == "RandomLevel")
+        if (SceneManager.GetActiveScene().name == "RandomLevel")
         {
             restartButton.interactable = false;
         }
@@ -85,6 +85,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
         GameIsPaused = true;
         EventSystem.current.SetSelectedGameObject(resumeButton);
+
     }
 
     void TogglePause()

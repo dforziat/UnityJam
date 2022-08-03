@@ -55,7 +55,6 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
-     //   firstLoad();
         LoadResolutions();
         LoadSettings();
 
@@ -171,21 +170,24 @@ public class Settings : MonoBehaviour
     void LoadSettings()
     {
         //Volume
-        audioMixer.SetFloat("masterVolume", SaveData.Instance.masterVolume);
-        volumeSlider_Main.value = SaveData.Instance.masterVolume;
+        if(SaveData.Instance != null)
+        {
+            audioMixer.SetFloat("masterVolume", SaveData.Instance.masterVolume);
+            volumeSlider_Main.value = SaveData.Instance.masterVolume;
 
-        audioMixer.SetFloat("sfxVolume", SaveData.Instance.sfxVolume);
-        volumeSlider_SFX.value = SaveData.Instance.sfxVolume;
+            audioMixer.SetFloat("sfxVolume", SaveData.Instance.sfxVolume);
+            volumeSlider_SFX.value = SaveData.Instance.sfxVolume;
 
-        audioMixer.SetFloat("musicVolume", SaveData.Instance.musicVolume);
-        volumeSlider_Music.value = SaveData.Instance.musicVolume;
+            audioMixer.SetFloat("musicVolume", SaveData.Instance.musicVolume);
+            volumeSlider_Music.value = SaveData.Instance.musicVolume;
 
-        //Resolution
-        Screen.SetResolution(SaveData.Instance.resolutionWidth, SaveData.Instance.resolutionHeight, true);
-       
+            //Resolution
+            Screen.SetResolution(SaveData.Instance.resolutionWidth, SaveData.Instance.resolutionHeight, true);
 
-        //Mouse Sensitivity
-        mouseSensSlider.value = SaveData.Instance.mouseSens;
+
+            //Mouse Sensitivity
+            mouseSensSlider.value = SaveData.Instance.mouseSens;
+        }
 
     }
 
