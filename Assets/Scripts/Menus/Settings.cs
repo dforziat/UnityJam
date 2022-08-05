@@ -127,6 +127,13 @@ public class Settings : MonoBehaviour
         //resolutions = Screen.resolutions.Where(resolution => (resolution.refreshRate == nativeRefreshRate)).ToArray();
         resolutions = Screen.resolutions;
 
+     
+        foreach (Resolution res in Screen.resolutions)
+        {
+            Debug.Log("Screen Resolutions: " + res.ToString());
+        }
+
+
 
         resolutionDropdown.ClearOptions();
 

@@ -27,13 +27,7 @@ public class SaveManager : MonoBehaviour
         LoadPref();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Press H to reset player prefs to a default
-        //DebugPref();
-        unlockAllWeapons();
-    }
+
 
     public void SavePrefs()
     {
@@ -77,7 +71,6 @@ public class SaveManager : MonoBehaviour
         //Save
         PlayerPrefs.Save();
         
-
     }
 
     public void LoadPref()
@@ -116,41 +109,8 @@ public class SaveManager : MonoBehaviour
           else
             spear.tag = "Untagged";
 
-
-
     Debug.Log("Loaded PREFS");
 
     }
 
-    void DebugPref()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
-
-            //Set curLevel
-            SaveData.Instance.currentLevel = SceneManager.GetActiveScene().buildIndex;
-
-            //Delete Weapons
-            //PlayerPrefs.SetInt(PlayerPrefsConstants.SHOTGUN, 0);
-            //PlayerPrefs.SetInt(PlayerPrefsConstants.GRAPPLEGUN, 0);
-
-            //Save
-            PlayerPrefs.Save();
-
-            LoadPref();
-        }
-    }
-
-    private void unlockAllWeapons()
-    {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            shotgun.tag = "unlocked";
-            machinegun.tag = "unlocked";
-            grapplegun.tag = "unlocked";
-            spear.tag = "unlocked"; 
-            richochetgun.tag = "unlocked";
-        }
-    }
 }
