@@ -15,9 +15,12 @@ public class Settings : MonoBehaviour
 
     public AudioMixer audioMixer;
 
-    public TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
-    List<Resolution> finalRes = new List<Resolution>();
+    int resolutionIndex = 0;
+    public TextMeshProUGUI resolutionText;
+    private bool fullscreen;
+    public TextMeshProUGUI fullScreenText;
+
 
     public Slider mouseSensSlider;
     public TextMeshProUGUI mouseSensText;
@@ -44,7 +47,7 @@ public class Settings : MonoBehaviour
 
     [Header("Controller Navigation")]
     public GameObject graphicsButton;
-    public GameObject resolutionDropdownObject;
+    public GameObject resolutionButtonRight;
     public GameObject mainVolumeSlider;
     public GameObject sensSlider;
     public GameObject creditsBackButton;
@@ -55,8 +58,8 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
-        LoadResolutions();
         LoadSettings();
+        loadButtonResolutions();
 
 
 
@@ -104,75 +107,7 @@ public class Settings : MonoBehaviour
     {
         Screen.fullScreen = isFullscreen;
     }
-
-    public void SetResolution(int resolutionIndex)
-    {
-        
-        Resolution resolution = finalRes[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-
-       // PlayerPrefs.SetInt(PlayerPrefsConstants.RESOLUTION_WIDTH, resolution.width);
-        SaveData.Instance.resolutionWidth = resolution.width;
-       // PlayerPrefs.SetInt(PlayerPrefsConstants.RESOLUTION_HEIGHT, resolution.height);
-        SaveData.Instance.resolutionHeight = resolution.height;
-    }
-
-    void LoadResolutions()
-    {
-        float nativeWidth = Screen.currentResolution.width;
-        float nativeHeight = Screen.currentResolution.height;
-        float nativeRefreshRate = Screen.currentResolution.refreshRate;
-
-        //Only 60,120,144 Hz displayed
-        //resolutions = Screen.resolutions.Where(resolution => (resolution.refreshRate == nativeRefreshRate)).ToArray();
-        resolutions = Screen.resolutions;
-
-     
-        foreach (Resolution res in Screen.resolutions)
-        {
-            Debug.Log("Screen Resolutions: " + res.ToString());
-        }
-
-
-
-        resolutionDropdown.ClearOptions();
-
-        List<string> options = new List<string>();
-
-        int currentResolutionIndex = 0;
-        for (int i = 0; i < resolutions.Length; i++)
-        {
-
-            float parseWidth = resolutions[i].width;
-            float parseHeight = resolutions[i].height;
-
-
-            string option = resolutions[i].width + " x " + resolutions[i].height +" (" +resolutions[i].refreshRate + "HZ)";
-
-
-
-            if ((parseWidth / parseHeight) == (nativeWidth / nativeHeight))
-            {
-                options.Add(option);
-                finalRes.Add(resolutions[i]);
-                Debug.Log(parseWidth +" x "+ parseHeight);
-            }
-
-        }
-
-        for (int i = 0; i < finalRes.Count; i++)
-        {
-            if (finalRes[i].width == Screen.currentResolution.width &&
-                finalRes[i].height == Screen.currentResolution.height)
-            {
-                currentResolutionIndex = i;
-            }
-        }
-        
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
-    }
+    
 
     void LoadSettings()
     {
@@ -188,9 +123,18 @@ public class Settings : MonoBehaviour
             audioMixer.SetFloat("musicVolume", SaveData.Instance.musicVolume);
             volumeSlider_Music.value = SaveData.Instance.musicVolume;
 
+            fullscreen = SaveData.Instance.fullScreen;
             //Resolution
-            Screen.SetResolution(SaveData.Instance.resolutionWidth, SaveData.Instance.resolutionHeight, true);
+            Screen.SetResolution(SaveData.Instance.resolutionWidth, SaveData.Instance.resolutionHeight, fullscreen, SaveData.Instance.frameRate);
 
+            if (fullscreen)
+            {
+                fullScreenText.text = "Fullscreen: On";
+            }
+            else
+            {
+                fullScreenText.text = "Fullscreen: Off";
+            }
 
             //Mouse Sensitivity
             mouseSensSlider.value = SaveData.Instance.mouseSens;
@@ -221,7 +165,7 @@ public class Settings : MonoBehaviour
         GraphicsOptions.SetActive(true);
         settingMenu.SetActive(false);
         audioSource.Play();
-        EventSystem.current.SetSelectedGameObject(resolutionDropdownObject);
+        EventSystem.current.SetSelectedGameObject(resolutionButtonRight);
     }
 
     public void displayButton_Audio()
@@ -253,6 +197,12 @@ public class Settings : MonoBehaviour
         GraphicsOptions.SetActive(false);
         settingMenu.SetActive(true);
         audioSource.Play();
+        Screen.SetResolution(resolutions[resolutionIndex].width, resolutions[resolutionIndex].height, fullscreen, resolutions[resolutionIndex].refreshRate);
+        SaveData.Instance.resolutionWidth = resolutions[resolutionIndex].width;
+        SaveData.Instance.resolutionHeight = resolutions[resolutionIndex].height;
+        SaveData.Instance.frameRate = resolutions[resolutionIndex].refreshRate;
+        SaveData.Instance.fullScreen = fullscreen;
+
         EventSystem.current.SetSelectedGameObject(graphicsButton);
     }
 
@@ -272,5 +222,60 @@ public class Settings : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(sensSlider);
     }
 
+    private void loadButtonResolutions()
+    {
+        resolutions = Screen.resolutions;
+        Resolution currentResolution = new Resolution();
+        currentResolution.height = SaveData.Instance.resolutionHeight;
+        currentResolution.width = SaveData.Instance.resolutionWidth;
+        currentResolution.refreshRate = SaveData.Instance.frameRate;
+        resolutionIndex = System.Array.IndexOf(resolutions, currentResolution);
 
+       /* foreach (Resolution res in Screen.resolutions)
+        {
+            Debug.Log("Screen Resolutions: " + res.ToString());
+        } */
+
+        Debug.Log("Resolution Index: " + resolutionIndex);
+        
+        resolutionText.text = currentResolution.ToString();
+    }
+
+
+    public void resolutionRightButton()
+    {
+        if(resolutionIndex < resolutions.Length - 1)
+        {
+            audioSource.Play();
+            resolutionIndex++;
+            resolutionText.text = resolutions[resolutionIndex].ToString();
+        }
+
+    }
+
+    public void resolutionLeftButton()
+    {
+        if (resolutionIndex > 0)
+        {
+            audioSource.Play();
+            resolutionIndex--;
+            resolutionText.text = resolutions[resolutionIndex].ToString();
+        }
+    }
+
+
+    public void fullScreenToggle()
+    {
+        audioSource.Play();
+        if (fullscreen)
+        {
+            fullscreen = false;
+            fullScreenText.text = "Fullscreen: Off";
+        }
+        else if (!fullscreen)
+        {
+            fullscreen = true;
+            fullScreenText.text = "Fullscreen: On";
+        }
+    }
 }

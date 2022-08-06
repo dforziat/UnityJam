@@ -55,8 +55,10 @@ public static class SaveSystem
     {
         string path = Application.persistentDataPath + fileLocation;
         SaveData.Instance = new SaveData();
-        SaveData.Instance.resolutionWidth = 1280;
-        SaveData.Instance.resolutionHeight = 720;
+        SaveData.Instance.resolutionWidth = Screen.currentResolution.width;
+        SaveData.Instance.resolutionHeight = Screen.currentResolution.height;
+        SaveData.Instance.frameRate = Screen.currentResolution.refreshRate;
+        SaveData.Instance.fullScreen = true;
         SaveData.Instance.masterVolume = 1f;
         SaveData.Instance.sfxVolume = 1f;
         SaveData.Instance.musicVolume = 1f;

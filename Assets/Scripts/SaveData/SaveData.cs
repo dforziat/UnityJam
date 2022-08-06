@@ -17,6 +17,8 @@ public class SaveData
 
     public int resolutionWidth;
     public int resolutionHeight;
+    public int frameRate;
+    public bool fullScreen;
 
     public float masterVolume;
     public float sfxVolume;
