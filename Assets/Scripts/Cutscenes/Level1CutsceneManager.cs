@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class Level1CutsceneManager : MonoBehaviour
@@ -9,7 +10,7 @@ public class Level1CutsceneManager : MonoBehaviour
  
     public GameObject GUI;
     public GameObject Dialogue;
-
+    PlayerControls playerControls;
 
 
 
@@ -18,7 +19,7 @@ public class Level1CutsceneManager : MonoBehaviour
     {
         //player starts with no HUD, timeline locks them in place
         GUI.SetActive(false);
-
+        playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
     }
 
 
@@ -31,6 +32,11 @@ public class Level1CutsceneManager : MonoBehaviour
     public void StartLevel()
     {
         //enables hud, scene ends
+        
+        Debug.Log("Level Advanced");
+        playerControls.curLevel = 2;
+        SaveData.Instance.currentLevel = playerControls.curLevel;
+        SceneManager.LoadScene("Level1");
         GUI.SetActive(true);
 
     }

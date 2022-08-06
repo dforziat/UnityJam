@@ -50,7 +50,8 @@ public class LevelSelectButton : MonoBehaviour
     public void loadLevel()
     {
         SaveData.Instance.currentLevel = levelNum;
-        SceneManager.LoadSceneAsync(levelNum);
+        // +1 because Menu = 0 // Prologue = 1 // Level 1 = 2, etc
+        SceneManager.LoadSceneAsync(levelNum+1);
         Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
     }
 

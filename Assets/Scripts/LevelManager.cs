@@ -99,13 +99,15 @@ public class LevelManager : MonoBehaviour
     {
 
         //Uncomment these once level is solid
-        //playerControls.curLevel = 1;
-        //SaveManager.SavePrefs();
+
+
 
 
         //Loads Level 1 Everytime
-
+        
         Debug.Log("Level Advanced");
+        playerControls.curLevel = 2;
+        SaveManager.SavePrefs();
         SceneManager.LoadScene("Level1");
     }
 

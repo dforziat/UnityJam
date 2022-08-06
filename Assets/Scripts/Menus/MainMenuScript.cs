@@ -54,7 +54,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level0");
         SaveData.Instance.currentLevel = 1;
         //Add in "Default Values" for player prefs, to esstentially delete saved data and start fresh
         SaveData.Instance.grapplegun = false;
@@ -69,7 +69,7 @@ public class MainMenuScript : MonoBehaviour
     public void ContinueButton()
     {
         //failsafe for how many levels we have
-        if (SaveData.Instance.currentLevel < 1 || SaveData.Instance.currentLevel > 19)
+        if (SaveData.Instance.currentLevel < 1 || SaveData.Instance.currentLevel > 20)
         {
             SaveData.Instance.currentLevel = 1;
             SceneManager.LoadScene(SaveData.Instance.currentLevel);

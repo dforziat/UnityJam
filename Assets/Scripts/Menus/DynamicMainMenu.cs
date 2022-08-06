@@ -21,21 +21,21 @@ public class DynamicMainMenu : MonoBehaviour
         {
             currentLevel = SaveData.Instance.currentLevel;
         }
-        if (currentLevel <= 6)
+        if (currentLevel <= 7)
         {
             Act1.SetActive(true);
             Act2.SetActive(false);
             Act3.SetActive(false);
             return;
         }
-        else if (currentLevel > 6 && currentLevel <= 12)
+        else if (currentLevel > 7 && currentLevel <= 13)
         {
             Act1.SetActive(false);
             Act2.SetActive(true);
             Act3.SetActive(false);
             return;
         }
-        else if (currentLevel > 12)
+        else if (currentLevel > 13)
         {
             Act1.SetActive(false);
             Act2.SetActive(false);
