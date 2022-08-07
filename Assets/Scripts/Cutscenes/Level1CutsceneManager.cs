@@ -11,6 +11,7 @@ public class Level1CutsceneManager : MonoBehaviour
     public GameObject GUI;
     public GameObject Dialogue;
     PlayerControls playerControls;
+    public GameObject loadScreen;
 
 
 
@@ -34,10 +35,10 @@ public class Level1CutsceneManager : MonoBehaviour
         //enables hud, scene ends
         
         Debug.Log("Level Advanced");
-        playerControls.curLevel = 2;
-        SaveData.Instance.currentLevel = playerControls.curLevel;
-        SceneManager.LoadScene("Level1");
-        GUI.SetActive(true);
+        SaveData.Instance.currentLevel = 2;
+        SceneManager.LoadSceneAsync("Level1");
+        Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
+        //GUI.SetActive(true);
 
     }
 

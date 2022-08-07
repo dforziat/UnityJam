@@ -57,7 +57,7 @@ public class LevelManager : MonoBehaviour
         timer();
         checkBest();
         displayBest();
-        playerControls.curLevel++;//This is a bug
+        SaveData.Instance.currentLevel++;
         SaveManager.SavePrefs();
     }
 
@@ -76,17 +76,17 @@ public class LevelManager : MonoBehaviour
 
     public void checkBest()
     {
-        curBesttime = SaveData.Instance.bestTime[playerControls.curLevel];
+        curBesttime = SaveData.Instance.bestTime[SaveData.Instance.currentLevel];
 
         if (currentTime < curBesttime || curBesttime == 0)
         {
-            SaveData.Instance.bestTime[playerControls.curLevel] = currentTime;
+            SaveData.Instance.bestTime[SaveData.Instance.currentLevel] = currentTime;
         }
     }
 
     public void displayBest()
     {
-        curBesttime = SaveData.Instance.bestTime[playerControls.curLevel];
+        curBesttime = SaveData.Instance.bestTime[SaveData.Instance.currentLevel];
 
         bestMins = (int)(curBesttime / 60);
         bestSecs = (int)(curBesttime % 60);
@@ -106,7 +106,7 @@ public class LevelManager : MonoBehaviour
         //Loads Level 1 Everytime
         
         Debug.Log("Level Advanced");
-        playerControls.curLevel = 2;
+        SaveData.Instance.currentLevel = 2;
         SaveManager.SavePrefs();
         SceneManager.LoadScene("Level1");
     }

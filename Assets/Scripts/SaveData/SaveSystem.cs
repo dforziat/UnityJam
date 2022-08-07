@@ -63,7 +63,7 @@ public static class SaveSystem
         SaveData.Instance.sfxVolume = 1f;
         SaveData.Instance.musicVolume = 1f;
         SaveData.Instance.mouseSens = 1f;
-        SaveData.Instance.bestTime = new float[18];
+        SaveData.Instance.bestTime = new float[20];
 
         string json = JsonUtility.ToJson(SaveData.Instance);
         Debug.Log("Create NEW JSON: " + json);

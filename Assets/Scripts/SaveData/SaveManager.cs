@@ -37,8 +37,6 @@ public class SaveManager : MonoBehaviour
         weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
         weaponSwitching = GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<WeaponSwitching>();
 
-        //Set curLevel
-        SaveData.Instance.currentLevel = playerControls.curLevel;
 
         //Set Max Level
         int highestLevel = SaveData.Instance.highestLevel;
@@ -81,7 +79,6 @@ public class SaveManager : MonoBehaviour
             return;
         }
 
-        playerControls.curLevel = SaveData.Instance.currentLevel;
         weaponSwitching.curWeapon = SaveData.Instance.curWeapon;
 
         if (SaveData.Instance.shotgun)

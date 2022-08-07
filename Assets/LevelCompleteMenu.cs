@@ -26,7 +26,7 @@ public class LevelCompleteMenu : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadSceneAsync(SaveData.Instance.currentLevel);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
     }
 }

@@ -46,7 +46,6 @@ public class PlayerControls : MonoBehaviour
     public int machinegunAmmo = 30;
     //public int spearAmmo = 1;
 
-    public int curLevel;
     Vector3 vel;
     [SerializeField] CharacterController controller;
 

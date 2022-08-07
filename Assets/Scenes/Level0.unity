@@ -398,17 +398,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
---- !u!114 &297120091 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5626183233001529232, guid: cc8a9cca00a8f0342ab9d8bd1bf4ff17, type: 3}
-  m_PrefabInstance: {fileID: 297120090}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 581c915832aabd9438f1fab695506c98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &339986636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1300,9 +1289,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3931274598810507087, guid: 5b85cd28e5503db4dbae7fa298a03b9e, type: 3}
       propertyPath: dialogue.sentences.Array.data[13]
-      value: 'Alright, you are a frozen security guard, the scientists went mad,
-        experiments are tearing the place apart, and I need you to blow this place
-        to hell before it gets worse. Got it?
+      value: 'Alright, you are a cryogenically frozen security guard, the scientists
+        went mad, experiments are tearing the place apart, and I need you to blow
+        this place to hell before it gets worse. Got it?
 
 '
       objectReference: {fileID: 0}
@@ -3167,6 +3156,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5093898325680900129, guid: 6b807295d3badcf449bfa79a43033f20, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f7a085aa1a21cb54887756c97b6d449e, type: 3}
     - target: {fileID: 5093898325680900130, guid: 6b807295d3badcf449bfa79a43033f20, type: 3}
       propertyPath: m_Name
       value: _MusicManager
@@ -3733,4 +3726,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GUI: {fileID: 552756121}
   Dialogue: {fileID: 372394214}
-  SaveManager: {fileID: 297120091}
+  loadScreen: {fileID: 8875192550856222381, guid: 28fe281318170204eb3bd08f2e459c2a, type: 3}
