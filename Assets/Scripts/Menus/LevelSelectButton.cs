@@ -21,6 +21,8 @@ public class LevelSelectButton : MonoBehaviour
     void Start()
     {
         levelTitle.text = levelTitle.text + levelNum;
+        // +1 because Menu = 0 // Prologue = 1 // Level 1 = 2, etc
+        levelNum++;
         displayBest();
         button = GetComponent<Button>();
 
@@ -37,7 +39,7 @@ public class LevelSelectButton : MonoBehaviour
 
     public void displayBest()
     {
-        float curBesttime = SaveData.Instance.bestTime[levelNum+1];
+        float curBesttime = SaveData.Instance.bestTime[levelNum];
 
 
         float bestMins = (int)(curBesttime / 60);
@@ -51,8 +53,7 @@ public class LevelSelectButton : MonoBehaviour
     {
         SaveData.Instance.currentLevel = levelNum;
         
-        // +1 because Menu = 0 // Prologue = 1 // Level 1 = 2, etc
-        SceneManager.LoadSceneAsync(levelNum+1);
+        SceneManager.LoadSceneAsync(levelNum);
         Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
     }
 
