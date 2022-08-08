@@ -12,6 +12,8 @@ public class LevelSelectButton : MonoBehaviour
 
     public TextMeshProUGUI levelTitle;
     public TextMeshProUGUI bestTimeNum;
+    public TextMeshProUGUI devTimeNum;
+
 
     string timeFormat = "{0,2:00}:{1,2:00}:{2,2:00}";
 
@@ -24,6 +26,7 @@ public class LevelSelectButton : MonoBehaviour
         // +1 because Menu = 0 // Prologue = 1 // Level 1 = 2, etc
         levelNum++;
         displayBest();
+        displayDevTime();
         button = GetComponent<Button>();
 
         if(levelNum > SaveData.Instance.highestLevel){
@@ -49,10 +52,19 @@ public class LevelSelectButton : MonoBehaviour
         bestTimeNum.text = string.Format(timeFormat, bestMins, bestSecs, bestMiliSecs);
     }
 
+    public void displayDevTime()
+    {
+        float devTime = DevTimes.devTimesList[levelNum];
+        float bestMins = (int)(devTime / 60);
+        float bestSecs = (int)(devTime % 60);
+        float bestMiliSecs = Mathf.RoundToInt((devTime - bestMins * 60 - bestSecs) * 100);
+
+        devTimeNum.text = string.Format(timeFormat, bestMins, bestSecs, bestMiliSecs);
+    }
+
     public void loadLevel()
     {
         SaveData.Instance.currentLevel = levelNum;
-        
         SceneManager.LoadSceneAsync(levelNum);
         Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
     }

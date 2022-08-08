@@ -13,6 +13,9 @@ public class LevelManager : MonoBehaviour
 
     private TextMeshProUGUI finaltimeText;
     private TextMeshProUGUI besttimeText;
+    private TextMeshProUGUI devtimeText;
+
+
 
     int mins;
     int secs;
@@ -33,6 +36,7 @@ public class LevelManager : MonoBehaviour
         levelCompleteScreen = GameObject.Find("LevelCompleteCanvas");
         finaltimeText = levelCompleteScreen.gameObject.transform.Find("playerTime").GetComponent<TextMeshProUGUI>();
         besttimeText = levelCompleteScreen.gameObject.transform.Find("bestTime").GetComponent<TextMeshProUGUI>();
+        devtimeText = levelCompleteScreen.gameObject.transform.Find("devTime").GetComponent<TextMeshProUGUI>();
         levelLoading = false;
         levelCompleteScreen.SetActive(false);
         Time.timeScale = 1;
@@ -55,6 +59,7 @@ public class LevelManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         timer();
+        displayDevTime();
         checkBest();
         displayBest();
         SaveData.Instance.currentLevel++;
@@ -87,13 +92,21 @@ public class LevelManager : MonoBehaviour
     public void displayBest()
     {
         curBesttime = SaveData.Instance.bestTime[SaveData.Instance.currentLevel];
-
         bestMins = (int)(curBesttime / 60);
         bestSecs = (int)(curBesttime % 60);
         bestMiliSecs = Mathf.RoundToInt((curBesttime - bestMins * 60 - bestSecs) * 100);
-
         besttimeText.text = string.Format(timeFormat, bestMins, bestSecs, bestMiliSecs);
     }
+
+    public void displayDevTime()
+    {
+        float devTime = DevTimes.devTimesList[SaveData.Instance.currentLevel];
+        float bestMins = (int)(devTime / 60);
+        float bestSecs = (int)(devTime % 60);
+        float bestMiliSecs = Mathf.RoundToInt((devTime - bestMins * 60 - bestSecs) * 100);
+        devtimeText.text = string.Format(timeFormat, bestMins, bestSecs, bestMiliSecs);
+    }
+
 
     public void Level_0_Complete()
     {
