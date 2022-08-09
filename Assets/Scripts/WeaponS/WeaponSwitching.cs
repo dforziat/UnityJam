@@ -9,13 +9,19 @@ public class WeaponSwitching : MonoBehaviour
     public int curWeapon;
     public bool lockWeaponSwitch = false;
     public Transform nextWeapon;
+
+    public GameObject shotgun;
+    public GameObject grapplegun;
+    public GameObject machinegun;
+    public GameObject ricochetgun;
+    public GameObject spear;
     // Start is called before the first frame update
     void Start()
     {
-        //this should load in the save manager, but that version doesn't seem to work -Dylan
-        if(SceneManager.GetActiveScene().name != "RandomLevel")
+        if (SceneManager.GetActiveScene().name != "RandomLevel")
         {
-            curWeapon = SaveData.Instance.curWeapon;
+            findWeapons();
+            unlockWeapons();
         }
 
         selectedWeapon = curWeapon;
@@ -126,5 +132,46 @@ public class WeaponSwitching : MonoBehaviour
         }
         curWeapon = selectedWeapon;
 
+    }
+
+    private void unlockWeapons()
+    {
+        int currentLevel = SaveData.Instance.currentLevel;
+        
+        if(currentLevel > 3)
+        {
+            shotgun.tag = "unlocked";
+            curWeapon = 1;
+        }
+        if (currentLevel > 5)
+        {
+            grapplegun.tag = "unlocked";
+            curWeapon = 2;
+        }
+        if (currentLevel > 9)
+        {
+            machinegun.tag = "unlocked";
+            curWeapon = 3;
+        }
+        if (currentLevel > 12)
+        {
+            ricochetgun.tag = "unlocked";
+            curWeapon = 4;
+        }
+
+        if (currentLevel > 15)
+        {
+            spear.tag = "unlocked";
+            curWeapon = 5;
+        }
+    }
+
+    private void findWeapons()
+    {
+        shotgun = transform.Find("Shotgun").gameObject;
+        grapplegun = transform.Find("Grapplegun").gameObject;
+        machinegun = transform.Find("Machinegun").gameObject;
+        ricochetgun = transform.Find("RicochetGun").gameObject;
+        spear = transform.Find("SpearOfBealial").gameObject;
     }
 }

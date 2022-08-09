@@ -57,12 +57,6 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene("Level0");
         SaveData.Instance.currentLevel = 1;
         SaveData.Instance.highestLevel = 1;
-        //Add in "Default Values" for player prefs, to esstentially delete saved data and start fresh
-        SaveData.Instance.grapplegun = false;
-        SaveData.Instance.shotgun = false;
-        SaveData.Instance.richochetgun = false;
-        SaveData.Instance.machinegun = false;
-        SaveData.Instance.spear = false;
 
         audioSource.Play();
     }

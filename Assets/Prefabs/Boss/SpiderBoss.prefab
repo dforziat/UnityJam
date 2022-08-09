@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 131947608}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Missile_Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1438850257}
   - component: {fileID: 1438850258}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpriteHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 1523989061}
   - component: {fileID: 1523989063}
   - component: {fileID: 1523989062}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -4925,7 +4925,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1949912741}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: StompEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4959,7 +4959,7 @@ GameObject:
   - component: {fileID: 2583426638801589940}
   - component: {fileID: 1469239084361952422}
   - component: {fileID: 4700697017270354325}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tube_steel 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5007,8 +5007,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5041,7 +5041,7 @@ GameObject:
   - component: {fileID: 9063992994395456768}
   - component: {fileID: 7471553283425754435}
   - component: {fileID: 3607289167938380157}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: engine_round
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5089,9 +5089,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5124,7 +5124,7 @@ GameObject:
   - component: {fileID: 9030297857586547204}
   - component: {fileID: 8429073996694884349}
   - component: {fileID: 2874764668944342805}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tube_steel 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5172,8 +5172,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5206,7 +5206,7 @@ GameObject:
   - component: {fileID: 4192563361375664465}
   - component: {fileID: 7073160832438323500}
   - component: {fileID: 4965824015911767393}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_pipes 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5254,9 +5254,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5289,7 +5289,7 @@ GameObject:
   - component: {fileID: 7604852629800697433}
   - component: {fileID: 720669986149040406}
   - component: {fileID: 5115098026689854018}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_pipes 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5337,9 +5337,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5372,7 +5372,7 @@ GameObject:
   - component: {fileID: 698951716261673205}
   - component: {fileID: 3052197577577063915}
   - component: {fileID: 191928546658893309}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: detail_tire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5420,7 +5420,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5451,7 +5451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8385487491786523466}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5487,7 +5487,7 @@ GameObject:
   - component: {fileID: 8425299434987117040}
   - component: {fileID: 7705711020226389662}
   - component: {fileID: 8102523932601287610}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tube_steel 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5535,8 +5535,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5567,7 +5567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6691072656591728776}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -5604,7 +5604,7 @@ GameObject:
   - component: {fileID: 2697192460604015386}
   - component: {fileID: 5470954520945442195}
   - component: {fileID: 7868042048581581782}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_pipes 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5652,9 +5652,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5687,7 +5687,7 @@ GameObject:
   - component: {fileID: 1434645476814320361}
   - component: {fileID: 3809001327470915558}
   - component: {fileID: 7009101368513186685}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_pipes 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5735,9 +5735,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5768,7 +5768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8914267680883627265}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left Rear Leg
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -5802,7 +5802,7 @@ GameObject:
   - component: {fileID: 5644169016162133578}
   - component: {fileID: 231947946211351464}
   - component: {fileID: 7215317274908484360}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tube_steel 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5850,8 +5850,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5884,7 +5884,7 @@ GameObject:
   - component: {fileID: 7475639438714418413}
   - component: {fileID: 3321437744029549400}
   - component: {fileID: 2524347778082939956}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: clipBarrel_large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5932,8 +5932,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5966,7 +5966,7 @@ GameObject:
   - component: {fileID: 6369371185657213450}
   - component: {fileID: 8046861892869935785}
   - component: {fileID: 5255891124705936249}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hull_frontSmooth 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6014,9 +6014,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6049,7 +6049,7 @@ GameObject:
   - component: {fileID: 8856520614287607661}
   - component: {fileID: 180102698708860405}
   - component: {fileID: 8924111752363824785}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_pipes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6097,9 +6097,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6136,7 +6136,8 @@ GameObject:
   - component: {fileID: 4824548750186313099}
   - component: {fileID: 4824548750186313104}
   - component: {fileID: 7145921071202829773}
-  m_Layer: 0
+  - component: {fileID: 5276305550815449065}
+  m_Layer: 7
   m_Name: SpiderBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -6170,9 +6171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3138948aea2190c49a43b91388b549d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 100
   jumppads: {fileID: 0}
-  explosion: {fileID: 0}
+  explosion: {fileID: 8579213436375878188, guid: 4bdc1c35b7082374ebbba56e08168e2f, type: 3}
   bossDoor: {fileID: 0}
   laser: {fileID: 0}
   chargeShotObject: {fileID: 0}
@@ -6199,9 +6200,12 @@ MonoBehaviour:
   missile: {fileID: 3704464155311358507, guid: b1c0d1dfb58a8694586c0bfce12425b5, type: 3}
   stompSpriteHolder: {fileID: 1438850256}
   stompParticle: {fileID: 1523989063}
+  stompLocation: {fileID: 1949912741}
   spinClip: {fileID: 8300000, guid: 311c8c9c233ac5f46b065c4bfd7ae320, type: 3}
   missileLaunchClip: {fileID: 8300000, guid: d0d989445bb42ac47b1e910530825c72, type: 3}
   transformClip: {fileID: 8300000, guid: 36aa35e0ef37cb64a918697a25156d80, type: 3}
+  stompExplosionClip: {fileID: 8300000, guid: ee0b402d854991149917b0bc028e6dd4, type: 3}
+  walkAudioSource: {fileID: 5276305550815449065}
 --- !u!82 &4975998147825299976
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6223,7 +6227,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -6373,7 +6377,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -6448,6 +6452,102 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &5276305550815449065
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427561613376219047}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -7452003932176372400, guid: d9342bf93340e05478fdee181af1c0a7, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 7105dd564163a82449737c303c67fc7e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0037460327
+      value: 0.988945
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.9925232
+      value: 0.011062622
+      inSlope: -1.1666666
+      outSlope: -1.1666666
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2487743291699773524
 GameObject:
   m_ObjectHideFlags: 0
@@ -6459,7 +6559,7 @@ GameObject:
   - component: {fileID: 3343001599905171514}
   - component: {fileID: 8230746793430645354}
   - component: {fileID: 4838332347077842858}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_default 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6507,7 +6607,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6540,7 +6640,7 @@ GameObject:
   - component: {fileID: 6802729043548714390}
   - component: {fileID: 7860655487846060463}
   - component: {fileID: 2142732986389526534}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: engine_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6588,9 +6688,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6622,7 +6722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3347393642601423388}
   - component: {fileID: 1213841072}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -6671,7 +6771,7 @@ GameObject:
   - component: {fileID: 2263468456928271140}
   - component: {fileID: 347586912016183465}
   - component: {fileID: 7474791651464267752}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_default 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6719,7 +6819,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6752,7 +6852,7 @@ GameObject:
   - component: {fileID: 3478565681915293669}
   - component: {fileID: 4028612168004104862}
   - component: {fileID: 7388744271677047716}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_pipes 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6800,9 +6900,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6835,7 +6935,7 @@ GameObject:
   - component: {fileID: 5074527879282158226}
   - component: {fileID: 4967162096935222069}
   - component: {fileID: 3929068323408847804}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hull_frontSmooth 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6883,9 +6983,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6918,7 +7018,7 @@ GameObject:
   - component: {fileID: 4809210997878027114}
   - component: {fileID: 4241433262311680695}
   - component: {fileID: 665158675261212195}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_cover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6966,8 +7066,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6998,7 +7098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7493301132203475460}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Limb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7035,7 +7135,7 @@ GameObject:
   - component: {fileID: 7565368082016139632}
   - component: {fileID: 1100806254057970517}
   - component: {fileID: 5823214069033430272}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_default 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7083,7 +7183,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7114,7 +7214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7855095564211737669}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7150,7 +7250,7 @@ GameObject:
   - component: {fileID: 8898877178053810378}
   - component: {fileID: 308415379189301145}
   - component: {fileID: 3940133996668171161}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_cover 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7198,8 +7298,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7232,7 +7332,7 @@ GameObject:
   - component: {fileID: 5716361062424031845}
   - component: {fileID: 1184176852231846889}
   - component: {fileID: 5181220335871081363}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sphere_half
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7280,7 +7380,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7313,7 +7413,7 @@ GameObject:
   - component: {fileID: 5234586467873673898}
   - component: {fileID: 7989838684433660544}
   - component: {fileID: 8866458717942485143}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hull_back 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7361,9 +7461,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7394,7 +7494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2024543698652618490}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right Front Leg
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -7426,7 +7526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3807777610235611478}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right Rear Leg
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -7460,7 +7560,7 @@ GameObject:
   - component: {fileID: 8698154824895193397}
   - component: {fileID: 2732941280286201388}
   - component: {fileID: 3064893063017267199}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hull_back 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7508,9 +7608,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7543,7 +7643,7 @@ GameObject:
   - component: {fileID: 6627198960252200072}
   - component: {fileID: 3749866104468706933}
   - component: {fileID: 1456058864175566062}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hull_back 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7591,9 +7691,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7626,7 +7726,7 @@ GameObject:
   - component: {fileID: 272322133517831278}
   - component: {fileID: 7585376601313498838}
   - component: {fileID: 2525521132170204500}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_pipes 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7674,9 +7774,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7709,7 +7809,7 @@ GameObject:
   - component: {fileID: 6087481759272907026}
   - component: {fileID: 2293691214108997994}
   - component: {fileID: 7348814199260236334}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_cover 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7757,8 +7857,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7791,7 +7891,7 @@ GameObject:
   - component: {fileID: 7623746660616813672}
   - component: {fileID: 5598262114360859652}
   - component: {fileID: 6442079932241345878}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_cover 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7839,8 +7939,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7871,7 +7971,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6021984345004169690}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpiderBoss4Legs
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -7910,7 +8010,7 @@ GameObject:
   - component: {fileID: 2150887474532264843}
   - component: {fileID: 1733780318390219716}
   - component: {fileID: 3391934924471246529}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_cover 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7958,8 +8058,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7992,7 +8092,7 @@ GameObject:
   - component: {fileID: 1915487206648189892}
   - component: {fileID: 4645663452398565483}
   - component: {fileID: 7017433834529624359}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8040,7 +8140,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8073,7 +8173,7 @@ GameObject:
   - component: {fileID: 1915314853358851143}
   - component: {fileID: 5006227919733434630}
   - component: {fileID: 9219833504905102259}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tube_steel 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8121,8 +8221,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8153,7 +8253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8363949698903252134}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8189,7 +8289,7 @@ GameObject:
   - component: {fileID: 3865906952381763004}
   - component: {fileID: 8278252057156675187}
   - component: {fileID: 4485668169290060375}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hull_frontSmooth 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8237,9 +8337,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8272,7 +8372,7 @@ GameObject:
   - component: {fileID: 7080713765742560549}
   - component: {fileID: 3103550886392689527}
   - component: {fileID: 9205049995048081653}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weapon_turretSmall 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8320,9 +8420,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8353,7 +8453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7450371538779281178}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Limb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8390,7 +8490,7 @@ GameObject:
   - component: {fileID: 8854599997151135497}
   - component: {fileID: 3897819415539908534}
   - component: {fileID: 7159343073268212233}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hull_frontSmooth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8438,9 +8538,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8473,7 +8573,7 @@ GameObject:
   - component: {fileID: 6733086498259162339}
   - component: {fileID: 4869052131091789460}
   - component: {fileID: 2348784616433586555}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hull_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8521,9 +8621,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8556,7 +8656,7 @@ GameObject:
   - component: {fileID: 3592905520853689527}
   - component: {fileID: 8412759826635615824}
   - component: {fileID: 4315613011592593695}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_cover 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8604,8 +8704,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8638,7 +8738,7 @@ GameObject:
   - component: {fileID: 5076741262595760665}
   - component: {fileID: 838342293396481181}
   - component: {fileID: 5343515985848017403}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tube_steel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8686,8 +8786,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8720,7 +8820,7 @@ GameObject:
   - component: {fileID: 335668300076485692}
   - component: {fileID: 1412312094543026382}
   - component: {fileID: 9046131628867147056}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_cover 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8768,8 +8868,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8802,7 +8902,7 @@ GameObject:
   - component: {fileID: 935394491643285305}
   - component: {fileID: 7116172716904704910}
   - component: {fileID: 5596338231877091408}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: weapon_turretSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8850,9 +8950,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8885,7 +8985,7 @@ GameObject:
   - component: {fileID: 6574703776805646860}
   - component: {fileID: 6658865579542297523}
   - component: {fileID: 4174092225526974292}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tube_steel 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8933,8 +9033,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8965,7 +9065,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7908497636791375128}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Limb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9002,7 +9102,7 @@ GameObject:
   - component: {fileID: 7596466878561338033}
   - component: {fileID: 383756238278409945}
   - component: {fileID: 11782881917957960}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_pipes 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9050,9 +9150,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9085,7 +9185,7 @@ GameObject:
   - component: {fileID: 8068459616875360345}
   - component: {fileID: 3494996220249869269}
   - component: {fileID: 3744035523575560476}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg_cover 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9133,8 +9233,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -401682579244895114, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 2d890d6f8882fc946b7994fc04121a05, type: 2}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9165,7 +9265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5156627286143462993}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Limb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9200,7 +9300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5046810524143301261}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left Front Leg
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -9234,7 +9334,7 @@ GameObject:
   - component: {fileID: 1619100259196105571}
   - component: {fileID: 2526167507629087587}
   - component: {fileID: 4563573631433923617}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tube_steel 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9282,8 +9382,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7985398228763123802, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
-  - {fileID: -4872552678638238010, guid: 664d6a15a63716c4f8ff73541973fc9a, type: 3}
+  - {fileID: 2100000, guid: 7bda021e9c0fb844c97b78f23424dae7, type: 2}
+  - {fileID: 2100000, guid: 328a457566792094c90668a6bafac1ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9314,7 +9414,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2922620364372151062}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

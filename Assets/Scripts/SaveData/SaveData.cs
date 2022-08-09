@@ -7,13 +7,6 @@ public class SaveData
 {
     public int currentLevel;
     public int highestLevel;
-    public int curWeapon;
-    public bool shotgun;
-    public bool grapplegun;
-    public bool richochetgun;
-    public bool machinegun;
-    public bool spear;
-
 
     public int resolutionWidth;
     public int resolutionHeight;
