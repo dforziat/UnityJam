@@ -25,7 +25,7 @@ public class SpearScript : MonoBehaviour
 
     public Image ammoIcon;
     public Image infinityAmmoIcon;
-    public Camera cam;
+    private Camera cam;
     //public GameObject hitEffect;
 
 
@@ -36,17 +36,18 @@ public class SpearScript : MonoBehaviour
     float dashTime = .3f;
 
     public GameObject dashHurtbox;
-    public GameObject Player;
-    public GameObject dashEffect;
+    private GameObject Player;
+    private GameObject dashEffect;
 
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponent<Animator>();
         weaponSwitching = GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<WeaponSwitching>();
         spearTimer = GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<SpearTimer>();
-
-
+        cam = Player.transform.Find("Main Camera").GetComponent<Camera>();
+        dashEffect = Player.transform.Find("DashEffect").gameObject;
     }
 
     private void OnEnable()
@@ -55,6 +56,7 @@ public class SpearScript : MonoBehaviour
         attackAudioSource = GetComponent<AudioSource>();
        // checkWeaponSwitchAudio();
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
+
         infinityAmmoIcon.enabled = true;
         ammoIcon.enabled = true;
         

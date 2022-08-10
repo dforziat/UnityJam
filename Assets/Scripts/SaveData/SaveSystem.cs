@@ -55,6 +55,7 @@ public static class SaveSystem
     {
         string path = Application.persistentDataPath + fileLocation;
         SaveData.Instance = new SaveData();
+        SaveData.Instance.currentLevel = 1;
         SaveData.Instance.resolutionWidth = Screen.currentResolution.width;
         SaveData.Instance.resolutionHeight = Screen.currentResolution.height;
         SaveData.Instance.frameRate = Screen.currentResolution.refreshRate;

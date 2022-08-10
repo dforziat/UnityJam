@@ -54,7 +54,8 @@ public class MainMenuScript : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene("Level0");
+        SceneManager.LoadSceneAsync("Level0");
+        loadScreen.SetActive(true);
         SaveData.Instance.currentLevel = 1;
         SaveData.Instance.highestLevel = 1;
 
@@ -63,7 +64,8 @@ public class MainMenuScript : MonoBehaviour
 
     public void ContinueButton()
     {
-        SceneManager.LoadScene(SaveData.Instance.currentLevel);
+        SceneManager.LoadSceneAsync(SaveData.Instance.currentLevel);
+        loadScreen.SetActive(true);
         audioSource.Play();
     }
 
@@ -97,6 +99,7 @@ public class MainMenuScript : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(21);
         loadScreen.SetActive(true);
+        audioSource.Play();
     }
 
     public void DisplayStory()

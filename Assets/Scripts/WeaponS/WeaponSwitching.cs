@@ -138,12 +138,12 @@ public class WeaponSwitching : MonoBehaviour
     {
         int currentLevel = SaveData.Instance.currentLevel;
         
-        if(currentLevel > 3)
+        if(currentLevel > 4)
         {
             shotgun.tag = "unlocked";
             curWeapon = 1;
         }
-        if (currentLevel > 5)
+        if (currentLevel > 6)
         {
             grapplegun.tag = "unlocked";
             curWeapon = 2;

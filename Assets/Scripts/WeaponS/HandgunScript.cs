@@ -11,7 +11,7 @@ public class HandgunScript : MonoBehaviour
     private bool canShoot = true;
     private bool onFirstLoad = true;
     int damage = 1;
-    float rateOfFire = .2f;
+    float rateOfFire = .15f;
     Animator gunAnimator;
     PlayerControls playerControls;
     CameraEffects cameraEffects;
