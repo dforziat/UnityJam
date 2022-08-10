@@ -10,6 +10,7 @@ public class MainMenuScript : MonoBehaviour
     public GameObject mainMenuCanvas;
     public GameObject settingMenuCanvas;
     public GameObject storyCanvas;
+    public GameObject newGameConfirmCanvas;
     public GameObject levelSelectCanvas;
     public GameObject loadScreen;
 
@@ -26,6 +27,7 @@ public class MainMenuScript : MonoBehaviour
     public GameObject newGameButton;
     public GameObject graphicsButton;
     public GameObject levelSelectRightButton;
+    public GameObject noButton;
 
     [Header("Audio")]
     private AudioSource audioSource;
@@ -35,6 +37,7 @@ public class MainMenuScript : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         settingMenuCanvas.SetActive(false);
         loadScreen.SetActive(false);
+        storyCanvas.SetActive(false);
         Time.timeScale = 1f;
         EventSystem.current.SetSelectedGameObject(storyButton);
         lastSelectedButton = storyButton;
@@ -107,7 +110,16 @@ public class MainMenuScript : MonoBehaviour
         storyCanvas.SetActive(true);
         audioSource.Play();
         mainMenuCanvas.SetActive(false);
+        newGameConfirmCanvas.SetActive(false);
         EventSystem.current.SetSelectedGameObject(newGameButton);
+    }
+
+    public void DisplayNewGameConfirm()
+    {
+        audioSource.Play();
+        storyCanvas.SetActive(false);
+        newGameConfirmCanvas.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(noButton);
     }
 
     public void DisplayLevelSelect()
