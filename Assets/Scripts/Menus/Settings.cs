@@ -42,6 +42,14 @@ public class Settings : MonoBehaviour
     public GameObject AudioOptions;
     public GameObject creditsOptions;
     public GameObject controlsCanvas;
+    public GameObject keyboardCanvas;
+    public GameObject controllerCanvas;
+    public TextMeshProUGUI controllerTitle;
+
+    private const string KEYBOARD = "keyboard";
+    private const string CONTROLLER = "controller";
+
+    private string controlSelection = KEYBOARD;
 
 
     private AudioSource audioSource;
@@ -196,11 +204,29 @@ public class Settings : MonoBehaviour
 
     public void displayControls()
     {
-
         GameOptions.SetActive(false);
         controlsCanvas.SetActive(true);
         audioSource.Play();
         EventSystem.current.SetSelectedGameObject(controlsRightButton);
+    }
+
+    public void rightButtonControls()
+    {
+        if(controlSelection == KEYBOARD)
+        {
+            controllerTitle.text = "Controller";
+            keyboardCanvas.SetActive(false);
+            controllerCanvas.SetActive(true);
+            controlSelection = CONTROLLER;
+
+        }else if (controlSelection == CONTROLLER)
+        {
+            controllerTitle.text = "Keyboard";
+            keyboardCanvas.SetActive(true);
+            controllerCanvas.SetActive(false);
+            controlSelection = KEYBOARD;
+        }
+        audioSource.Play();
     }
 
     public void backButton_Graphics()
@@ -228,6 +254,14 @@ public class Settings : MonoBehaviour
     public void backButton_Credits()
     {
         creditsOptions.SetActive(false);
+        GameOptions.SetActive(true);
+        controlsCanvas.SetActive(false);
+        audioSource.Play();
+        EventSystem.current.SetSelectedGameObject(sensSlider);
+    }
+
+    public void backButton_Controls()
+    {
         GameOptions.SetActive(true);
         controlsCanvas.SetActive(false);
         audioSource.Play();

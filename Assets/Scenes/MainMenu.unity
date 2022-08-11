@@ -16116,10 +16116,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
+  m_fontSize: 70.3
   m_fontSizeBase: 80
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -16152,7 +16152,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -12.443668, y: -4.5061617, z: -10.151672, w: -1.1295078}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -16491,7 +16491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1218952083
 Transform:
   m_ObjectHideFlags: 0
@@ -18240,7 +18240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1330603563
 Transform:
   m_ObjectHideFlags: 0
@@ -21481,9 +21481,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969902384}
-        m_TargetAssemblyTypeName: LevelSelectMenu, Assembly-CSharp
-        m_MethodName: moveActLeft
+      - m_Target: {fileID: 1821992358}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: rightButtonControls
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24630,7 +24630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1813437401
 Transform:
   m_ObjectHideFlags: 0
@@ -24973,6 +24973,9 @@ MonoBehaviour:
   AudioOptions: {fileID: 815194649}
   creditsOptions: {fileID: 1688406377}
   controlsCanvas: {fileID: 1218952082}
+  keyboardCanvas: {fileID: 1813437400}
+  controllerCanvas: {fileID: 1330603562}
+  controllerTitle: {fileID: 1178495045}
   graphicsButton: {fileID: 51477755}
   resolutionButtonRight: {fileID: 1219793104}
   mainVolumeSlider: {fileID: 1421723363}
@@ -27358,9 +27361,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969902384}
-        m_TargetAssemblyTypeName: LevelSelectMenu, Assembly-CSharp
-        m_MethodName: moveActRight
+      - m_Target: {fileID: 1821992358}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: rightButtonControls
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
