@@ -41,6 +41,7 @@ public class Settings : MonoBehaviour
     public GameObject GraphicsOptions;
     public GameObject AudioOptions;
     public GameObject creditsOptions;
+    public GameObject controlsCanvas;
 
 
     private AudioSource audioSource;
@@ -51,6 +52,7 @@ public class Settings : MonoBehaviour
     public GameObject mainVolumeSlider;
     public GameObject sensSlider;
     public GameObject creditsBackButton;
+    public GameObject controlsRightButton;
 
 
 
@@ -192,6 +194,15 @@ public class Settings : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(graphicsButton);
     }
 
+    public void displayControls()
+    {
+
+        GameOptions.SetActive(false);
+        controlsCanvas.SetActive(true);
+        audioSource.Play();
+        EventSystem.current.SetSelectedGameObject(controlsRightButton);
+    }
+
     public void backButton_Graphics()
     {
         GraphicsOptions.SetActive(false);
@@ -218,6 +229,7 @@ public class Settings : MonoBehaviour
     {
         creditsOptions.SetActive(false);
         GameOptions.SetActive(true);
+        controlsCanvas.SetActive(false);
         audioSource.Play();
         EventSystem.current.SetSelectedGameObject(sensSlider);
     }
