@@ -24,6 +24,7 @@ public class WeaponSwitching : MonoBehaviour
             unlockWeapons();
         }
 
+        //selectedWeapon = SaveData.Instance.lastWeapon;
         selectedWeapon = curWeapon;
         SelectWeapon();
     }
@@ -130,39 +131,52 @@ public class WeaponSwitching : MonoBehaviour
         {
             SelectWeapon();
         }
-        curWeapon = selectedWeapon;
+        SaveData.Instance.lastWeapon = selectedWeapon;
 
     }
 
     private void unlockWeapons()
     {
         int currentLevel = SaveData.Instance.currentLevel;
-        
-        if(currentLevel > 4)
+
+
+        if (currentLevel > 4)
         {
             shotgun.tag = "unlocked";
-            curWeapon = 1;
+            //curWeapon = 1;
         }
         if (currentLevel > 6)
         {
             grapplegun.tag = "unlocked";
-            curWeapon = 2;
+            //curWeapon = 2;
         }
         if (currentLevel > 9)
         {
             machinegun.tag = "unlocked";
-            curWeapon = 3;
+            //curWeapon = 3;
         }
         if (currentLevel > 12)
         {
             ricochetgun.tag = "unlocked";
-            curWeapon = 4;
+            //curWeapon = 4;
         }
 
         if (currentLevel > 15)
         {
             spear.tag = "unlocked";
-            curWeapon = 5;
+            //curWeapon = 5;
+        }
+
+        curWeapon = SaveData.Instance.lastWeapon;
+
+        //failsafe for weapons that don't belong in early levels
+        if ((curWeapon == 5 && currentLevel < 16) || 
+            (curWeapon == 4 && currentLevel < 13) || 
+            (curWeapon == 3 && currentLevel < 10) ||
+            (curWeapon == 2 && currentLevel < 7) ||
+            (curWeapon == 1 && currentLevel < 5))
+        {
+            curWeapon = 0;
         }
     }
 

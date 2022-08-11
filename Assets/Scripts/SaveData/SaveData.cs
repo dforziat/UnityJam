@@ -22,6 +22,8 @@ public class SaveData
     public float[] bestTime;
     public float challengeBestTime;
 
+    public int lastWeapon;
+
    public static SaveData Instance;
 
 
