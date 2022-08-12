@@ -34,9 +34,9 @@ public class Boss3Cutscene : MonoBehaviour
     public void ActivateBoss()
     {
         bossName.enabled = true;
-        bossName.CrossFadeAlpha(0, 8, false);
+        bossName.CrossFadeAlpha(0, 4, false);
         bossSubName.enabled = true;
-        bossSubName.CrossFadeAlpha(0, 8, false);
+        bossSubName.CrossFadeAlpha(0, 4, false);
         musicManager.Play();
 
         healthBar.enabled = true;
@@ -46,7 +46,6 @@ public class Boss3Cutscene : MonoBehaviour
         {
             glassPod.activateAnimation();
         }
-
     }
 
     public void StartFight()

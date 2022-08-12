@@ -151,7 +151,6 @@ public class Boss3Script : MonoBehaviour
             sniperRoomDoor.isUnlocked = true;
         }
 
-
         currentThreshold += damage;
         if (bossStage == 1)
         {

@@ -22,7 +22,14 @@ public class LevelSelectButton : MonoBehaviour
     private Button button;
     void Start()
     {
-        levelTitle.text = levelTitle.text + levelNum;
+        if(levelNum % 6 == 0)
+        {
+            levelTitle.text = "Boss " + levelNum / 6;
+        }
+        else
+        {
+            levelTitle.text = levelTitle.text + levelNum;
+        }
         // +1 because Menu = 0 // Prologue = 1 // Level 1 = 2, etc
         levelNum++;
         displayBest();

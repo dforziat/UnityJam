@@ -8,6 +8,7 @@ public class Bomb : MonoBehaviour
     public AudioClip beepClip;
     public GameObject explosion;
     public GameObject ammoPickup;
+    public GameObject healthPickup;
 
     private int explosionDamage = 10;
     private float explosionDistance = 3f;
@@ -50,7 +51,15 @@ public class Bomb : MonoBehaviour
         int dropRandomNum = Random.Range(0, 100);
         if (dropRandomNum <= 10)
         {
-            Instantiate(ammoPickup, new Vector3(transform.position.x, transform.position.y + verticalOffset, transform.position.z), transform.rotation);
+            int randomDrop = Random.Range(0, 10);
+            if(randomDrop <= 5)
+            {
+                Instantiate(ammoPickup, new Vector3(transform.position.x, transform.position.y + verticalOffset, transform.position.z), transform.rotation);
+            }
+            else
+            {
+                Instantiate(healthPickup, new Vector3(transform.position.x, transform.position.y + verticalOffset, transform.position.z), transform.rotation);
+            }
         }
 
         if (isGrenade)

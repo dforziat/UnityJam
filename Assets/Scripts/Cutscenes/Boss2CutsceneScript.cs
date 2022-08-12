@@ -47,4 +47,5 @@ public class Boss2CutsceneScript : MonoBehaviour
         healthBar.enabled = true;
         healthBar.GetComponent<Animator>().SetTrigger("healthBarFill");
     }
+
 }
