@@ -14,6 +14,7 @@ public class Boss2CutsceneScript : MonoBehaviour
     public TextMeshProUGUI bossName;
     public TextMeshProUGUI bossSubName;
     public Image healthBar;
+    public GameObject bossShadow;
     void Start()
     {
         GUI.SetActive(false);
@@ -21,6 +22,7 @@ public class Boss2CutsceneScript : MonoBehaviour
         bossSubName.enabled = false;
         healthBar.enabled = false;
         musicManager.Stop();
+        bossShadow.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class Boss2CutsceneScript : MonoBehaviour
         GUI.SetActive(true);
         entranceDoor.isUnlocked = false;
         boss.GetComponent<Animator>().SetTrigger("begin");
+        bossShadow.SetActive(true);
     }
 
     public void ActivateBoss()

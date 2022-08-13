@@ -20,6 +20,7 @@ public class BossScript : MonoBehaviour
     private MeshRenderer[] meshRendererList;
     private List<Color> originalColorList;
     private float flashTime = .2f;
+    public GameObject bossShadow;
 
     [Header("Charge Shot")]
     private float chargeShotSpeed = 10f;
@@ -252,6 +253,7 @@ public class BossScript : MonoBehaviour
         isSecondStage = true;
         jumppads.SetActive(true);
         laser.activateLaser();
+        bossShadow.GetComponent<Animator>().SetTrigger("shrink");
     }
 
     public void explode()
@@ -266,6 +268,7 @@ public class BossScript : MonoBehaviour
 
     public void die()
     {
+        Destroy(bossShadow);
         bossDoor.isUnlocked = true;
         laser.deactivateLaser();
         Destroy(gameObject);

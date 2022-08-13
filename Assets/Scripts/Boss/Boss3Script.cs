@@ -90,6 +90,7 @@ public class Boss3Script : MonoBehaviour
         {
             originalColorList.Add(material.color);
         }
+
     }
 
     // Update is called once per frame

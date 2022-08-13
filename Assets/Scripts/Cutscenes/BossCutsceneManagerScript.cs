@@ -14,6 +14,7 @@ public class BossCutsceneManagerScript : MonoBehaviour
     public TextMeshProUGUI bossName;
     public TextMeshProUGUI bossSubName;
     public Image healthBar;
+    public GameObject bossShadow;
 
 
     void Start()
@@ -23,6 +24,7 @@ public class BossCutsceneManagerScript : MonoBehaviour
         bossName.enabled = false;
         bossSubName.enabled = false;
         healthBar.enabled = false;
+        bossShadow.SetActive(false);
     }
 
     // Update is called once per frame
@@ -51,5 +53,6 @@ public class BossCutsceneManagerScript : MonoBehaviour
 
         healthBar.enabled = true;
         healthBar.GetComponent<Animator>().SetTrigger("healthBarFill");
+        bossShadow.SetActive(true);
     }
 }
