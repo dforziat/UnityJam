@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
 
     private AudioSource audioSource;
+
+    public Image charPortrait;
+    public Sprite artsFace;
 
 
     // Start is called before the first frame update
@@ -51,6 +55,12 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
+        Debug.Log("sentences.Count " + sentences.Count);
+
+       if(SceneManager.GetActiveScene().name == "Level0" && sentences.Count == 1)
+        {
+          faceSwap();
+        }
 
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
@@ -69,7 +79,6 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(.05f);
         }
         yield return new WaitForSeconds(2f);
-       // Debug.Log("Text: " + dialogueText.text);
         DisplayNextSentences();
     }
 
@@ -78,5 +87,9 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
     }
 
-
+    public void faceSwap()
+    {
+        charPortrait.sprite = artsFace;
+        nameText.text = "ART";
+    }
 }
