@@ -131,6 +131,16 @@ public class CameraEffects : MonoBehaviour
        // }
     }
 
+    public void shotgunShake()
+    {
+        // if (Input.GetKeyDown(KeyCode.Mouse0))
+        //  {
+        Amount = new Vector3(.3f, .3f, 0);
+        Duration = .4f;
+        Shake();
+        // }
+    }
+
     public void damageShake()
     {
         Amount = new Vector3(.5f, .5f, 0);

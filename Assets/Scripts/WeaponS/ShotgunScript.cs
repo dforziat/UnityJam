@@ -81,7 +81,7 @@ public class ShotgunScript : MonoBehaviour
         audioSource.PlayOneShot(shootClip);
         playerControls.shotgunAmmo--;
         shotgunAmmoText.text = playerControls.shotgunAmmo.ToString("D3");
-        cameraEffects.gunShake();
+        cameraEffects.shotgunShake();
         RaycastHit hit;
 
         for(int i = 0; i < buckshot; i++)
