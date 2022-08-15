@@ -11,7 +11,7 @@ public class Boss3Script : MonoBehaviour
     private const int maxHealth = 170;
     private const float speed = 3.5f;
     private const float runSpeed = 5f;
-    private const float meleeRange = 4f;
+    private const float meleeRange = 2f;
 
     private int bossStage = 1;
 
@@ -365,7 +365,8 @@ public class Boss3Script : MonoBehaviour
         if (bossStage == 2 && state != MOVING)
         {
             rotateTowardsPlayerBool = false;
-            int randomNum = Random.Range(0, 4);
+            //Range (0,4) will include jump attack
+            int randomNum = Random.Range(0, 3);
 
             switch (randomNum)
             {

@@ -16,6 +16,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject GameOptions;
     public GameObject GraphicsOptions;
     public GameObject AudioOptions;
+    public GameObject buttonOptions;
     public GameObject loadScreen;
     private AudioSource audioSource;
 
@@ -61,6 +62,8 @@ public class PauseMenu : MonoBehaviour
         GameOptions.SetActive(false);
         GraphicsOptions.SetActive(false);
         AudioOptions.SetActive(false);
+        buttonOptions.SetActive(false);
+
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -80,6 +83,8 @@ public class PauseMenu : MonoBehaviour
         GameOptions.SetActive(false);
         GraphicsOptions.SetActive(false);
         AudioOptions.SetActive(false);
+        buttonOptions.SetActive(false);
+
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
