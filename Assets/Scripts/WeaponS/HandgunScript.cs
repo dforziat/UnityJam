@@ -95,6 +95,10 @@ public class HandgunScript : MonoBehaviour
             {
                 hit.transform.GetComponent<ButtonController>().Activate();
             }
+            if (hit.transform.tag == "FinalButton")
+            {
+                hit.transform.GetComponent<EpilogueButton>().Activate();
+            }
         }
         yield return new WaitForSeconds(rateOfFire);
         canShoot = true;

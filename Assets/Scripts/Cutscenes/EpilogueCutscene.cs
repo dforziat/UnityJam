@@ -29,4 +29,9 @@ public class EpilogueCutscene : MonoBehaviour
         }
 
     }
+
+    public void weaponEquip()
+    {
+        GUI.SetActive(true);
+    }
 }
