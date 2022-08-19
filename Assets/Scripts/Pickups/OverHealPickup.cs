@@ -1,3 +1,4 @@
+using Steamworks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,6 +28,18 @@ public class OverHealPickup : MonoBehaviour
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>().OverHeal();
                 Destroy(gameObject);
+            }
+
+            if (SteamManager.Initialized)
+            {
+                SteamUserStats.GetAchievement(SteamAchievementConstants.ARMOR, out bool achievementUnlocked);
+                if (!achievementUnlocked)
+                {
+                    SteamScript.incrementPlatStat();
+                    SteamUserStats.SetAchievement(SteamAchievementConstants.ARMOR);
+                    SteamUserStats.StoreStats();
+                }
+
             }
         }
     }

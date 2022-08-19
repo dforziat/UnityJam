@@ -1,3 +1,4 @@
+using Steamworks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,19 @@ public class SpearPickup : MonoBehaviour
             weaponsHud.GetComponent<WeaponSwitching>().selectedWeapon = 5;
             weaponsHud.GetComponent<WeaponSwitching>().SelectWeapon();
             weaponsHud.transform.Find("SpearOfBealial").tag = "unlocked";
+
+            if (SteamManager.Initialized)
+            {
+                SteamUserStats.GetAchievement(SteamAchievementConstants.ARSENAL, out bool achievementUnlocked);
+                if (!achievementUnlocked)
+                {
+                    SteamScript.incrementPlatStat();
+                    SteamUserStats.SetAchievement(SteamAchievementConstants.ARSENAL);
+                    SteamUserStats.StoreStats();
+                }
+
+            }
+
             Destroy(gameObject);
         }
     }

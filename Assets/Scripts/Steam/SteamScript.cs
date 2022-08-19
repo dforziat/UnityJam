@@ -9,7 +9,6 @@ public class SteamScript : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
     }
 
     void Start()
@@ -18,7 +17,10 @@ public class SteamScript : MonoBehaviour
         {
             string name = SteamFriends.GetPersonaName();
             SteamUserStats.GetAchievement(SteamAchievementConstants.ACT_1, out bool bossKilled);
+            int statNum;
+            SteamUserStats.GetStat(SteamAchievementConstants.STAT_PLAT, out statNum);
             Debug.Log("Boss1 Killed: " + bossKilled);
+            Debug.Log("Plat Stats: " + statNum);
             Debug.Log(name);
         }
     }
@@ -26,10 +28,25 @@ public class SteamScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (SteamManager.Initialized)
+            {
+                SteamUserStats.ResetAllStats(true);
+                SteamUserStats.StoreStats();
+                SteamUserStats.GetStat(SteamAchievementConstants.STAT_PLAT, out int statNum);
+                SteamUserStats.GetAchievement(SteamAchievementConstants.ACT_1, out bool bossKilled);
+                Debug.Log("Boss1 Killed: " + bossKilled);
+                Debug.Log("Plat Stats: " + statNum);
+            }
+        }
     }
 
-    private void OnApplicationQuit()
+    public static void incrementPlatStat()
     {
+        int statNum;
+        SteamUserStats.GetStat(SteamAchievementConstants.STAT_PLAT, out statNum);
+        statNum++;
+        SteamUserStats.SetStat(SteamAchievementConstants.STAT_PLAT, statNum);
     }
 }

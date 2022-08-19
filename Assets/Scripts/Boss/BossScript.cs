@@ -102,8 +102,14 @@ public class BossScript : MonoBehaviour
             animator.SetTrigger("death");
             if (SteamManager.Initialized)
             {
-                SteamUserStats.SetAchievement(SteamAchievementConstants.ACT_1);
-                SteamUserStats.StoreStats();
+                SteamUserStats.GetAchievement(SteamAchievementConstants.ACT_1, out bool bossKilled);
+                if (!bossKilled)
+                {
+                    SteamScript.incrementPlatStat();
+                    SteamUserStats.SetAchievement(SteamAchievementConstants.ACT_1);
+                    SteamUserStats.StoreStats();
+                }
+               
             }
         }
         health -= damage;

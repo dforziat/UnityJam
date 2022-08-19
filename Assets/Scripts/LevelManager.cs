@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Steamworks;
 
 public class LevelManager : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class LevelManager : MonoBehaviour
     int bestSecs;
     int bestMiliSecs;
 
+    float devTime;
 
 
     void Start()
@@ -64,6 +66,7 @@ public class LevelManager : MonoBehaviour
         displayBest();
         SaveData.Instance.currentLevel++;
         SaveManager.SavePrefs();
+        checkDevTimeAchievement();
     }
 
 
@@ -100,7 +103,7 @@ public class LevelManager : MonoBehaviour
 
     public void displayDevTime()
     {
-        float devTime = DevTimes.devTimesList[SaveData.Instance.currentLevel];
+        devTime = DevTimes.devTimesList[SaveData.Instance.currentLevel];
         float bestMins = (int)(devTime / 60);
         float bestSecs = (int)(devTime % 60);
         float bestMiliSecs = Mathf.RoundToInt((devTime - bestMins * 60 - bestSecs) * 100);
@@ -111,17 +114,31 @@ public class LevelManager : MonoBehaviour
     public void Level_0_Complete()
     {
 
-        //Uncomment these once level is solid
-
-
-
-
         //Loads Level 1 Everytime
         
         Debug.Log("Level Advanced");
         SaveData.Instance.currentLevel = 2;
         SaveManager.SavePrefs();
         SceneManager.LoadScene("Level1");
+    }
+
+    public void checkDevTimeAchievement()
+    {
+        if (currentTime < devTime)
+        {
+            if (SteamManager.Initialized)
+            {
+                SteamUserStats.GetAchievement(SteamAchievementConstants.DEV_TIME, out bool achievementUnlocked);
+                if (!achievementUnlocked)
+                {
+                    SteamScript.incrementPlatStat();
+                    SteamUserStats.SetAchievement(SteamAchievementConstants.DEV_TIME);
+                    SteamUserStats.StoreStats();
+                }
+
+            }
+        }
+       
     }
 
 }

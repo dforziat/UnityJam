@@ -1,3 +1,4 @@
+using Steamworks;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -88,6 +89,18 @@ public class ChallengeLevelManager : MonoBehaviour
 
             GameObject levelCompleteText = levelCompleteCanvas.transform.Find("LevelComplete").gameObject;
             levelCompleteText.SetActive(false);
+
+            if (SteamManager.Initialized)
+            {
+                SteamUserStats.GetAchievement(SteamAchievementConstants.CHALLENGE_MODE, out bool achievementUnlocked);
+                if (!achievementUnlocked)
+                {
+                    SteamScript.incrementPlatStat();
+                    SteamUserStats.SetAchievement(SteamAchievementConstants.CHALLENGE_MODE);
+                    SteamUserStats.StoreStats();
+                }
+
+            }
 
         }
 

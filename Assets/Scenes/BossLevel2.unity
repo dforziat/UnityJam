@@ -89333,6 +89333,10 @@ PrefabInstance:
       propertyPath: bossDoor
       value: 
       objectReference: {fileID: 1587154477}
+    - target: {fileID: 4824548750186313104, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
 --- !u!1 &4824548750186313097 stripped
@@ -89345,6 +89349,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4722222066634076197, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
   m_PrefabInstance: {fileID: 4824548750186313096}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4824548750186313099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9012117450350496723, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+  m_PrefabInstance: {fileID: 4824548750186313096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &4824548750186313100
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824548750186313099}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: -1.8, y: -2, z: 1}
 --- !u!114 &4824548750186313101 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4824548750186313100, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
@@ -89356,6 +89379,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3138948aea2190c49a43b91388b549d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4824548750186313102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5583643547445881385, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+  m_PrefabInstance: {fileID: 4824548750186313096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &4824548750186313103
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824548750186313102}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 1.7, y: -2, z: 1}
 --- !u!95 &4824548750186313104 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4824548750186313098, guid: d2a2708dc3efed1449e8738676624fab, type: 3}

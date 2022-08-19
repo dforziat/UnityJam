@@ -1,3 +1,4 @@
+using Steamworks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -124,6 +125,18 @@ public class Boss3Script : MonoBehaviour
             navMeshAgent.speed = 0;
             animator.CrossFade("Boss3_Death", .5f);
             finalDoor.isUnlocked = true;
+
+            if (SteamManager.Initialized)
+            {
+                SteamUserStats.GetAchievement(SteamAchievementConstants.ACT_3, out bool bossKilled);
+                if (!bossKilled)
+                {
+                    SteamScript.incrementPlatStat();
+                    SteamUserStats.SetAchievement(SteamAchievementConstants.ACT_3);
+                    SteamUserStats.StoreStats();
+                }
+
+            }
         }
         health -= damage;
         // Debug.Log("Boss Health: " + health);
