@@ -17,6 +17,8 @@ public class SteamScript : MonoBehaviour
         if (SteamManager.Initialized)
         {
             string name = SteamFriends.GetPersonaName();
+            SteamUserStats.GetAchievement(SteamAchievementConstants.ACT_1, out bool bossKilled);
+            Debug.Log("Boss1 Killed: " + bossKilled);
             Debug.Log(name);
         }
     }

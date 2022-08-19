@@ -12,5 +12,7 @@ public class SteamAchievementConstants : MonoBehaviour
     public const string ARMOR = "ACHIEVEMENT_ARMOR_PICKUP";
     public const string PLATINUM = "ACHIEVEMENT_PLATINUM";
     public const string ARSENAL = "ACHIEVEMENT_ARSENAL";
+    public const string DEV_TIME = "ACHIEVEMENT_DEV_TIME";
+
 
 }

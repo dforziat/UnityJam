@@ -103,6 +103,7 @@ public class BossScript : MonoBehaviour
             if (SteamManager.Initialized)
             {
                 SteamUserStats.SetAchievement(SteamAchievementConstants.ACT_1);
+                SteamUserStats.StoreStats();
             }
         }
         health -= damage;
