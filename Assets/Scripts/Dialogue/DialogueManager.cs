@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
+
     public GameObject dialogueBox;
 
     private Queue<string> sentences;
@@ -18,6 +19,11 @@ public class DialogueManager : MonoBehaviour
 
     public Image charPortrait;
     public Sprite artsFace;
+
+    public SpriteRenderer artMonitor;
+    public Sprite artMonitorFace;
+    public string triggerScript;
+
 
 
     // Start is called before the first frame update
@@ -61,6 +67,11 @@ public class DialogueManager : MonoBehaviour
         {
           faceSwap();
         }
+        
+        if (SceneManager.GetActiveScene().name == "Epilogue" && sentences.Count == 8 && triggerScript != null & triggerScript == "epilogue")
+       {
+            artMonitor.sprite = artMonitorFace;
+       }
 
         string sentence = sentences.Dequeue();
         StopAllCoroutines();

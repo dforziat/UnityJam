@@ -143,35 +143,41 @@ public class WeaponSwitching : MonoBehaviour
         if (currentLevel > 4)
         {
             shotgun.tag = "unlocked";
-            //curWeapon = 1;
         }
         if (currentLevel > 6)
         {
             grapplegun.tag = "unlocked";
-            //curWeapon = 2;
         }
         if (currentLevel > 9)
         {
             machinegun.tag = "unlocked";
-            //curWeapon = 3;
         }
         if (currentLevel > 12)
         {
             ricochetgun.tag = "unlocked";
-            //curWeapon = 4;
         }
 
         if (currentLevel > 15)
         {
             spear.tag = "unlocked";
-            //curWeapon = 5;
         }
 
         curWeapon = SaveData.Instance.lastWeapon;
 
+        //disable all weapons but handgun for epilogue
+        if (SceneManager.GetActiveScene().name == "Epilogue")
+        {
+            shotgun.tag = "Untagged";
+            grapplegun.tag = "Untagged";
+            machinegun.tag = "Untagged";
+            ricochetgun.tag = "Untagged";
+            spear.tag = "Untagged";
+            curWeapon = 0;
+        }
+
         //failsafe for weapons that don't belong in early levels
-        if ((curWeapon == 5 && currentLevel < 16) || 
-            (curWeapon == 4 && currentLevel < 13) || 
+        if ((curWeapon == 5 && currentLevel < 16) ||
+            (curWeapon == 4 && currentLevel < 13) ||
             (curWeapon == 3 && currentLevel < 10) ||
             (curWeapon == 2 && currentLevel < 7) ||
             (curWeapon == 1 && currentLevel < 5))

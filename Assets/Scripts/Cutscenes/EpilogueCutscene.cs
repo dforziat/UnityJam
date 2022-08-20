@@ -15,7 +15,6 @@ public class EpilogueCutscene : MonoBehaviour
     void Awake()
     {
         timeline = GetComponent<PlayableDirector>();
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,8 +23,6 @@ public class EpilogueCutscene : MonoBehaviour
         {
             timeline.Play();
             GUI.SetActive(false);
-
-
         }
 
     }

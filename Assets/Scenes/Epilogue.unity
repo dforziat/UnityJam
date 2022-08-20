@@ -6238,6 +6238,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5093898325680900129, guid: 6b807295d3badcf449bfa79a43033f20, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a2282be8247a74841bd2cf91f5450095, type: 3}
     - target: {fileID: 5093898325680900130, guid: 6b807295d3badcf449bfa79a43033f20, type: 3}
       propertyPath: m_Name
       value: _MusicManager
@@ -7244,6 +7248,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6719174760462874041, guid: ae1a62fe0ecc04742b0726af614ffb4f, type: 3}
   m_PrefabInstance: {fileID: 271909869}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &272292904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272292905}
+  m_Layer: 0
+  m_Name: ExplosionPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &272292905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272292904}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 25.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &273255487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18138,7 +18172,7 @@ MonoBehaviour:
     sentences:
     - So...
     - I kinda lied a bit...
-    - '[MONITOR LIGHTS UP REMOVE THIS AND REPLACE WITH] ...'
+    - ...
     - I mean I AM locked in here. Just not the person you were expecting...
     - ...
     - Nothing changes though, the plan is still the same. I can't set off the bomb,
@@ -18149,6 +18183,7 @@ MonoBehaviour:
     - Now just shoot that comically oversized button over there and GET OUT. I'll
       make sure you have enough time to leave.
     - My job here is done...
+  scriptName: epilogue
 --- !u!1001 &656647120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19923,11 +19958,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
+  GUI: {fileID: 1599512396}
   triggerBox: {fileID: 1999957172}
   endScreen: {fileID: 1792314841}
+  mainMenuButton: {fileID: 560428807}
   buttonClip: {fileID: 8300000, guid: dc47a824e5f63e3459adee03ecb65b89, type: 3}
   timeline1: {fileID: 752346835}
   timeline2: {fileID: 597014308}
+  explosionPoint: {fileID: 272292905}
+  explosion: {fileID: 8579213436375878188, guid: 4bdc1c35b7082374ebbba56e08168e2f, type: 3}
 --- !u!1001 &714854902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20352,7 +20391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -29800,6 +29839,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1101540861}
+  - component: {fileID: 1101540862}
+  - component: {fileID: 1101540863}
   m_Layer: 0
   m_Name: Dialogue-EP
   m_TagString: Untagged
@@ -29830,6 +29871,39 @@ RectTransform:
   m_AnchoredPosition: {x: 261.4, y: 84.3}
   m_SizeDelta: {x: 930, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &1101540862
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101540860}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: -10
+  m_TargetDisplay: 0
+--- !u!225 &1101540863
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101540860}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1102140751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29892,6 +29966,88 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6719174760462874041, guid: ae1a62fe0ecc04742b0726af614ffb4f, type: 3}
   m_PrefabInstance: {fileID: 1102140751}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1103483323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1103483325}
+  - component: {fileID: 1103483324}
+  m_Layer: 0
+  m_Name: ArtMonitor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1103483324
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103483323}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -6223054573562775768, guid: 4bf639c611a2edb4e8b510c962ea3dad, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.48, y: 0.32}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1103483325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103483323}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 2.258, z: 25.392}
+  m_LocalScale: {x: 6.2, y: 6.2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1107570648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43354,6 +43510,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3234496502120325714, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4412032328294747392, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: cam
       value: 
@@ -43485,6 +43645,10 @@ PrefabInstance:
     - target: {fileID: 8152528223183677286, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643817862950157814, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9151208001315596806, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: m_AnchorMax.x
@@ -51767,7 +51931,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Misson Accomplished!
+  m_text: Mission Accomplished!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac20fcb28a0c1754e8894ac109d93bc0, type: 2}
   m_sharedMaterial: {fileID: -7858543778738272850, guid: ac20fcb28a0c1754e8894ac109d93bc0, type: 2}
@@ -53628,6 +53792,7 @@ MonoBehaviour:
     name: Art
     sentences:
     - Goodbye...friend...
+  scriptName: 
 --- !u!65 &1999957175
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58246,6 +58411,9 @@ MonoBehaviour:
   dialogueBox: {fileID: 1101540860}
   charPortrait: {fileID: 0}
   artsFace: {fileID: 0}
+  artMonitor: {fileID: 1103483324}
+  artMonitorFace: {fileID: 5015598661268232584, guid: 4bf639c611a2edb4e8b510c962ea3dad, type: 3}
+  triggerScript: 
 --- !u!4 &4763318268699637037
 Transform:
   m_ObjectHideFlags: 0

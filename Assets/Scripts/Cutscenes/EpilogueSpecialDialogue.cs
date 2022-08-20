@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class EpilogueSpecialDialogue : MonoBehaviour
 {
     public Dialogue dialogue;
+    public string scriptName;
 
     public void Start()
     {
@@ -18,13 +19,12 @@ public class EpilogueSpecialDialogue : MonoBehaviour
     {
 
         GetComponentInParent<DialogueManager>().StartDialogue(dialogue);
+        GetComponentInParent<DialogueManager>().triggerScript = scriptName;
 
     }
     private void OnTriggerEnter(Collider other)
     {
         TriggerDialogue();
-        Destroy(this);
-     
-
+        Destroy(this);    
     }
 }

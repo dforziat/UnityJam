@@ -1,19 +1,27 @@
+using Steamworks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Playables;
 
 public class EpilogueButton : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool isActivated = false;
+    public GameObject GUI;
     public GameObject triggerBox;
     public GameObject endScreen;
+    public GameObject mainMenuButton;
     private Animator animator;
     public AudioClip buttonClip;
     private AudioSource audioSource;
     public PlayableDirector timeline1;
     public PlayableDirector timeline2;
+    public Transform explosionPoint;
+
+    public GameObject explosion;
+    private float explosionTime = 1f;
 
 
     void Start()
@@ -42,14 +50,29 @@ public class EpilogueButton : MonoBehaviour
             timeline1.Stop();
             timeline2.Play();
             StartCoroutine(slightPause());
+            GUI.SetActive(false);
+
 
         }
     }
 
     IEnumerator slightPause()
     {
-        
+
         //dan put code to start explosions here
+        explode();
+
+        if (SteamManager.Initialized)
+        {
+            SteamUserStats.GetAchievement(SteamAchievementConstants.ART, out bool achievmentUnlocked);
+            if (!achievmentUnlocked)
+            {
+                SteamScript.incrementPlatStat();
+                SteamUserStats.SetAchievement(SteamAchievementConstants.ART);
+                SteamUserStats.StoreStats();
+            }
+
+        }
 
         //player starts turning here
         yield return new WaitForSeconds(3f);
@@ -65,7 +88,7 @@ public class EpilogueButton : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         endScreen.SetActive(true);
-
+        EventSystem.current.SetSelectedGameObject(mainMenuButton);
 
     }
 
@@ -73,5 +96,23 @@ public class EpilogueButton : MonoBehaviour
     {
          triggerBox.SetActive(true);
          StartCoroutine(slightPause());
+    }
+
+    public void explode()
+    {
+        float max = 1.5f;
+        float min = -1.5f;
+        float randomX = Random.Range(max, min);
+        float randomY = Random.Range(max, min);
+        float randomZ = Random.Range(max, min);
+        Instantiate(explosion, new Vector3(explosionPoint.position.x + randomX, explosionPoint.position.y + randomY + 1f, explosionPoint.position.z), explosionPoint.transform.rotation);
+        if(explosionTime > .3f)
+        {
+            explosionTime -= .1f;
+        }
+        if (!endScreen.activeInHierarchy)
+        {
+            Invoke("explode", explosionTime);
+        }
     }
 }
