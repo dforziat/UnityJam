@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class EpilogueButton : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class EpilogueButton : MonoBehaviour
     private Animator animator;
     public AudioClip buttonClip;
     private AudioSource audioSource;
+    public PlayableDirector timeline1;
+    public PlayableDirector timeline2;
+
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -33,21 +38,40 @@ public class EpilogueButton : MonoBehaviour
         {
             isActivated = true;
             animator.SetTrigger("activate");
-            //door.GetComponent<DoorProximityScript>().isUnlocked = true;
             audioSource.PlayOneShot(buttonClip);
-            triggerBox.SetActive(true);
+            timeline1.Stop();
+            timeline2.Play();
             StartCoroutine(slightPause());
+
         }
     }
 
     IEnumerator slightPause()
     {
-        yield return new WaitForSeconds(5f);
+        
+        //dan put code to start explosions here
+
+        //player starts turning here
+        yield return new WaitForSeconds(3f);
+
+        //dialogue starts
+        triggerBox.SetActive(true);
+
+        //waits till dialogue is over and then rest tosses up end screen
+        //increase the wait time to wait longer till game ends
+        yield return new WaitForSeconds(13f);
+        LevelManager.levelLoading = true;
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         endScreen.SetActive(true);
 
 
+    }
+
+    public void signalEndGame()
+    {
+         triggerBox.SetActive(true);
+         StartCoroutine(slightPause());
     }
 }
