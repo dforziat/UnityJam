@@ -103,4 +103,23 @@ public class GolemScript : EnemyParent
         animator.SetBool("shoot", false);
     }
 
+    public new void takeDamage(int damage)
+    {
+        isProvoked = true;
+        health -= damage;
+        StartCoroutine(FlashRed());
+
+        if (health <= 0)
+        {
+            Instantiate(explosion, new Vector3(transform.position.x, transform.position.y - verticalOffset, transform.position.z), transform.rotation);
+            dropItem();
+
+            Destroy(gameObject);
+        }
+        if (audioSource.enabled == true)
+        {
+            audioSource.PlayOneShot(damagedClip);
+        }
+    }
+
 }

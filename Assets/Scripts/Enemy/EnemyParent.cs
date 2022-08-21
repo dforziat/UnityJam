@@ -59,10 +59,6 @@ public class EnemyParent : MonoBehaviour
             Instantiate(explosion, new Vector3(transform.position.x, transform.position.y - verticalOffset, transform.position.z), transform.rotation);
             dropItem();
 
-            //Add speedStack - Functionaility
-            //SpeedStack speedStack = GameObject.FindGameObjectWithTag("Player").GetComponent<SpeedStack>();
-            //speedStack.stackAdd();
-
             Destroy(gameObject);
         }
         if (audioSource.enabled == true)

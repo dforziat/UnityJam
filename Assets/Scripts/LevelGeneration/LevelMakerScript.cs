@@ -14,6 +14,7 @@ public class LevelMakerScript : MonoBehaviour
     //Test with 3RoomPrefab;
     public GameObject testRoom;
     public GameObject wall;
+    public GameObject act3Wall;
     public GameObject exitRoom;
     public GameObject[] roomList;
     
@@ -54,7 +55,7 @@ public class LevelMakerScript : MonoBehaviour
         GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
         //check bounding box to see if it intersects with another object, if it does then return false and restart
         GameObject collRoom = Instantiate(roomType, exitPoint.transform.position, exitPoint.transform.rotation);
-        collRoom.name = "RoomNum " + currentNumOfRooms;
+       // collRoom.name = "RoomNum " + currentNumOfRooms;
         foreach (GameObject room in rooms)
         {
             if (collRoom.GetComponent<BoxCollider>().bounds.Intersects(room.GetComponent<BoxCollider>().bounds))
@@ -85,14 +86,20 @@ public class LevelMakerScript : MonoBehaviour
         //Block All Remaining Gaps will walls
         foreach (GameObject exitPoint in exitPoints)
         {
-            Instantiate(wall, exitPoint.transform.position, exitPoint.transform.rotation);
+            if(exitPoint.GetComponent<ExitPointScript>().act == 3)
+            {
+                Instantiate(act3Wall, exitPoint.transform.position, exitPoint.transform.rotation);
+            }
+            else
+            {
+                Instantiate(wall, exitPoint.transform.position, exitPoint.transform.rotation);
+            }
             exitPoint.SetActive(false);
         }
 
         NavMeshSurface surface = GameObject.FindObjectOfType<NavMeshSurface>();
         surface.BuildNavMesh();
-        NavMeshLink link = GameObject.FindObjectOfType<NavMeshLink>();
-        //link.
+
         spawnEnemies();
     }
 

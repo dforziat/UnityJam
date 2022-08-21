@@ -5,6 +5,7 @@ using UnityEngine;
 public class ExitPointScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    public int act = 1;
     void Start()
     {
         
