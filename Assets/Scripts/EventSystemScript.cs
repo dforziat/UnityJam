@@ -8,6 +8,7 @@ public class EventSystemScript : MonoBehaviour
     // Start is called before the first frame update
     AudioSource audioSource;
     public AudioClip buttonChangeClip;
+    bool playedOnce = false;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -17,6 +18,13 @@ public class EventSystemScript : MonoBehaviour
 
     public void playButtonChangeClip()
     {
-        audioSource.PlayOneShot(buttonChangeClip);
+        if (playedOnce)
+        {
+            audioSource.PlayOneShot(buttonChangeClip);
+        }
+        else
+        {
+            playedOnce = true;
+        }
     }
 }

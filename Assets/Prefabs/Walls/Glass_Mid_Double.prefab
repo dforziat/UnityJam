@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9033446031827964876}
   - component: {fileID: 6471593977028823457}
   - component: {fileID: 7461797245661156889}
+  - component: {fileID: 942811881098245143}
   m_Layer: 6
   m_Name: Glass_Mid_Double
   m_TagString: Untagged
@@ -97,6 +98,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &942811881098245143
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369978252902178718}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0.01, z: 10.000002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5706629745573686464
 PrefabInstance:
   m_ObjectHideFlags: 0

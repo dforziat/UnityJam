@@ -102,9 +102,10 @@ public class GrapplegunScript : MonoBehaviour
 
         RaycastHit[] hits;
 
-        hits = Physics.RaycastAll(cam.transform.position, cam.transform.forward, range);
+        hits = Physics.RaycastAll(cam.transform.position, cam.transform.forward, range  + .1f);
 
         foreach(RaycastHit hit in hits){
+            Debug.Log("Grapple Hit: " + hit.transform.name);
             if (hit.transform.tag == "Enemy")
             {
                 hit.transform.SendMessageUpwards("takeDamage", damage, SendMessageOptions.DontRequireReceiver);

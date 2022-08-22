@@ -28,6 +28,19 @@ public class SteamScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //resetAchievements();
+    }
+
+    public static void incrementPlatStat()
+    {
+        int statNum;
+        SteamUserStats.GetStat(SteamAchievementConstants.STAT_PLAT, out statNum);
+        statNum++;
+        SteamUserStats.SetStat(SteamAchievementConstants.STAT_PLAT, statNum);
+    }
+
+    private void resetAchievements()
+    {
         if (Input.GetKeyDown(KeyCode.L))
         {
             if (SteamManager.Initialized)
@@ -40,13 +53,5 @@ public class SteamScript : MonoBehaviour
                 Debug.Log("Plat Stats: " + statNum);
             }
         }
-    }
-
-    public static void incrementPlatStat()
-    {
-        int statNum;
-        SteamUserStats.GetStat(SteamAchievementConstants.STAT_PLAT, out statNum);
-        statNum++;
-        SteamUserStats.SetStat(SteamAchievementConstants.STAT_PLAT, statNum);
     }
 }

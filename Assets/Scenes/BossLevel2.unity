@@ -33819,7 +33819,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Arachnid Assualt Unit
+  m_text: Arachnid Assault Unit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac20fcb28a0c1754e8894ac109d93bc0, type: 2}
   m_sharedMaterial: {fileID: -7858543778738272850, guid: ac20fcb28a0c1754e8894ac109d93bc0, type: 2}
@@ -66316,6 +66316,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 330909090}
+    - target: {fileID: 170453990427658994, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 434152138127771313, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: cam
       value: 
@@ -89403,3 +89407,41 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4824548750186313098, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
   m_PrefabInstance: {fileID: 4824548750186313096}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4824548750186313105 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1834639586496878017, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+  m_PrefabInstance: {fileID: 4824548750186313096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &4824548750186313106
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824548750186313105}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: -1.83, y: -2, z: -0.98}
+--- !u!1 &4824548750186313107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5696324804897010576, guid: d2a2708dc3efed1449e8738676624fab, type: 3}
+  m_PrefabInstance: {fileID: 4824548750186313096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &4824548750186313108
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824548750186313107}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 1.74, y: -2, z: -1.05}
