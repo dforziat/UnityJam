@@ -12,7 +12,7 @@ public class EnemyParent : MonoBehaviour
     public int droprate = 25; //20% drop rate of pickup
     public GameObject ammoPickup;
     public GameObject healthPickup;
-    private int AmmoPityCount = 10;
+    private int AmmoPityCount = 15;
     public Transform target;
 
     public SpriteRenderer spriteRenderer;

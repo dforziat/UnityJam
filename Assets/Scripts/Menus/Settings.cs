@@ -276,12 +276,6 @@ public class Settings : MonoBehaviour
         currentResolution.width = SaveData.Instance.resolutionWidth;
         currentResolution.refreshRate = SaveData.Instance.frameRate;
         resolutionIndex = System.Array.IndexOf(resolutions, currentResolution);
-
-       /* foreach (Resolution res in Screen.resolutions)
-        {
-            Debug.Log("Screen Resolutions: " + res.ToString());
-        } */
-
         Debug.Log("Resolution Index: " + resolutionIndex);
         
         resolutionText.text = currentResolution.ToString();

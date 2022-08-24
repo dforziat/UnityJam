@@ -20,7 +20,6 @@ public class LevelMakerScript : MonoBehaviour
     
     void Start()
     {
-        //navMeshBuilder = new NavMeshBuilder();
         initialExitPoint = GameObject.FindGameObjectWithTag("ExitPoint");
         GenerateLevel(initialExitPoint);
         runFinalPass();
@@ -94,12 +93,12 @@ public class LevelMakerScript : MonoBehaviour
             {
                 Instantiate(wall, exitPoint.transform.position, exitPoint.transform.rotation);
             }
-            exitPoint.SetActive(false);
+            Destroy(exitPoint);
         }
 
         NavMeshSurface surface = GameObject.FindObjectOfType<NavMeshSurface>();
         surface.BuildNavMesh();
-
+        Destroy(initialExitPoint);
         spawnEnemies();
     }
 

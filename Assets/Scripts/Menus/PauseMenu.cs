@@ -109,6 +109,7 @@ public class PauseMenu : MonoBehaviour
         Resume();
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
+        PauseMenuObj.SetActive(false);
         audioSource.Play();
     }
 
@@ -133,6 +134,8 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(0);
         Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
+        PauseMenuObj.SetActive(false);
+
     }
 
 

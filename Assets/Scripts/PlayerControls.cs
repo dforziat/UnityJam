@@ -16,7 +16,6 @@ public class PlayerControls : MonoBehaviour
     float groundDistance = 0.4f;
     [SerializeField] LayerMask groundMask;
     bool isGrounded;
-    private float jumpHeight = 5f;
 
     [Header("GrappleStuff")]
     public bool isGrappling = false;
@@ -41,10 +40,9 @@ public class PlayerControls : MonoBehaviour
 
 
     [Header("Ammo Count")]
-    public int handgunAmmo = 25;
+    public int handgunAmmo = 30;
     public int shotgunAmmo = 10;
     public int machinegunAmmo = 30;
-    //public int spearAmmo = 1;
 
     Vector3 vel;
     [SerializeField] CharacterController controller;
@@ -101,6 +99,7 @@ public class PlayerControls : MonoBehaviour
         {
             Gravity();
             MouseCamLook();
+            ControllerCamLook();
             Movement();
         }
             Grapple();
@@ -115,7 +114,7 @@ public class PlayerControls : MonoBehaviour
         }
         if (!isGrappling)
         {
-            ControllerCamLook();
+            //ControllerCamLook();
         }
     }
 
@@ -155,7 +154,7 @@ public class PlayerControls : MonoBehaviour
         float controllery = Input.GetAxis("RightStick") * lookSensitivity;
         if(controllery != 0)
         {
-            transform.eulerAngles += Vector3.up * controllery * 5;
+            transform.eulerAngles += Vector3.up * controllery * 2;
         }
     }
 

@@ -74,6 +74,7 @@ public class LevelSelectButton : MonoBehaviour
         SaveData.Instance.currentLevel = levelNum;
         SceneManager.LoadSceneAsync(levelNum);
         Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
+        GameObject.Find("UI Menu").SetActive(false);
     }
 
 }

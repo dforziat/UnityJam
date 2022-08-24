@@ -27,5 +27,6 @@ public class LevelCompleteMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
+        gameObject.SetActive(false);
     }
 }

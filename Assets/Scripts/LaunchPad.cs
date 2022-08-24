@@ -23,7 +23,7 @@ public class LaunchPad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collided with player");
+      //  Debug.Log("Collided with player");
         if (other.tag == "Player" && !hasCollided)
         {
             audioSource.PlayOneShot(launchClip);

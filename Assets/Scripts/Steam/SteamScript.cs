@@ -22,6 +22,9 @@ public class SteamScript : MonoBehaviour
             Debug.Log("Boss1 Killed: " + bossKilled);
             Debug.Log("Plat Stats: " + statNum);
             Debug.Log(name);
+            Debug.Log("Cloud Enabled Account: " + SteamRemoteStorage.IsCloudEnabledForAccount());
+            Debug.Log("Cloud Enabled Game: " + SteamRemoteStorage.IsCloudEnabledForApp());
+            //SteamInput.Shutdown();
         }
     }
 

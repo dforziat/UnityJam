@@ -59,6 +59,7 @@ public class MainMenuScript : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("Level0");
         loadScreen.SetActive(true);
+        gameObject.SetActive(false);
         SaveData.Instance.currentLevel = 1;
         SaveData.Instance.highestLevel = 1;
 
@@ -102,6 +103,7 @@ public class MainMenuScript : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(21);
         loadScreen.SetActive(true);
+        gameObject.SetActive(false);
         audioSource.Play();
     }
 

@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using Steamworks;
+using UnityEngine.EventSystems;
 
 public class LevelManager : MonoBehaviour
 {
     SaveManager SaveManager;
     PlayerControls playerControls;
     private GameObject levelCompleteScreen;
+    private GameObject nextLevelButton;
     public static bool levelLoading;
 
     private TextMeshProUGUI finaltimeText;
@@ -39,6 +41,7 @@ public class LevelManager : MonoBehaviour
         finaltimeText = levelCompleteScreen.gameObject.transform.Find("playerTime").GetComponent<TextMeshProUGUI>();
         besttimeText = levelCompleteScreen.gameObject.transform.Find("bestTime").GetComponent<TextMeshProUGUI>();
         devtimeText = levelCompleteScreen.gameObject.transform.Find("devTime").GetComponent<TextMeshProUGUI>();
+        nextLevelButton = levelCompleteScreen.gameObject.transform.Find("Next Level Button").gameObject;
         levelLoading = false;
         levelCompleteScreen.SetActive(false);
         Time.timeScale = 1;
@@ -57,6 +60,7 @@ public class LevelManager : MonoBehaviour
     {
         levelLoading = true;
         levelCompleteScreen.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(nextLevelButton);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
