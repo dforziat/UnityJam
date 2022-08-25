@@ -16,7 +16,7 @@ public class MachinegunScript : MonoBehaviour
     PlayerControls playerControls;
     CameraEffects cameraEffects;
     AudioSource audioSource;
-    private Sprite idleSprite;
+    public Sprite idleSprite;
 
     public AudioClip shootClip;
     public AudioClip weaponSwitchClip;

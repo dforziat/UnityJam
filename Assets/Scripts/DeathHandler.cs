@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class DeathHandler : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class DeathHandler : MonoBehaviour
     public void HandleDeath()
     {
         gameOverCanvas.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(gameOverCanvas.transform.Find("Restart").gameObject);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

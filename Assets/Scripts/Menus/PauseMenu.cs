@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using Steamworks;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -52,6 +53,7 @@ public class PauseMenu : MonoBehaviour
         }
         TogglePause();
         checkForControllerReconnect();
+       // checkForSteamOverlay();
     }
 
 
@@ -156,6 +158,17 @@ public class PauseMenu : MonoBehaviour
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             {
                 EventSystem.current.SetSelectedGameObject(lastSelectedButton);
+            }
+        }
+    }
+
+    public void checkForSteamOverlay()
+    {
+        if (SteamManager.Initialized)
+        {
+            if (SteamUtils.IsOverlayEnabled())
+            {
+                Pause();
             }
         }
     }
