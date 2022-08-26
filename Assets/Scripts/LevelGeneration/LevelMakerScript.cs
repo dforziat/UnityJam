@@ -61,7 +61,7 @@ public class LevelMakerScript : MonoBehaviour
             {
                 collRoom.SetActive(false);
                 Destroy(collRoom);
-                Instantiate(wall, exitPoint.transform.position, exitPoint.transform.rotation);
+                spawnWall(exitPoint);
                 exitPoint.SetActive(false);
                 GenerateLevel(getRandomExitPoint());
             }
@@ -85,14 +85,7 @@ public class LevelMakerScript : MonoBehaviour
         //Block All Remaining Gaps will walls
         foreach (GameObject exitPoint in exitPoints)
         {
-            if(exitPoint.GetComponent<ExitPointScript>().act == 3)
-            {
-                Instantiate(act3Wall, exitPoint.transform.position, exitPoint.transform.rotation);
-            }
-            else
-            {
-                Instantiate(wall, exitPoint.transform.position, exitPoint.transform.rotation);
-            }
+            spawnWall(exitPoint);
             Destroy(exitPoint);
         }
 
@@ -130,6 +123,18 @@ public class LevelMakerScript : MonoBehaviour
         {
             Debug.Log("Spawn Enemy!");
             spawner.spawnEnemy();
+        }
+    }
+
+    private void spawnWall(GameObject exitPoint)
+    {
+        if (exitPoint.GetComponent<ExitPointScript>().act == 3)
+        {
+            Instantiate(act3Wall, exitPoint.transform.position, exitPoint.transform.rotation);
+        }
+        else
+        {
+            Instantiate(wall, exitPoint.transform.position, exitPoint.transform.rotation);
         }
     }
 }

@@ -105,6 +105,7 @@ public class Boss3Script : MonoBehaviour
         processStageOne();
         processStageTwo();
         processStageThree();
+
         if (rotateTowardsPlayerBool)
         {
             rotateTowardsPlayer();
@@ -477,8 +478,8 @@ public class Boss3Script : MonoBehaviour
                 animator.ResetTrigger("draw");
                 animator.SetTrigger("drawrifle");
                 animator.CrossFade("Boss3_Idle", .3f);
+                GetComponentInChildren<Boss3AnimationEvents>().drawRifle();
                 StartCoroutine(pauseMovement());
-                rotateTowardsPlayerBool = true;
                 state = WAIT;
             }
         }
@@ -486,6 +487,7 @@ public class Boss3Script : MonoBehaviour
 
     public void aimSniper()
     {
+        rotateTowardsPlayerBool = true;
         LayerMask enemyLayerMask = LayerMask.GetMask("Enemy");
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Linecast(muzzleTransform.position, playerTransform.position, out RaycastHit hitInfo, ~enemyLayerMask))
