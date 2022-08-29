@@ -105,6 +105,8 @@ public class MainMenuScript : MonoBehaviour
         loadScreen.SetActive(true);
         gameObject.SetActive(false);
         audioSource.Play();
+        checkForRogueManager();
+
     }
 
     public void DisplayStory()
@@ -159,6 +161,15 @@ public class MainMenuScript : MonoBehaviour
             {
                 EventSystem.current.SetSelectedGameObject(lastSelectedButton);
             }
+        }
+    }
+
+    private void checkForRogueManager()
+    {
+       GameObject rogueManager =  GameObject.Find("RogueManager");
+        if(rogueManager != null)
+        {
+            Destroy(GameObject.Find("RogueManager"));
         }
     }
 }

@@ -19,11 +19,11 @@ public class WeaponSpawner : MonoBehaviour
 
     public void spawnWeapon()
     {
-        RougeManager rogueManager = FindObjectOfType<RougeManager>();
-        int randNum = Random.Range(0, rogueManager.weaponList.Count);
-        Debug.Log("Random Num: " + randNum + " Weapon List size: " + rogueManager.weaponList.Capacity);
-        GameObject randomWeapon = (GameObject)rogueManager.weaponList[randNum];
-        rogueManager.weaponList.RemoveAt(randNum);
+        //RougeManager rogueManager = FindObjectOfType<RougeManager>();
+        int randNum = Random.Range(0, RougeManager.instance.weaponList.Count);
+        Debug.Log("Random Num: " + randNum + " Weapon List size: " + RougeManager.instance.weaponList.Capacity);
+        GameObject randomWeapon = (GameObject)RougeManager.instance.weaponList[randNum];
+        RougeManager.instance.weaponList.RemoveAt(randNum);
         Instantiate(randomWeapon, transform.position, transform.rotation);
     }
 

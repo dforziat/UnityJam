@@ -38,8 +38,6 @@ public class EnemyController : EnemyParent
     // Update is called once per frame
     void Update()
     {
-        distanceToTarget = Vector3.Distance(target.position, transform.position);
-
         if (isProvoked)
         {
             EngageTarget();
@@ -49,6 +47,11 @@ public class EnemyController : EnemyParent
             isProvoked = true;
             childAudioSource.PlayOneShot(provokedClip);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        distanceToTarget = Vector3.Distance(target.position, transform.position);
     }
 
     private void EngageTarget()

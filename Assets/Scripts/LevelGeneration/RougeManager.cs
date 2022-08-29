@@ -10,28 +10,26 @@ public class RougeManager : MonoBehaviour
     public float totalTime = 0;
     public List<GameObject> weaponList;
     public List<string> unlockedWeaponList;
-    public GameObject loadScreen;
-
+    public static RougeManager instance = null;
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+            GameObject go = new GameObject("RogueManager");
+            go.AddComponent<RougeManager>();
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
         DontDestroyOnLoad(this.gameObject);
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 
-    public void nextLevel()
+    public void destroySelf()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-        loadScreen.SetActive(true);
+        Destroy(gameObject);
     }
 }

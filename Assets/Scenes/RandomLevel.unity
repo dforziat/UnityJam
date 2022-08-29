@@ -4557,8 +4557,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 609972467}
-        m_TargetAssemblyTypeName: RougeManager, Assembly-CSharp
+      - m_Target: {fileID: 1999888053}
+        m_TargetAssemblyTypeName: ChallengeLevelManager, Assembly-CSharp
         m_MethodName: nextLevel
         m_Mode: 1
         m_Arguments:
@@ -6690,6 +6690,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6274393614110584575, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274393614110584575, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274393614110584575, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 609972467}
+    - target: {fileID: 6274393614110584575, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274393614110584575, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: destroySelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274393614110584575, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: RougeManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274393614110584575, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6329683975242372969, guid: f1d9ac43815414442b2c5996161c2948, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -8810,6 +8838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d46a6f49814b74886f824939ceaf52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadScreen: {fileID: 17617269}
 --- !u!4 &1999888054
 Transform:
   m_ObjectHideFlags: 0
@@ -9742,6 +9771,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1810486894}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: mainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 609972467}
+        m_TargetAssemblyTypeName: RougeManager, Assembly-CSharp
+        m_MethodName: destroySelf
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChallengeLevelManager : MonoBehaviour
 {
@@ -12,14 +13,16 @@ public class ChallengeLevelManager : MonoBehaviour
     GameObject storyLevelCompleteCanvas;
     TextMeshProUGUI levelTimeText;
     TextMeshProUGUI totalTimeText;
-    RougeManager rm;
+    // RougeManager rm;
+    public GameObject loadScreen;
+
 
     string timeFormat = "{0,2:00}:{1,2:00}:{2,2:00}";
     float levelTime = 0;
 
     void Start()
     {
-        rm = GameObject.FindObjectOfType<RougeManager>();
+        //rm = GameObject.FindObjectOfType<RougeManager>();
         levelCompleteCanvas = GameObject.Find("ChallengeLevelCompleteCanvas");
         storyLevelCompleteCanvas = GameObject.Find("LevelCompleteCanvas");
         storyLevelCompleteCanvas.SetActive(false);
@@ -39,7 +42,7 @@ public class ChallengeLevelManager : MonoBehaviour
 
     public void levelComplete()
     {
-        rm.numLevelsCompleted++;
+        RougeManager.instance.numLevelsCompleted++;
         //display the GUI
         levelCompleteCanvas.SetActive(true);
         Time.timeScale = 0f;
@@ -56,15 +59,15 @@ public class ChallengeLevelManager : MonoBehaviour
 
         //Set Total Run Time
         levelTime = Time.timeSinceLevelLoad;
-        rm.totalTime += levelTime;
+        RougeManager.instance.totalTime += levelTime;
 
-        mins = (int)(rm.totalTime / 60);
-        secs = (int)(rm.totalTime % 60);
-        miliSecs = Mathf.RoundToInt((rm.totalTime - mins * 60 - secs) * 100);
+        mins = (int)(RougeManager.instance.totalTime / 60);
+        secs = (int)(RougeManager.instance.totalTime % 60);
+        miliSecs = Mathf.RoundToInt((RougeManager.instance.totalTime - mins * 60 - secs) * 100);
         totalTimeText = levelCompleteCanvas.transform.Find("totalTime").GetComponent<TextMeshProUGUI>();
         totalTimeText.text = string.Format(timeFormat, mins, secs, miliSecs);
 
-        if (rm.numLevelsCompleted < 5)
+        if (RougeManager.instance.numLevelsCompleted < 5)
         {
             GameObject runCompleteText = levelCompleteCanvas.transform.Find("RunCompleteText").gameObject;
             runCompleteText.SetActive(false);
@@ -79,9 +82,9 @@ public class ChallengeLevelManager : MonoBehaviour
         else
         {
             float challengeBestTime = SaveData.Instance.challengeBestTime;
-            if (rm.totalTime < challengeBestTime || challengeBestTime == 0)
+            if (RougeManager.instance.totalTime < challengeBestTime || challengeBestTime == 0)
             {
-                SaveData.Instance.challengeBestTime = rm.totalTime;
+                SaveData.Instance.challengeBestTime = RougeManager.instance.totalTime;
             }
 
             GameObject nextLevelButton = levelCompleteCanvas.transform.Find("Next Level Button").gameObject;
@@ -111,7 +114,7 @@ public class ChallengeLevelManager : MonoBehaviour
     {
         GameObject weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
      
-        foreach (string weaponName in rm.unlockedWeaponList)
+        foreach (string weaponName in RougeManager.instance.unlockedWeaponList)
         {
             weaponsHud.transform.Find(weaponName).tag = "unlocked";
         }
@@ -121,13 +124,19 @@ public class ChallengeLevelManager : MonoBehaviour
     public void saveUnlockedWeapons()
     {
         GameObject weaponsHud = GameObject.FindGameObjectWithTag("WeaponsHud");
-        rm.unlockedWeaponList.Clear();
+        RougeManager.instance.unlockedWeaponList.Clear();
         foreach(Transform weapon in weaponsHud.transform)
         {
             if(weapon.tag == "unlocked")
             {
-                rm.unlockedWeaponList.Add(weapon.name);
+                RougeManager.instance.unlockedWeaponList.Add(weapon.name);
             }
         }
+    }
+
+    public void nextLevel()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        loadScreen.SetActive(true);
     }
 }

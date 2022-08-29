@@ -16,6 +16,7 @@ public class HandgunScript : MonoBehaviour
     PlayerControls playerControls;
     CameraEffects cameraEffects;
     AudioSource audioSource;
+    public Sprite idleSprite;
 
     public AudioClip shootClip;
     public AudioClip weaponSwitchClip;
@@ -28,6 +29,7 @@ public class HandgunScript : MonoBehaviour
     void Start()
     {
         gunAnimator = GetComponent<Animator>();
+        idleSprite = GetComponent<Image>().sprite;
     }
 
     private void OnEnable()
@@ -46,6 +48,7 @@ public class HandgunScript : MonoBehaviour
     {
         handgunAmmoText.enabled = false;
         ammoIcon.enabled = false;
+        GetComponent<Image>().sprite = idleSprite;
     }
 
     // Update is called once per frame

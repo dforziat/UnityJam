@@ -71,6 +71,7 @@ public class LevelManager : MonoBehaviour
         SaveData.Instance.currentLevel++;
         SaveManager.SavePrefs();
         checkDevTimeAchievement();
+        GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<WeaponSwitching>().lockWeaponSwitch = true;
     }
 
 
