@@ -8,15 +8,14 @@ public class WeaponSwitching : MonoBehaviour
     public int selectedWeapon = 0;
     public int curWeapon;
     public bool lockWeaponSwitch = false;
-    public Transform nextWeapon;
 
-    public GameObject shotgun;
-    public GameObject grapplegun;
-    public GameObject machinegun;
-    public GameObject ricochetgun;
-    public GameObject spear;
+    private GameObject shotgun;
+    private GameObject grapplegun;
+    private GameObject machinegun;
+    private GameObject ricochetgun;
+    private GameObject spear;
     // Start is called before the first frame update
-    void Start()
+    void start()
     {
         if (SceneManager.GetActiveScene().name != "RandomLevel")
         {

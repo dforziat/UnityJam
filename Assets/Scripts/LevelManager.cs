@@ -9,7 +9,6 @@ using UnityEngine.EventSystems;
 public class LevelManager : MonoBehaviour
 {
     SaveManager SaveManager;
-    PlayerControls playerControls;
     private GameObject levelCompleteScreen;
     private GameObject nextLevelButton;
     public static bool levelLoading;
@@ -46,7 +45,6 @@ public class LevelManager : MonoBehaviour
         levelCompleteScreen.SetActive(false);
         Time.timeScale = 1;
         SaveManager = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
-        playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
     }
 
     // Update is called once per frame

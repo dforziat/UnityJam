@@ -10,7 +10,6 @@ public class Level1CutsceneManager : MonoBehaviour
  
     public GameObject GUI;
     public GameObject Dialogue;
-    PlayerControls playerControls;
     public GameObject loadScreen;
 
 
@@ -20,7 +19,6 @@ public class Level1CutsceneManager : MonoBehaviour
     {
         //player starts with no HUD, timeline locks them in place
         GUI.SetActive(false);
-        playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
     }
 
 
@@ -38,7 +36,6 @@ public class Level1CutsceneManager : MonoBehaviour
         SaveData.Instance.currentLevel = 2;
         SceneManager.LoadSceneAsync("Level1");
         Instantiate(loadScreen, Vector3.zero, new Quaternion(0, 0, 0, 0));
-        //GUI.SetActive(true);
 
     }
 

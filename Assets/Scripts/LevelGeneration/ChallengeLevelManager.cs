@@ -28,7 +28,8 @@ public class ChallengeLevelManager : MonoBehaviour
         storyLevelCompleteCanvas.SetActive(false);
         levelCompleteCanvas.SetActive(false);
         PauseMenu.GameIsPaused = false;
-
+        Time.timeScale = 1;
+        LevelManager.levelLoading = false;
         //setup player guns
         loadUnlockedWeapons();
 
@@ -85,6 +86,7 @@ public class ChallengeLevelManager : MonoBehaviour
             if (RougeManager.instance.totalTime < challengeBestTime || challengeBestTime == 0)
             {
                 SaveData.Instance.challengeBestTime = RougeManager.instance.totalTime;
+                challengeBestTime = RougeManager.instance.totalTime;
             }
 
             GameObject nextLevelButton = levelCompleteCanvas.transform.Find("Next Level Button").gameObject;

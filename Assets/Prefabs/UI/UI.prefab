@@ -785,7 +785,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6691291183544239214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,12 +818,6 @@ MonoBehaviour:
   selectedWeapon: 0
   curWeapon: 0
   lockWeaponSwitch: 0
-  nextWeapon: {fileID: 0}
-  shotgun: {fileID: 0}
-  grapplegun: {fileID: 0}
-  machinegun: {fileID: 0}
-  ricochetgun: {fileID: 0}
-  spear: {fileID: 0}
 --- !u!95 &583434003
 Animator:
   serializedVersion: 3
@@ -1087,7 +1081,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2842712775945165084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8719,6 +8713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65007587680b93246b04d2f0d4a67831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idleSprite: {fileID: -7554800821435680655, guid: a1a08007a043e254984645e8bea4ad3d, type: 3}
   shootClip: {fileID: 8300000, guid: 8b6e974f368aa57478b0432e065a85dd, type: 3}
   weaponSwitchClip: {fileID: 8300000, guid: 9934f4f3f1685a041a251231451c4751, type: 3}
   dryfireClip: {fileID: 8300000, guid: dd197105deb018540b2bfe48ee85e602, type: 3}

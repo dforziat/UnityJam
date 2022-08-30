@@ -1274,6 +1274,10 @@ PrefabInstance:
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 1442953617}
+    - target: {fileID: 3931274598305058293, guid: 5b85cd28e5503db4dbae7fa298a03b9e, type: 3}
+      propertyPath: triggerScript
+      value: prologue
+      objectReference: {fileID: 0}
     - target: {fileID: 3931274598810507081, guid: 5b85cd28e5503db4dbae7fa298a03b9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 231.276
@@ -1306,6 +1310,10 @@ PrefabInstance:
       propertyPath: charName
       value: 
       objectReference: {fileID: 1173787325}
+    - target: {fileID: 3931274598810507087, guid: 5b85cd28e5503db4dbae7fa298a03b9e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3931274598810507087, guid: 5b85cd28e5503db4dbae7fa298a03b9e, type: 3}
       propertyPath: charPortrait
       value: 
@@ -1400,6 +1408,70 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &571338995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3931274598305058251, guid: 5b85cd28e5503db4dbae7fa298a03b9e, type: 3}
+  m_PrefabInstance: {fileID: 571338992}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &571338996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571338995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5300e6fc0ab4f6346ba79bddd438212e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GUI: {fileID: 552756121}
+  Dialogue: {fileID: 372394214}
+  loadScreen: {fileID: 8875192550856222381, guid: 28fe281318170204eb3bd08f2e459c2a, type: 3}
+--- !u!114 &571338997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571338993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b651050b88a5e47a0b1b1d76782aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: ???
+    sentences:
+    - '...Hello?  '
+    - '...Come on man you gotta wake up!  '
+    - "Oh there you are! Thank the maker.\r  "
+    - 'Time to get you up to speed. Mission Bravo Alpha 214 has been compromised.
+      We have a Code Cherry Blue with the Chief Research Officer and his team.   '
+    - 'You need to enact protocol B-254 ASAP!  '
+    - ...
+    - "Maybe too much at once. Do you remember the mission?\r  "
+    - ...
+    - 'Alright well how about your name?  '
+    - '...  '
+    - 'Do you remember ANYTHING at all? '
+    - ...
+    - "I will take that as a no.\r  "
+    - 'Alright, you are a cryogenically frozen security guard, the scientists went
+      mad, experiments are tearing the place apart, and I need you to blow this place
+      to hell before it gets worse. Got it?
+
+'
+    - "The facility's self destruct is located in High Sec\u2026conveniently where
+      I am.\r"
+    - "Problem is that they have me locked up.\r"
+    - To get in here you are gonna have to disable the locks. They are contained
+      within three AI Security Machines.
+    - "You will need to destroy them to get into my room, where we can arm the bomb
+      and get out of here. \r"
+    - "Do not worry, I still have my laptop with me. I will guide you every step
+      of the way. \r"
+    - "You can call me Art by the way. Now get going!\r"
 --- !u!1 &587293441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,7 +1877,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1239703134108287154, guid: 22752a4003cdb4a4dad50d113e1e22d6, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1239703134108287154, guid: 22752a4003cdb4a4dad50d113e1e22d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2426,11 +2498,6 @@ Camera:
 --- !u!1 &1276834063 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5028391134535262241, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
-  m_PrefabInstance: {fileID: 1276834061}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1276834064 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1400614379, guid: 5014468dfcef7854ab63ca23bf1abc03, type: 3}
   m_PrefabInstance: {fileID: 1276834061}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1417855548
@@ -3692,102 +3759,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5188078946274966914, guid: 56d1c2f1c3f3be149b7489b67bef2c4b, type: 3}
   m_PrefabInstance: {fileID: 2121914286}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2126849176
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2126849178}
-  - component: {fileID: 2126849177}
-  - component: {fileID: 2126849179}
-  - component: {fileID: 2126849180}
-  m_Layer: 0
-  m_Name: Timeline-Cutscene-Level-0
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!320 &2126849177
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126849176}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 443a7e5f3fa339646b034f3d630d3a82, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 327943528105795056, guid: 443a7e5f3fa339646b034f3d630d3a82, type: 2}
-    value: {fileID: 1276834064}
-  - key: {fileID: 4476754470476052179, guid: 443a7e5f3fa339646b034f3d630d3a82, type: 2}
-    value: {fileID: 2126849179}
-  m_ExposedReferences:
-    m_References: []
---- !u!4 &2126849178
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126849176}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6421334, y: 2.5731225, z: 2.659653}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2126849179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126849176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 7c3260d096ee09348874fe669e011c80, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2126849180}
-          m_TargetAssemblyTypeName: Level1CutsceneManager, Assembly-CSharp
-          m_MethodName: StartLevel
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &2126849180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126849176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5300e6fc0ab4f6346ba79bddd438212e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GUI: {fileID: 552756121}
-  Dialogue: {fileID: 372394214}
-  loadScreen: {fileID: 8875192550856222381, guid: 28fe281318170204eb3bd08f2e459c2a, type: 3}

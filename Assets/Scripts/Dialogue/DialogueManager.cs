@@ -27,7 +27,7 @@ public class DialogueManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         audioSource = GetComponent<AudioSource>();
         dialogueBox.SetActive(false);
@@ -41,6 +41,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue (Dialogue dialogue)
     {
+        Debug.Log("Dianlogue: " + dialogue.name);
         dialogueBox.SetActive(true);
         nameText.text = dialogue.name;
 
@@ -66,12 +67,13 @@ public class DialogueManager : MonoBehaviour
        if(SceneManager.GetActiveScene().name == "Level0" && sentences.Count == 1)
         {
           faceSwap();
+          GetComponent<Level1CutsceneManager>().Invoke("StartLevel", 8f);
         }
-        
+
         if (SceneManager.GetActiveScene().name == "Epilogue" && sentences.Count == 8 && triggerScript != null & triggerScript == "epilogue")
-       {
+        {
             artMonitor.sprite = artMonitorFace;
-       }
+        }
 
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
