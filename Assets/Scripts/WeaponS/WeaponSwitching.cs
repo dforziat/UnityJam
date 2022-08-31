@@ -15,7 +15,7 @@ public class WeaponSwitching : MonoBehaviour
     private GameObject ricochetgun;
     private GameObject spear;
     // Start is called before the first frame update
-    void start()
+    void Start()
     {
         if (SceneManager.GetActiveScene().name != "RandomLevel")
         {
@@ -31,7 +31,7 @@ public class WeaponSwitching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PauseMenu.GameIsPaused || lockWeaponSwitch)
+        if (PauseMenu.GameIsPaused || lockWeaponSwitch || PlayerControls.isDead)
         {
             return;
         }
