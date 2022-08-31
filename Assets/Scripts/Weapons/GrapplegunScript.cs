@@ -92,8 +92,9 @@ public class GrapplegunScript : MonoBehaviour
 
         RaycastHit preHit;
         LayerMask wallMask = LayerMask.GetMask("Wall");
+        LayerMask groundMask = LayerMask.GetMask("Ground");
         float range = 0;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out preHit, Mathf.Infinity, wallMask))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out preHit, Mathf.Infinity, wallMask) || Physics.Raycast(cam.transform.position, cam.transform.forward, out preHit, Mathf.Infinity, groundMask))
         {
             range = preHit.distance;
         }
@@ -105,7 +106,6 @@ public class GrapplegunScript : MonoBehaviour
         hits = Physics.RaycastAll(cam.transform.position, cam.transform.forward, range  + .1f);
 
         foreach(RaycastHit hit in hits){
-            Debug.Log("Grapple Hit: " + hit.transform.name);
             if (hit.transform.tag == "Enemy")
             {
                 hit.transform.SendMessageUpwards("takeDamage", damage, SendMessageOptions.DontRequireReceiver);
@@ -131,7 +131,6 @@ public class GrapplegunScript : MonoBehaviour
             }
         }
 
-        Debug.Log("Grapple hit tag: " + finalHit.transform.tag);
         yield return new WaitForSeconds(rateOfFire);
 
         if (finalHit.transform == null || !finalHit.transform.CompareTag("GrapplePoint"))

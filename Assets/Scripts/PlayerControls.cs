@@ -9,6 +9,7 @@ public class PlayerControls : MonoBehaviour
     [Header("Movement")]
     public static float moveSpeed = 5;
     float grappleSpeed = 100;
+    float grappleFailsafeTimer = 8f;
 
     [Header("Gravity")]
     float grav = -10f;
@@ -269,10 +270,11 @@ public class PlayerControls : MonoBehaviour
                 Debug.Log("DISTANCE: " + Vector3.Distance(initialPos, transform.position));
                 controller.Move(controller.transform.forward * Mathf.Sqrt(grappleSpeed) * Time.deltaTime);
             }
-            if (distanceToGrapple <= Vector3.Distance(initialPos, transform.position) + 1)
+            if (distanceToGrapple <= Vector3.Distance(initialPos, transform.position) + 1 || controller.velocity == Vector3.zero)
             {
                 stopGrappling();
             }
+
         }
 
     }
@@ -317,4 +319,5 @@ public class PlayerControls : MonoBehaviour
             stopGrappling();
         }
     }
+
 }

@@ -39,6 +39,10 @@ public class BossCutsceneManagerScript : MonoBehaviour
         GUI.SetActive(true);
         entranceDoor.isUnlocked = false;
         boss.GetComponent<Animator>().SetTrigger("enterRoom");
+        GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<WeaponSwitching>().curWeapon = 0;
+        GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<WeaponSwitching>().selectedWeapon = 0;
+        GameObject.FindGameObjectWithTag("WeaponsHud").GetComponent<WeaponSwitching>().SelectWeapon();
+
     }
 
     public void ActivateBoss()

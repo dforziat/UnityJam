@@ -83,11 +83,17 @@ public class ChallengeLevelManager : MonoBehaviour
         else
         {
             float challengeBestTime = SaveData.Instance.challengeBestTime;
-            if (RougeManager.instance.totalTime < challengeBestTime || challengeBestTime == 0)
+            if (RougeManager.instance.totalTime < challengeBestTime || challengeBestTime <= 0f)
             {
                 SaveData.Instance.challengeBestTime = RougeManager.instance.totalTime;
                 challengeBestTime = RougeManager.instance.totalTime;
             }
+
+            GameObject bestTimeNum = levelCompleteCanvas.transform.Find("bestTime").gameObject;
+           int bestmins = (int)(RougeManager.instance.totalTime / 60);
+           int  bestsecs = (int)(RougeManager.instance.totalTime % 60);
+           int bestmiliSecs = Mathf.RoundToInt((challengeBestTime - bestmins * 60 - bestsecs) * 100);
+            bestTimeNum.GetComponent<TextMeshProUGUI>().text = string.Format(timeFormat, bestmins, bestsecs, bestmiliSecs);
 
             GameObject nextLevelButton = levelCompleteCanvas.transform.Find("Next Level Button").gameObject;
             nextLevelButton.SetActive(false);
